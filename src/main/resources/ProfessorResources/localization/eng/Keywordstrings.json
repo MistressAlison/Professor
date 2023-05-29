@@ -1,0 +1,101 @@
+[
+  {
+    "ID": "catalyst",
+    "PROPER_NAME": "Catalyst",
+    "NAMES": [
+      "catalyst",
+      "catalysts",
+      "catalyze",
+      "catalytic"
+    ],
+    "DESCRIPTION": "Catalysts are not consumed during #ySynthesis and return to your hand on completion."
+  },
+  {
+    "ID": "reactant",
+    "PROPER_NAME": "Reactant",
+    "NAMES": [
+      "reactant",
+      "reactants"
+    ],
+    "DESCRIPTION": "Reactants do not consume #yValency during #ySynthesis."
+  },
+  {
+    "ID": "valency",
+    "PROPER_NAME": "Valency",
+    "NAMES": [
+      "valency"
+    ],
+    "DESCRIPTION": "The number of cards required to finish #ySynthesis."
+  },
+  {
+    "ID": "synthesis",
+    "PROPER_NAME": "Synthesis",
+    "NAMES": [
+      "synthesis",
+      "synthesize"
+    ],
+    "DESCRIPTION": "Begin converting this card. Until its #yValency is full, cards played are removed from combat and confer their #yElements towards #ySynthesis. The newly created card is then added to your hand."
+  },
+  {
+    "ID": "spectrumize",
+    "PROPER_NAME": "Spectrumize",
+    "NAMES": [
+      "spectrumize",
+      "spectrumized"
+    ],
+    "DESCRIPTION": "A #ySpectrumized card is removed from combat and is replaced with #yNeutralizers matching its #yElements."
+  },
+  {
+    "ID": "neutralizer",
+    "PROPER_NAME": "Neutralizer",
+    "NAMES": [
+      "neutralizer",
+      "neutralizers"
+    ],
+    "DESCRIPTION": "Neutralizers are 0 cost cards which do not consume #yValency during #ySynthesis."
+  },
+  {
+    "ID": "recipe",
+    "PROPER_NAME": "Recipe",
+    "NAMES": [
+      "recipe",
+      "recipes"
+    ],
+    "DESCRIPTION": "?"
+  },
+  {
+    "ID": "creation",
+    "PROPER_NAME": "Creation",
+    "NAMES": [
+      "creation",
+      "creations"
+    ],
+    "DESCRIPTION": "?"
+  },
+  {
+    "ID": "bomb",
+    "PROPER_NAME": "Bomb",
+    "NAMES": [
+      "bomb"
+    ],
+    "DESCRIPTION": "Deals #b6 damage plus #b3 per [Professor:FireIcon] to ALL enemies. NL Applies [Professor:BoltIcon] #yBurn."
+  },
+  {
+    "ID": "burn",
+    "PROPER_NAME": "Burn",
+    "NAMES": [
+      "burn",
+      "burning"
+    ],
+    "DESCRIPTION": "Burning creatures take damage at the start of their turn."
+  },
+  {
+    "ID": "explosive_uni",
+    "PROPER_NAME": "Explosive Uni",
+    "NAMES": [
+      "explosive uni",
+      "explosive_uni"
+    ],
+    "DESCRIPTION": "Deals #b6 damage plus #b2 per [Professor:FireIcon] . NL Enemy loses [Professor:IceIcon] #yStrength this turn."
+  }
+]

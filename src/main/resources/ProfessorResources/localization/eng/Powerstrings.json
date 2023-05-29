@@ -1,0 +1,10 @@
+{
+  "${ModID}:AmmoPower": {
+    "NAME": "Ammo",
+    "DESCRIPTIONS": ["Used to perform #yRanged attacks."]
+  },
+  "${ModID}:BurnPower": {
+    "NAME": "Burn",
+    "DESCRIPTIONS": ["At the start of its turn, takes #b"," damage."]
+  }
+}

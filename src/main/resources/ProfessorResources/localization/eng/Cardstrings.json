@@ -1,0 +1,70 @@
+{
+  "${ModID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Main description",
+    "UPGRADE_DESCRIPTION": "Upgrade description",
+    "EXTENDED_DESCRIPTION": ["Extra Stuff"]
+  },
+  "${ModID}:Bomb": {
+    "NAME": "Bomb",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies.{!M!|>0= NL Apply !M! professor:Burn.}{@@}",
+    "EXTENDED_DESCRIPTION": ["Deal !D! damage plus 3 per [Professor:FireIcon] to ALL enemies. NL Apply [Professor:BoltIcon] professor:Burn."]
+  },
+  "${ModID}:SynthesizeBomb": {
+    "NAME": "Synthesize - Bomb",
+    "DESCRIPTION": "professor:Synthesize a professor:Bomb. NL professor:Valency !M!."
+  },
+  "${ModID}:ExplosiveUni": {
+    "NAME": "Explosive Uni",
+    "DESCRIPTION": "Deal !D! damage.{!M!|>0= NL Enemy loses !M! Strength this turn.}{@@}",
+    "EXTENDED_DESCRIPTION": ["Deal !D! damage plus 2 per [Professor:FireIcon] . NL Enemy loses [Professor:IceIcon] Strength this turn."]
+  },
+  "${ModID}:SynthesizeExplosiveUni": {
+    "NAME": "Create Explosive Uni",
+    "DESCRIPTION": "professor:Synthesize an professor:Explosive_Uni. NL professor:Valency !M!."
+  },
+  "${ModID}:BlueNeutralizer": {
+    "NAME": "Blue Neutralizer",
+    "DESCRIPTION": "professor:Reactant. NL Gain !B! Block."
+  },
+  "${ModID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${ModID}:EternalCrystal": {
+    "NAME": "Eternal Crystal",
+    "DESCRIPTION": "professor:Catalyst. NL Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable."
+  },
+  "${ModID}:EternalFire": {
+    "NAME": "Eternal Fire",
+    "DESCRIPTION": "Apply !M! professor:Burn. NL Put a copy of this card on top of your draw pile."
+  },
+  "${ModID}:GreenNeutralizer": {
+    "NAME": "Green Neutralizer",
+    "DESCRIPTION": "professor:Reactant. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
+  },
+  "${ModID}:Liquifier": {
+    "NAME": "Liquifier",
+    "DESCRIPTION": "professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Exhaust"
+  },
+  "${ModID}:RedNeutralizer": {
+    "NAME": "Red Neutralizer",
+    "DESCRIPTION": "professor:Reactant. NL Deal !D! damage."
+  },
+  "${ModID}:SaintsDiamond": {
+    "NAME": "Saint's Diamond",
+    "DESCRIPTION": "professor:Catalyst. NL Gain !B! Block."
+  },
+  "${ModID}:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${ModID}:Uni": {
+    "NAME": "Uni",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
+  },
+  "${ModID}:YellowNeutralizer": {
+    "NAME": "Yellow Neutralizer",
+    "DESCRIPTION": "professor:Reactant. NL Apply !M! Vulnerable."
+  }
+}

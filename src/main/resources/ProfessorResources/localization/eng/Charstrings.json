@@ -1,0 +1,13 @@
+{
+  "${ModID}:TheProfessor": {
+    "NAMES": [
+      "The Professor",
+      "the Professor"
+    ],
+    "TEXT": [
+      "A dangerous scholar studying in the field of Netherscience. NL Wielder of many fiendish devices.",
+      "You experiment on the heart.",
+      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~mad~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
+    ]
+  }
+}
