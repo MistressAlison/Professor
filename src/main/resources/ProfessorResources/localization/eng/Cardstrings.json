@@ -26,7 +26,7 @@
     "DESCRIPTION": "Deal !D! damage. NL ALL enemies lose !M! HP."
   },
   "${ModID}:SynthesizeBomb": {
-    "NAME": "Synthesize Bomb",
+    "NAME": "Bomb",
     "DESCRIPTION": "professor:Synthesize a professor:Bomb. NL professor:Valency !M!."
   },
   "${ModID}:ExplosiveUni": {
@@ -34,7 +34,7 @@
     "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn."
   },
   "${ModID}:SynthesizeExplosiveUni": {
-    "NAME": "Synthesize Explosive Uni",
+    "NAME": "Explosive Uni",
     "DESCRIPTION": "professor:Synthesize an professor:Explosive_Uni. NL professor:Valency !M!."
   },
   "${ModID}:NA": {
@@ -42,7 +42,7 @@
     "DESCRIPTION": "Deal !D! damage to ALL enemies."
   },
   "${ModID}:SynthesizeNA": {
-    "NAME": "Synthesize N/A",
+    "NAME": "N/A",
     "DESCRIPTION": "professor:Synthesize an professor:N/A. NL professor:Valency !M!."
   },
   "${ModID}:AmberOil": {
@@ -56,6 +56,10 @@
   "${ModID}:CleanWater": {
     "NAME": "Clean Water",
     "DESCRIPTION": "professor:Reactant. NL Gain !B! Block."
+  },
+  "${ModID}:Clobber": {
+    "NAME": "Clobber",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
