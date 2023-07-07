@@ -94,6 +94,6 @@ public class Bomb extends AbstractCreationCard {
 
     @Override
     public String itemArt() {
-        return "Bomb";
+        return Bomb.class.getSimpleName();
     }
 }

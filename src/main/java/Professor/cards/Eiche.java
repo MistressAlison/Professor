@@ -43,6 +43,6 @@ public class Eiche extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return "Eiche";
+        return Eiche.class.getSimpleName();
     }
 }

@@ -5,8 +5,6 @@ import Professor.patches.CustomTags;
 import Professor.powers.AmberOilPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -44,6 +42,6 @@ public class AmberOil extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return "AmberOil";
+        return AmberOil.class.getSimpleName();
     }
 }

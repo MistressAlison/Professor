@@ -89,6 +89,6 @@ public class ExplosiveUni extends AbstractCreationCard {
 
     @Override
     public String itemArt() {
-        return "ExplosiveUni";
+        return ExplosiveUni.class.getSimpleName();
     }
 }

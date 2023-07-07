@@ -41,6 +41,6 @@ public class Liquifier extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return "Liquifier";
+        return Liquifier.class.getSimpleName();
     }
 }

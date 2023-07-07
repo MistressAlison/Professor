@@ -97,6 +97,6 @@ public class NA extends AbstractCreationCard {
 
     @Override
     public String itemArt() {
-        return "NA";
+        return NA.class.getSimpleName();
     }
 }

@@ -40,6 +40,6 @@ public class Septrin extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return "Septrin";
+        return Septrin.class.getSimpleName();
     }
 }

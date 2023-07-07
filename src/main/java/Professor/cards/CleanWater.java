@@ -40,6 +40,6 @@ public class CleanWater extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return "CleanWater";
+        return CleanWater.class.getSimpleName();
     }
 }

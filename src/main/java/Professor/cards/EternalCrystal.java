@@ -2,11 +2,9 @@ package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.patches.CustomTags;
-import Professor.powers.BurnPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -50,6 +48,6 @@ public class EternalCrystal extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return "EternalCrystal";
+        return EternalCrystal.class.getSimpleName();
     }
 }

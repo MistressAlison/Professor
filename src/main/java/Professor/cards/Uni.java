@@ -41,6 +41,6 @@ public class Uni extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return "Uni";
+        return Uni.class.getSimpleName();
     }
 }

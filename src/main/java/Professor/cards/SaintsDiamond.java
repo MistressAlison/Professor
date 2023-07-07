@@ -41,6 +41,6 @@ public class SaintsDiamond extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return "SaintsDiamond";
+        return SaintsDiamond.class.getSimpleName();
     }
 }
