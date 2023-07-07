@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 public class KeywordManager {
     public static HashMap<String, String> keywordMap = new HashMap<>();
+    public static String ELEMENT;
     public static String CATALYST;
     public static String REACTANT;
     public static String SYNTHESIS;

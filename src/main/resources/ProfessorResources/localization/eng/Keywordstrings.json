@@ -1,5 +1,18 @@
 [
   {
+    "ID": "element",
+    "PROPER_NAME": "Elements",
+    "NAMES": [
+      "element",
+      "elements",
+      "fire",
+      "ice",
+      "bolt",
+      "wind"
+    ],
+    "DESCRIPTION": "#rFire [Professor:FireIcon] , #bIce [Professor:IceIcon] , #yBolt [Professor:BoltIcon] , and #gWind [Professor:WindIcon] ."
+  },
+  {
     "ID": "catalyst",
     "PROPER_NAME": "Catalyst",
     "NAMES": [
