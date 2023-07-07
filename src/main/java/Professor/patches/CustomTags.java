@@ -10,4 +10,12 @@ public class CustomTags {
     public static AbstractCard.CardTags PROF_REACTANT;
     @SpireEnum
     public static AbstractCard.CardTags PROF_ELEMENTLESS;
+    @SpireEnum
+    public static AbstractCard.CardTags PROF_FIRE;
+    @SpireEnum
+    public static AbstractCard.CardTags PROF_ICE;
+    @SpireEnum
+    public static AbstractCard.CardTags PROF_BOLT;
+    @SpireEnum
+    public static AbstractCard.CardTags PROF_WIND;
 }
