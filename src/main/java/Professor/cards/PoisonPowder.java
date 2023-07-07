@@ -8,8 +8,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Professor.MainModfile.makeID;
 
