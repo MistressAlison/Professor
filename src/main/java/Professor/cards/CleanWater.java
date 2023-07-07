@@ -1,9 +1,8 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.powers.BracedPower;
+import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
-import Professor.util.Wiz;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,20 +14,18 @@ public class CleanWater extends AbstractEasyCard {
 
     public CleanWater() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 4;
-        baseMagicNumber = magicNumber = 4;
+        baseBlock = block = 8;
+        tags.add(CustomTags.PROF_REACTANT);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.applyToSelf(new BracedPower(p, magicNumber));
     }
 
     @Override
     public void upp() {
-        upgradeBlock(2);
-        upgradeMagicNumber(2);
+        upgradeBlock(3);
     }
 
     @Override

@@ -55,7 +55,7 @@
   },
   "${ModID}:CleanWater": {
     "NAME": "Clean Water",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! professor:Braced."
+    "DESCRIPTION": "professor:Reactant. NL Gain !B! Block."
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
