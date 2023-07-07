@@ -7,6 +7,10 @@
     "NAME": "Amber Oil",
     "DESCRIPTIONS": ["Whenever you apply #yBurn, apply #b"," more."]
   },
+  "${ModID}:SeptrinPower": {
+    "NAME": "Septrin",
+    "DESCRIPTIONS": ["Whenever you #yExhaust a card, #ySpectrumize it."]
+  },
   "${ModID}:BracedPower": {
     "NAME": "Braced",
     "DESCRIPTIONS": ["Your next #yBlock gaining card gains #b", " additional #yBlock."]

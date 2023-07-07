@@ -16,22 +16,33 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 public class SpectrumizeAction extends AbstractGameAction {
     public static final String ID = MainModfile.makeID(SpectrumizeAction.class.getSimpleName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ID).TEXT;
+    public AbstractCard card;
 
     public SpectrumizeAction(int amount) {
         this.amount = amount;
         this.actionType = ActionType.EXHAUST;
     }
 
+    public SpectrumizeAction(AbstractCard card) {
+        this.card = card;
+        this.actionType = ActionType.EXHAUST;
+    }
+
     @Override
     public void update() {
-        addToTop(new SelectCardsInHandAction(amount, TEXT[0], l -> {
-            for (AbstractCard c : l) {
-                addCards(c);
-                addToTop(new ShowCardAndPoofAction(c));
-            }
-            //Clear to not put cards back in hand
-            l.clear();
-        }));
+        if (card != null) {
+            addCards(card);
+            addToTop(new ShowCardAndPoofAction(card));
+        } else {
+            addToTop(new SelectCardsInHandAction(amount, TEXT[0], l -> {
+                for (AbstractCard c : l) {
+                    addCards(c);
+                    addToTop(new ShowCardAndPoofAction(c));
+                }
+                //Clear to not put cards back in hand
+                l.clear();
+            }));
+        }
         this.isDone = true;
     }
 

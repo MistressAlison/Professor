@@ -81,6 +81,10 @@
     "NAME": "Saint's Diamond",
     "DESCRIPTION": "professor:Catalyst. NL Gain !B! Block."
   },
+  "${ModID}:Septrin": {
+    "NAME": "Septrin",
+    "DESCRIPTION": "Whenever a card is Exhausted, professor:Spectrumize it."
+  },
   "${ModID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
