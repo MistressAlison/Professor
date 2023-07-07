@@ -86,14 +86,6 @@
     "DESCRIPTION": "?"
   },
   {
-    "ID": "bomb",
-    "PROPER_NAME": "Bomb",
-    "NAMES": [
-      "bomb"
-    ],
-    "DESCRIPTION": "Deals #b+3 damage per [Professor:FireIcon] . NL Enemies lose #b+2 HP per [Professor:BoltIcon] ."
-  },
-  {
     "ID": "burn",
     "PROPER_NAME": "Burn",
     "NAMES": [
@@ -109,6 +101,14 @@
       "braced"
     ],
     "DESCRIPTION": "Your next #yBlock gaining card gains additional #yBlock."
+  },
+  {
+    "ID": "bomb",
+    "PROPER_NAME": "Bomb",
+    "NAMES": [
+      "bomb"
+    ],
+    "DESCRIPTION": "Deals #b+3 damage per [Professor:FireIcon] . NL Enemies lose #b+2 HP per [Professor:BoltIcon] ."
   },
   {
     "ID": "explosive_uni",
