@@ -78,7 +78,7 @@
     "NAMES": [
       "bomb"
     ],
-    "DESCRIPTION": "Deals #b3 additional damage per [Professor:FireIcon] . NL Enemies lose #b2 additional HP per [Professor:BoltIcon] ."
+    "DESCRIPTION": "Deals #b+3 damage per [Professor:FireIcon] . NL Enemies lose #b+2 HP per [Professor:BoltIcon] ."
   },
   {
     "ID": "burn",
@@ -90,21 +90,21 @@
     "DESCRIPTION": "Burning creatures take damage at the start of their turn."
   },
   {
-    "ID": "explosive_uni",
-    "PROPER_NAME": "Explosive Uni",
-    "NAMES": [
-      "explosive uni",
-      "explosive_uni"
-    ],
-    "DESCRIPTION": "Deals #b2 additional damage per [Professor:FireIcon] . NL Enemy loses #b1 additional #yStrength this turn per [Professor:IceIcon] ."
-  },
-  {
     "ID": "braced",
     "PROPER_NAME": "Braced",
     "NAMES": [
       "braced"
     ],
     "DESCRIPTION": "Your next #yBlock gaining card gains additional #yBlock."
+  },
+  {
+    "ID": "explosive_uni",
+    "PROPER_NAME": "Explosive Uni",
+    "NAMES": [
+      "explosive uni",
+      "explosive_uni"
+    ],
+    "DESCRIPTION": "Deals #b+2 damage per [Professor:FireIcon] . NL Enemy loses #b+1 #yStrength this turn per [Professor:IceIcon] ."
   },
   {
     "ID": "na",
