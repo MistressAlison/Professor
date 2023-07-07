@@ -1,0 +1,102 @@
+package Professor.cards.creations;
+
+import Professor.cards.abstracts.AbstractCreationCard;
+import Professor.powers.BurnPower;
+import Professor.util.CardArtRoller;
+import Professor.util.KeywordManager;
+import Professor.util.Wiz;
+import basemod.BaseMod;
+import basemod.helpers.TooltipInfo;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static Professor.MainModfile.makeID;
+
+public class NA extends AbstractCreationCard {
+    public final static String ID = makeID(NA.class.getSimpleName());
+    private List<TooltipInfo> tips;
+
+    private static final int BASE_COST = 5;
+
+    public NA() {
+        this(null);
+    }
+
+    public NA(ElementData data) {
+        super(ID, BASE_COST, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        updateElementData(data);
+        isMultiDamage = true;
+    }
+
+    @Override
+    public void updateElementData(ElementData data) {
+        baseDamage = damage = 50;
+        if (data != null) {
+            this.data = data;
+            int newcost = BASE_COST;
+            if (data.r >= 2) {
+                newcost--;
+            }
+            if (data.b >= 2) {
+                newcost--;
+            }
+            if (data.y >= 2) {
+                newcost--;
+            }
+            if (data.g >= 2) {
+                newcost--;
+            }
+            if (newcost != BASE_COST) {
+                upgradeBaseCost(newcost);
+            }
+        }
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltipsTop() {
+        if (tips == null) {
+            tips = new ArrayList<>();
+            tips.add(new TooltipInfo(BaseMod.getKeywordTitle(KeywordManager.NA), BaseMod.getKeywordDescription(KeywordManager.NA)));
+        }
+        return tips;
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        if (data != null) {
+            return new NA(data.cpy());
+        }
+        return super.makeCopy();
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        allDmg(AbstractGameAction.AttackEffect.FIRE);
+    }
+
+    @Override
+    public void upp() {
+        upgradeDamage(20);
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, BLACK, WHITE, BLACK, WHITE, false);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return VoidCard.ID;
+    }
+
+    @Override
+    public String itemArt() {
+        return "NA";
+    }
+}
