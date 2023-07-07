@@ -85,6 +85,10 @@
     "NAME": "Eternal Fire",
     "DESCRIPTION": "Apply !M! professor:Burn. NL Put a copy of this card on top of your draw pile."
   },
+  "${ModID}:GiantClaws": {
+    "NAME": "Giant Claws",
+    "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Giant Claws by !M! this combat."
+  },
   "${ModID}:Liquifier": {
     "NAME": "Liquifier",
     "DESCRIPTION": "professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Exhaust"
