@@ -8,9 +8,13 @@ import Professor.util.Wiz;
 import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
@@ -24,10 +28,7 @@ public class Bomb extends AbstractCreationCard {
     private List<TooltipInfo> tips;
 
     public Bomb() {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
-        baseDamage = damage = 6;
-        rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
-        initializeDescription();
+        this(null);
     }
 
     public Bomb(ElementData data) {
@@ -38,10 +39,13 @@ public class Bomb extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        this.data = data;
-        baseDamage = damage = 6 + 3*data.r;
-        if (data.y > 0) {
-            baseMagicNumber = magicNumber = data.y;
+        baseDamage = damage = 6;
+        baseMagicNumber = magicNumber = 4;
+        if (data != null) {
+            baseDamage += 3*data.r;
+            damage = baseDamage;
+            baseMagicNumber += 2*data.y;
+            magicNumber = baseMagicNumber;
         }
     }
 
@@ -64,15 +68,18 @@ public class Bomb extends AbstractCreationCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        allDmg(AbstractGameAction.AttackEffect.FIRE);
-        if (magicNumber > 0) {
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE, true));
+        addToBot(new DamageAllEnemiesAction(p, magicNumber, DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
+        //allDmg(AbstractGameAction.AttackEffect.FIRE);
+        /*if (magicNumber > 0) {
             Wiz.applyToEnemy(m, new BurnPower(m, p, magicNumber));
-        }
+        }*/
     }
 
     @Override
     public void upp() {
         upgradeDamage(3);
+        upgradeMagicNumber(2);
     }
 
     @Override

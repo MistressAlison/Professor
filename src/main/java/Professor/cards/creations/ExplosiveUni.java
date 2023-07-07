@@ -2,10 +2,8 @@ package Professor.cards.creations;
 
 import Professor.actions.ApplyPowerActionWithFollowup;
 import Professor.cards.abstracts.AbstractCreationCard;
-import Professor.powers.BurnPower;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
-import Professor.util.Wiz;
 import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
@@ -28,10 +26,7 @@ public class ExplosiveUni extends AbstractCreationCard {
     private List<TooltipInfo> tips;
 
     public ExplosiveUni() {
-        super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
-        baseDamage = damage = 6;
-        rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
-        initializeDescription();
+        this(null);
     }
 
     public ExplosiveUni(ElementData data) {
@@ -41,10 +36,14 @@ public class ExplosiveUni extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        this.data = data;
-        baseDamage = damage = 6 + 2*data.r;
-        if (data.b > 0) {
-            baseMagicNumber = magicNumber = data.b;
+        baseDamage = damage = 6;
+        baseMagicNumber = magicNumber = 1;
+        if (data != null) {
+            this.data = data;
+            baseDamage += 2*data.r;
+            damage = baseDamage;
+            baseMagicNumber += data.b;
+            magicNumber = baseMagicNumber;
         }
     }
 
