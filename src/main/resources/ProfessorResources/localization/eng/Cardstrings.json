@@ -57,6 +57,10 @@
     "NAME": "Amber Oil",
     "DESCRIPTION": "Whenever you apply professor:Burn, apply !M! more."
   },
+  "${ModID}:ArborIvy": {
+    "NAME": "Arbor Ivy",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}.{@@}"
+  },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",
     "DESCRIPTION": "Apply !M! Poison. NL Apply !Professor:M2! Weak."
