@@ -77,13 +77,13 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
-  "${ModID}:EternalCrystal": {
-    "NAME": "Eternal Crystal",
-    "DESCRIPTION": "professor:Catalyst. NL Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable."
-  },
   "${ModID}:Eiche": {
     "NAME": "Eiche",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! professor:Braced."
+  },
+  "${ModID}:EternalCrystal": {
+    "NAME": "Eternal Crystal",
+    "DESCRIPTION": "professor:Catalyst. NL Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable."
   },
   "${ModID}:EternalFire": {
     "NAME": "Eternal Fire",
