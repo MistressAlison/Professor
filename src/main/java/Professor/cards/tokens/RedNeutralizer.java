@@ -1,6 +1,6 @@
-package Professor.cards;
+package Professor.cards.tokens;
 
-import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.cards.abstracts.AbstractTokenCard;
 import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class RedNeutralizer extends AbstractEasyCard {
+public class RedNeutralizer extends AbstractTokenCard {
     public final static String ID = makeID(RedNeutralizer.class.getSimpleName());
 
     public RedNeutralizer() {
-        super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         baseDamage = damage = 6;
         tags.add(CustomTags.PROF_REACTANT);
     }
