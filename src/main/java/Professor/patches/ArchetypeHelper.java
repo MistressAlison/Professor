@@ -118,6 +118,7 @@ public class ArchetypeHelper {
             new CompoundMatcher(new OverrideMatcher(AbstractPower.class, "atDamageReceive"), new PowerTypeMatcher(AbstractPower.PowerType.DEBUFF)),
             new CompoundMatcher(new OverrideMatcher(AbstractPower.class, "atDamageFinalReceive"), new PowerTypeMatcher(AbstractPower.PowerType.DEBUFF)),
             new CompoundMatcher(new OverrideMatcher(AbstractPower.class, "atDamageGive"), new PowerTypeMatcher(AbstractPower.PowerType.BUFF)),
+            new CompoundMatcher(new OverrideMatcher(AbstractPower.class, "atDamageFinalGive"), new PowerTypeMatcher(AbstractPower.PowerType.BUFF)),
             //Compounds cover these basegame powers and get modded ones
             //new Matcher.NewExprMatcher(StrengthPower.class),
             //new Matcher.NewExprMatcher(VigorPower.class),
