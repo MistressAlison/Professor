@@ -37,6 +37,14 @@
     "NAME": "Explosive Uni",
     "DESCRIPTION": "professor:Synthesize an professor:Explosive_Uni. NL professor:Valency !M!."
   },
+  "${ModID}:IceBomb": {
+    "NAME": "Ice Bomb",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak to ALL enemies."
+  },
+  "${ModID}:SynthesizeIceBomb": {
+    "NAME": "Ice Bomb",
+    "DESCRIPTION": "professor:Synthesize an professor:Ice_Bomb. NL professor:Valency !M!."
+  },
   "${ModID}:NA": {
     "NAME": "N/A",
     "DESCRIPTION": "Deal !D! damage to ALL enemies."

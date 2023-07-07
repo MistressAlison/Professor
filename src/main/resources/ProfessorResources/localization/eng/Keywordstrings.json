@@ -114,5 +114,14 @@
       "na"
     ],
     "DESCRIPTION": "Costs #b1 less for each [Professor:FireIcon] [Professor:FireIcon] , NL [Professor:IceIcon] [Professor:IceIcon] , [Professor:BoltIcon] [Professor:BoltIcon] , and [Professor:WindIcon] [Professor:WindIcon] pair."
+  },
+  {
+    "ID": "ice_bomb",
+    "PROPER_NAME": "Ice Bomb",
+    "NAMES": [
+      "ice bomb",
+      "ice_bomb"
+    ],
+    "DESCRIPTION": "Deals #b+3 damage per [Professor:IceIcon] . NL Applies #b+1 Weak per [Professor:WindIcon] ."
   }
 ]
