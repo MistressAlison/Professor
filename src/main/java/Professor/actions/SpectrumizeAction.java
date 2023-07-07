@@ -1,10 +1,10 @@
 package Professor.actions;
 
 import Professor.MainModfile;
-import Professor.cards.BlueNeutralizer;
-import Professor.cards.GreenNeutralizer;
-import Professor.cards.RedNeutralizer;
-import Professor.cards.YellowNeutralizer;
+import Professor.cards.tokens.BlueNeutralizer;
+import Professor.cards.tokens.GreenNeutralizer;
+import Professor.cards.tokens.RedNeutralizer;
+import Professor.cards.tokens.YellowNeutralizer;
 import Professor.patches.ArchetypeHelper;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

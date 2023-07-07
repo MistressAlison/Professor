@@ -78,7 +78,7 @@
     "NAMES": [
       "bomb"
     ],
-    "DESCRIPTION": "Deals #b6 damage plus #b3 per [Professor:FireIcon] to ALL enemies. NL Applies [Professor:BoltIcon] #yBurn."
+    "DESCRIPTION": "Deals #b3 additional single target damage per [Professor:FireIcon] . NL Enemies lose #b2 additional HP per [Professor:BoltIcon] ."
   },
   {
     "ID": "burn",
@@ -96,6 +96,23 @@
       "explosive uni",
       "explosive_uni"
     ],
-    "DESCRIPTION": "Deals #b6 damage plus #b2 per [Professor:FireIcon] . NL Enemy loses [Professor:IceIcon] #yStrength this turn."
+    "DESCRIPTION": "Deals #b2 additional damage per [Professor:FireIcon] . NL Enemy loses #b1 additional #yStrength this turn per [Professor:IceIcon] ."
+  },
+  {
+    "ID": "braced",
+    "PROPER_NAME": "Braced",
+    "NAMES": [
+      "braced"
+    ],
+    "DESCRIPTION": "Your next #yBlock gaining card gains additional #yBlock."
+  },
+  {
+    "ID": "na",
+    "PROPER_NAME": "N/A",
+    "NAMES": [
+      "n/a",
+      "na"
+    ],
+    "DESCRIPTION": "Costs #b1 less for each [Professor:FireIcon] [Professor:FireIcon] , NL [Professor:IceIcon] [Professor:IceIcon] , [Professor:BoltIcon] [Professor:BoltIcon] , and [Professor:WindIcon] [Professor:WindIcon] pair."
   }
 ]

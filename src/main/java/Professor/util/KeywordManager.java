@@ -13,9 +13,11 @@ public class KeywordManager {
     public static String CREATION;
     public static String SPECTRUMIZE;
     public static String NEUTRALIZER;
+    public static String BRACED;
 
     public static String BOMB;
     public static String EXPLOSIVE_UNI;
+    public static String NA;
 
     public static String getKeyword(String ID) {
         return keywordMap.getOrDefault(ID, "");

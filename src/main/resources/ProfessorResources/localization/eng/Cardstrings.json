@@ -5,27 +5,57 @@
     "UPGRADE_DESCRIPTION": "Upgrade description",
     "EXTENDED_DESCRIPTION": ["Extra Stuff"]
   },
+  "${ModID}:BlueNeutralizer": {
+    "NAME": "Blue Neutralizer",
+    "DESCRIPTION": "professor:Reactant. NL Gain !B! Block."
+  },
+  "${ModID}:GreenNeutralizer": {
+    "NAME": "Green Neutralizer",
+    "DESCRIPTION": "professor:Reactant. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
+  },
+  "${ModID}:RedNeutralizer": {
+    "NAME": "Red Neutralizer",
+    "DESCRIPTION": "professor:Reactant. NL Deal !D! damage."
+  },
+  "${ModID}:YellowNeutralizer": {
+    "NAME": "Yellow Neutralizer",
+    "DESCRIPTION": "professor:Reactant. NL Apply !M! Vulnerable."
+  },
   "${ModID}:Bomb": {
     "NAME": "Bomb",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies.{!M!|>0= NL Apply !M! professor:Burn.}{@@}",
-    "EXTENDED_DESCRIPTION": ["Deal !D! damage plus 3 per [Professor:FireIcon] to ALL enemies. NL Apply [Professor:BoltIcon] professor:Burn."]
+    "DESCRIPTION": "Deal !D! damage. NL ALL enemies lose !M! HP."
   },
   "${ModID}:SynthesizeBomb": {
-    "NAME": "Synthesize - Bomb",
+    "NAME": "Synthesize Bomb",
     "DESCRIPTION": "professor:Synthesize a professor:Bomb. NL professor:Valency !M!."
   },
   "${ModID}:ExplosiveUni": {
     "NAME": "Explosive Uni",
-    "DESCRIPTION": "Deal !D! damage.{!M!|>0= NL Enemy loses !M! Strength this turn.}{@@}",
-    "EXTENDED_DESCRIPTION": ["Deal !D! damage plus 2 per [Professor:FireIcon] . NL Enemy loses [Professor:IceIcon] Strength this turn."]
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn."
   },
   "${ModID}:SynthesizeExplosiveUni": {
-    "NAME": "Create Explosive Uni",
+    "NAME": "Synthesize Explosive Uni",
     "DESCRIPTION": "professor:Synthesize an professor:Explosive_Uni. NL professor:Valency !M!."
   },
-  "${ModID}:BlueNeutralizer": {
-    "NAME": "Blue Neutralizer",
-    "DESCRIPTION": "professor:Reactant. NL Gain !B! Block."
+  "${ModID}:NA": {
+    "NAME": "N/A",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+  },
+  "${ModID}:SynthesizeNA": {
+    "NAME": "Synthesize N/A",
+    "DESCRIPTION": "professor:Synthesize an professor:N/A. NL professor:Valency !M!."
+  },
+  "${ModID}:AmberOil": {
+    "NAME": "Amber Oil",
+    "DESCRIPTION": "Whenever you apply professor:Burn, apply !M! more."
+  },
+  "${ModID}:BlackMuck": {
+    "NAME": "Black Muck",
+    "DESCRIPTION": "Apply !M! Poison. NL Apply !Professor:M2! Weak."
+  },
+  "${ModID}:CleanWater": {
+    "NAME": "Clean Water",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! professor:Braced."
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
@@ -39,17 +69,9 @@
     "NAME": "Eternal Fire",
     "DESCRIPTION": "Apply !M! professor:Burn. NL Put a copy of this card on top of your draw pile."
   },
-  "${ModID}:GreenNeutralizer": {
-    "NAME": "Green Neutralizer",
-    "DESCRIPTION": "professor:Reactant. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
-  },
   "${ModID}:Liquifier": {
     "NAME": "Liquifier",
     "DESCRIPTION": "professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Exhaust"
-  },
-  "${ModID}:RedNeutralizer": {
-    "NAME": "Red Neutralizer",
-    "DESCRIPTION": "professor:Reactant. NL Deal !D! damage."
   },
   "${ModID}:SaintsDiamond": {
     "NAME": "Saint's Diamond",
@@ -62,9 +84,5 @@
   "${ModID}:Uni": {
     "NAME": "Uni",
     "DESCRIPTION": "Deal !D! damage. NL Exhaust."
-  },
-  "${ModID}:YellowNeutralizer": {
-    "NAME": "Yellow Neutralizer",
-    "DESCRIPTION": "professor:Reactant. NL Apply !M! Vulnerable."
   }
 }
