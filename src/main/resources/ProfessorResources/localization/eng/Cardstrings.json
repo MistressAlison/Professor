@@ -65,6 +65,10 @@
     "NAME": "Eternal Crystal",
     "DESCRIPTION": "professor:Catalyst. NL Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable."
   },
+  "${ModID}:Eiche": {
+    "NAME": "Eiche",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! professor:Braced."
+  },
   "${ModID}:EternalFire": {
     "NAME": "Eternal Fire",
     "DESCRIPTION": "Apply !M! professor:Burn. NL Put a copy of this card on top of your draw pile."

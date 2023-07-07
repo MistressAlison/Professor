@@ -411,7 +411,7 @@ public class MainModfile implements
     }
 
     public static boolean runTest = false;
-    public static boolean colorLog = false;
+    public static boolean colorLog = true;
     public static boolean crash = false;
     public static boolean shaderTest = false;
 
