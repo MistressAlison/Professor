@@ -101,6 +101,10 @@
     "NAME": "Lunar Drop",
     "DESCRIPTION": "Gain !B! Block for each professor:Ice card played this combat. NL Exhaust.{!Location!|0= NL (Gain !Professor:I! Block)}{@@}"
   },
+  "${ModID}:ManaEaterBranch": {
+    "NAME": "Mana-Eater Branch",
+    "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Exhaust."
+  },
   "${ModID}:PoisonPowder": {
     "NAME": "Poison Powder",
     "DESCRIPTION": "Your next Attack applies !M! Poison on hit."
