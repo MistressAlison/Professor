@@ -11,6 +11,10 @@
     "NAME": "Septrin",
     "DESCRIPTIONS": ["Whenever you #yExhaust a card, #ySpectrumize it."]
   },
+  "${ModID}:PoisonPowderPower": {
+    "NAME": "Poison Powder",
+    "DESCRIPTIONS": ["Your next Attack applies #b"," #yPoison on hit."]
+  },
   "${ModID}:BracedPower": {
     "NAME": "Braced",
     "DESCRIPTIONS": ["Your next #yBlock gaining card gains #b", " additional #yBlock."]

@@ -77,6 +77,10 @@
     "NAME": "Liquifier",
     "DESCRIPTION": "professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Exhaust"
   },
+  "${ModID}:PoisonPowder": {
+    "NAME": "Poison Powder",
+    "DESCRIPTION": "Your next Attack applies !M! Poison on hit."
+  },
   "${ModID}:SaintsDiamond": {
     "NAME": "Saint's Diamond",
     "DESCRIPTION": "professor:Catalyst. NL Gain !B! Block."
