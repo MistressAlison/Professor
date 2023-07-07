@@ -75,7 +75,7 @@
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL professor:Element."
   },
   "${ModID}:Eiche": {
     "NAME": "Eiche",
@@ -96,6 +96,10 @@
   "${ModID}:Liquifier": {
     "NAME": "Liquifier",
     "DESCRIPTION": "professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Exhaust"
+  },
+  "${ModID}:LunarDrop": {
+    "NAME": "Lunar Drop",
+    "DESCRIPTION": "Gain !B! Block for each professor:Ice card played this combat. NL Exhaust.{!Location!|0= NL (Gain !Professor:I! Block)}{@@}"
   },
   "${ModID}:PoisonPowder": {
     "NAME": "Poison Powder",
