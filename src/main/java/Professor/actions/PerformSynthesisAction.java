@@ -1,5 +1,6 @@
 package Professor.actions;
 
+import Professor.cards.interfaces.OnUseInSynthesisCard;
 import Professor.patches.CustomTags;
 import Professor.ui.SynthesisPanel;
 import Professor.ui.SynthesisSlot;
@@ -34,8 +35,13 @@ public class PerformSynthesisAction extends AbstractGameAction {
         if (isDone) {
             cardToHand(card);
             for (SynthesisSlot s : SynthesisPanel.slots) {
-                if (s.card != null && s.card.hasTag(CustomTags.PROF_CATALYST)) {
-                    cardToHand(s.card);
+                if (s.card != null) {
+                    if (s.card.hasTag(CustomTags.PROF_CATALYST)) {
+                        cardToHand(s.card);
+                    }
+                    if (s.card instanceof OnUseInSynthesisCard) {
+                        ((OnUseInSynthesisCard) s.card).onSynthesis(card);
+                    }
                 }
             }
             AbstractDungeon.player.hand.glowCheck();
