@@ -143,7 +143,7 @@
       "n/a",
       "na"
     ],
-    "DESCRIPTION": "Costs #b1 less for each [Professor:FireIcon] [Professor:FireIcon] , NL [Professor:IceIcon] [Professor:IceIcon] , [Professor:BoltIcon] [Professor:BoltIcon] , and [Professor:WindIcon] [Professor:WindIcon] pair."
+    "DESCRIPTION": "Costs #b1 less for each unique [Professor:FireIcon] [Professor:FireIcon] , NL [Professor:IceIcon] [Professor:IceIcon] , [Professor:BoltIcon] [Professor:BoltIcon] , and [Professor:WindIcon] [Professor:WindIcon] pair."
   },
   {
     "ID": "ice_bomb",
