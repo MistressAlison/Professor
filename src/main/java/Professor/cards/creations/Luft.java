@@ -36,7 +36,7 @@ public class Luft extends AbstractCreationCard {
         if (data != null) {
             baseDamage += 3*data.g;
             damage = baseDamage;
-            baseMagicNumber += data.y;
+            baseMagicNumber += data.b;
             magicNumber = baseMagicNumber;
         }
     }
