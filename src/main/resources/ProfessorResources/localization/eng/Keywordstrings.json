@@ -120,6 +120,15 @@
     "DESCRIPTION": "Exposed creatures take more damage from Attacks this turn."
   },
   {
+    "ID": "gather",
+    "PROPER_NAME": "Gather",
+    "NAMES": [
+      "gather",
+      "gathered"
+    ],
+    "DESCRIPTION": "Choose #b1 of #b3 random cards to add into your hand."
+  },
+  {
     "ID": "bomb",
     "PROPER_NAME": "Bomb",
     "NAMES": [
