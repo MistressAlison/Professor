@@ -22,5 +22,9 @@
   "${ModID}:BurnPower": {
     "NAME": "Burn",
     "DESCRIPTIONS": ["At the start of its turn, takes #b"," damage."]
+  },
+  "${ModID}:ExposedPower": {
+    "NAME": "Exposed",
+    "DESCRIPTIONS": ["Takes #b"," more damage from Attacks this turn."]
   }
 }

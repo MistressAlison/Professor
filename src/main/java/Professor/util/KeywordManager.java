@@ -16,6 +16,7 @@ public class KeywordManager {
     public static String SPECTRUMIZE;
     public static String NEUTRALIZER;
     public static String BRACED;
+    public static String EXPOSED;
 
     public static String BOMB;
     public static String EXPLOSIVE_UNI;

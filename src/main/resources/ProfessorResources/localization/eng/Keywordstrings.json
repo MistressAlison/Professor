@@ -111,6 +111,15 @@
     "DESCRIPTION": "Your next #yBlock gaining card gains additional #yBlock."
   },
   {
+    "ID": "exposed",
+    "PROPER_NAME": "Exposed",
+    "NAMES": [
+      "expose",
+      "exposed"
+    ],
+    "DESCRIPTION": "Exposed creatures take more damage from Attacks this turn."
+  },
+  {
     "ID": "bomb",
     "PROPER_NAME": "Bomb",
     "NAMES": [
