@@ -15,7 +15,7 @@ public class LunarDrop extends AbstractEasyCard {
     public final static String ID = makeID(LunarDrop.class.getSimpleName());
 
     public LunarDrop() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         baseBlock = block = 5;
         baseInfo = info = 0;
         exhaust = true;
