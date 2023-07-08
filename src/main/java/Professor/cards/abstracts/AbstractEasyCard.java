@@ -1,6 +1,9 @@
 package Professor.cards.abstracts;
 
+import Professor.util.KeywordManager;
+import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
+import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -16,18 +19,23 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Professor.TheProfessor;
 import Professor.util.CardArtRoller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static Professor.MainModfile.*;
 import static Professor.util.Wiz.atb;
 import static Professor.util.Wiz.att;
 
 public abstract class AbstractEasyCard extends CustomCard {
+    private List<TooltipInfo> addedTips;
     protected final Color RED = new Color(1, 0, 0, 1);
     protected final Color ORANGE = new Color(1, 0.5f, 0, 1);
     protected final Color YELLOW = new Color(1, 1, 0, 1);
@@ -324,6 +332,28 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     public Color mix(Color c1, Color c2) {
         return c1.cpy().lerp(c2, 0.5f);
+    }
+
+    protected void addCustomKeyword(String key) {
+        if (addedTips == null) {
+            addedTips = new ArrayList<>();
+        }
+        addedTips.add(new TooltipInfo(BaseMod.getKeywordTitle(key), BaseMod.getKeywordDescription(key)));
+    }
+
+    protected void addVanillaKeyword(Keyword key) {
+        if (addedTips == null) {
+            addedTips = new ArrayList<>();
+        }
+        addedTips.add(new TooltipInfo(TipHelper.capitalize(key.NAMES[0]), key.DESCRIPTION));
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        if (addedTips != null) {
+            return addedTips;
+        }
+        return super.getCustomTooltips();
     }
 }
 
