@@ -155,11 +155,19 @@
     "DESCRIPTION": "Deals #b+3 damage per [Professor:IceIcon] . NL Applies #b+1 Weak per [Professor:WindIcon] ."
   },
   {
-  "ID": "luft",
-  "PROPER_NAME": "Luft",
-  "NAMES": [
-    "luft"
-  ],
-  "DESCRIPTION": "Deals #b+3 damage per [Professor:WindIcon] . NL Draw #b+1 card per [Professor:BoltIcon] ."
-}
+    "ID": "luft",
+    "PROPER_NAME": "Luft",
+    "NAMES": [
+      "luft"
+    ],
+    "DESCRIPTION": "Deals #b+3 damage per [Professor:WindIcon] . NL Draw #b+1 card per [Professor:BoltIcon] ."
+  },
+  {
+    "ID": "plajig",
+    "PROPER_NAME": "Plajig",
+    "NAMES": [
+      "plajig"
+    ],
+    "DESCRIPTION": "Deals #b+3 damage per [Professor:BoltIcon] . NL Applies #b+2 Exposed per [Professor:FireIcon] ."
+  }
 ]

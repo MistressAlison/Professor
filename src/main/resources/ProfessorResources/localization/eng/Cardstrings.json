@@ -65,6 +65,14 @@
     "NAME": "N/A",
     "DESCRIPTION": "professor:Synthesize an professor:N/A. NL professor:Valency !M!."
   },
+  "${ModID}:Plajig": {
+    "NAME": "Plajig",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Exposed."
+  },
+  "${ModID}:SynthesizePlajig": {
+    "NAME": "Plajig",
+    "DESCRIPTION": "professor:Synthesize a professor:Plajig. NL professor:Valency !M!."
+  },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
     "DESCRIPTION": "Whenever you apply professor:Burn, apply !M! more."
