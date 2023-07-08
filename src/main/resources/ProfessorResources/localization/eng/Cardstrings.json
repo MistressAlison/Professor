@@ -83,7 +83,7 @@
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block. NL professor:Element."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "${ModID}:Eiche": {
     "NAME": "Eiche",
