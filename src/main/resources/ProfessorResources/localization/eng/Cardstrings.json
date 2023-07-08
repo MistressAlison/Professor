@@ -21,6 +21,10 @@
     "NAME": "Yellow Neutralizer",
     "DESCRIPTION": "professor:Reactant. NL Apply !M! Vulnerable."
   },
+  "${ModID}:HolyArborCrystal": {
+    "NAME": "Holy Arbor Crystal",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{@@}{!M!|>1=s}. NL Exhaust."
+  },
   "${ModID}:Bomb": {
     "NAME": "Bomb",
     "DESCRIPTION": "Deal !D! damage. NL ALL enemies lose !M! HP."
@@ -100,6 +104,10 @@
   "${ModID}:GiantClaws": {
     "NAME": "Giant Claws",
     "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Giant Claws by !M! this combat."
+  },
+  "${ModID}:HolyArborBranch": {
+    "NAME": "Holy Arbor Branch",
+    "DESCRIPTION": "Gain !B! Block. NL Fetch !M! card{@@}{!M!|>1=s} from your discard pile. NL professor:Precipitate: *Holy *Arbor *Crystal."
   },
   "${ModID}:Liquifier": {
     "NAME": "Liquifier",

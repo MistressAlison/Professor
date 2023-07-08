@@ -68,6 +68,14 @@
     "DESCRIPTION": "Neutralizers are 0 cost cards which do not consume #yValency during #ySynthesis."
   },
   {
+    "ID": "precipitate",
+    "PROPER_NAME": "Precipitate",
+    "NAMES": [
+      "precipitate"
+    ],
+    "DESCRIPTION": "If this card is used to perform #ySynthesis, add the following card to your hand."
+  },
+  {
     "ID": "recipe",
     "PROPER_NAME": "Recipe",
     "NAMES": [

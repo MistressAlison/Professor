@@ -10,6 +10,7 @@ public class KeywordManager {
     public static String REACTANT;
     public static String SYNTHESIS;
     public static String VALENCY;
+    public static String PRECIPITATE;
     public static String RECIPE;
     public static String CREATION;
     public static String SPECTRUMIZE;
