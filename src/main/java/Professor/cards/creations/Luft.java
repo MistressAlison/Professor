@@ -29,7 +29,7 @@ public class Luft extends AbstractCreationCard {
     }
 
     public Luft(ElementData data) {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         updateElementData(data);
     }
 
