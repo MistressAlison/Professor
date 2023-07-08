@@ -2,10 +2,7 @@ package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
-import Professor.util.KeywordManager;
 import Professor.util.Wiz;
-import basemod.BaseMod;
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -18,14 +15,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static Professor.MainModfile.makeID;
 
 public class IceBomb extends AbstractCreationCard {
     public final static String ID = makeID(IceBomb.class.getSimpleName());
-    private List<TooltipInfo> tips;
 
     public IceBomb() {
         this(null);
@@ -46,15 +39,6 @@ public class IceBomb extends AbstractCreationCard {
             baseMagicNumber += data.g;
             magicNumber = baseMagicNumber;
         }
-    }
-
-    @Override
-    public List<TooltipInfo> getCustomTooltipsTop() {
-        if (tips == null) {
-            tips = new ArrayList<>();
-            tips.add(new TooltipInfo(BaseMod.getKeywordTitle(KeywordManager.ICE_BOMB), BaseMod.getKeywordDescription(KeywordManager.ICE_BOMB)));
-        }
-        return tips;
     }
 
     @Override

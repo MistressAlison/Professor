@@ -2,9 +2,6 @@ package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
-import Professor.util.KeywordManager;
-import basemod.BaseMod;
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -15,14 +12,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static Professor.MainModfile.makeID;
 
 public class Luft extends AbstractCreationCard {
     public final static String ID = makeID(Luft.class.getSimpleName());
-    private List<TooltipInfo> tips;
 
     public Luft() {
         this(null);
@@ -44,15 +37,6 @@ public class Luft extends AbstractCreationCard {
             baseMagicNumber += data.y;
             magicNumber = baseMagicNumber;
         }
-    }
-
-    @Override
-    public List<TooltipInfo> getCustomTooltipsTop() {
-        if (tips == null) {
-            tips = new ArrayList<>();
-            tips.add(new TooltipInfo(BaseMod.getKeywordTitle(KeywordManager.LUFT), BaseMod.getKeywordDescription(KeywordManager.LUFT)));
-        }
-        return tips;
     }
 
     @Override

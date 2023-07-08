@@ -1,12 +1,7 @@
 package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
-import Professor.powers.BurnPower;
 import Professor.util.CardArtRoller;
-import Professor.util.KeywordManager;
-import Professor.util.Wiz;
-import basemod.BaseMod;
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -14,18 +9,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static Professor.MainModfile.makeID;
 
 public class Bomb extends AbstractCreationCard {
     public final static String ID = makeID(Bomb.class.getSimpleName());
-    private List<TooltipInfo> tips;
 
     public Bomb() {
         this(null);
@@ -46,15 +35,6 @@ public class Bomb extends AbstractCreationCard {
             baseMagicNumber += 2*data.y;
             magicNumber = baseMagicNumber;
         }
-    }
-
-    @Override
-    public List<TooltipInfo> getCustomTooltipsTop() {
-        if (tips == null) {
-            tips = new ArrayList<>();
-            tips.add(new TooltipInfo(BaseMod.getKeywordTitle(KeywordManager.BOMB), BaseMod.getKeywordDescription(KeywordManager.BOMB)));
-        }
-        return tips;
     }
 
     @Override

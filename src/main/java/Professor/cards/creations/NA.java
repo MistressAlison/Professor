@@ -1,26 +1,17 @@
 package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
-import Professor.powers.BurnPower;
 import Professor.util.CardArtRoller;
-import Professor.util.KeywordManager;
-import Professor.util.Wiz;
-import basemod.BaseMod;
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static Professor.MainModfile.makeID;
 
 public class NA extends AbstractCreationCard {
     public final static String ID = makeID(NA.class.getSimpleName());
-    private List<TooltipInfo> tips;
 
     private static final int BASE_COST = 5;
 
@@ -56,15 +47,6 @@ public class NA extends AbstractCreationCard {
                 upgradeBaseCost(newcost);
             }
         }
-    }
-
-    @Override
-    public List<TooltipInfo> getCustomTooltipsTop() {
-        if (tips == null) {
-            tips = new ArrayList<>();
-            tips.add(new TooltipInfo(BaseMod.getKeywordTitle(KeywordManager.NA), BaseMod.getKeywordDescription(KeywordManager.NA)));
-        }
-        return tips;
     }
 
     @Override

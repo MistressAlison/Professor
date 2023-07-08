@@ -3,9 +3,6 @@ package Professor.cards.creations;
 import Professor.actions.ApplyPowerActionWithFollowup;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
-import Professor.util.KeywordManager;
-import basemod.BaseMod;
-import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -16,14 +13,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static Professor.MainModfile.makeID;
 
 public class ExplosiveUni extends AbstractCreationCard {
     public final static String ID = makeID(ExplosiveUni.class.getSimpleName());
-    private List<TooltipInfo> tips;
 
     public ExplosiveUni() {
         this(null);
@@ -45,15 +38,6 @@ public class ExplosiveUni extends AbstractCreationCard {
             baseMagicNumber += data.b;
             magicNumber = baseMagicNumber;
         }
-    }
-
-    @Override
-    public List<TooltipInfo> getCustomTooltipsTop() {
-        if (tips == null) {
-            tips = new ArrayList<>();
-            tips.add(new TooltipInfo(BaseMod.getKeywordTitle(KeywordManager.EXPLOSIVE_UNI), BaseMod.getKeywordDescription(KeywordManager.EXPLOSIVE_UNI)));
-        }
-        return tips;
     }
 
     @Override

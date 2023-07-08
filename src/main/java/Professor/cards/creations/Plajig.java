@@ -3,10 +3,7 @@ package Professor.cards.creations;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.powers.ExposedPower;
 import Professor.util.CardArtRoller;
-import Professor.util.KeywordManager;
 import Professor.util.Wiz;
-import basemod.BaseMod;
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -18,14 +15,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static Professor.MainModfile.makeID;
 
 public class Plajig extends AbstractCreationCard {
     public final static String ID = makeID(Plajig.class.getSimpleName());
-    private List<TooltipInfo> tips;
 
     public Plajig() {
         this(null);
@@ -46,15 +39,6 @@ public class Plajig extends AbstractCreationCard {
             baseMagicNumber += 2*data.r;
             magicNumber = baseMagicNumber;
         }
-    }
-
-    @Override
-    public List<TooltipInfo> getCustomTooltipsTop() {
-        if (tips == null) {
-            tips = new ArrayList<>();
-            tips.add(new TooltipInfo(BaseMod.getKeywordTitle(KeywordManager.PLAJIG), BaseMod.getKeywordDescription(KeywordManager.PLAJIG)));
-        }
-        return tips;
     }
 
     @Override
