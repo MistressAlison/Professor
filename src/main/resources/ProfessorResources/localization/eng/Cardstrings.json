@@ -45,6 +45,14 @@
     "NAME": "Ice Bomb",
     "DESCRIPTION": "professor:Synthesize an professor:Ice_Bomb. NL professor:Valency !M!."
   },
+  "${ModID}:Luft": {
+    "NAME": "Luft",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Draw !M! card{!M!|>1=s}.{@@}"
+  },
+  "${ModID}:SynthesizeLuft": {
+    "NAME": "Luft",
+    "DESCRIPTION": "professor:Synthesize a professor:Luft. NL professor:Valency !M!."
+  },
   "${ModID}:NA": {
     "NAME": "N/A",
     "DESCRIPTION": "Deal !D! damage to ALL enemies."

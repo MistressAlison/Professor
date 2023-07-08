@@ -20,6 +20,7 @@ public class KeywordManager {
     public static String EXPLOSIVE_UNI;
     public static String NA;
     public static String ICE_BOMB;
+    public static String LUFT;
 
     public static String getKeyword(String ID) {
         return keywordMap.getOrDefault(ID, "");
