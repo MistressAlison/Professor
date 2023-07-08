@@ -73,6 +73,10 @@
     "NAME": "Plajig",
     "DESCRIPTION": "professor:Synthesize a professor:Plajig. NL professor:Valency !M!."
   },
+  "${ModID}:AlchemyFibers": {
+    "NAME": "Alchemy Fibers",
+    "DESCRIPTION": "professor:Gather a{!Upgrades!|>0=n Upgraded}{@@} professor:Synthesis card. NL It costs 0 this turn. NL Exhaust."
+  },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
     "DESCRIPTION": "Whenever you apply professor:Burn, apply !M! more."
