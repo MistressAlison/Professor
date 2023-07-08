@@ -34,7 +34,6 @@ public class Bomb extends AbstractCreationCard {
     public Bomb(ElementData data) {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
-        isMultiDamage = true;
     }
 
     @Override

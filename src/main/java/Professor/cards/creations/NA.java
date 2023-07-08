@@ -31,12 +31,12 @@ public class NA extends AbstractCreationCard {
     public NA(ElementData data) {
         super(ID, BASE_COST, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
-        isMultiDamage = true;
     }
 
     @Override
     public void updateElementData(ElementData data) {
         baseDamage = damage = 50;
+        isMultiDamage = true;
         if (data != null) {
             this.data = data;
             int newcost = BASE_COST;
