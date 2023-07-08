@@ -113,6 +113,10 @@
     "NAME": "Eternal Fire",
     "DESCRIPTION": "Apply !M! professor:Burn. NL Put a copy of this card on top of your draw pile."
   },
+  "${ModID}:EtherealStone": {
+    "NAME": "Ethereal Stone",
+    "DESCRIPTION": "Ethereal. NL When you draw this card, draw !M! cards."
+  },
   "${ModID}:GiantClaws": {
     "NAME": "Giant Claws",
     "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Giant Claws by !M! this combat."
