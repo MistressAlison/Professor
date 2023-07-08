@@ -83,7 +83,7 @@
   },
   "${ModID}:Clobber": {
     "NAME": "Clobber",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Exposed."
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
