@@ -40,6 +40,6 @@ public class BlueNeutralizer extends AbstractTokenCard {
 
     @Override
     public String itemArt() {
-        return "BlueNeutralizer";
+        return BlueNeutralizer.class.getSimpleName();
     }
 }

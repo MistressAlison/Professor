@@ -43,6 +43,6 @@ public class YellowNeutralizer extends AbstractTokenCard {
 
     @Override
     public String itemArt() {
-        return "YellowNeutralizer";
+        return YellowNeutralizer.class.getSimpleName();
     }
 }

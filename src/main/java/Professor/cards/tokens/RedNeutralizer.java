@@ -41,6 +41,6 @@ public class RedNeutralizer extends AbstractTokenCard {
 
     @Override
     public String itemArt() {
-        return "RedNeutralizer";
+        return RedNeutralizer.class.getSimpleName();
     }
 }
