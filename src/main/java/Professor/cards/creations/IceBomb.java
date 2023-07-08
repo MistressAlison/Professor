@@ -2,6 +2,7 @@ package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
+import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -27,6 +28,7 @@ public class IceBomb extends AbstractCreationCard {
     public IceBomb(ElementData data) {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
+        addCustomKeyword(KeywordManager.ICE_BOMB);
     }
 
     @Override

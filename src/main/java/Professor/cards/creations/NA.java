@@ -2,6 +2,7 @@ package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
+import Professor.util.KeywordManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -22,6 +23,7 @@ public class NA extends AbstractCreationCard {
     public NA(ElementData data) {
         super(ID, BASE_COST, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
+        addCustomKeyword(KeywordManager.NA);
     }
 
     @Override

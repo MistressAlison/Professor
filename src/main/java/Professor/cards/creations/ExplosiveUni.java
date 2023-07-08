@@ -3,6 +3,7 @@ package Professor.cards.creations;
 import Professor.actions.ApplyPowerActionWithFollowup;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
+import Professor.util.KeywordManager;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -25,6 +26,7 @@ public class ExplosiveUni extends AbstractCreationCard {
     public ExplosiveUni(ElementData data) {
         super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
+        addCustomKeyword(KeywordManager.EXPLOSIVE_UNI);
     }
 
     @Override

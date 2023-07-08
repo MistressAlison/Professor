@@ -2,6 +2,7 @@ package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
+import Professor.util.KeywordManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -24,6 +25,7 @@ public class Luft extends AbstractCreationCard {
     public Luft(ElementData data) {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         updateElementData(data);
+        addCustomKeyword(KeywordManager.LUFT);
     }
 
     @Override
