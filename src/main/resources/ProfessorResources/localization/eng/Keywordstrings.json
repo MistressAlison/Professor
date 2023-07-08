@@ -125,7 +125,7 @@
     "NAMES": [
       "bomb"
     ],
-    "DESCRIPTION": "Deals #b+3 damage per [Professor:FireIcon] . NL Enemies lose #b+2 HP per [Professor:BoltIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:FireIcon] . NL Enemies lose #b+2 HP per [Professor:BoltIcon] ."
   },
   {
     "ID": "explosive_uni",
@@ -134,7 +134,7 @@
       "explosive uni",
       "explosive_uni"
     ],
-    "DESCRIPTION": "Deals #b+2 damage per [Professor:FireIcon] . NL Enemy loses #b+1 #yStrength this turn per [Professor:IceIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+2 damage per [Professor:FireIcon] . NL Enemy loses #b+1 #yStrength this turn per [Professor:IceIcon] ."
   },
   {
     "ID": "na",
@@ -143,7 +143,7 @@
       "n/a",
       "na"
     ],
-    "DESCRIPTION": "Costs #b1 less for each unique [Professor:FireIcon] [Professor:FireIcon] , NL [Professor:IceIcon] [Professor:IceIcon] , [Professor:BoltIcon] [Professor:BoltIcon] , and [Professor:WindIcon] [Professor:WindIcon] pair."
+    "DESCRIPTION": "Synthesis Benefits: NL [Professor:FireIcon] [Professor:FireIcon] - Costs #b1 less. NL [Professor:IceIcon] [Professor:IceIcon] - Costs #b1 less. NL [Professor:BoltIcon] [Professor:BoltIcon] - Costs #b1 less. NL [Professor:WindIcon] [Professor:WindIcon] - Costs #b1 less."
   },
   {
     "ID": "ice_bomb",
@@ -152,7 +152,7 @@
       "ice bomb",
       "ice_bomb"
     ],
-    "DESCRIPTION": "Deals #b+3 damage per [Professor:IceIcon] . NL Applies #b+1 Weak per [Professor:WindIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:IceIcon] . NL Applies #b+1 Weak per [Professor:WindIcon] ."
   },
   {
     "ID": "luft",
@@ -160,7 +160,7 @@
     "NAMES": [
       "luft"
     ],
-    "DESCRIPTION": "Deals #b+3 damage per [Professor:WindIcon] . NL Draw #b+1 card per [Professor:BoltIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:WindIcon] . NL Draw #b+1 card per [Professor:BoltIcon] ."
   },
   {
     "ID": "plajig",
@@ -168,6 +168,6 @@
     "NAMES": [
       "plajig"
     ],
-    "DESCRIPTION": "Deals #b+3 damage per [Professor:BoltIcon] . NL Applies #b+2 Exposed per [Professor:FireIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:BoltIcon] . NL Applies #b+2 Exposed per [Professor:FireIcon] ."
   }
 ]
