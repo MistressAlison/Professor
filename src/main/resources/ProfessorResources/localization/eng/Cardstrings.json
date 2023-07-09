@@ -121,6 +121,10 @@
     "NAME": "Giant Claws",
     "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Giant Claws by !M! this combat."
   },
+  "${ModID}:GoldUni": {
+    "NAME": "Gold Uni",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each professor:Bolt card played this combat."
+  },
   "${ModID}:HolyArborBranch": {
     "NAME": "Holy Arbor Branch",
     "DESCRIPTION": "Gain !B! Block. NL Fetch !M! card{@@}{!M!|>1=s} from your discard pile. NL professor:Precipitate: *Holy *Arbor *Crystal."
