@@ -155,6 +155,6 @@
   },
   "${ModID}:Uni": {
     "NAME": "Uni",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Draw !Professor:M2! card{!Professor:M2!|>1=s}{@@}."
   }
 }

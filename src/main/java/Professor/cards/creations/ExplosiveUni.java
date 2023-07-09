@@ -2,6 +2,7 @@ package Professor.cards.creations;
 
 import Professor.actions.ApplyPowerActionWithFollowup;
 import Professor.cards.abstracts.AbstractCreationCard;
+import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import com.badlogic.gdx.graphics.Color;
@@ -27,6 +28,7 @@ public class ExplosiveUni extends AbstractCreationCard {
         super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
         addCustomKeyword(KeywordManager.EXPLOSIVE_UNI);
+        tags.add(CustomTags.PROF_UNI);
     }
 
     @Override

@@ -18,4 +18,6 @@ public class CustomTags {
     public static AbstractCard.CardTags PROF_BOLT;
     @SpireEnum
     public static AbstractCard.CardTags PROF_WIND;
+    @SpireEnum
+    public static AbstractCard.CardTags PROF_UNI;
 }

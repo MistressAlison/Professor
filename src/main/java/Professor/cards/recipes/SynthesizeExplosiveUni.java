@@ -3,8 +3,8 @@ package Professor.cards.recipes;
 import Professor.actions.BeginSynthesisAction;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.cards.abstracts.AbstractRecipeCard;
-import Professor.cards.creations.Bomb;
 import Professor.cards.creations.ExplosiveUni;
+import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
@@ -20,6 +20,7 @@ public class SynthesizeExplosiveUni extends AbstractRecipeCard {
         super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         baseMagicNumber = magicNumber = 2;
         cardsToPreview = new ExplosiveUni();
+        tags.add(CustomTags.PROF_UNI);
     }
 
     @Override

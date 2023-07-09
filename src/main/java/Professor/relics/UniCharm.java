@@ -1,14 +1,14 @@
 package Professor.relics;
 
 import Professor.TheProfessor;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import Professor.patches.CustomTags;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
-import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
@@ -20,7 +20,16 @@ public class UniCharm extends AbstractEasyRelic {
         super(ID, RelicTier.STARTER, LandingSound.FLAT, TheProfessor.Enums.MEDIUM_RUBY_COLOR);
     }
 
-    public void atPreBattle() {
+    @Override
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+        if (targetCard.hasTag(CustomTags.PROF_UNI)) {
+            flash();
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(3, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        }
+    }
+
+    /*public void atPreBattle() {
         this.grayscale = false;
         beginLongPulse();
     }
@@ -32,7 +41,7 @@ public class UniCharm extends AbstractEasyRelic {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(AbstractCard.CardTags.STRIKE) && !this.grayscale) {
+        if (card.hasTag(CustomTags.PROF_UNI) && !this.grayscale) {
             this.grayscale = true;
             this.flash();
             AbstractMonster m = null;
@@ -51,5 +60,5 @@ public class UniCharm extends AbstractEasyRelic {
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
             stopPulse();
         }
-    }
+    }*/
 }
