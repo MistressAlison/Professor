@@ -145,6 +145,10 @@
     "NAME": "Poison Powder",
     "DESCRIPTION": "Your next Attack applies !M! Poison on hit."
   },
+  "${ModID}:PolishingPowder": {
+    "NAME": "Polishing Powder",
+    "DESCRIPTION": "Reduce the cost of all cards in your hand by 1 this turn. NL Exhaust."
+  },
   "${ModID}:RestraintSilk": {
     "NAME": "Restraint Silk",
     "DESCRIPTION": "Apply !M! professor:Exposed and Vulnerable to ALL enemies. NL Exhaust."
