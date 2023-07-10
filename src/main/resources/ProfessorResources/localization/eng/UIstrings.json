@@ -20,5 +20,10 @@
     "TEXT": [
       "Spectrumize"
     ]
+  },
+  "${ModID}:ModifyAction": {
+    "TEXT": [
+      "Modify"
+    ]
   }
 }
