@@ -105,6 +105,10 @@
     "NAME": "Eiche",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! professor:Braced."
   },
+  "${ModID}:EmperorUni": {
+    "NAME": "Emperor Uni",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL professor:Infuse \"Deal !M! damage to ALL enemies\" into all cards in your hand. NL Exhaust."
+  },
   "${ModID}:EternalCrystal": {
     "NAME": "Eternal Crystal",
     "DESCRIPTION": "professor:Catalyst. NL Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable."
