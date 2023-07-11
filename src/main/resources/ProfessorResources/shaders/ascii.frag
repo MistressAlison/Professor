@@ -152,5 +152,8 @@ void main() {
     }
 
     vec3 col = tex.xyz/max(tex.x,max(tex.y,tex.z));
-    gl_FragColor = vec4(cha*col,1.);
+    float alpha = tex.a == 0 ? 0 : 1;
+    //gl_FragColor = vec4(cha*col,1.);
+    //gl_FragColor = cha*tex;
+    gl_FragColor = vec4(cha*col.rgb,alpha);
 }
