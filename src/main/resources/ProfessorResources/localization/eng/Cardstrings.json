@@ -117,6 +117,10 @@
     "NAME": "Ethereal Stone",
     "DESCRIPTION": "Ethereal. NL When you draw this card, draw !M! cards."
   },
+  "${ModID}:Fragile": {
+    "NAME": "Fragile",
+    "DESCRIPTION": "professor:Infuse \"Gain !M! Block\" into all cards in your hand. NL Exhaust."
+  },
   "${ModID}:GiantClaws": {
     "NAME": "Giant Claws",
     "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Giant Claws by !M! this combat."
