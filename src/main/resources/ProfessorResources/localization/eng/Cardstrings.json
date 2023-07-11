@@ -81,6 +81,10 @@
     "NAME": "Amber Oil",
     "DESCRIPTION": "Whenever you apply professor:Burn, apply !M! more."
   },
+  "${ModID}:AncientUni": {
+    "NAME": "Ancient Uni",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
+  },
   "${ModID}:ArborIvy": {
     "NAME": "Arbor Ivy",
     "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}.{@@}"
