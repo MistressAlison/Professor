@@ -35,7 +35,7 @@ public class PolishingPowder extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.SKY, WHITE, Color.SKY, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, Color.GOLDENROD, WHITE, Color.GOLDENROD, WHITE, false);
     }
 
     @Override
