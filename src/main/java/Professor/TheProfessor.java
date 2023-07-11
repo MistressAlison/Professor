@@ -140,8 +140,7 @@ public class TheProfessor extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        // TODO
-        return new Strike();
+        return new SynthesizeExplosiveUni();
     }
 
     @Override
