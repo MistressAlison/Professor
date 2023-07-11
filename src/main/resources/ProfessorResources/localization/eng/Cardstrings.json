@@ -35,7 +35,7 @@
   },
   "${ModID}:ExplosiveUni": {
     "NAME": "Explosive Uni",
-    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Stagger."
   },
   "${ModID}:SynthesizeExplosiveUni": {
     "NAME": "Explosive Uni",

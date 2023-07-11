@@ -17,6 +17,7 @@ public class KeywordManager {
     public static String NEUTRALIZER;
     public static String BRACED;
     public static String EXPOSED;
+    public static String STAGGER;
     public static String GATHER;
     public static String INFUSE;
 

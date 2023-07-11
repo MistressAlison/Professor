@@ -120,6 +120,15 @@
     "DESCRIPTION": "Exposed creatures take more damage from Attacks this turn."
   },
   {
+    "ID": "stagger",
+    "PROPER_NAME": "Staggered",
+    "NAMES": [
+      "stagger",
+      "staggered"
+    ],
+    "DESCRIPTION": "Staggered creatures deal less damage with Attacks this turn."
+  },
+  {
     "ID": "gather",
     "PROPER_NAME": "Gather",
     "NAMES": [
@@ -152,7 +161,7 @@
       "explosive uni",
       "explosive_uni"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+2 damage per [Professor:FireIcon] . NL Enemy loses #b+1 #yStrength this turn per [Professor:IceIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+2 damage per [Professor:FireIcon] . NL Apply #b+1 #yStagger per [Professor:IceIcon] ."
   },
   {
     "ID": "na",

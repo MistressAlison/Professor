@@ -1,19 +1,17 @@
 package Professor.cards.creations;
 
-import Professor.actions.ApplyPowerActionWithFollowup;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.patches.CustomTags;
+import Professor.powers.StaggerPower;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
+import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.GainStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static Professor.MainModfile.makeID;
 
@@ -56,7 +54,7 @@ public class ExplosiveUni extends AbstractCreationCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
         if (magicNumber > 0) {
-            addToBot(new ApplyPowerActionWithFollowup(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber)), new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber))));
+            Wiz.applyToEnemy(m, new StaggerPower(m, magicNumber));
         }
     }
 
