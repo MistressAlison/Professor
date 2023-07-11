@@ -17,7 +17,7 @@ public class BlackMuck extends AbstractEasyCard {
 
     public BlackMuck() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 5;
+        baseMagicNumber = magicNumber = 3;
         baseSecondMagic = secondMagic = 1;
     }
 
