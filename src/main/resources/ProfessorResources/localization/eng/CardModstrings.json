@@ -13,5 +13,14 @@
   },
   "${ModID}:ApplyPoisonMod": {
     "EXTENDED_DESCRIPTION": [" NL Apply %s Poison."]
+  },
+  "${ModID}:DealDamageMod": {
+    "EXTENDED_DESCRIPTION": [" NL Deal %s damage."]
+  },
+  "${ModID}:DealRandomDamageMod": {
+    "EXTENDED_DESCRIPTION": [" NL Deal %s damage to a random enemy."]
+  },
+  "${ModID}:DealAOEDamageMod": {
+    "EXTENDED_DESCRIPTION": [" NL Deal %s damage to ALL enemies."]
   }
 }
