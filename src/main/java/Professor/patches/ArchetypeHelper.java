@@ -62,7 +62,7 @@ public class ArchetypeHelper {
     // These classes create false positives as they are accidentally included in basegame cards
     public static Class<?>[] bannedClassChecks = {ExhaustAllEtherealAction.class};
     // We want to check objects which extend these
-    public static Class<?>[] importantSuperClasses = {AbstractGameAction.class, AbstractPower.class, AbstractOrb.class, AbstractDamageModifier.class};
+    public static Class<?>[] importantSuperClasses = {AbstractGameAction.class, AbstractPower.class, AbstractOrb.class, AbstractDamageModifier.class, AbstractCardModifier.class};
     // Built from previous array when needed
     public static final ArrayList<CtClass> importantCtSuperClasses = new ArrayList<>();
     // Don't look at methods from classes that start with these
