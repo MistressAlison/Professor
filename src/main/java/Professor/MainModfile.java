@@ -1,9 +1,6 @@
 package Professor;
 
-import Professor.cards.cardvars.Info;
-import Professor.cards.cardvars.SecondBlock;
-import Professor.cards.cardvars.SecondDamage;
-import Professor.cards.cardvars.SecondMagicNumber;
+import Professor.cards.cardvars.*;
 import Professor.icons.IconContainer;
 import Professor.patches.ArchetypeHelper;
 import Professor.relics.AbstractEasyRelic;
@@ -172,6 +169,7 @@ public class MainModfile implements
         BaseMod.addDynamicVariable(new SecondMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
         BaseMod.addDynamicVariable(new SecondBlock());
+        BaseMod.addDynamicVariable(new DynvarInterfaceManager());
 
         CustomIconHelper.addCustomIcon(IconContainer.FireIcon.get());
         CustomIconHelper.addCustomIcon(IconContainer.IceIcon.get());
