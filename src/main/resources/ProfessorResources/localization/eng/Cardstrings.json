@@ -175,6 +175,6 @@
   },
   "${ModID}:WaterUni": {
     "NAME": "Water Uni",
-    "DESCRIPTION": "Apply !M! Poison. NL Apply !Professor:M2! Weak."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL While held, deal !M! damage back whenever you are attacked."
   }
 }
