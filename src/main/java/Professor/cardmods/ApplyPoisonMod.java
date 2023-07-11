@@ -51,18 +51,6 @@ public class ApplyPoisonMod extends AbstractCardModifier implements DynvarInterf
     }
 
     @Override
-    public void onApplyPowers(AbstractCard card) {
-        val = CalcHelper.applyPowersToBlock(baseVal);
-        valModified = val != baseVal;
-    }
-
-    @Override
-    public void onCalculateCardDamage(AbstractCard card, AbstractMonster mo) {
-        val = CalcHelper.applyPowersToBlock(baseVal);
-        valModified = val != baseVal;
-    }
-
-    @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
         return FormatHelper.insertAfterText(rawDescription , String.format(TEXT[0], DESCRIPTION_KEY));
     }
