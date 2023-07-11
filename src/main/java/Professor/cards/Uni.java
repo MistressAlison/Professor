@@ -25,7 +25,7 @@ public class Uni extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0 ; i < 3 ; i++) {
+        for (int i = 0 ; i < magicNumber ; i++) {
             dmg(m, i % 2 == 0 ? AbstractGameAction.AttackEffect.SLASH_HORIZONTAL : AbstractGameAction.AttackEffect.SLASH_VERTICAL);
         }
         addToBot(new DrawCardAction(secondMagic));
