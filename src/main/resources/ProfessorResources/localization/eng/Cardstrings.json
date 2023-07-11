@@ -169,6 +169,10 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
+  "${ModID}:TemptingSap": {
+    "NAME": "Tempting Sap",
+    "DESCRIPTION": "professor:Infuse \"Apply !M! Poison\" into all cards in your hand. NL Exhaust."
+  },
   "${ModID}:Uni": {
     "NAME": "Uni",
     "DESCRIPTION": "Deal !D! damage !M! times. NL Draw !Professor:M2! card{!Professor:M2!|>1=s}{@@}."
