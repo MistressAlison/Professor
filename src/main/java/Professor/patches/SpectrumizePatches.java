@@ -1,3 +1,4 @@
+/*
 package Professor.patches;
 
 import Professor.MainModfile;
@@ -16,10 +17,11 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import java.nio.charset.StandardCharsets;
 
 public class SpectrumizePatches {
-    private static final ShaderProgram sp = new ShaderProgram(SpriteBatch.createDefaultShader().getVertexShaderSource(), Gdx.files.internal(MainModfile.makePath("shaders/wave2.frag")).readString(String.valueOf(StandardCharsets.UTF_8)));
+    private static final ShaderProgram sp = new ShaderProgram(SpriteBatch.createDefaultShader().getVertexShaderSource(), Gdx.files.internal(MainModfile.makePath("shaders/ascii.frag")).readString(String.valueOf(StandardCharsets.UTF_8)));
     private static ShaderProgram oldShader;
     private static final FrameBuffer fbo = ImageHelper.createBuffer();
-/*    @SpirePatch2(clz = AbstractCard.class, method = "render", paramtypez = SpriteBatch.class)
+
+    @SpirePatch2(clz = AbstractCard.class, method = "render", paramtypez = SpriteBatch.class)
     @SpirePatch2(clz = AbstractCard.class, method = "renderInLibrary", paramtypez = SpriteBatch.class)
     public static class ApplyShaders {
         @SpirePrefixPatch
@@ -38,9 +40,10 @@ public class SpectrumizePatches {
             sb.setShader(sp);
             sp.setUniformf("x_time", MainModfile.time);
             sp.setUniformf("u_mouse", InputHelper.mX, InputHelper.mY);
-            sp.setUniformf("angleR", (float) Math.toRadians(__instance.angle));
+            //sp.setUniformf("angleR", (float) Math.toRadians(__instance.angle));
             sb.draw(ImageHelper.getBufferTexture(fbo), -Settings.VERT_LETTERBOX_AMT, -Settings.HORIZ_LETTERBOX_AMT);
             sb.setShader(oldShader);
         }
-    }*/
+    }
 }
+*/
