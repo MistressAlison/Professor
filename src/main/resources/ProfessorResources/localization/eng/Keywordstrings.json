@@ -129,6 +129,15 @@
     "DESCRIPTION": "Choose #b1 of #b3 random cards to add into your hand."
   },
   {
+    "ID": "infuse",
+    "PROPER_NAME": "Infuse",
+    "NAMES": [
+      "infuse",
+      "infused"
+    ],
+    "DESCRIPTION": "Add an extra effect onto a card this combat."
+  },
+  {
     "ID": "bomb",
     "PROPER_NAME": "Bomb",
     "NAMES": [
