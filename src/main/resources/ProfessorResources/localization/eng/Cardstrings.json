@@ -181,6 +181,10 @@
     "NAME": "Septrin",
     "DESCRIPTION": "Whenever a card is Exhausted, professor:Spectrumize it."
   },
+  "${ModID}:ShiningSand": {
+    "NAME": "Shining Sand",
+    "DESCRIPTION": "Ethereal. NL Next turn, NL gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL When you draw this card, apply !Professor:M2! Weak to ALL enemies."
+  },
   "${ModID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
