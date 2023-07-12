@@ -29,6 +29,7 @@ public class EtherealStone extends AbstractEasyCard {
 
     @Override
     public void triggerWhenDrawn() {
+        flash();
         addToBot(new DrawCardAction(magicNumber));
     }
 
