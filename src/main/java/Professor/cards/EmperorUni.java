@@ -45,7 +45,7 @@ public class EmperorUni extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.SKY, WHITE, Color.SKY, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, mix(YELLOW, Color.FIREBRICK), WHITE, mix(YELLOW, Color.FIREBRICK), WHITE, false);
     }
 
     @Override
