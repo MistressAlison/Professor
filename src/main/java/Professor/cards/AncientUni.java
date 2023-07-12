@@ -3,7 +3,6 @@ package Professor.cards;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -37,7 +36,7 @@ public class AncientUni extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.BROWN, WHITE, Color.BROWN, BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, BLACK, WHITE, WHITE, BLACK, false);
     }
 
     @Override
