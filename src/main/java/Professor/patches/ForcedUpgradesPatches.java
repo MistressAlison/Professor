@@ -2,6 +2,7 @@ package Professor.patches;
 
 import Professor.cardmods.UpgradeFlagMod;
 import basemod.abstracts.AbstractCardModifier;
+import basemod.helpers.CardModifierManager;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CardModifierPatches;
 import basemod.patches.com.megacrit.cardcrawl.saveAndContinue.SaveFile.ModSaves;
 import com.evacipated.cardcrawl.modthespire.Loader;
@@ -33,7 +34,9 @@ public class ForcedUpgradesPatches {
         @SpirePostfixPatch
         public static void plz(HandCardSelectScreen __instance) {
             if (previewMultipleUpgrade) {
-                ForcedUpgradeField.inf.set(__instance.upgradePreviewCard, true);
+                if (!CardModifierManager.hasModifier(__instance.upgradePreviewCard, UpgradeFlagMod.ID)) {
+                    CardModifierManager.addModifier(__instance.upgradePreviewCard, new UpgradeFlagMod());
+                }
                 for (int i = 0 ; i < upgradeTimes-1 ; i++) {
                     __instance.upgradePreviewCard.upgrade();
                 }

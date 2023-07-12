@@ -2,9 +2,12 @@ package Professor.actions;
 
 import Professor.cardmods.UpgradeFlagMod;
 import Professor.patches.ForcedUpgradesPatches;
+import Professor.util.ChimeraHelper;
 import basemod.helpers.CardModifierManager;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -69,8 +72,10 @@ public class MultiUpgradeAction extends AbstractGameAction {
 
     private void performUpgrades(List<AbstractCard> cards) {
         for (AbstractCard card : cards) {
-            if (!ForcedUpgradesPatches.ForcedUpgradeField.inf.get(card)) {
-                CardModifierManager.addModifier(card, new UpgradeFlagMod());
+            if (!(card instanceof SearingBlow) && !CardModifierManager.hasModifier(card, UpgradeFlagMod.ID)) {
+                if (!(Loader.isModLoaded("CardAugments") && ChimeraHelper.hasSearing(card))) {
+                    CardModifierManager.addModifier(card, new UpgradeFlagMod());
+                }
             }
             AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
             card.superFlash();
