@@ -133,6 +133,10 @@
     "NAME": "Giant Claws",
     "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Giant Claws by !M! this combat."
   },
+  "${ModID}:GoldenCrown": {
+    "NAME": "Golden Crown",
+    "DESCRIPTION": "Choose a card. NL {!Upgrades!|>0=Upgrade it and add|@=Add}{@@} a copy of it into your deck. NL Fleeting."
+  },
   "${ModID}:GoldUni": {
     "NAME": "Gold Uni",
     "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each professor:Bolt card played this combat."
