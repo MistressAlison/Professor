@@ -153,6 +153,10 @@
     "NAME": "Mana-Eater Branch",
     "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Exhaust."
   },
+  "${ModID}:OldMagicTome": {
+    "NAME": "Old Magic Tome",
+    "DESCRIPTION": "Choose a card. NL It can be Upgraded any number of times this combat. NL Upgrade it !M! times. NL Exhaust."
+  },
   "${ModID}:PoisonPowder": {
     "NAME": "Poison Powder",
     "DESCRIPTION": "Your next Attack applies !M! Poison on hit."
