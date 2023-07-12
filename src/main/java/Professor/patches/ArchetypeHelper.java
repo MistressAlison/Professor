@@ -14,6 +14,7 @@ import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.MultiUpgradeCard;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.AbstractDamageModifier;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.Matcher;
@@ -194,7 +195,7 @@ public class ArchetypeHelper {
 
     public static boolean isBolt(AbstractCard card) {
         //Energy, Exhaust, Vulnerable
-        if (cardCheck(card, (c,l) -> c.exhaust || ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c) > -1 || l.stream().anyMatch(u ->  u.exhaust || ExhaustiveField.ExhaustiveFields.baseExhaustive.get(u) > -1))) {
+        if (cardCheck(card, (c,l) -> c.exhaust || ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c) > -1 || FleetingField.fleeting.get(c) || l.stream().anyMatch(u ->  u.exhaust || ExhaustiveField.ExhaustiveFields.baseExhaustive.get(u) > -1 || FleetingField.fleeting.get(u)))) {
             return true;
         }
         if (Arrays.stream(orbCodes).anyMatch(s -> CardModifierManager.onCreateDescription(card, card.rawDescription).contains(s))) {

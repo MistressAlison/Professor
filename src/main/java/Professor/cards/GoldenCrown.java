@@ -22,6 +22,7 @@ public class GoldenCrown extends AbstractEasyCard {
     public GoldenCrown() {
         super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         FleetingField.fleeting.set(this, true);
+        tags.add(CardTags.HEALING);
     }
 
     @Override
