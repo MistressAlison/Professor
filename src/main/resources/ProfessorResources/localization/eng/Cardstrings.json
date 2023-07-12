@@ -183,7 +183,7 @@
   },
   "${ModID}:Uni": {
     "NAME": "Uni",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Draw !Professor:M2! card{!Professor:M2!|>1=s}{@@}."
+    "DESCRIPTION": "Apply !M! professor:Exposed. NL Draw !Professor:M2! card{!Professor:M2!|>1=s}{@@}."
   },
   "${ModID}:WaterUni": {
     "NAME": "Water Uni",

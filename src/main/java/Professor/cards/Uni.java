@@ -2,9 +2,10 @@ package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.patches.CustomTags;
+import Professor.powers.ExposedPower;
 import Professor.util.CardArtRoller;
+import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,25 +17,22 @@ public class Uni extends AbstractEasyCard {
     public final static String ID = makeID(Uni.class.getSimpleName());
 
     public Uni() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 4;
-        baseMagicNumber = magicNumber = 2;
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
+        baseMagicNumber = magicNumber = 4;
         secondMagic = baseSecondMagic = 1;
         tags.add(CustomTags.PROF_UNI);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0 ; i < magicNumber ; i++) {
-            dmg(m, i % 2 == 0 ? AbstractGameAction.AttackEffect.SLASH_HORIZONTAL : AbstractGameAction.AttackEffect.SLASH_VERTICAL);
-        }
+        Wiz.applyToEnemy(m, new ExposedPower(m, magicNumber));
         addToBot(new DrawCardAction(secondMagic));
     }
 
     @Override
     public void upp() {
         //upgradeDamage(2);
-        upgradeMagicNumber(1);
+        upgradeMagicNumber(2);
     }
 
     @Override
