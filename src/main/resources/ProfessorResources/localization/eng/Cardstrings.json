@@ -79,7 +79,7 @@
   },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
-    "DESCRIPTION": "Whenever you play a professor:Fire or professor:Bolt card, deal !M! damage to a random enemy."
+    "DESCRIPTION": "professor:Reactant. NL Whenever you play a professor:Fire or professor:Bolt card, deal !M! damage to a random enemy."
   },
   "${ModID}:AncientUni": {
     "NAME": "Ancient Uni",
@@ -156,6 +156,10 @@
   "${ModID}:ManaEaterBranch": {
     "NAME": "Mana-Eater Branch",
     "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Exhaust."
+  },
+  "${ModID}:MistLiquid": {
+    "NAME": "Mist Liquid",
+    "DESCRIPTION": "professor:Reactant. NL Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced."
   },
   "${ModID}:OldMagicTome": {
     "NAME": "Old Magic Tome",
