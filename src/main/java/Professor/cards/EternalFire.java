@@ -1,12 +1,19 @@
 package Professor.cards;
 
+import Professor.actions.BetterSelectCardsInHandAction;
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.powers.BurnPower;
+import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
-import Professor.util.Wiz;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
@@ -17,13 +24,18 @@ public class EternalFire extends AbstractEasyCard {
     public EternalFire() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 5;
-        //tags.add(CustomTags.PROF_CATALYST);
+        tags.add(CustomTags.PROF_REACTANT);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToEnemy(m, new BurnPower(m, p, magicNumber));
-        addToBot(new MakeTempCardInDrawPileAction(makeStatEquivalentCopy(), 1, false, true, false));
+        addToBot(new DamageAction(m, new DamageInfo(p, magicNumber, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new BetterSelectCardsInHandAction(1, CardCrawlGame.languagePack.getUIString("ExhaustAction").TEXT[0], false, false, c -> true, l -> {
+            for (AbstractCard c : l) {
+                addToTop(new MakeTempCardInHandAction(makeStatEquivalentCopy()));
+                addToTop(new ExhaustSpecificCardAction(c, p.hand));
+            }
+        }));
     }
 
     @Override
@@ -33,7 +45,7 @@ public class EternalFire extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, RED, WHITE, RED, BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, mix(Color.GRAY, AZURE), WHITE, mix(Color.GRAY, AZURE), BLACK, false);
     }
 
     @Override
