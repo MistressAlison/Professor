@@ -115,7 +115,7 @@
   },
   "${ModID}:EternalCrystal": {
     "NAME": "Eternal Crystal",
-    "DESCRIPTION": "professor:Catalyst. NL Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable."
+    "DESCRIPTION": "professor:Catalyst. NL At the end of your turn, gain !M! Block."
   },
   "${ModID}:EternalFire": {
     "NAME": "Eternal Fire",
