@@ -5,7 +5,7 @@
   },
   "${ModID}:AmberOilPower": {
     "NAME": "Amber Oil",
-    "DESCRIPTIONS": ["Whenever you apply #yBurn, apply #b"," more."]
+    "DESCRIPTIONS": ["Whenever you play a #rFire or #yBolt card, deal #b"," damage to a random enemy."]
   },
   "${ModID}:SeptrinPower": {
     "NAME": "Septrin",

@@ -79,7 +79,7 @@
   },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
-    "DESCRIPTION": "Whenever you apply professor:Burn, apply !M! more."
+    "DESCRIPTION": "Whenever you play a professor:Fire or professor:Bolt card, deal !M! damage to a random enemy."
   },
   "${ModID}:AncientUni": {
     "NAME": "Ancient Uni",
