@@ -119,7 +119,8 @@
   },
   "${ModID}:EternalFire": {
     "NAME": "Eternal Fire",
-    "DESCRIPTION": "Professor:Reactant. NL Enemy loses !M! HP. NL Replace a card in your hand with a copy of this."
+    "DESCRIPTION": "Professor:Reactant. NL Enemy loses !M! HP. NL Replace a card in your hand with a copy of this.",
+    "EXTENDED_DESCRIPTION": ["Burn"]
   },
   "${ModID}:EtherealStone": {
     "NAME": "Ethereal Stone",

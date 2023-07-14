@@ -1,19 +1,18 @@
 package Professor.cards;
 
 import Professor.actions.BetterSelectCardsInHandAction;
+import Professor.actions.BetterTransformCardInHandAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
@@ -30,10 +29,10 @@ public class EternalFire extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, magicNumber, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
-        addToBot(new BetterSelectCardsInHandAction(1, CardCrawlGame.languagePack.getUIString("ExhaustAction").TEXT[0], false, false, c -> true, l -> {
+        addToBot(new BetterSelectCardsInHandAction(1, cardStrings.EXTENDED_DESCRIPTION[0], false, false, c -> true, l -> {
             for (AbstractCard c : l) {
-                addToTop(new MakeTempCardInHandAction(makeStatEquivalentCopy()));
-                addToTop(new ExhaustSpecificCardAction(c, p.hand));
+                addToTop(new BetterTransformCardInHandAction(c, makeStatEquivalentCopy()));
+                addToTop(new SFXAction("CARD_BURN", 0.2F));
             }
         }));
     }
