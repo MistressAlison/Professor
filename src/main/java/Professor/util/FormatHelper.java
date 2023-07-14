@@ -7,11 +7,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class FormatHelper {
-    private static final String EXHAUST_TEXT = " NL " + CardAugments.util.FormatHelper.capitalize(GameDictionary.EXHAUST.NAMES[0]) + LocalizedStrings.PERIOD;
-    private static final String INNATE_TEXT = CardAugments.util.FormatHelper.capitalize(GameDictionary.INNATE.NAMES[0]) + LocalizedStrings.PERIOD + " NL ";
-    private static final String ETHEREAL_TEXT = CardAugments.util.FormatHelper.capitalize(GameDictionary.ETHEREAL.NAMES[0]) + LocalizedStrings.PERIOD + " NL ";
-    private static final String RETAIN_TEXT = CardAugments.util.FormatHelper.capitalize(GameDictionary.RETAIN.NAMES[0]) + LocalizedStrings.PERIOD + " NL ";
-    private static final String UNPLAYABLE_TEXT = CardAugments.util.FormatHelper.capitalize(GameDictionary.UNPLAYABLE.NAMES[0]) + LocalizedStrings.PERIOD + " NL ";
+    private static final String EXHAUST_TEXT = " NL " + capitalize(GameDictionary.EXHAUST.NAMES[0]) + LocalizedStrings.PERIOD;
+    private static final String INNATE_TEXT = capitalize(GameDictionary.INNATE.NAMES[0]) + LocalizedStrings.PERIOD + " NL ";
+    private static final String ETHEREAL_TEXT = capitalize(GameDictionary.ETHEREAL.NAMES[0]) + LocalizedStrings.PERIOD + " NL ";
+    private static final String RETAIN_TEXT = capitalize(GameDictionary.RETAIN.NAMES[0]) + LocalizedStrings.PERIOD + " NL ";
+    private static final String UNPLAYABLE_TEXT = capitalize(GameDictionary.UNPLAYABLE.NAMES[0]) + LocalizedStrings.PERIOD + " NL ";
+    private static final String CATALYST_TEXT = capitalize(KeywordManager.CATALYST) + LocalizedStrings.PERIOD + " NL ";
+    private static final String REACTANT_TEXT = capitalize(KeywordManager.REACTANT) + LocalizedStrings.PERIOD + " NL ";
     private static final StringBuilder newMsg = new StringBuilder();
 
     public static String capitalize(String str) {
@@ -42,7 +44,7 @@ public class FormatHelper {
 
     public static String insertBeforeText(String rawDescription, String text) {
         StringBuilder removed = new StringBuilder();
-        ArrayList<String> matches = makeMatchers(INNATE_TEXT, ETHEREAL_TEXT, RETAIN_TEXT, UNPLAYABLE_TEXT);
+        ArrayList<String> matches = makeMatchers(INNATE_TEXT, ETHEREAL_TEXT, RETAIN_TEXT, UNPLAYABLE_TEXT, CATALYST_TEXT, REACTANT_TEXT);
         while (matches.stream().anyMatch(rawDescription::startsWith)) {
             for (String match : matches) {
                 if (rawDescription.startsWith(match)) {
