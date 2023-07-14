@@ -15,6 +15,10 @@
     "NAME": "Septrin",
     "DESCRIPTIONS": ["Whenever you #yExhaust a card, #ySpectrumize it."]
   },
+  "${ModID}:DragonBloodPower": {
+    "NAME": "Dragon Blood",
+    "DESCRIPTIONS": ["Whenever you #yInfuse a card, #yInfuse it #b"," additional time."," additional times."]
+  },
   "${ModID}:PoisonPowderPower": {
     "NAME": "Poison Powder",
     "DESCRIPTIONS": ["Your next Attack applies #b"," #yPoison on hit."]

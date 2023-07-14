@@ -105,6 +105,11 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+  "${ModID}:DragonBlood": {
+    "NAME": "Dragon Blood",
+    "DESCRIPTION": "Whenever you professor:Infuse a card, the professor:Infusion is performed !M! additional time{@@}{!M!|>1=s}.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you professor:Infuse a card, the professor:Infusion is performed !M! additional time{@@}{!M!|>1=s}."
+  },
   "${ModID}:Eiche": {
     "NAME": "Eiche",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! professor:Braced."
