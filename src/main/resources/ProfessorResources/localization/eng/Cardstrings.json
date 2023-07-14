@@ -210,6 +210,10 @@
     "NAME": "Requiem Flower",
     "DESCRIPTION": "Fetch a card from your exhaust pile. NL Exhaust."
   },
+  "${ModID}:VortexSand": {
+    "NAME": "Vortex Sand",
+    "DESCRIPTION": "Draw X {!M!|>0=+ !M!}{@@} cards. NL They cost 0 this turn. NL Exhaust."
+  },
   "${ModID}:WaterUni": {
     "NAME": "Water Uni",
     "DESCRIPTION": "Retain. NL Gain !B! Block. NL While held, deal !M! damage back whenever you are attacked."
