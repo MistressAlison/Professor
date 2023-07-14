@@ -201,6 +201,10 @@
     "NAME": "Uni",
     "DESCRIPTION": "Apply !M! professor:Exposed. NL Draw !Professor:M2! card{!Professor:M2!|>1=s}{@@}."
   },
+  "${ModID}:VirgoRequiemFlower": {
+    "NAME": "Requiem Flower",
+    "DESCRIPTION": "Fetch a card from your exhaust pile. NL Exhaust."
+  },
   "${ModID}:WaterUni": {
     "NAME": "Water Uni",
     "DESCRIPTION": "Retain. NL Gain !B! Block. NL While held, deal !M! damage back whenever you are attacked."
