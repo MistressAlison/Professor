@@ -158,6 +158,10 @@
     "NAME": "Mana-Eater Branch",
     "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Exhaust."
   },
+  "${ModID}:MedicinalMoss": {
+    "NAME": "Medicinal Moss",
+    "DESCRIPTION": "Gain !B! Block. NL Remove !M! of your debuffs."
+  },
   "${ModID}:MistLiquid": {
     "NAME": "Mist Liquid",
     "DESCRIPTION": "professor:Reactant. NL Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced."
