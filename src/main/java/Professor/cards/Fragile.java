@@ -1,6 +1,7 @@
 package Professor.cards;
 
 import Professor.actions.ApplyCardModifierAction;
+import Professor.actions.InfuseCardsInHandAction;
 import Professor.actions.ModifyCardsInHandAction;
 import Professor.cardmods.GainBlockMod;
 import Professor.cards.abstracts.AbstractEasyCard;
@@ -24,11 +25,7 @@ public class Fragile extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ModifyCardsInHandAction(p.hand.size(), l -> {
-            for (AbstractCard c : l) {
-                addToTop(new ApplyCardModifierAction(c, new GainBlockMod(magicNumber)));
-            }
-        }));
+        addToBot(new InfuseCardsInHandAction(p.hand.size(), new GainBlockMod(magicNumber)));
     }
 
     @Override

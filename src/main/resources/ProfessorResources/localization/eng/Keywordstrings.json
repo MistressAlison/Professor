@@ -142,7 +142,8 @@
     "PROPER_NAME": "Infuse",
     "NAMES": [
       "infuse",
-      "infused"
+      "infused",
+      "infusion"
     ],
     "DESCRIPTION": "Add an extra effect onto a card this combat."
   },

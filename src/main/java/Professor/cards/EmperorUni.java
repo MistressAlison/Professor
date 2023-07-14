@@ -1,6 +1,7 @@
 package Professor.cards;
 
 import Professor.actions.ApplyCardModifierAction;
+import Professor.actions.InfuseCardsInHandAction;
 import Professor.actions.ModifyCardsInHandAction;
 import Professor.cardmods.DealAOEDamageMod;
 import Professor.cards.abstracts.AbstractEasyCard;
@@ -30,11 +31,7 @@ public class EmperorUni extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         allDmg(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        addToBot(new ModifyCardsInHandAction(p.hand.size(), l -> {
-            for (AbstractCard c : l) {
-                addToTop(new ApplyCardModifierAction(c, new DealAOEDamageMod(magicNumber)));
-            }
-        }));
+        addToBot(new InfuseCardsInHandAction(p.hand.size(), new DealAOEDamageMod(magicNumber)));
     }
 
     @Override

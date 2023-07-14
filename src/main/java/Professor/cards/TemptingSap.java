@@ -1,6 +1,7 @@
 package Professor.cards;
 
 import Professor.actions.ApplyCardModifierAction;
+import Professor.actions.InfuseCardsInHandAction;
 import Professor.actions.ModifyCardsInHandAction;
 import Professor.cardmods.ApplyPoisonMod;
 import Professor.cards.abstracts.AbstractEasyCard;
@@ -24,11 +25,7 @@ public class TemptingSap extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ModifyCardsInHandAction(p.hand.size(), l -> {
-            for (AbstractCard c : l) {
-                addToTop(new ApplyCardModifierAction(c, new ApplyPoisonMod(magicNumber)));
-            }
-        }));
+        addToBot(new InfuseCardsInHandAction(p.hand.size(), new ApplyPoisonMod(magicNumber)));
     }
 
     @Override
