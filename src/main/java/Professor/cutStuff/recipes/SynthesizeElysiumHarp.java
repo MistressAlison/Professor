@@ -1,9 +1,9 @@
-//package Professor.cards.recipes;
+//package Professor.cutStuff.recipes;
 //
 //import Professor.actions.BeginSynthesisAction;
 //import Professor.cards.abstracts.AbstractCreationCard;
 //import Professor.cards.abstracts.AbstractRecipeCard;
-//import Professor.cards.creations.ThornyEmbrace;
+//import Professor.cutStuff.creations.ElysiumHarp;
 //import Professor.util.CardArtRoller;
 //import com.badlogic.gdx.graphics.Color;
 //import com.megacrit.cardcrawl.cards.tempCards.Miracle;
@@ -12,13 +12,13 @@
 //
 //import static Professor.MainModfile.makeID;
 //
-//public class SynthesizeThornyEmbrace extends AbstractRecipeCard {
-//    public final static String ID = makeID(SynthesizeThornyEmbrace.class.getSimpleName());
+//public class SynthesizeElysiumHarp extends AbstractRecipeCard {
+//    public final static String ID = makeID(SynthesizeElysiumHarp.class.getSimpleName());
 //
-//    public SynthesizeThornyEmbrace() {
-//        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+//    public SynthesizeElysiumHarp() {
+//        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
 //        baseMagicNumber = magicNumber = 2;
-//        cardsToPreview = new ThornyEmbrace();
+//        cardsToPreview = new ElysiumHarp();
 //    }
 //
 //    @Override
@@ -33,7 +33,7 @@
 //
 //    @Override
 //    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-//        return new CardArtRoller.ReskinInfo(ID, mix(Color.FOREST, Color.GRAY), WHITE, mix(Color.FOREST, Color.GRAY), WHITE, false);
+//        return new CardArtRoller.ReskinInfo(ID, Color.GOLD, WHITE, Color.GOLD, WHITE, false);
 //    }
 //
 //    @Override
@@ -43,7 +43,7 @@
 //
 //    @Override
 //    public String itemArt() {
-//        return "ThornyEmbrace";
+//        return "ElysiumHarp";
 //    }
 //
 //    @Override
@@ -53,6 +53,6 @@
 //
 //    @Override
 //    public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-//        return new ThornyEmbrace(new AbstractCreationCard.ElementData(red, blue, yellow, green));
+//        return new ElysiumHarp(new AbstractCreationCard.ElementData(red, blue, yellow, green));
 //    }
 //}

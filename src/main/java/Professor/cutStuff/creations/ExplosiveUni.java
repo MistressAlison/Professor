@@ -1,67 +1,71 @@
-package Professor.cards.creations;
+package Professor.cutStuff.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
+import Professor.patches.CustomTags;
+import Professor.powers.StaggerPower;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static Professor.MainModfile.makeID;
 
-public class ElysiumHarp extends AbstractCreationCard {
-    public final static String ID = makeID(ElysiumHarp.class.getSimpleName());
+public class ExplosiveUni extends AbstractCreationCard {
+    public final static String ID = makeID(ExplosiveUni.class.getSimpleName());
 
-    public ElysiumHarp() {
+    public ExplosiveUni() {
         this(null);
     }
 
-    public ElysiumHarp(ElementData data) {
-        super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
+    public ExplosiveUni(ElementData data) {
+        super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
-        addCustomKeyword(KeywordManager.ELYSIUM_HARP);
+        addCustomKeyword(KeywordManager.EXPLOSIVE_UNI);
+        tags.add(CustomTags.PROF_UNI);
     }
 
     @Override
     public void updateElementData(ElementData data) {
-        baseMagicNumber = magicNumber = 5;
-        baseSecondMagic = secondMagic = 2;
+        baseDamage = damage = 6;
+        baseMagicNumber = magicNumber = 1;
         if (data != null) {
-            baseMagicNumber += 2*data.y;
+            this.data = data;
+            baseDamage += 2*data.r;
+            damage = baseDamage;
+            baseMagicNumber += data.b;
             magicNumber = baseMagicNumber;
-            baseSecondMagic += data.g;
-            secondMagic = baseSecondMagic;
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
         if (data != null) {
-            return new ElysiumHarp(data.cpy());
+            return new ExplosiveUni(data.cpy());
         }
         return super.makeCopy();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(secondMagic));
-        Wiz.applyToSelf(new VigorPower(p, magicNumber));
+        dmg(m, AbstractGameAction.AttackEffect.FIRE);
+        if (magicNumber > 0) {
+            Wiz.applyToEnemy(m, new StaggerPower(m, magicNumber));
+        }
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
-        upgradeSecondMagic(1);
+        upgradeDamage(3);
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.GOLD, WHITE, Color.GOLD, BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, Color.BROWN, WHITE, Color.BROWN, WHITE, false);
     }
 
     @Override
@@ -71,6 +75,6 @@ public class ElysiumHarp extends AbstractCreationCard {
 
     @Override
     public String itemArt() {
-        return ElysiumHarp.class.getSimpleName();
+        return ExplosiveUni.class.getSimpleName();
     }
 }

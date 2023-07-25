@@ -1,9 +1,9 @@
-//package Professor.cards.recipes;
+//package Professor.cutStuff.recipes;
 //
 //import Professor.actions.BeginSynthesisAction;
 //import Professor.cards.abstracts.AbstractCreationCard;
 //import Professor.cards.abstracts.AbstractRecipeCard;
-//import Professor.cards.creations.CrystalIceBomb;
+//import Professor.cutStuff.creations.CrystalIceBomb;
 //import Professor.util.CardArtRoller;
 //import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 //import com.megacrit.cardcrawl.characters.AbstractPlayer;

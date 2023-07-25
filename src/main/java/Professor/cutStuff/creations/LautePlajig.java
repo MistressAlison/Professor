@@ -1,4 +1,4 @@
-package Professor.cards.creations;
+package Professor.cutStuff.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.damageMods.ExposedDamage;

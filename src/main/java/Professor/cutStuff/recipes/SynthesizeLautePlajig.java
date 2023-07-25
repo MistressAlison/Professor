@@ -1,9 +1,9 @@
-//package Professor.cards.recipes;
+//package Professor.cutStuff.recipes;
 //
 //import Professor.actions.BeginSynthesisAction;
 //import Professor.cards.abstracts.AbstractCreationCard;
 //import Professor.cards.abstracts.AbstractRecipeCard;
-//import Professor.cards.creations.DarkNightTreasure;
+//import Professor.cutStuff.creations.LautePlajig;
 //import Professor.util.CardArtRoller;
 //import com.badlogic.gdx.graphics.Color;
 //import com.megacrit.cardcrawl.cards.tempCards.Miracle;
@@ -12,13 +12,13 @@
 //
 //import static Professor.MainModfile.makeID;
 //
-//public class SynthesizeDarkNightTreasure extends AbstractRecipeCard {
-//    public final static String ID = makeID(SynthesizeDarkNightTreasure.class.getSimpleName());
+//public class SynthesizeLautePlajig extends AbstractRecipeCard {
+//    public final static String ID = makeID(SynthesizeLautePlajig.class.getSimpleName());
 //
-//    public SynthesizeDarkNightTreasure() {
-//        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+//    public SynthesizeLautePlajig() {
+//        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
 //        baseMagicNumber = magicNumber = 2;
-//        cardsToPreview = new DarkNightTreasure();
+//        cardsToPreview = new LautePlajig();
 //    }
 //
 //    @Override
@@ -33,7 +33,7 @@
 //
 //    @Override
 //    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-//        return new CardArtRoller.ReskinInfo(ID, mix(Color.PURPLE, Color.GRAY), WHITE, mix(Color.PURPLE, Color.GRAY), WHITE, false);
+//        return new CardArtRoller.ReskinInfo(ID, Color.GOLD, WHITE, Color.GOLD, WHITE, false);
 //    }
 //
 //    @Override
@@ -43,7 +43,7 @@
 //
 //    @Override
 //    public String itemArt() {
-//        return "DarkNightTreasure";
+//        return "LautePlajig";
 //    }
 //
 //    @Override
@@ -53,6 +53,6 @@
 //
 //    @Override
 //    public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-//        return new DarkNightTreasure(new AbstractCreationCard.ElementData(red, blue, yellow, green));
+//        return new LautePlajig(new AbstractCreationCard.ElementData(red, blue, yellow, green));
 //    }
 //}

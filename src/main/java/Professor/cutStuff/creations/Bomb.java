@@ -1,42 +1,40 @@
-package Professor.cards.creations;
+package Professor.cutStuff.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 import static Professor.MainModfile.makeID;
 
-public class Luft extends AbstractCreationCard {
-    public final static String ID = makeID(Luft.class.getSimpleName());
+public class Bomb extends AbstractCreationCard {
+    public final static String ID = makeID(Bomb.class.getSimpleName());
 
-    public Luft() {
+    public Bomb() {
         this(null);
     }
 
-    public Luft(ElementData data) {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+    public Bomb(ElementData data) {
+        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
-        addCustomKeyword(KeywordManager.LUFT);
+        addCustomKeyword(KeywordManager.BOMB);
     }
 
     @Override
     public void updateElementData(ElementData data) {
         baseDamage = damage = 6;
-        baseMagicNumber = magicNumber = 1;
-        isMultiDamage = true;
+        baseMagicNumber = magicNumber = 4;
         if (data != null) {
-            baseDamage += 3*data.g;
+            baseDamage += 3*data.r;
             damage = baseDamage;
-            baseMagicNumber += data.b;
+            baseMagicNumber += 2*data.y;
             magicNumber = baseMagicNumber;
         }
     }
@@ -44,17 +42,15 @@ public class Luft extends AbstractCreationCard {
     @Override
     public AbstractCard makeCopy() {
         if (data != null) {
-            return new Luft(data.cpy());
+            return new Bomb(data.cpy());
         }
         return super.makeCopy();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SFXAction("APPEAR"));
-        addToBot(new VFXAction(new WhirlwindEffect(), 0.2F));
-        allDmg(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        addToBot(new DrawCardAction(magicNumber));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE, true));
+        addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(magicNumber, true), DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
         //allDmg(AbstractGameAction.AttackEffect.FIRE);
         /*if (magicNumber > 0) {
             Wiz.applyToEnemy(m, new BurnPower(m, p, magicNumber));
@@ -69,7 +65,7 @@ public class Luft extends AbstractCreationCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, SPRING_GREEN, WHITE, SPRING_GREEN, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, RED, WHITE, RED, WHITE, false);
     }
 
     @Override
@@ -79,6 +75,6 @@ public class Luft extends AbstractCreationCard {
 
     @Override
     public String itemArt() {
-        return Luft.class.getSimpleName();
+        return Bomb.class.getSimpleName();
     }
 }

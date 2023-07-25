@@ -1,24 +1,24 @@
-//package Professor.cards.recipes;
+//package Professor.cutStuff.recipes;
 //
 //import Professor.actions.BeginSynthesisAction;
 //import Professor.cards.abstracts.AbstractCreationCard;
 //import Professor.cards.abstracts.AbstractRecipeCard;
-//import Professor.cards.creations.DawnGrimoire;
+//import Professor.cutStuff.creations.DarkNightTreasure;
 //import Professor.util.CardArtRoller;
+//import com.badlogic.gdx.graphics.Color;
 //import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 //import com.megacrit.cardcrawl.characters.AbstractPlayer;
 //import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //
 //import static Professor.MainModfile.makeID;
 //
-//public class SynthesizeDawnGrimoire extends AbstractRecipeCard {
-//    public final static String ID = makeID(SynthesizeDawnGrimoire.class.getSimpleName());
+//public class SynthesizeDarkNightTreasure extends AbstractRecipeCard {
+//    public final static String ID = makeID(SynthesizeDarkNightTreasure.class.getSimpleName());
 //
-//    public SynthesizeDawnGrimoire() {
-//        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-//        baseMagicNumber = magicNumber = 3;
-//        cardsToPreview = new DawnGrimoire();
-//        tags.add(CardTags.HEALING);
+//    public SynthesizeDarkNightTreasure() {
+//        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+//        baseMagicNumber = magicNumber = 2;
+//        cardsToPreview = new DarkNightTreasure();
 //    }
 //
 //    @Override
@@ -28,12 +28,12 @@
 //
 //    @Override
 //    public void upp() {
-//        upgradeBaseCost(0);
+//        upgradeMagicNumber(1);
 //    }
 //
 //    @Override
 //    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-//        return new CardArtRoller.ReskinInfo(ID, RED, WHITE, RED, BLACK, false);
+//        return new CardArtRoller.ReskinInfo(ID, mix(Color.PURPLE, Color.GRAY), WHITE, mix(Color.PURPLE, Color.GRAY), WHITE, false);
 //    }
 //
 //    @Override
@@ -43,7 +43,7 @@
 //
 //    @Override
 //    public String itemArt() {
-//        return "DawnGrimoire";
+//        return "DarkNightTreasure";
 //    }
 //
 //    @Override
@@ -53,6 +53,6 @@
 //
 //    @Override
 //    public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-//        return new DawnGrimoire(new AbstractCreationCard.ElementData(red, blue, yellow, green));
+//        return new DarkNightTreasure(new AbstractCreationCard.ElementData(red, blue, yellow, green));
 //    }
 //}

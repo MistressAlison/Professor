@@ -1,26 +1,23 @@
-//package Professor.cards.recipes;
+//package Professor.cutStuff.recipes;
 //
 //import Professor.actions.BeginSynthesisAction;
 //import Professor.cards.abstracts.AbstractCreationCard;
 //import Professor.cards.abstracts.AbstractRecipeCard;
-//import Professor.cards.creations.ExplosiveUni;
-//import Professor.patches.CustomTags;
+//import Professor.cutStuff.creations.NA;
 //import Professor.util.CardArtRoller;
-//import com.badlogic.gdx.graphics.Color;
 //import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 //import com.megacrit.cardcrawl.characters.AbstractPlayer;
 //import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //
 //import static Professor.MainModfile.makeID;
 //
-//public class SynthesizeExplosiveUni extends AbstractRecipeCard {
-//    public final static String ID = makeID(SynthesizeExplosiveUni.class.getSimpleName());
+//public class SynthesizeNA extends AbstractRecipeCard {
+//    public final static String ID = makeID(SynthesizeNA.class.getSimpleName());
 //
-//    public SynthesizeExplosiveUni() {
-//        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-//        baseMagicNumber = magicNumber = 2;
-//        cardsToPreview = new ExplosiveUni();
-//        tags.add(CustomTags.PROF_UNI);
+//    public SynthesizeNA() {
+//        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+//        baseMagicNumber = magicNumber = 6;
+//        cardsToPreview = new NA();
 //    }
 //
 //    @Override
@@ -30,12 +27,13 @@
 //
 //    @Override
 //    public void upp() {
-//        upgradeMagicNumber(1);
+//        upgradeBaseCost(0);
+//        //upgradeMagicNumber(1);
 //    }
 //
 //    @Override
 //    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-//        return new CardArtRoller.ReskinInfo(ID, Color.BROWN, WHITE, Color.BROWN, WHITE, false);
+//        return new CardArtRoller.ReskinInfo(ID, BLACK, WHITE, BLACK, WHITE, false);
 //    }
 //
 //    @Override
@@ -45,7 +43,7 @@
 //
 //    @Override
 //    public String itemArt() {
-//        return "ExplosiveUni";
+//        return "NA";
 //    }
 //
 //    @Override
@@ -55,6 +53,6 @@
 //
 //    @Override
 //    public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-//        return new ExplosiveUni(new AbstractCreationCard.ElementData(red, blue, yellow, green));
+//        return new NA(new AbstractCreationCard.ElementData(red, blue, yellow, green));
 //    }
 //}
