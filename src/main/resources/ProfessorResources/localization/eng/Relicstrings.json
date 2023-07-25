@@ -1,0 +1,9 @@
+{
+  "${ModID}:UniCharm": {
+    "NAME": "Uni Charm",
+    "FLAVOR": "A charm made to look like an Uni. People always comment how creepily real it looks, which makes sense because it's made with an actual Uni.",
+    "DESCRIPTIONS": [
+      "Whenever you play an \"Uni\" card, deal #b3 damage to ALL enemies."
+    ]
+  }
+}

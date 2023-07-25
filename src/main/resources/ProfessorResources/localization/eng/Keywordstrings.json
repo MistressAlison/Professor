@@ -1,0 +1,238 @@
+[
+  {
+    "ID": "element",
+    "PROPER_NAME": "Elements",
+    "NAMES": [
+      "element",
+      "elements",
+      "fire",
+      "ice",
+      "bolt",
+      "wind"
+    ],
+    "DESCRIPTION": "#rFire [Professor:FireIcon] , #bIce [Professor:IceIcon] , #yBolt [Professor:BoltIcon] , and #gWind [Professor:WindIcon] ."
+  },
+  {
+    "ID": "catalyst",
+    "PROPER_NAME": "Catalyst",
+    "NAMES": [
+      "catalyst",
+      "catalysts",
+      "catalyze",
+      "catalytic"
+    ],
+    "DESCRIPTION": "Catalysts are not consumed during #ySynthesis and return to your hand on completion."
+  },
+  {
+    "ID": "reactant",
+    "PROPER_NAME": "Reactant",
+    "NAMES": [
+      "reactant",
+      "reactants"
+    ],
+    "DESCRIPTION": "Reactants do not consume #yValency during #ySynthesis."
+  },
+  {
+    "ID": "valency",
+    "PROPER_NAME": "Valency",
+    "NAMES": [
+      "valency"
+    ],
+    "DESCRIPTION": "The number of cards required to finish #ySynthesis."
+  },
+  {
+    "ID": "synthesis",
+    "PROPER_NAME": "Synthesis",
+    "NAMES": [
+      "synthesis",
+      "synthesize"
+    ],
+    "DESCRIPTION": "Begin converting this card. Until its #yValency is full, cards played are removed from combat and confer their #yElements towards #ySynthesis. The newly created card is then added to your hand and costs 0 this turn."
+  },
+  {
+    "ID": "spectrumize",
+    "PROPER_NAME": "Spectrumize",
+    "NAMES": [
+      "spectrumize",
+      "spectrumized"
+    ],
+    "DESCRIPTION": "A #ySpectrumized card is removed from combat and is replaced with #yNeutralizers matching its #yElements."
+  },
+  {
+    "ID": "neutralizer",
+    "PROPER_NAME": "Neutralizer",
+    "NAMES": [
+      "neutralizer",
+      "neutralizers"
+    ],
+    "DESCRIPTION": "Neutralizers are 0 cost cards which do not consume #yValency during #ySynthesis."
+  },
+  {
+    "ID": "precipitate",
+    "PROPER_NAME": "Precipitate",
+    "NAMES": [
+      "precipitate"
+    ],
+    "DESCRIPTION": "If this card is used to perform #ySynthesis, add the following card to your hand."
+  },
+  {
+    "ID": "recipe",
+    "PROPER_NAME": "Recipe",
+    "NAMES": [
+      "recipe",
+      "recipes"
+    ],
+    "DESCRIPTION": "?"
+  },
+  {
+    "ID": "creation",
+    "PROPER_NAME": "Creation",
+    "NAMES": [
+      "creation",
+      "creations"
+    ],
+    "DESCRIPTION": "?"
+  },
+  {
+    "ID": "burn",
+    "PROPER_NAME": "Burn",
+    "NAMES": [
+      "burn",
+      "burning"
+    ],
+    "DESCRIPTION": "Burning creatures take damage at the start of their turn."
+  },
+  {
+    "ID": "braced",
+    "PROPER_NAME": "Braced",
+    "NAMES": [
+      "braced"
+    ],
+    "DESCRIPTION": "Your next #yBlock gaining card gains additional #yBlock."
+  },
+  {
+    "ID": "exposed",
+    "PROPER_NAME": "Exposed",
+    "NAMES": [
+      "expose",
+      "exposed"
+    ],
+    "DESCRIPTION": "Exposed creatures take more damage from Attacks this turn."
+  },
+  {
+    "ID": "stagger",
+    "PROPER_NAME": "Staggered",
+    "NAMES": [
+      "stagger",
+      "staggered"
+    ],
+    "DESCRIPTION": "Staggered creatures deal less damage with Attacks this turn."
+  },
+  {
+    "ID": "gather",
+    "PROPER_NAME": "Gather",
+    "NAMES": [
+      "gather",
+      "gathered"
+    ],
+    "DESCRIPTION": "Choose #b1 of #b3 random cards to add into your hand."
+  },
+  {
+    "ID": "infuse",
+    "PROPER_NAME": "Infuse",
+    "NAMES": [
+      "infuse",
+      "infused",
+      "infusion"
+    ],
+    "DESCRIPTION": "Add an extra effect onto a card this combat."
+  },
+  {
+    "ID": "bomb",
+    "PROPER_NAME": "Bomb",
+    "NAMES": [
+      "bomb"
+    ],
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:FireIcon] . NL Enemies lose #b+2 HP per [Professor:BoltIcon] ."
+  },
+  {
+    "ID": "explosive_uni",
+    "PROPER_NAME": "Explosive Uni",
+    "NAMES": [
+      "explosive uni",
+      "explosive_uni"
+    ],
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+2 damage per [Professor:FireIcon] . NL Apply #b+1 #yStagger per [Professor:IceIcon] ."
+  },
+  {
+    "ID": "na",
+    "PROPER_NAME": "N/A",
+    "NAMES": [
+      "n/a",
+      "na"
+    ],
+    "DESCRIPTION": "Synthesis Benefits: NL [Professor:FireIcon] [Professor:FireIcon] - Costs #b1 less. NL [Professor:IceIcon] [Professor:IceIcon] - Costs #b1 less. NL [Professor:BoltIcon] [Professor:BoltIcon] - Costs #b1 less. NL [Professor:WindIcon] [Professor:WindIcon] - Costs #b1 less."
+  },
+  {
+    "ID": "crystal_ice_bomb",
+    "PROPER_NAME": "Crystal Ice Bomb",
+    "NAMES": [
+      "crystal ice bomb",
+      "crystal_ice_bomb"
+    ],
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:IceIcon] . NL Applies #b+1 Weak per [Professor:WindIcon] ."
+  },
+  {
+    "ID": "luft",
+    "PROPER_NAME": "Luft",
+    "NAMES": [
+      "luft"
+    ],
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:WindIcon] . NL Draw #b+1 card per [Professor:IceIcon] ."
+  },
+  {
+    "ID": "laute_plajig",
+    "PROPER_NAME": "Laute Plajig",
+    "NAMES": [
+      "laute plajig",
+      "laute_plajig"
+    ],
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+1 damage per [Professor:BoltIcon] . NL Applies #b+1 Exposed per [Professor:FireIcon] ."
+  },
+  {
+    "ID": "dawn_grimoire",
+    "PROPER_NAME": "Dawn Grimoire",
+    "NAMES": [
+      "dawn grimoire",
+      "dawn_grimoire"
+    ],
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+4 damage per [Professor:FireIcon] . NL Heals #b+1 HP per [Professor:BoltIcon] ."
+  },
+  {
+    "ID": "thorny_embrace",
+    "PROPER_NAME": "Thorny Embrace",
+    "NAMES": [
+      "thorny embrace",
+      "thorny_embrace"
+    ],
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+1 damage per [Professor:WindIcon] or [Professor:BoltIcon] ."
+  },
+  {
+    "ID": "elysium_harp",
+    "PROPER_NAME": "Elysium Harp",
+    "NAMES": [
+      "elysium harp",
+      "elysium_harp"
+    ],
+    "DESCRIPTION": "Synthesis Benefits: NL Draw #b+1 card per [Professor:WindIcon] . NL Gain #b+2 additional damage NL per [Professor:BoltIcon] ."
+  },
+  {
+    "ID": "dark_night_treasure",
+    "PROPER_NAME": "Dark Night Treasure",
+    "NAMES": [
+      "dark night treasure",
+      "dark_night_treasure"
+    ],
+    "DESCRIPTION": "Synthesis Benefits: NL Threshold #b+5 per [Professor:IceIcon] ."
+  }
+]

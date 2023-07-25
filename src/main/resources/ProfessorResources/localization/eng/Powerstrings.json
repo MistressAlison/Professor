@@ -1,0 +1,62 @@
+{
+  "${ModID}:AmmoPower": {
+    "NAME": "Ammo",
+    "DESCRIPTIONS": ["Used to perform #yRanged attacks."]
+  },
+  "${ModID}:AmberOilPower": {
+    "NAME": "Amber Oil",
+    "DESCRIPTIONS": ["Whenever you play a #rFire or #yBolt card, deal #b"," damage to a random enemy."]
+  },
+  "${ModID}:MistLiquidPower": {
+    "NAME": "Mist Liquid",
+    "DESCRIPTIONS": ["Whenever you play an #bIce or #gWind card, gain #b"," #yBraced."]
+  },
+  "${ModID}:SeptrinPower": {
+    "NAME": "Septrin",
+    "DESCRIPTIONS": ["Whenever you #yExhaust a card, #ySpectrumize it."]
+  },
+  "${ModID}:DragonBloodPower": {
+    "NAME": "Dragon Blood",
+    "DESCRIPTIONS": ["Whenever you #yInfuse a card, #yInfuse it #b"," additional time."," additional times."]
+  },
+  "${ModID}:AetherFormPower": {
+    "NAME": "Aether Form",
+    "DESCRIPTIONS": ["You may play a card you do not have the #yEnergy for once per turn.","You may play a card you do not have the #yEnergy for #b", " times per turn."]
+  },
+  "${ModID}:FireEssencePower": {
+    "NAME": "Fire Essence",
+    "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, deal #b"," damage to ALL enemies."]
+  },
+  "${ModID}:IceEssencePower": {
+    "NAME": "Ice Essence",
+    "DESCRIPTIONS": ["Whenever a card is #yRetained, gain #b"," #yBlock."]
+  },
+  "${ModID}:BoltEssencePower": {
+    "NAME": "Lightning Essence",
+    "DESCRIPTIONS": ["Whenever a card is #yExhausted, apply #b"," #yExposed to ALL enemies."]
+  },
+  "${ModID}:WindEssencePower": {
+    "NAME": "Wind Essence",
+    "DESCRIPTIONS": ["Whenever you draw your #b6th card each turn, draw #b"," card."," cards."]
+  },
+  "${ModID}:PoisonPowderPower": {
+    "NAME": "Poison Powder",
+    "DESCRIPTIONS": ["Your next Attack applies #b"," #yPoison on hit."]
+  },
+  "${ModID}:BracedPower": {
+    "NAME": "Braced",
+    "DESCRIPTIONS": ["Your next #yBlock gaining card gains #b", " additional #yBlock."]
+  },
+  "${ModID}:BurnPower": {
+    "NAME": "Burn",
+    "DESCRIPTIONS": ["At the start of its turn, takes #b"," damage."]
+  },
+  "${ModID}:ExposedPower": {
+    "NAME": "Exposed",
+    "DESCRIPTIONS": ["Takes #b"," more damage from Attacks this turn."]
+  },
+  "${ModID}:StaggerPower": {
+    "NAME": "Staggered",
+    "DESCRIPTIONS": ["Deals #b"," less damage with Attacks this turn."]
+  }
+}

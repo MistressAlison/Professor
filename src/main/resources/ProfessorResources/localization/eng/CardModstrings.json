@@ -1,0 +1,29 @@
+{
+  "${ModID}:EtherealMod": {
+    "EXTENDED_DESCRIPTION": ["Ethereal. NL "]
+  },
+  "${ModID}:ExhaustMod": {
+    "EXTENDED_DESCRIPTION": [" NL Exhaust."]
+  },
+  "${ModID}:RetainMod": {
+    "EXTENDED_DESCRIPTION": ["Retain. NL "]
+  },
+  "${ModID}:GainBlockMod": {
+    "EXTENDED_DESCRIPTION": ["Gain %s Block. NL "]
+  },
+  "${ModID}:ApplyPoisonMod": {
+    "EXTENDED_DESCRIPTION": [" NL Apply %s Poison."]
+  },
+  "${ModID}:DealDamageMod": {
+    "EXTENDED_DESCRIPTION": [" NL Deal %s damage."]
+  },
+  "${ModID}:DealRandomDamageMod": {
+    "EXTENDED_DESCRIPTION": [" NL Deal %s damage to a random enemy."]
+  },
+  "${ModID}:DealAOEDamageMod": {
+    "EXTENDED_DESCRIPTION": [" NL Deal %s damage to ALL enemies."]
+  },
+  "${ModID}:UpgradeFlagMod": {
+    "EXTENDED_DESCRIPTION": [" NL Can be upgraded any number of times."]
+  }
+}
