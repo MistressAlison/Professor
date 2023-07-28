@@ -148,6 +148,15 @@
     "DESCRIPTION": "Add an extra effect onto a card this combat."
   },
   {
+    "ID": "unlock",
+    "PROPER_NAME": "Unlock",
+    "NAMES": [
+      "unlock",
+      "unlocked"
+    ],
+    "DESCRIPTION": "Unlocked cards can be upgraded any number of times."
+  },
+  {
     "ID": "bomb",
     "PROPER_NAME": "Bomb",
     "NAMES": [

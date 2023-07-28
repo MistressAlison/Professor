@@ -20,6 +20,7 @@ public class KeywordManager {
     public static String STAGGER;
     public static String GATHER;
     public static String INFUSE;
+    public static String UNLOCK;
 
     public static String BOMB;
     public static String EXPLOSIVE_UNI;

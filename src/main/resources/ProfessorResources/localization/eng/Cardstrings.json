@@ -240,7 +240,7 @@
   },
   "${ModID}:OldMagicTome": {
     "NAME": "Old Magic Tome",
-    "DESCRIPTION": "Choose a card. NL It can be Upgraded any number of times this combat. NL Upgrade it !M! times. NL Exhaust."
+    "DESCRIPTION": "professor:Unlock a card. NL Upgrade it !M! times this combat. NL Exhaust."
   },
   "${ModID}:PoisonGrass": {
     "NAME": "Poison Grass",
