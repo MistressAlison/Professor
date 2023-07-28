@@ -23,6 +23,10 @@
     "NAME": "Aether Form",
     "DESCRIPTIONS": ["You may play a card you do not have the #yEnergy for once per turn.","You may play a card you do not have the #yEnergy for #b", " times per turn."]
   },
+  "${ModID}:PhilosophersPower": {
+    "NAME": "Philosopher's Form",
+    "DESCRIPTIONS": ["You may play a card you do not have the #yEnergy for once per turn.","You may play a card you do not have the #yEnergy for #b", " times per turn."]
+  },
   "${ModID}:FireEssencePower": {
     "NAME": "Fire Essence",
     "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, deal #b"," damage to ALL enemies."]

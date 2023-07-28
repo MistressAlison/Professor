@@ -238,6 +238,11 @@
     "NAME": "Mist Liquid",
     "DESCRIPTION": "professor:Reactant. NL Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced."
   },
+  "${ModID}:OldenPhilosophersStone": {
+    "NAME": "Philosopher's Form",
+    "DESCRIPTION": "Ethereal. NL You may play a card you do not have the Energy for {!M!|1=once|>1=!M! times} per turn.{@@}",
+    "UPGRADE_DESCRIPTION": "You may play a card you do not have the Energy for {!M!|1=once|>1=!M! times} per turn.{@@}"
+  },
   "${ModID}:OldMagicTome": {
     "NAME": "Old Magic Tome",
     "DESCRIPTION": "professor:Unlock a card. NL Upgrade it !M! times this combat. NL Exhaust."
