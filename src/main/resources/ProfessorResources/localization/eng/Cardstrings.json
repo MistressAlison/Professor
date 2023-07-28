@@ -106,9 +106,8 @@
     "DESCRIPTION": "professor:Synthesize a professor:Thorny_Embrace. NL professor:Valency !M!."
   },
   "${ModID}:AetherEssence": {
-    "NAME": "Aether Form",
-    "DESCRIPTION": "Ethereal. NL You may play a card you do not have the Energy for {!M!|1=once|>1=!M! times} per turn.{@@}",
-    "UPGRADE_DESCRIPTION": "You may play a card you do not have the Energy for {!M!|1=once|>1=!M! times} per turn.{@@}"
+    "NAME": "Aether Essence",
+    "DESCRIPTION": "You may not receive additional debuffs this combat."
   },
   "${ModID}:AlchemyFibers": {
     "NAME": "Alchemy Fibers",

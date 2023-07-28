@@ -19,9 +19,9 @@
     "NAME": "Dragon Blood",
     "DESCRIPTIONS": ["Whenever you #yInfuse a card, #yInfuse it #b"," additional time."," additional times."]
   },
-  "${ModID}:AetherFormPower": {
-    "NAME": "Aether Form",
-    "DESCRIPTIONS": ["You may play a card you do not have the #yEnergy for once per turn.","You may play a card you do not have the #yEnergy for #b", " times per turn."]
+  "${ModID}:AetherPower": {
+    "NAME": "Aether Essence",
+    "DESCRIPTIONS": ["Negates all debuffs."]
   },
   "${ModID}:PhilosophersPower": {
     "NAME": "Philosopher's Form",
