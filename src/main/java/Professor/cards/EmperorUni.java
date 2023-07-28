@@ -1,15 +1,12 @@
 package Professor.cards;
 
-import Professor.actions.ApplyCardModifierAction;
 import Professor.actions.InfuseCardsInHandAction;
-import Professor.actions.ModifyCardsInHandAction;
 import Professor.cardmods.DealAOEDamageMod;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -20,7 +17,7 @@ public class EmperorUni extends AbstractEasyCard {
     public final static String ID = makeID(EmperorUni.class.getSimpleName());
 
     public EmperorUni() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 3;
         tags.add(CustomTags.PROF_UNI);
