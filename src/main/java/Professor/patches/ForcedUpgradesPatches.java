@@ -1,6 +1,7 @@
 package Professor.patches;
 
 import Professor.cardmods.UpgradeFlagMod;
+import Professor.util.ChimeraHelper;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CardModifierPatches;
@@ -14,6 +15,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
@@ -30,16 +32,27 @@ public class ForcedUpgradesPatches {
     public static int upgradeTimes = 0;
 
     @SpirePatch2(clz = HandCardSelectScreen.class, method = "selectHoveredCard")
+    @SpirePatch2(clz = HandCardSelectScreen.class, method = "updateMessage")
     public static class ShowMultipleUpgrades {
-        @SpirePostfixPatch
+        @SpireInsertPatch(locator = Locator.class)
         public static void plz(HandCardSelectScreen __instance) {
             if (previewMultipleUpgrade) {
-                if (!CardModifierManager.hasModifier(__instance.upgradePreviewCard, UpgradeFlagMod.ID)) {
-                    CardModifierManager.addModifier(__instance.upgradePreviewCard, new UpgradeFlagMod());
+                if (!(__instance.upgradePreviewCard instanceof SearingBlow) && !CardModifierManager.hasModifier(__instance.upgradePreviewCard, UpgradeFlagMod.ID)) {
+                    if (!(Loader.isModLoaded("CardAugments") && ChimeraHelper.hasSearing(__instance.upgradePreviewCard))) {
+                        CardModifierManager.addModifier(__instance.upgradePreviewCard, new UpgradeFlagMod());
+                    }
                 }
                 for (int i = 0 ; i < upgradeTimes-1 ; i++) {
                     __instance.upgradePreviewCard.upgrade();
                 }
+            }
+        }
+
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher m = new Matcher.MethodCallMatcher(AbstractCard.class, "upgrade");
+                return LineFinder.findInOrder(ctBehavior, m);
             }
         }
     }
