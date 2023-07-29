@@ -24,6 +24,6 @@
     "EXTENDED_DESCRIPTION": [" NL Deal %s damage to ALL enemies."]
   },
   "${ModID}:UpgradeFlagMod": {
-    "EXTENDED_DESCRIPTION": [" NL Can be upgraded any number of times."]
+    "EXTENDED_DESCRIPTION": [" NL Can be Upgraded any number of times."]
   }
 }
