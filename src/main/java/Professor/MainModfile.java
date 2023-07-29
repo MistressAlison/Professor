@@ -4,6 +4,7 @@ import Professor.cards.cardvars.*;
 import Professor.icons.IconContainer;
 import Professor.patches.ArchetypeHelper;
 import Professor.relics.AbstractEasyRelic;
+import Professor.ui.SynthesisPanel;
 import Professor.util.CustomSounds;
 import Professor.util.KeywordManager;
 import Professor.util.TexLoader;
@@ -44,7 +45,7 @@ public class MainModfile implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        EditCharactersSubscriber, PostInitializeSubscriber, PostUpdateSubscriber, AddAudioSubscriber {
+        EditCharactersSubscriber, PostInitializeSubscriber, PostUpdateSubscriber, AddAudioSubscriber, OnPlayerTurnStartSubscriber {
 
     public static final String modID = "Professor";
     public static final Logger logger = LogManager.getLogger(MainModfile.class.getName());
@@ -425,5 +426,10 @@ public class MainModfile implements
         BaseMod.addAudio(CustomSounds.SYNTH_START_KEY2, CustomSounds.SYNTH_START_PATH2);
         BaseMod.addAudio(CustomSounds.SYNTH_END_KEY, CustomSounds.SYNTH_END_PATH);
         BaseMod.addAudio(CustomSounds.SYNTH_MIX_KEY, CustomSounds.SYNTH_MIX_PATH);
+    }
+
+    @Override
+    public void receiveOnPlayerTurnStart() {
+        SynthesisPanel.performSynthesis();
     }
 }

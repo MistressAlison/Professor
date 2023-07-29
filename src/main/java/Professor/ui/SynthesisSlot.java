@@ -14,10 +14,8 @@ import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.vfx.BobEffect;
 
 public class SynthesisSlot {
-    public float cX = 0.0F;
-    public float cY = 0.0F;
-    public float tX;
-    public float tY;
+    private SynthesisItem container;
+    public float cX, cY, tX, tY;
     protected float angle;
     public AbstractCard card;
     protected BobEffect bobEffect;
@@ -27,7 +25,8 @@ public class SynthesisSlot {
     private boolean snapped;
     private final float snapThreshold = 15f * Settings.scale;
 
-    public SynthesisSlot(float x, float y) {
+    public SynthesisSlot(SynthesisItem container, float x, float y) {
+        this.container = container;
         this.hb = new Hitbox(96.0F * Settings.scale, 96.0F * Settings.scale);
         this.bobEffect = new BobEffect(3.0F * Settings.scale, 3.0F);
         this.cX = x;
@@ -55,7 +54,7 @@ public class SynthesisSlot {
             if (!snapped && Math.abs(card.current_x-cX) <= snapThreshold && Math.abs(card.current_y-cY) <= snapThreshold) {
                 snapped = true;
             }
-            if (card.hb.hovered && !SynthesisPanel.hovered && !SynthesisPanel.processing) {
+            if (card.hb.hovered && !container.hovered && !container.processing) {
                 card.targetDrawScale = 0.75f;
             } else {
                 card.targetDrawScale = 0.2f;

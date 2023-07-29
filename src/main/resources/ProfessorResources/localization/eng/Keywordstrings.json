@@ -21,7 +21,7 @@
       "catalyze",
       "catalytic"
     ],
-    "DESCRIPTION": "Catalysts are not consumed during #ySynthesis and return to your hand on completion."
+    "DESCRIPTION": "Catalysts are not #yExhausted during #ySynthesis and instead return to your hand on completion."
   },
   {
     "ID": "reactant",
@@ -30,7 +30,7 @@
       "reactant",
       "reactants"
     ],
-    "DESCRIPTION": "When used in #ySynthesis, draw a card."
+    "DESCRIPTION": "When added to #ySynthesis, draw a card."
   },
   {
     "ID": "valency",
@@ -38,7 +38,7 @@
     "NAMES": [
       "valency"
     ],
-    "DESCRIPTION": "The number of cards required to finish #ySynthesis."
+    "DESCRIPTION": "The number of cards you can contribute to #ySynthesis."
   },
   {
     "ID": "synthesis",
@@ -47,7 +47,7 @@
       "synthesis",
       "synthesize"
     ],
-    "DESCRIPTION": "Begin converting this card. Until its #yValency is full, cards played are removed from combat and confer their #yElements towards #ySynthesis. The newly created card is then added to your hand and costs 0 this turn."
+    "DESCRIPTION": "Remove up to X cards from your hand, contributing their #yElements towards Synthesis. Next turn, add the completed card into your hand and #yExhaust the chosen cards."
   },
   {
     "ID": "spectrumize",

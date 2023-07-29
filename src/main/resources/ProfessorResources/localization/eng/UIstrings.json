@@ -32,5 +32,10 @@
       "Choose a power to Cleanse.",
       "Choose "," powers to Cleanse."
     ]
+  },
+  "${ModID}:SynthesisAction": {
+    "TEXT": [
+      "Contribute"
+    ]
   }
 }

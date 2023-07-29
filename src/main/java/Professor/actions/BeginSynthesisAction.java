@@ -1,14 +1,19 @@
 package Professor.actions;
 
+import Professor.MainModfile;
 import Professor.cards.abstracts.AbstractRecipeCard;
+import Professor.patches.CustomTags;
 import Professor.patches.EmpowerRedirectPatches;
+import Professor.ui.SynthesisItem;
 import Professor.ui.SynthesisPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class BeginSynthesisAction extends AbstractGameAction {
+    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(MainModfile.makeID("SynthesisAction")).TEXT;
     protected final AbstractRecipeCard recipeCard;
 
     public BeginSynthesisAction(AbstractRecipeCard recipe) {
@@ -17,22 +22,25 @@ public class BeginSynthesisAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (SynthesisPanel.currentCreation != null) {
-            addToTop(new BeginSynthesisAction(recipeCard));
-            addToTop(new PerformSynthesisAction());
-        } else {
-            SynthesisPanel.beginSynthesis(recipeCard);
-            CardCrawlGame.sound.play("ORB_SLOT_GAIN", 0.1f);
-            /*addToTop(new BetterSelectCardsInHandAction(recipeCard.getValance(), "Test", true, true, c -> true, l -> {
-                for (AbstractCard c : l) {
-                    EmpowerRedirectPatches.setRedirect(c, SynthesisPanel.BASE_X, SynthesisPanel.BASE_Y);
-                    AbstractDungeon.player.hand.empower(c);
-                    SynthesisPanel.addCard(c);
+        addToTop(new BetterSelectCardsInHandAction(recipeCard.getValance(), TEXT[0], true, true, c -> true, l -> {
+            int draw = 0;
+            SynthesisPanel.addSynthesisItem(new SynthesisItem(recipeCard, l));
+            EmpowerRedirectPatches.setRedirect(recipeCard, SynthesisPanel.BASE_X, SynthesisPanel.BASE_Y);
+            AbstractDungeon.player.hand.empower(recipeCard);
+            recipeCard.fadingOut = true;
+            for (AbstractCard c : l) {
+                EmpowerRedirectPatches.setRedirect(c, SynthesisPanel.BASE_X, SynthesisPanel.BASE_Y);
+                AbstractDungeon.player.hand.empower(c);
+                if (c.hasTag(CustomTags.PROF_REACTANT)) {
+                    draw++;
                 }
-                l.clear();
-                addToTop(new PerformSynthesisAction());
-            }));*/
-        }
+            }
+            l.clear();
+            if (draw > 0) {
+                addToTop(new DrawCardAction(draw));
+            }
+            //addToTop(new PerformSynthesisAction());
+            }));
         this.isDone = true;
     }
 }

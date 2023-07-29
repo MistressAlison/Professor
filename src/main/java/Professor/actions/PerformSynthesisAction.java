@@ -2,6 +2,7 @@ package Professor.actions;
 
 import Professor.cards.interfaces.OnUseInSynthesisCard;
 import Professor.patches.CustomTags;
+import Professor.ui.SynthesisItem;
 import Professor.ui.SynthesisPanel;
 import Professor.ui.SynthesisSlot;
 import Professor.util.CustomSounds;
@@ -16,29 +17,34 @@ import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
 public class PerformSynthesisAction extends AbstractGameAction {
     private final CardGroup g = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
     private static final float DUR = 1.5f;
+    private final SynthesisItem item;
     private final AbstractCard card;
 
-    public PerformSynthesisAction() {
+    public PerformSynthesisAction(SynthesisItem i) {
+        this.item = i;
         this.startDuration = duration = DUR;
-        this.card = SynthesisPanel.currentCreation;
+        this.card = item.currentCreation;
     }
 
     @Override
     public void update() {
-        if (SynthesisPanel.slots.stream().allMatch(s -> s.isSnapped() || s.isEmpty())) {
+        if (item.slots.stream().allMatch(s -> s.isSnapped() || s.isEmpty())) {
             if (duration == startDuration) {
-                SynthesisPanel.processing = true;
+                item.processing = true;
                 CardCrawlGame.sound.play(CustomSounds.SYNTH_START_KEY2, 0.1f);
             }
             tickDuration();
         }
         if (isDone) {
-            card.setCostForTurn(0);
+            //card.setCostForTurn(0);
             cardToHand(card);
-            for (SynthesisSlot s : SynthesisPanel.slots) {
+            CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            for (SynthesisSlot s : item.slots) {
                 if (s.card != null) {
                     if (s.card.hasTag(CustomTags.PROF_CATALYST)) {
                         cardToHand(s.card);
+                    } else {
+                        temp.moveToExhaustPile(s.card);
                     }
                     if (s.card instanceof OnUseInSynthesisCard) {
                         ((OnUseInSynthesisCard) s.card).onSynthesis(card);
@@ -48,7 +54,8 @@ public class PerformSynthesisAction extends AbstractGameAction {
             AbstractDungeon.player.hand.glowCheck();
             CardCrawlGame.sound.play(CustomSounds.SYNTH_END_KEY, 0.1f);
             AbstractDungeon.effectList.add(new SanctityEffect(card.hb.cX, card.hb.cY));
-            SynthesisPanel.clear();
+            item.clear();
+            SynthesisPanel.items.remove(item);
         }
     }
 
