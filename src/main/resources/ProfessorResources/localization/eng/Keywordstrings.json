@@ -30,7 +30,7 @@
       "reactant",
       "reactants"
     ],
-    "DESCRIPTION": "Reactants do not consume #yValency during #ySynthesis."
+    "DESCRIPTION": "When used in #ySynthesis, draw a card."
   },
   {
     "ID": "valency",
