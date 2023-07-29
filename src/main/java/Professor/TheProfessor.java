@@ -2,6 +2,7 @@ package Professor;
 
 import Professor.cards.*;
 import Professor.cards.interfaces.SkillAnimationAttack;
+import Professor.cards.recipes.SynthesizeExplosiveUni;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -90,7 +91,7 @@ public class TheProfessor extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        //retVal.add(SynthesizeExplosiveUni.ID);
+        retVal.add(SynthesizeExplosiveUni.ID);
         return retVal;
     }
 

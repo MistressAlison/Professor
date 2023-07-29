@@ -1,67 +1,62 @@
-package Professor.cutStuff.creations;
+package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import static Professor.MainModfile.makeID;
 
-public class ElysiumHarp extends AbstractCreationCard {
-    public final static String ID = makeID(ElysiumHarp.class.getSimpleName());
+public class ThornyEmbrace extends AbstractCreationCard {
+    public final static String ID = makeID(ThornyEmbrace.class.getSimpleName());
 
-    public ElysiumHarp() {
+    public ThornyEmbrace() {
         this(null);
     }
 
-    public ElysiumHarp(ElementData data) {
-        super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
+    public ThornyEmbrace(ElementData data) {
+        super(ID, 1, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF);
         updateElementData(data);
-        addCustomKeyword(KeywordManager.ELYSIUM_HARP);
+        addCustomKeyword(KeywordManager.THORNY_EMBRACE);
     }
 
     @Override
     public void updateElementData(ElementData data) {
         baseMagicNumber = magicNumber = 5;
-        baseSecondMagic = secondMagic = 2;
         if (data != null) {
-            baseMagicNumber += 2*data.y;
+            baseMagicNumber += data.g;
+            baseMagicNumber += data.y;
             magicNumber = baseMagicNumber;
-            baseSecondMagic += data.g;
-            secondMagic = baseSecondMagic;
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
         if (data != null) {
-            return new ElysiumHarp(data.cpy());
+            return new ThornyEmbrace(data.cpy());
         }
         return super.makeCopy();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(secondMagic));
-        Wiz.applyToSelf(new VigorPower(p, magicNumber));
+        Wiz.applyToSelf(new ThornsPower(p, magicNumber));
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
-        upgradeSecondMagic(1);
+        upgradeMagicNumber(3);
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.GOLD, WHITE, Color.GOLD, BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, mix(Color.FOREST, Color.GRAY), WHITE, mix(Color.FOREST, Color.GRAY), WHITE, false);
     }
 
     @Override
@@ -71,6 +66,6 @@ public class ElysiumHarp extends AbstractCreationCard {
 
     @Override
     public String itemArt() {
-        return ElysiumHarp.class.getSimpleName();
+        return ThornyEmbrace.class.getSimpleName();
     }
 }

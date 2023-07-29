@@ -1,37 +1,43 @@
-package Professor.cutStuff.creations;
+package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
+import Professor.patches.CustomTags;
+import Professor.powers.StaggerPower;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import static Professor.MainModfile.makeID;
 
-public class ThornyEmbrace extends AbstractCreationCard {
-    public final static String ID = makeID(ThornyEmbrace.class.getSimpleName());
+public class ExplosiveUni extends AbstractCreationCard {
+    public final static String ID = makeID(ExplosiveUni.class.getSimpleName());
 
-    public ThornyEmbrace() {
+    public ExplosiveUni() {
         this(null);
     }
 
-    public ThornyEmbrace(ElementData data) {
-        super(ID, 1, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF);
+    public ExplosiveUni(ElementData data) {
+        super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
-        addCustomKeyword(KeywordManager.THORNY_EMBRACE);
+        addCustomKeyword(KeywordManager.EXPLOSIVE_UNI);
+        tags.add(CustomTags.PROF_UNI);
     }
 
     @Override
     public void updateElementData(ElementData data) {
-        baseMagicNumber = magicNumber = 5;
+        baseDamage = damage = 6;
+        baseMagicNumber = magicNumber = 1;
         if (data != null) {
-            baseMagicNumber += data.g;
-            baseMagicNumber += data.y;
+            this.data = data;
+            baseDamage += 2*data.r;
+            damage = baseDamage;
+            baseMagicNumber += data.b;
             magicNumber = baseMagicNumber;
         }
     }
@@ -39,24 +45,27 @@ public class ThornyEmbrace extends AbstractCreationCard {
     @Override
     public AbstractCard makeCopy() {
         if (data != null) {
-            return new ThornyEmbrace(data.cpy());
+            return new ExplosiveUni(data.cpy());
         }
         return super.makeCopy();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new ThornsPower(p, magicNumber));
+        dmg(m, AbstractGameAction.AttackEffect.FIRE);
+        if (magicNumber > 0) {
+            Wiz.applyToEnemy(m, new StaggerPower(m, magicNumber));
+        }
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(3);
+        upgradeDamage(3);
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, mix(Color.FOREST, Color.GRAY), WHITE, mix(Color.FOREST, Color.GRAY), WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, Color.BROWN, WHITE, Color.BROWN, WHITE, false);
     }
 
     @Override
@@ -66,6 +75,6 @@ public class ThornyEmbrace extends AbstractCreationCard {
 
     @Override
     public String itemArt() {
-        return ThornyEmbrace.class.getSimpleName();
+        return ExplosiveUni.class.getSimpleName();
     }
 }
