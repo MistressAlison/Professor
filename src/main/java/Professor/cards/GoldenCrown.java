@@ -51,4 +51,9 @@ public class GoldenCrown extends AbstractEasyCard {
     public String itemArt() {
         return GoldenCrown.class.getSimpleName();
     }
+
+    @Override
+    public float itemScale() {
+        return 0.8f;
+    }
 }
