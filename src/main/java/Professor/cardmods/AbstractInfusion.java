@@ -28,7 +28,7 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
     public int baseVal;
     public boolean valModified;
     public boolean valUpgraded;
-    public Texture modIcon;
+    public transient Texture modIcon;
     public String modText;
 
     public AbstractInfusion(String key, InfusionType type, int baseAmount, String modText, Texture modIcon) {
