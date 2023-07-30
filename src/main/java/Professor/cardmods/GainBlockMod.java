@@ -16,14 +16,15 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class GainBlockMod extends AbstractInfusion {
     public static final String ID = MainModfile.makeID(GainBlockMod.class.getSimpleName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
-    public static final Texture icon = TextureScaler.rescale(AbstractPower.atlas.findRegion("128/channel"), 64, 64);
+    public static final Texture ICON = TextureScaler.rescale(AbstractPower.atlas.findRegion("128/channel"), 64, 64);
 
     static {
         DynvarInterfaceManager.registerDynvarCarrier(ID);
     }
 
     public GainBlockMod(int baseAmount) {
-        super(ID, InfusionType.BLOCK, baseAmount, TEXT[0], icon);
+        super(ID, InfusionType.BLOCK, baseAmount, TEXT[0], ICON);
+        priority = -1;
     }
 
     @Override

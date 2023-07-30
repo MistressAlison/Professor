@@ -17,14 +17,14 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 public class ApplyPoisonMod extends AbstractInfusion {
     public static final String ID = MainModfile.makeID(ApplyPoisonMod.class.getSimpleName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
-    public static final Texture icon = TextureScaler.rescale(AbstractPower.atlas.findRegion("128/poison"), 64, 64);
+    public static final Texture ICON = TextureScaler.rescale(AbstractPower.atlas.findRegion("128/poison"), 64, 64);
 
     static {
         DynvarInterfaceManager.registerDynvarCarrier(ID);
     }
 
     public ApplyPoisonMod(int baseAmount) {
-        super(ID, InfusionType.MAGIC, baseAmount, TEXT[0], icon);
+        super(ID, InfusionType.MAGIC, baseAmount, TEXT[0], ICON);
     }
 
     @Override

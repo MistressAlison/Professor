@@ -18,14 +18,14 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class DealDamageMod extends AbstractInfusion {
     public static final String ID = MainModfile.makeID(DealDamageMod.class.getSimpleName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
-    public static final Texture icon = TextureScaler.rescale(AbstractPower.atlas.findRegion("128/pressure_points"), 64, 64);
+    public static final Texture ICON = TextureScaler.rescale(AbstractPower.atlas.findRegion("128/pressure_points"), 64, 64);
 
     static {
         DynvarInterfaceManager.registerDynvarCarrier(ID);
     }
 
     public DealDamageMod(int baseAmount) {
-        super(ID, InfusionType.DAMAGE_DIRECT, baseAmount, TEXT[0], icon);
+        super(ID, InfusionType.DAMAGE_DIRECT, baseAmount, TEXT[0], ICON);
     }
 
     @Override

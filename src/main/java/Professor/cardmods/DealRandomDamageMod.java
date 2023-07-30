@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class DealRandomDamageMod extends AbstractInfusion {
     public static final String ID = MainModfile.makeID(DealRandomDamageMod.class.getSimpleName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
-    public static final Texture icon = TextureScaler.rescale(AbstractPower.atlas.findRegion("128/noPain"), 64, 64);
+    public static final Texture ICON = TextureScaler.rescale(AbstractPower.atlas.findRegion("128/noPain"), 64, 64);
 
 
     static {
@@ -29,7 +29,7 @@ public class DealRandomDamageMod extends AbstractInfusion {
     }
 
     public DealRandomDamageMod(int baseAmount) {
-        super(ID, InfusionType.DAMAGE_RANDOM, baseAmount, TEXT[0], icon);
+        super(ID, InfusionType.DAMAGE_RANDOM, baseAmount, TEXT[0], ICON);
     }
 
     @Override

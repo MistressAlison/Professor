@@ -28,23 +28,23 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
     public int baseVal;
     public boolean valModified;
     public boolean valUpgraded;
-    public Texture icon;
-    public String text;
+    public Texture modIcon;
+    public String modText;
 
-    public AbstractInfusion(String key, InfusionType type, int baseAmount, String text, Texture icon) {
+    public AbstractInfusion(String key, InfusionType type, int baseAmount, String modText, Texture modIcon) {
         this.key = key;
         this.type = type;
         this.baseVal = this.val = baseAmount;
-        this.text = text;
-        this.icon = icon;
+        this.modText = modText;
+        this.modIcon = modIcon;
     }
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
         if (priority < 0) {
-            return FormatHelper.insertBeforeText(rawDescription , String.format(text, descriptionKey()));
+            return FormatHelper.insertBeforeText(rawDescription , String.format(modText, descriptionKey()));
         } else {
-            return FormatHelper.insertAfterText(rawDescription , String.format(text, descriptionKey()));
+            return FormatHelper.insertAfterText(rawDescription , String.format(modText, descriptionKey()));
         }
     }
 
@@ -110,12 +110,12 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
 
     @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
-        ExtraIcons.icon(icon).text(String.valueOf(baseVal)).textOffsetX(3).drawColor(new Color(1, 1, 1, card.transparency)).render(card);
+        ExtraIcons.icon(modIcon).text(String.valueOf(baseVal)).textOffsetX(3).drawColor(new Color(1, 1, 1, card.transparency)).render(card);
     }
 
     @Override
     public void onSingleCardViewRender(AbstractCard card, SpriteBatch sb) {
-        ExtraIcons.icon(icon).text(String.valueOf(baseVal)).textOffsetX(6).drawColor(new Color(1, 1, 1, card.transparency)).render(card);
+        ExtraIcons.icon(modIcon).text(String.valueOf(baseVal)).textOffsetX(6).drawColor(new Color(1, 1, 1, card.transparency)).render(card);
     }
 
     public String descriptionKey() {

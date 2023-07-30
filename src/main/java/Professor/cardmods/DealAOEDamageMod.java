@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class DealAOEDamageMod extends AbstractInfusion {
     public static final String ID = MainModfile.makeID(DealAOEDamageMod.class.getSimpleName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
-    public static final Texture icon = TextureScaler.rescale(AbstractPower.atlas.findRegion("128/swivel"), 64, 64);
+    public static final Texture ICON = TextureScaler.rescale(AbstractPower.atlas.findRegion("128/swivel"), 64, 64);
 
 
     static {
@@ -26,7 +26,7 @@ public class DealAOEDamageMod extends AbstractInfusion {
     }
 
     public DealAOEDamageMod(int baseAmount) {
-        super(ID, InfusionType.DAMAGE_ALL, baseAmount, TEXT[0], icon);
+        super(ID, InfusionType.DAMAGE_ALL, baseAmount, TEXT[0], ICON);
     }
 
     @Override
