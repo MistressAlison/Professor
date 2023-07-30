@@ -330,6 +330,10 @@ public abstract class AbstractEasyCard extends CustomCard {
         return "";
     }
 
+    public float itemScale() {
+        return 1.0f;
+    }
+
     public Color mix(Color c1, Color c2) {
         return c1.cpy().lerp(c2, 0.5f);
     }

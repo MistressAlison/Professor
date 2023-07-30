@@ -269,6 +269,13 @@ public class CardArtRoller {
                 }
             });
             Color HSLC = new Color(r.H, r.S, r.L, r.C);
+            Texture itemTex = null;
+            if (!c.itemArt().isEmpty()) {
+                itemTex = TexLoader.getTexture(MainModfile.makeImagePath("items/"+c.itemArt()+".png"));
+                if (c.itemScale() != 1.0f) {
+                    itemTex = TextureScaler.rescale(itemTex, c.itemScale());
+                }
+            }
             AbstractCard artCard = CardLibrary.getCard(r.origCardID);
             TextureAtlas.AtlasRegion t = artCard.portrait;
             t.flip(r.flipX, true);
@@ -319,9 +326,8 @@ public class CardArtRoller {
             }
             sb.draw(t, -125, -95);
             sb.setShader(SpriteBatch.createDefaultShader());
-            if (!c.itemArt().isEmpty()) {
-                Texture item = TexLoader.getTexture(MainModfile.makeImagePath("items/"+c.itemArt()+".png"));
-                sb.draw(item, -item.getWidth()/2f, -item.getHeight()/2f, -item.getWidth()/2f, -item.getHeight()/2f, item.getWidth(), item.getHeight(), 1, 1, 0, 0, 0, item.getWidth(), item.getHeight(), false, true);
+            if (itemTex != null) {
+                sb.draw(itemTex, -itemTex.getWidth()/2f, -itemTex.getHeight()/2f, -itemTex.getWidth()/2f, -itemTex.getHeight()/2f, itemTex.getWidth(), itemTex.getHeight(), 1, 1, 0, 0, 0, itemTex.getWidth(), itemTex.getHeight(), false, true);
             }
             if (needsMask(c, artCard) || !c.itemArt().isEmpty()) {
                 sb.setBlendFunction(GL_DST_COLOR, GL_ZERO);
@@ -340,6 +346,13 @@ public class CardArtRoller {
     public static Texture getPortraitTexture(AbstractCard c) {
         ReskinInfo r = infos.get(c.cardID);
         Color HSLC = new Color(r.H, r.S, r.L, r.C);
+        Texture itemTex = null;
+        if (c instanceof AbstractEasyCard && !((AbstractEasyCard) c).itemArt().isEmpty()) {
+            itemTex = TexLoader.getTexture(MainModfile.makeImagePath("items/"+ ((AbstractEasyCard) c).itemArt()+".png"));
+            if (((AbstractEasyCard) c).itemScale() != 1.0f) {
+                itemTex = TextureScaler.rescale(itemTex, ((AbstractEasyCard) c).itemScale());
+            }
+        }
         AbstractCard artCard = CardLibrary.getCard(r.origCardID);
         TextureAtlas.AtlasRegion t = new TextureAtlas.AtlasRegion(TexLoader.getTexture("images/1024Portraits/" + artCard.assetUrl + ".png"), 0, 0, 500, 380);
         t.flip(r.flipX, true);
@@ -390,9 +403,8 @@ public class CardArtRoller {
         }
         sb.draw(t, -250, -190);
         sb.setShader(SpriteBatch.createDefaultShader());
-        if (c instanceof AbstractEasyCard && !((AbstractEasyCard) c).itemArt().isEmpty()) {
-            Texture item = TexLoader.getTexture(MainModfile.makeImagePath("items/"+ ((AbstractEasyCard) c).itemArt()+".png"));
-            sb.draw(item, -item.getWidth(), -item.getHeight(), -item.getWidth(), -item.getHeight(), item.getWidth()*2, item.getHeight()*2, 1, 1, 0, 0, 0, item.getWidth(), item.getHeight(), false, true);
+        if (itemTex != null) {
+            sb.draw(itemTex, -itemTex.getWidth(), -itemTex.getHeight(), -itemTex.getWidth(), -itemTex.getHeight(), itemTex.getWidth()*2, itemTex.getHeight()*2, 1, 1, 0, 0, 0, itemTex.getWidth(), itemTex.getHeight(), false, true);
         }
         if (needsMask(c, artCard) || c instanceof AbstractEasyCard && !((AbstractEasyCard) c).itemArt().isEmpty()) {
             sb.setBlendFunction(GL_DST_COLOR, GL_ZERO);
