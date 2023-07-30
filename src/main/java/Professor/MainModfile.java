@@ -8,7 +8,7 @@ import Professor.ui.SynthesisPanel;
 import Professor.util.CustomSounds;
 import Professor.util.KeywordManager;
 import Professor.util.TexLoader;
-import Professor.vfx.WaveTest;
+import Professor.vfx.ShaderTest;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModPanel;
@@ -404,7 +404,7 @@ public class MainModfile implements
         }
 
         if (shaderTest) {
-            ScreenPostProcessor postProcessor = new WaveTest();
+            ScreenPostProcessor postProcessor = new ShaderTest();
             ScreenPostProcessorManager.addPostProcessor(postProcessor);
         }
     }
