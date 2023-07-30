@@ -229,6 +229,11 @@
     "NAME": "Mana-Eater Branch",
     "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Exhaust."
   },
+  "${ModID}:ManaLantern": {
+    "NAME": "Mana Lantern",
+    "DESCRIPTION": "Ethereal. NL When you draw this card, gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
+  },
   "${ModID}:MedicinalMoss": {
     "NAME": "Medicinal Moss",
     "DESCRIPTION": "Gain !B! Block. NL Remove !M! of your debuffs."
