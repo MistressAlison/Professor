@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -42,6 +43,9 @@ public class BetterSelectCardsInHandAction extends AbstractGameAction {
                 AbstractDungeon.handCardSelectScreen.open(this.text, this.amount, this.anyNumber, this.canPickZero);
                 this.tickDuration();
             } else {
+                if (callback != null) {
+                    callback.accept(Collections.emptyList());
+                }
                 this.isDone = true;
             }
         } else if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
