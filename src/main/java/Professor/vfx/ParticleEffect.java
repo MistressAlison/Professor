@@ -1,5 +1,6 @@
 package Professor.vfx;
 
+import Professor.util.CustomLighting;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-public class ParticleEffect extends AbstractGameEffect {
+public class ParticleEffect extends AbstractGameEffect implements CustomLighting {
     private float x;
     private float y;
     private float oX;
@@ -75,4 +76,14 @@ public class ParticleEffect extends AbstractGameEffect {
 
     public void dispose() {
     }// 96
+
+    @Override
+    public float[] _lightsOutGetXYRI() {
+        return new float[] {x, y, 150f, 1.0f};
+    }
+
+    @Override
+    public Color[] _lightsOutGetColor() {
+        return new Color[] {color};
+    }
 }

@@ -311,4 +311,24 @@ public class TheProfessor extends CustomPlayer {
             }
         }
     }
+
+    public float[] _lightsOutGetCharSelectXYRI() {
+        return new float[] {
+                1783*Settings.scale, 765*Settings.scale, 500f, 1.5f,
+                60*Settings.scale, 699*Settings.scale, 300f, 1.2f,
+                //311*Settings.scale, 656*Settings.scale, 200f, 1.0f,
+                545*Settings.scale, 633*Settings.scale, 150f, 1.0f,
+                700*Settings.scale, 627*Settings.scale, 100f, 1.0f
+        };
+    }
+
+    public Color[] _lightsOutGetCharSelectColor() {
+        return new Color[] {
+                Color.WHITE,
+                Color.WHITE,
+                //Color.WHITE,
+                Color.WHITE,
+                Color.WHITE
+        };
+    }
 }
