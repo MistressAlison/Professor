@@ -81,7 +81,7 @@ public abstract class AbstractEasyCard extends CustomCard {
     private int previewIndex;
     protected ArrayList<AbstractCard> cyclePreviewCards = new ArrayList<>();
 
-    private boolean needsArtRefresh = false;
+    protected boolean needsArtRefresh = false;
 
     public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, TheProfessor.Enums.MEDIUM_RUBY_COLOR);

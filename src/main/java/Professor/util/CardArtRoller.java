@@ -185,7 +185,7 @@ public class CardArtRoller {
     };
 
     public static void computeCard(AbstractEasyCard c) {
-        c.portrait = doneCards.computeIfAbsent(c.cardID, key -> {
+        c.portrait = doneCards.computeIfAbsent(c.rollerKey(), key -> {
             ReskinInfo r = infos.computeIfAbsent(key, key2 -> {
                 Random rng = new Random((long) c.cardID.hashCode());
                 String q;
@@ -343,14 +343,14 @@ public class CardArtRoller {
         });
     }
 
-    public static Texture getPortraitTexture(AbstractCard c) {
-        ReskinInfo r = infos.get(c.cardID);
+    public static Texture getPortraitTexture(AbstractEasyCard c) {
+        ReskinInfo r = infos.get(c.rollerKey());
         Color HSLC = new Color(r.H, r.S, r.L, r.C);
         Texture itemTex = null;
-        if (c instanceof AbstractEasyCard && !((AbstractEasyCard) c).itemArt().isEmpty()) {
-            itemTex = TexLoader.getTexture(MainModfile.makeImagePath("items/"+ ((AbstractEasyCard) c).itemArt()+".png"));
-            if (((AbstractEasyCard) c).itemScale() != 1.0f) {
-                itemTex = TextureScaler.rescale(itemTex, ((AbstractEasyCard) c).itemScale());
+        if (!c.itemArt().isEmpty()) {
+            itemTex = TexLoader.getTexture(MainModfile.makeImagePath("items/"+ c.itemArt()+".png"));
+            if (c.itemScale() != 1.0f) {
+                itemTex = TextureScaler.rescale(itemTex, c.itemScale());
             }
         }
         AbstractCard artCard = CardLibrary.getCard(r.origCardID);
