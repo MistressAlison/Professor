@@ -303,15 +303,27 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     // These shortcuts are specifically for cards. All other shortcuts that aren't specifically for cards can go in Wiz.
     protected void dmg(AbstractCreature t, AbstractGameAction.AttackEffect fx) {
-        atb(new DamageAction(t, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
+        dmg(t, fx, false);
+    }
+
+    protected void dmg(AbstractCreature t, AbstractGameAction.AttackEffect fx, boolean fast) {
+        atb(new DamageAction(t, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx, fast));
     }
 
     protected void dmgTop(AbstractCreature t, AbstractGameAction.AttackEffect fx) {
-        att(new DamageAction(t, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
+        dmgTop(t, fx, false);
+    }
+
+    protected void dmgTop(AbstractCreature t, AbstractGameAction.AttackEffect fx, boolean fast) {
+        att(new DamageAction(t, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx, fast));
     }
 
     protected void allDmg(AbstractGameAction.AttackEffect fx) {
-        atb(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx));
+        allDmg(fx, false);
+    }
+
+    protected void allDmg(AbstractGameAction.AttackEffect fx, boolean fast) {
+        atb(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx, fast));
     }
 
     protected void blck() {
@@ -328,6 +340,10 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     public String itemArt() {
         return "";
+    }
+
+    public String rollerKey() {
+        return cardID;
     }
 
     public float itemScale() {
