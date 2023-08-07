@@ -1,7 +1,133 @@
 {
+  "${ModID}:BaronsCrown": {
+    "NAME": "Baron's Crown",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:Cosmos": {
+    "NAME": "Cosmos",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:ElixirRing": {
+    "NAME": "Elixir Ring",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:EnergyPendant": {
+    "NAME": "Energy Pendant",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:EnlightenedBandana": {
+    "NAME": "Enlightened Bandana",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:FocusGlass": {
+    "NAME": "Focus Glass",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:FourSpiritsAmulet": {
+    "NAME": "Four Spirits Amulet",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:GloryBelt": {
+    "NAME": "Glory Belt",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:GnadeRing": {
+    "NAME": "Gnade Ring",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:HotBloodedBandana": {
+    "NAME": "Hot-Blooded Bandana",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:InnocentRiches": {
+    "NAME": "Innocent Riches",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:LocketOfDevotion": {
+    "NAME": "Locket of Devotion",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:MemoriaBracelet": {
+    "NAME": "Memoria Bracelet",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:MigratoryCharm": {
+    "NAME": "Migratory Charm",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:QuartzNecklace": {
+    "NAME": "Quartz Necklace",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:SageCirclet": {
+    "NAME": "Sage Circlet",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:SamastenNecklace": {
+    "NAME": "Samasten Necklace",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "${ModID}:SoulOfFortitude": {
+    "NAME": "Soul of Fortitude",
+    "FLAVOR": "???",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
   "${ModID}:UniCharm": {
     "NAME": "Uni Charm",
-    "FLAVOR": "A charm made to look like an Uni. People always comment how creepily real it looks, which makes sense because it's made with an actual Uni.",
+    "FLAVOR": "People always comment how creepily real it looks, which makes sense because it's made with an actual Uni.",
     "DESCRIPTIONS": [
       "Whenever you play an \"Uni\" card, deal #b3 damage to ALL enemies."
     ]
