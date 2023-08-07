@@ -38,7 +38,7 @@
     "NAME": "Focus Glass",
     "FLAVOR": "???",
     "DESCRIPTIONS": [
-      "???"
+      "Every time you play #b3 #yAttacks in a single turn, your next #yAttack deals #b50% more damage."
     ]
   },
   "${ModID}:FourSpiritsAmulet": {

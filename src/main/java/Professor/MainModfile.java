@@ -3,6 +3,7 @@ package Professor;
 import Professor.cards.cardvars.*;
 import Professor.icons.IconContainer;
 import Professor.patches.ArchetypeHelper;
+import Professor.powers.FocusPower;
 import Professor.relics.AbstractEasyRelic;
 import Professor.ui.SynthesisPanel;
 import Professor.util.CustomSounds;
@@ -258,6 +259,28 @@ public class MainModfile implements
         Texture badgeTexture = TexLoader.getTexture(BADGE_IMAGE);
         BaseMod.registerModBadge(badgeTexture, EXTRA_TEXT[0], AUTHOR, EXTRA_TEXT[1], settingsPanel);
 
+        //Add Powers
+        BaseMod.addPower(FocusPower.class, FocusPower.POWER_ID);
+
+        //Wide Potions
+
+        //Add Config stuff
+
+        //Other Setup stuff
+        processElements();
+
+        if (shaderTest) {
+            ScreenPostProcessor postProcessor = new ShaderTest();
+            ScreenPostProcessorManager.addPostProcessor(postProcessor);
+        }
+    }
+
+    public static boolean runTest = false;
+    public static boolean colorLog = true;
+    public static boolean crash = false;
+    public static boolean shaderTest = false;
+
+    private static void processElements() {
         logger.info("Performing elemental analysis:");
         ArrayList<AbstractCard> fireCards = new ArrayList<>();
         ArrayList<AbstractCard> iceCards = new ArrayList<>();
@@ -402,17 +425,7 @@ public class MainModfile implements
             checker.removeAll(elementlessCards);
             logger.info("Gained Elementless cards: "+checker.size()+" - "+checker);
         }
-
-        if (shaderTest) {
-            ScreenPostProcessor postProcessor = new ShaderTest();
-            ScreenPostProcessorManager.addPostProcessor(postProcessor);
-        }
     }
-
-    public static boolean runTest = false;
-    public static boolean colorLog = true;
-    public static boolean crash = false;
-    public static boolean shaderTest = false;
 
     public static float time = 0f;
     @Override
