@@ -121,6 +121,10 @@
     "NAME": "Ancient Uni",
     "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
   },
+  "${ModID}:AnotherPlanet": {
+    "NAME": "Another Planet",
+    "DESCRIPTION": "???"
+  },
   "${ModID}:ArborIvy": {
     "NAME": "Arbor Ivy",
     "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}.{@@}"
@@ -136,6 +140,10 @@
   "${ModID}:Clobber": {
     "NAME": "Clobber",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Exposed."
+  },
+  "${ModID}:CrossDaggers": {
+    "NAME": "Cross Daggers",
+    "DESCRIPTION": "???"
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
@@ -157,6 +165,10 @@
   "${ModID}:EmberStone": {
     "NAME": "Ember Stone",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+  },
+  "${ModID}:EmeraldBand": {
+    "NAME": "Emerald Band",
+    "DESCRIPTION": "Draw / Cost?"
   },
   "${ModID}:EmperorUni": {
     "NAME": "Emperor Uni",
@@ -241,6 +253,10 @@
   "${ModID}:MistLiquid": {
     "NAME": "Mist Liquid",
     "DESCRIPTION": "professor:Reactant. NL Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced."
+  },
+  "${ModID}:MysteriousBroom": {
+    "NAME": "Mysterious Broom",
+    "DESCRIPTION": "???"
   },
   "${ModID}:OldenPhilosophersStone": {
     "NAME": "Philosopher's Form",
