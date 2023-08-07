@@ -21,7 +21,7 @@ public class BarbExplodeEffect extends AbstractGameEffect {
     public void update() {
         this.duration += Gdx.graphics.getDeltaTime();
         if (duration >= DUR/MAX_DAGGERS) {
-            float angle = MathUtils.random(-10f, 190f);
+            float angle = MathUtils.random(-25f, 25f) + (MathUtils.randomBoolean() ? 180f : 0f);
             float length = MathUtils.random(0, 0);
             float x = AbstractDungeon.player.hb.cX + length * MathUtils.sinDeg(angle);
             float y = AbstractDungeon.player.hb.cY + length * MathUtils.cosDeg(angle);
