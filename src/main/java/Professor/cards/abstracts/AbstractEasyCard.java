@@ -354,6 +354,86 @@ public abstract class AbstractEasyCard extends CustomCard {
         return c1.cpy().lerp(c2, 0.5f);
     }
 
+    public Color lighten(Color c) {
+        return c.cpy().lerp(Color.WHITE, 0.25f);
+    }
+
+    public Color darken(Color c) {
+        return c.cpy().lerp(Color.BLACK, 0.25f);
+    }
+
+    public Color pastel(Color c) {
+        return colorFromHSL(getHue(c), getSat(c), 0.9f, c.a);
+    }
+
+    public float getHue(Color c) {
+        float max = c.r;
+        float min = c.r;
+        if (c.g > max) {
+            max = c.g;
+        }
+        if (c.b > max) {
+            max = c.b;
+        }
+        if (c.g < min) {
+            min = c.g;
+        }
+        if (c.b < min) {
+            min = c.b;
+        }
+        float delta = max - min;
+        if (delta == 0) {
+            return 0;
+        }
+        if (c.g >= c.b) {
+            return (float) Math.toDegrees(Math.acos((c.r - c.g/2 - c.b/2)/Math.sqrt(c.r*c.r + c.g*c.g + c.b*c.b - c.r*c.g - c.r*c.b - c.g*c.b)));
+        } else {
+            return 360 - (float) Math.toDegrees(Math.acos((c.r - c.g/2 - c.b/2)/Math.sqrt(c.r*c.r + c.g*c.g + c.b*c.b - c.r*c.g - c.r*c.b - c.g*c.b)));
+        }
+    }
+
+    public float getSat(Color c) {
+        float max = c.r;
+        float min = c.r;
+        if (c.g > max) {
+            max = c.g;
+        }
+        if (c.b > max) {
+            max = c.b;
+        }
+        if (c.g < min) {
+            min = c.g;
+        }
+        if (c.b < min) {
+            min = c.b;
+        }
+        float delta = max - min;
+        if (delta == 0) {
+            return 0;
+        }
+        float lightness = (max + min)/2f;
+        return delta / (1 - Math.abs(2*lightness - 1));
+    }
+
+    public Color colorFromHSL(float hue, float sat, float light, float alpha) {
+        float d = sat * (1 - Math.abs(2*light - 1));
+        float x = d * (1 - Math.abs(((hue/60f)%2) - 1));
+        float m = light - d/2f;
+        if (0 <= hue && hue < 60) {
+            return new Color(d+m, x+m, m, alpha);
+        } else if (60 <= hue && hue < 120) {
+            return new Color(x+m, d+m, m, alpha);
+        } else if (120 <= hue && hue < 180) {
+            return new Color(m, d+m, x+m, alpha);
+        } else if (180 <= hue && hue < 240) {
+            return new Color(m, x+m, d+m, alpha);
+        } else if (240 <= hue && hue < 300) {
+            return new Color(x+m, m, d+m, alpha);
+        } else {
+            return new Color(d+m, m, x+m, alpha);
+        }
+    }
+
     protected void addCustomKeyword(String key) {
         if (addedTips == null) {
             addedTips = new ArrayList<>();
