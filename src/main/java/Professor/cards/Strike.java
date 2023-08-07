@@ -1,12 +1,11 @@
 package Professor.cards;
 
-import Professor.MainModfile;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
+import Professor.vfx.AngledFlashAtkImgEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.purple.Strike_Purple;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,6 +24,7 @@ public class Strike extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new VFXAction(new AngledFlashAtkImgEffect(m.hb.cX, m.hb.cY, 180f, AbstractGameAction.AttackEffect.SLASH_DIAGONAL), 0.2f));
         dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
     }
 

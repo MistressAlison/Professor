@@ -267,6 +267,10 @@
     "NAME": "Old Magic Tome",
     "DESCRIPTION": "professor:Unlock a card. NL Upgrade it !M! times this combat. NL Exhaust."
   },
+  "${ModID}:Pierce": {
+    "NAME": "Pierce",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies{!M!|>1= !M! times}{@@}."
+  },
   "${ModID}:PoisonGrass": {
     "NAME": "Poison Grass",
     "DESCRIPTION": "Apply !M! Poison. NL professor:Infuse \"Apply !M! Poison\" into a card."
