@@ -344,6 +344,9 @@ public class CardArtRoller {
     }
 
     public static Texture getPortraitTexture(AbstractEasyCard c) {
+        if (!infos.containsKey(c.rollerKey())) {
+            computeCard(c);
+        }
         ReskinInfo r = infos.get(c.rollerKey());
         Color HSLC = new Color(r.H, r.S, r.L, r.C);
         Texture itemTex = null;
@@ -406,7 +409,7 @@ public class CardArtRoller {
         if (itemTex != null) {
             sb.draw(itemTex, -itemTex.getWidth(), -itemTex.getHeight(), -itemTex.getWidth(), -itemTex.getHeight(), itemTex.getWidth()*2, itemTex.getHeight()*2, 1, 1, 0, 0, 0, itemTex.getWidth(), itemTex.getHeight(), false, true);
         }
-        if (needsMask(c, artCard) || c instanceof AbstractEasyCard && !((AbstractEasyCard) c).itemArt().isEmpty()) {
+        if (needsMask(c, artCard) || !c.itemArt().isEmpty()) {
             sb.setBlendFunction(GL_DST_COLOR, GL_ZERO);
             Texture mask = getMask(c);
             sb.setProjectionMatrix(new OrthographicCamera(500, 380).combined);
