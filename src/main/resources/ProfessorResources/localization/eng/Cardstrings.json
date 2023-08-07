@@ -299,6 +299,10 @@
     "NAME": "Shining Sand",
     "DESCRIPTION": "Ethereal. NL Next turn, NL gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL When you draw this card, apply !Professor:M2! Weak to ALL enemies."
   },
+  "${ModID}:SmallCrystals": {
+    "NAME": "Small Crystal",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times."
+  },
   "${ModID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
