@@ -1,8 +1,7 @@
-package Professor.cards;
+package Professor.cutStuff;
 
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
-import Professor.vfx.ColoredFlyingDaggerEffect;
 import Professor.vfx.ColoredThrowDaggerEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -10,7 +9,6 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.ThrowDaggerEffect;
 
 import static Professor.MainModfile.makeID;
 
