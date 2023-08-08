@@ -1,4 +1,4 @@
-package Professor.cards;
+package Professor.cutStuff;
 
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.powers.ExposedPower;
