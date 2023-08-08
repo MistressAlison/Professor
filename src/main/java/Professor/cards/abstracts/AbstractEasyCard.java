@@ -35,26 +35,26 @@ import static Professor.util.Wiz.atb;
 import static Professor.util.Wiz.att;
 
 public abstract class AbstractEasyCard extends CustomCard {
-    private List<TooltipInfo> addedTips;
-    protected final Color RED = new Color(1, 0, 0, 1);
-    protected final Color ORANGE = new Color(1, 0.5f, 0, 1);
-    protected final Color YELLOW = new Color(1, 1, 0, 1);
-    protected final Color CHARTREUSE = new Color(0.5f, 1, 0, 1);
-    protected final Color GREEN =  new Color(0, 1, 0, 1);
-    protected final Color SPRING_GREEN = new Color(0, 1, 0.5f, 1);
-    protected final Color CYAN =  new Color(0, 1, 1, 1);
-    protected final Color AZURE = new Color(0, 0.5f, 1, 1);
-    protected final Color BLUE = new Color(0, 0, 1, 1);
-    protected final Color VIOLET = new Color(0.5f, 0, 1, 1);
-    protected final Color MAGENTA = new Color(1, 0, 1, 1);
-    protected final Color ROSE = new Color(1, 0, 0.5f, 1);
-    protected final Color WHITE = new Color(1, 1, 1, 1);
-    protected final Color QUARTER_GRAY =  new Color(0.75f, 0.75f, 0.75f, 1);
-    protected final Color HALF_GRAY =  new Color(0.5f, 0.5f, 0.5f, 1);
-    protected final Color THREE_QUARTER_GRAY =  new Color(0.25f, 0.25f, 0.25f, 1);
-    protected final Color BLACK = new Color(0, 0, 0, 1);
-    protected final Color TRANSPARENT = new Color(0, 0, 0, 0);
+    protected static final Color RED = new Color(1, 0, 0, 1);
+    protected static final Color ORANGE = new Color(1, 0.5f, 0, 1);
+    protected static final Color YELLOW = new Color(1, 1, 0, 1);
+    protected static final Color CHARTREUSE = new Color(0.5f, 1, 0, 1);
+    protected static final Color GREEN =  new Color(0, 1, 0, 1);
+    protected static final Color SPRING_GREEN = new Color(0, 1, 0.5f, 1);
+    protected static final Color CYAN =  new Color(0, 1, 1, 1);
+    protected static final Color AZURE = new Color(0, 0.5f, 1, 1);
+    protected static final Color BLUE = new Color(0, 0, 1, 1);
+    protected static final Color VIOLET = new Color(0.5f, 0, 1, 1);
+    protected static final Color MAGENTA = new Color(1, 0, 1, 1);
+    protected static final Color ROSE = new Color(1, 0, 0.5f, 1);
+    protected static final Color WHITE = new Color(1, 1, 1, 1);
+    protected static final Color QUARTER_GRAY =  new Color(0.75f, 0.75f, 0.75f, 1);
+    protected static final Color HALF_GRAY =  new Color(0.5f, 0.5f, 0.5f, 1);
+    protected static final Color THREE_QUARTER_GRAY =  new Color(0.25f, 0.25f, 0.25f, 1);
+    protected static final Color BLACK = new Color(0, 0, 0, 1);
+    protected static final Color TRANSPARENT = new Color(0, 0, 0, 0);
 
+    private List<TooltipInfo> addedTips;
     protected final CardStrings cardStrings;
 
     public int secondMagic = -1;
@@ -350,23 +350,23 @@ public abstract class AbstractEasyCard extends CustomCard {
         return 1.0f;
     }
 
-    public Color mix(Color c1, Color c2) {
+    public static Color mix(Color c1, Color c2) {
         return c1.cpy().lerp(c2, 0.5f);
     }
 
-    public Color lighten(Color c) {
+    public static Color lighten(Color c) {
         return c.cpy().lerp(Color.WHITE, 0.25f);
     }
 
-    public Color darken(Color c) {
+    public static Color darken(Color c) {
         return c.cpy().lerp(Color.BLACK, 0.25f);
     }
 
-    public Color pastel(Color c) {
-        return colorFromHSL(getHue(c), getSat(c), 0.9f, c.a);
+    public static Color pastel(Color c) {
+        return colorFromHSL(getHue(c), getSat(c), 0.8f, c.a);
     }
 
-    public float getHue(Color c) {
+    private static float getHue(Color c) {
         float max = c.r;
         float min = c.r;
         if (c.g > max) {
@@ -392,7 +392,7 @@ public abstract class AbstractEasyCard extends CustomCard {
         }
     }
 
-    public float getSat(Color c) {
+    private static float getSat(Color c) {
         float max = c.r;
         float min = c.r;
         if (c.g > max) {
@@ -415,7 +415,7 @@ public abstract class AbstractEasyCard extends CustomCard {
         return delta / (1 - Math.abs(2*lightness - 1));
     }
 
-    public Color colorFromHSL(float hue, float sat, float light, float alpha) {
+    public static Color colorFromHSL(float hue, float sat, float light, float alpha) {
         float d = sat * (1 - Math.abs(2*light - 1));
         float x = d * (1 - Math.abs(((hue/60f)%2) - 1));
         float m = light - d/2f;
