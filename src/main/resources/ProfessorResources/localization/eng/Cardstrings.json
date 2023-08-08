@@ -325,7 +325,7 @@
   },
   "${ModID}:Volley": {
     "NAME": "Volley",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies twice."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
   },
   "${ModID}:VortexSand": {
     "NAME": "Vortex Sand",

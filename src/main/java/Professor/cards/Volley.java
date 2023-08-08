@@ -20,28 +20,24 @@ public class Volley extends AbstractEasyCard {
     public Volley() {
         super(ID, 2, CardType.ATTACK, CardRarity.BASIC, CardTarget.ALL_ENEMY);
         baseDamage = damage = 5;
-        //baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 2;
         isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int k = 0 ; k < 5 ; k++) {
-            addToBot(new VFXAction(new ColoredFlyingDaggerEffect(p.hb.cX, p.hb.cY, MathUtils.random(20f)-10f, AbstractDungeon.getMonsters().shouldFlipVfx(), upgraded ? Color.GOLDENROD : Color.WHITE)));
+        for (int i = 0 ; i < magicNumber ; i++) {
+            for (int k = 0 ; k < 5 ; k++) {
+                addToBot(new VFXAction(new ColoredFlyingDaggerEffect(p.hb.cX, p.hb.cY, MathUtils.random(20f)-10f, AbstractDungeon.getMonsters().shouldFlipVfx(), upgraded ? Color.GOLDENROD : Color.WHITE)));
+            }
+            allDmg(AbstractGameAction.AttackEffect.NONE);
         }
-        allDmg(AbstractGameAction.AttackEffect.NONE);
-
-        for (int k = 0 ; k < 5 ; k++) {
-            addToBot(new VFXAction(new ColoredFlyingDaggerEffect(p.hb.cX, p.hb.cY, MathUtils.random(20f)-10f, AbstractDungeon.getMonsters().shouldFlipVfx(), upgraded ? Color.GOLDENROD : Color.WHITE)));
-        }
-        allDmg(AbstractGameAction.AttackEffect.NONE);
-
     }
 
     @Override
     public void upp() {
-        upgradeDamage(2);
-        //upgradeMagicNumber(1);
+        //upgradeDamage(2);
+        upgradeMagicNumber(1);
         needsArtRefresh = true;
     }
 
