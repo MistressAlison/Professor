@@ -267,10 +267,6 @@
     "NAME": "Old Magic Tome",
     "DESCRIPTION": "professor:Unlock a card. NL Upgrade it !M! times this combat. NL Exhaust."
   },
-  "${ModID}:Pierce": {
-    "NAME": "Pierce",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies twice."
-  },
   "${ModID}:PoisonGrass": {
     "NAME": "Poison Grass",
     "DESCRIPTION": "Apply !M! Poison. NL professor:Infuse \"Apply !M! Poison\" into a card."
@@ -326,6 +322,10 @@
   "${ModID}:VirgoRequiemFlower": {
     "NAME": "Requiem Flower",
     "DESCRIPTION": "Fetch a card from your exhaust pile. NL Exhaust."
+  },
+  "${ModID}:Volley": {
+    "NAME": "Volley",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies twice."
   },
   "${ModID}:VortexSand": {
     "NAME": "Vortex Sand",

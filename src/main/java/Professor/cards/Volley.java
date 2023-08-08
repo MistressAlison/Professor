@@ -14,10 +14,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class Pierce extends AbstractEasyCard {
-    public final static String ID = makeID(Pierce.class.getSimpleName());
+public class Volley extends AbstractEasyCard {
+    public final static String ID = makeID(Volley.class.getSimpleName());
 
-    public Pierce() {
+    public Volley() {
         super(ID, 2, CardType.ATTACK, CardRarity.BASIC, CardTarget.ALL_ENEMY);
         baseDamage = damage = 5;
         //baseMagicNumber = magicNumber = 2;
