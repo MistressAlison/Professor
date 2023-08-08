@@ -16,8 +16,8 @@ public class Clobber extends AbstractEasyCard {
     public final static String ID = makeID(Clobber.class.getSimpleName());
 
     public Clobber() {
-        super(ID, 2, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-        baseDamage = damage = 10;
+        super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        baseDamage = damage = 12;
         baseMagicNumber = magicNumber = 4;
     }
 
