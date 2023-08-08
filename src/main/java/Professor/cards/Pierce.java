@@ -3,7 +3,6 @@ package Professor.cards;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
 import Professor.vfx.ColoredFlyingDaggerEffect;
-import Professor.vfx.ColoredThrowDaggerEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -19,26 +18,30 @@ public class Pierce extends AbstractEasyCard {
     public final static String ID = makeID(Pierce.class.getSimpleName());
 
     public Pierce() {
-        super(ID, 0, CardType.ATTACK, CardRarity.BASIC, CardTarget.ALL_ENEMY);
-        baseDamage = damage = 4;
-        baseMagicNumber = magicNumber = 1;
+        super(ID, 2, CardType.ATTACK, CardRarity.BASIC, CardTarget.ALL_ENEMY);
+        baseDamage = damage = 5;
+        //baseMagicNumber = magicNumber = 2;
         isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0 ; i < magicNumber ; i++) {
-            for (int k = 0 ; k < 5 ; k++) {
-                addToBot(new VFXAction(new ColoredFlyingDaggerEffect(p.hb.cX, p.hb.cY, MathUtils.random(20f)-10f, AbstractDungeon.getMonsters().shouldFlipVfx(), upgraded ? Color.GOLDENROD : Color.WHITE)));
-            }
-            allDmg(AbstractGameAction.AttackEffect.NONE);
+        for (int k = 0 ; k < 5 ; k++) {
+            addToBot(new VFXAction(new ColoredFlyingDaggerEffect(p.hb.cX, p.hb.cY, MathUtils.random(20f)-10f, AbstractDungeon.getMonsters().shouldFlipVfx(), upgraded ? Color.GOLDENROD : Color.WHITE)));
         }
+        allDmg(AbstractGameAction.AttackEffect.NONE);
+
+        for (int k = 0 ; k < 5 ; k++) {
+            addToBot(new VFXAction(new ColoredFlyingDaggerEffect(p.hb.cX, p.hb.cY, MathUtils.random(20f)-10f, AbstractDungeon.getMonsters().shouldFlipVfx(), upgraded ? Color.GOLDENROD : Color.WHITE)));
+        }
+        allDmg(AbstractGameAction.AttackEffect.NONE);
+
     }
 
     @Override
     public void upp() {
-        //upgradeDamage(2);
-        upgradeMagicNumber(1);
+        upgradeDamage(2);
+        //upgradeMagicNumber(1);
         needsArtRefresh = true;
     }
 
