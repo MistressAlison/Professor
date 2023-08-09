@@ -15,7 +15,7 @@ public class YellowNeutralizer extends AbstractTokenCard {
     public final static String ID = makeID(YellowNeutralizer.class.getSimpleName());
 
     public YellowNeutralizer() {
-        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
         baseMagicNumber = magicNumber = 1;
         //tags.add(CustomTags.PROF_REACTANT);
         PurgeField.purge.set(this, true);

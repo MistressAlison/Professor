@@ -13,7 +13,7 @@ public class BlueNeutralizer extends AbstractTokenCard {
     public final static String ID = makeID(BlueNeutralizer.class.getSimpleName());
 
     public BlueNeutralizer() {
-        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
         baseBlock = block = 4;
         //tags.add(CustomTags.PROF_REACTANT);
         PurgeField.purge.set(this, true);

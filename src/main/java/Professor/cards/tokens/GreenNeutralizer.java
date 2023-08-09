@@ -14,7 +14,7 @@ public class GreenNeutralizer extends AbstractTokenCard {
     public final static String ID = makeID(GreenNeutralizer.class.getSimpleName());
 
     public GreenNeutralizer() {
-        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
         baseMagicNumber = magicNumber = 1;
         //tags.add(CustomTags.PROF_REACTANT);
         PurgeField.purge.set(this, true);

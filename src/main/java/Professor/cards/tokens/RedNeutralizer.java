@@ -16,7 +16,7 @@ public class RedNeutralizer extends AbstractTokenCard {
     public final static String ID = makeID(RedNeutralizer.class.getSimpleName());
 
     public RedNeutralizer() {
-        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.ALL_ENEMY, CardColor.COLORLESS);
         baseMagicNumber = magicNumber = 5;
         //tags.add(CustomTags.PROF_REACTANT);
         PurgeField.purge.set(this, true);
