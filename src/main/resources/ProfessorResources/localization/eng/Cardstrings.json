@@ -160,7 +160,7 @@
   },
   "${ModID}:Eiche": {
     "NAME": "Eiche",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! professor:Braced."
+    "DESCRIPTION": "Gain !B! Block. NL professor:Infuse \"Gain !M! Block\" into a card."
   },
   "${ModID}:EmberStone": {
     "NAME": "Ember Stone",
