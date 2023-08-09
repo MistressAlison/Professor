@@ -321,7 +321,7 @@
   },
   "${ModID}:Uni": {
     "NAME": "Uni",
-    "DESCRIPTION": "Apply !M! professor:Exposed. NL Draw !Professor:M2! card{!Professor:M2!|>1=s}{@@}."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Exposed."
   },
   "${ModID}:VirgoRequiemFlower": {
     "NAME": "Requiem Flower",
