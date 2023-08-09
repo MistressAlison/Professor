@@ -24,6 +24,7 @@ public class ThornyEmbrace extends AbstractCreationCard {
         super(ID, 1, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF);
         updateElementData(data);
         addCustomKeyword(KeywordManager.THORNY_EMBRACE);
+        setDisplayRarity(CardRarity.UNCOMMON);
     }
 
     @Override

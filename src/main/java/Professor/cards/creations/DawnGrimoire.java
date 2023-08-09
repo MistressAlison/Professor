@@ -30,6 +30,7 @@ public class DawnGrimoire extends AbstractCreationCard {
         addCustomKeyword(KeywordManager.DAWN_GRIMOIRE);
         exhaust = true;
         tags.add(CardTags.HEALING);
+        setDisplayRarity(CardRarity.RARE);
     }
 
     @Override

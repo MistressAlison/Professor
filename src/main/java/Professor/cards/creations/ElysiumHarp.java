@@ -25,6 +25,7 @@ public class ElysiumHarp extends AbstractCreationCard {
         super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         updateElementData(data);
         addCustomKeyword(KeywordManager.ELYSIUM_HARP);
+        setDisplayRarity(CardRarity.UNCOMMON);
     }
 
     @Override

@@ -24,6 +24,7 @@ public class NA extends AbstractCreationCard {
         super(ID, BASE_COST, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
         addCustomKeyword(KeywordManager.NA);
+        setDisplayRarity(CardRarity.RARE);
     }
 
     @Override

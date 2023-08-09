@@ -27,6 +27,7 @@ public class LautePlajig extends AbstractCreationCard {
         super(ID, 2, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         updateElementData(data);
         addCustomKeyword(KeywordManager.LAUTE_PLAJIG);
+        setDisplayRarity(CardRarity.UNCOMMON);
     }
 
     @Override

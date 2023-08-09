@@ -28,6 +28,7 @@ public class CrystalIceBomb extends AbstractCreationCard {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         updateElementData(data);
         addCustomKeyword(KeywordManager.CRYSTAL_ICE_BOMB);
+        setDisplayRarity(CardRarity.UNCOMMON);
     }
 
     @Override

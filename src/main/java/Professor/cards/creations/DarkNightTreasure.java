@@ -30,6 +30,7 @@ public class DarkNightTreasure extends AbstractCreationCard {
         super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         updateElementData(data);
         addCustomKeyword(KeywordManager.DARK_NIGHT_TREASURE);
+        setDisplayRarity(CardRarity.RARE);
     }
 
     @Override
