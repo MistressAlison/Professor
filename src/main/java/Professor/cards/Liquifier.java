@@ -2,7 +2,12 @@ package Professor.cards;
 
 import Professor.actions.SpectrumizeAction;
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.cards.tokens.BlueNeutralizer;
+import Professor.cards.tokens.GreenNeutralizer;
+import Professor.cards.tokens.RedNeutralizer;
+import Professor.cards.tokens.YellowNeutralizer;
 import Professor.util.CardArtRoller;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,6 +22,7 @@ public class Liquifier extends AbstractEasyCard {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
         exhaust = true;
+        MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
     }
 
     @Override
