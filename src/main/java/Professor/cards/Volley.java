@@ -1,7 +1,9 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.powers.ExposedPower;
 import Professor.util.CardArtRoller;
+import Professor.util.Wiz;
 import Professor.vfx.ColoredFlyingDaggerEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
@@ -18,7 +20,7 @@ public class Volley extends AbstractEasyCard {
     public final static String ID = makeID(Volley.class.getSimpleName());
 
     public Volley() {
-        super(ID, 2, CardType.ATTACK, CardRarity.BASIC, CardTarget.ALL_ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ALL_ENEMY);
         baseDamage = damage = 5;
         baseMagicNumber = magicNumber = 2;
         isMultiDamage = true;
@@ -26,17 +28,19 @@ public class Volley extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0 ; i < magicNumber ; i++) {
-            for (int k = 0 ; k < 5 ; k++) {
-                addToBot(new VFXAction(new ColoredFlyingDaggerEffect(p.hb.cX, p.hb.cY, MathUtils.random(20f)-10f, AbstractDungeon.getMonsters().shouldFlipVfx(), upgraded ? Color.GOLDENROD : Color.WHITE)));
-            }
-            allDmg(AbstractGameAction.AttackEffect.NONE);
+        /*for (int i = 0 ; i < magicNumber ; i++) {
+
+        }*/
+        for (int k = 0 ; k < 5 ; k++) {
+            addToBot(new VFXAction(new ColoredFlyingDaggerEffect(p.hb.cX, p.hb.cY, MathUtils.random(20f)-10f, AbstractDungeon.getMonsters().shouldFlipVfx(), upgraded ? Color.GOLDENROD : Color.WHITE)));
         }
+        allDmg(AbstractGameAction.AttackEffect.NONE);
+        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new ExposedPower(mon, magicNumber)));
     }
 
     @Override
     public void upp() {
-        //upgradeDamage(2);
+        upgradeDamage(2);
         upgradeMagicNumber(1);
         needsArtRefresh = true;
     }

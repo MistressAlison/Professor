@@ -329,7 +329,7 @@
   },
   "${ModID}:Volley": {
     "NAME": "Volley",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
+    "DESCRIPTION": "Deal !D! damage and apply !M! professor:Exposed to ALL enemies."
   },
   "${ModID}:VortexSand": {
     "NAME": "Vortex Sand",
