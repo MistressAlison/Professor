@@ -56,7 +56,7 @@
       "spectrumize",
       "spectrumized"
     ],
-    "DESCRIPTION": "A #ySpectrumized card is removed from combat and is replaced with #yNeutralizers matching its #yElements."
+    "DESCRIPTION": "A #ySpectrumized card is #yExhausted and is replaced with #yNeutralizers matching its #yElements."
   },
   {
     "ID": "neutralizer",

@@ -6,6 +6,7 @@ import Professor.cards.tokens.GreenNeutralizer;
 import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
 import Professor.patches.ArchetypeHelper;
+import Professor.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -33,11 +34,20 @@ public class SpectrumizeAction extends AbstractGameAction {
         if (card != null) {
             addCards(card);
             addToTop(new ShowCardAndPoofAction(card));
+        } else if (amount >= Wiz.adp().hand.size()) {
+            int size = Wiz.adp().hand.size();
+            for (int i = 0 ; i < size ; i++) {
+                AbstractCard c = Wiz.adp().hand.getTopCard();
+                addCards(c);
+                //addToTop(new ShowCardAndPoofAction(c));
+                Wiz.adp().hand.moveToExhaustPile(c);
+            }
         } else {
             addToTop(new SelectCardsInHandAction(amount, TEXT[0], l -> {
                 for (AbstractCard c : l) {
                     addCards(c);
-                    addToTop(new ShowCardAndPoofAction(c));
+                    //addToTop(new ShowCardAndPoofAction(c));
+                    Wiz.adp().hand.moveToExhaustPile(c);
                 }
                 //Clear to not put cards back in hand
                 l.clear();
