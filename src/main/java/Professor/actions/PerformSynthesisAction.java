@@ -44,7 +44,7 @@ public class PerformSynthesisAction extends AbstractGameAction {
                     if (s.card.hasTag(CustomTags.PROF_CATALYST)) {
                         cardToHand(s.card);
                     } else {
-                        temp.moveToExhaustPile(s.card);
+                        temp.moveToDiscardPile(s.card);
                     }
                     if (s.card instanceof OnUseInSynthesisCard) {
                         ((OnUseInSynthesisCard) s.card).onSynthesis(card);
