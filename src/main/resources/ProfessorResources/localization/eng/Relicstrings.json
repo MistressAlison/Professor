@@ -31,7 +31,7 @@
     "NAME": "Enlightened Bandana",
     "FLAVOR": "???",
     "DESCRIPTIONS": [
-      "???"
+      "Gain Str/Dex every third turn?"
     ]
   },
   "${ModID}:FocusGlass": {
@@ -52,7 +52,7 @@
     "NAME": "Glory Belt",
     "FLAVOR": "???",
     "DESCRIPTIONS": [
-      "???"
+      "If Fatal, gain Str/Dex/HP?"
     ]
   },
   "${ModID}:GnadeRing": {
@@ -94,7 +94,7 @@
     "NAME": "Migratory Charm",
     "FLAVOR": "???",
     "DESCRIPTIONS": [
-      "???"
+      "Negates debuff, heals you?"
     ]
   },
   "${ModID}:QuartzNecklace": {
@@ -108,7 +108,7 @@
     "NAME": "Sage Circlet",
     "FLAVOR": "???",
     "DESCRIPTIONS": [
-      "???"
+      "Bonus damage to Vuln enemies?"
     ]
   },
   "${ModID}:SamastenNecklace": {
