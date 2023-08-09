@@ -117,6 +117,10 @@
     "NAME": "Amber Oil",
     "DESCRIPTION": "professor:Reactant. NL Whenever you play a professor:Fire or professor:Bolt card, deal !M! damage to a random enemy."
   },
+  "${ModID}:AncientBlueWater": {
+    "NAME": "Ancient Blue Water",
+    "DESCRIPTION": "professor:Spectrumize your hand. NL Exhaust"
+  },
   "${ModID}:AncientUni": {
     "NAME": "Ancient Uni",
     "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
