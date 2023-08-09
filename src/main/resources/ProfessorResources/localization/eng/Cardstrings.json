@@ -326,7 +326,7 @@
   },
   "${ModID}:TabooDrop": {
     "NAME": "Taboo Drop",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
+    "DESCRIPTION": "ALL enemies lose !M! Strength this turn. NL Deal !D! damage to ALL enemies."
   },
   "${ModID}:TemptingSap": {
     "NAME": "Tempting Sap",
