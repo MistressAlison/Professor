@@ -223,7 +223,7 @@
   },
   "${ModID}:HolyArborBranch": {
     "NAME": "Holy Arbor Branch",
-    "DESCRIPTION": "Gain !B! Block. NL Add !M! *Holy *Arbor *Crystal{@@}{!M!|>1=s} into your hand."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL While in hand, Retain adjacent cards."
   },
   "${ModID}:IceEssence": {
     "NAME": "Ice Essence",

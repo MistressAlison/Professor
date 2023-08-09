@@ -1,4 +1,4 @@
-package Professor.cards.tokens;
+package Professor.cutStuff.cards;
 
 import Professor.cards.abstracts.AbstractTokenCard;
 import Professor.util.CardArtRoller;
