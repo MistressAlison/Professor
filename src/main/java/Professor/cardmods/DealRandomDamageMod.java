@@ -39,7 +39,7 @@ public class DealRandomDamageMod extends AbstractInfusion {
             public void update() {
                 AbstractMonster mon = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
                 if (mon!= null) {
-                    Wiz.att(new DamageAction(target, new DamageInfo(Wiz.adp(), CalcHelper.calculateCardDamage(baseVal, mon), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                    Wiz.att(new DamageAction(target, new DamageInfo(Wiz.adp(), CalcHelper.calculateCardDamage(baseVal, mon), DamageInfo.DamageType.NORMAL), AttackEffect.FIRE));
                 }
                 this.isDone = true;
             }
