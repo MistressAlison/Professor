@@ -4,6 +4,8 @@ import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,6 +16,8 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static Professor.MainModfile.makeID;
 
+@NoCompendium
+@NoPools
 public class ElysiumHarp extends AbstractCreationCard {
     public final static String ID = makeID(ElysiumHarp.class.getSimpleName());
 

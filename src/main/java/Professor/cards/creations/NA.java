@@ -3,6 +3,8 @@ package Professor.cards.creations;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -11,6 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
+@NoCompendium
+@NoPools
 public class NA extends AbstractCreationCard {
     public final static String ID = makeID(NA.class.getSimpleName());
 

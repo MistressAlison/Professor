@@ -4,6 +4,8 @@ import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
@@ -19,6 +21,8 @@ import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 import static Professor.MainModfile.makeID;
 
+@NoCompendium
+@NoPools
 public class DarkNightTreasure extends AbstractCreationCard {
     public final static String ID = makeID(DarkNightTreasure.class.getSimpleName());
 

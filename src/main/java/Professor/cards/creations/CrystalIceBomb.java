@@ -4,6 +4,8 @@ import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -17,6 +19,8 @@ import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 
 import static Professor.MainModfile.makeID;
 
+@NoCompendium
+@NoPools
 public class CrystalIceBomb extends AbstractCreationCard {
     public final static String ID = makeID(CrystalIceBomb.class.getSimpleName());
 

@@ -4,6 +4,8 @@ import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.damageMods.ExposedDamage;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.BindingHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
@@ -16,6 +18,8 @@ import java.util.Collections;
 
 import static Professor.MainModfile.makeID;
 
+@NoCompendium
+@NoPools
 public class LautePlajig extends AbstractCreationCard {
     public final static String ID = makeID(LautePlajig.class.getSimpleName());
 

@@ -4,6 +4,8 @@ import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -13,6 +15,8 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import static Professor.MainModfile.makeID;
 
+@NoCompendium
+@NoPools
 public class ThornyEmbrace extends AbstractCreationCard {
     public final static String ID = makeID(ThornyEmbrace.class.getSimpleName());
 
