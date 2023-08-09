@@ -33,7 +33,7 @@ public class SynthesizeElysiumHarp extends AbstractRecipeCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.GOLD, WHITE, Color.GOLD, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, Color.GOLD, WHITE, Color.GOLDENROD, WHITE, false);
     }
 
     @Override

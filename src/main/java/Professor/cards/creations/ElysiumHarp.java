@@ -61,7 +61,7 @@ public class ElysiumHarp extends AbstractCreationCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.GOLD, WHITE, Color.GOLD, BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), WHITE, Color.GOLD, BLACK, false);
     }
 
     @Override
