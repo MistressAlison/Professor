@@ -21,7 +21,7 @@ public class DragonBone extends AbstractEasyCard {
 
     public DragonBone() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 4;
+        baseDamage = damage = 5;
     }
 
     @Override
