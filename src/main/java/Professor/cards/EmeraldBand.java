@@ -8,8 +8,7 @@ import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static Professor.MainModfile.makeID;
 
@@ -18,15 +17,15 @@ public class EmeraldBand extends AbstractEasyCard {
 
     public EmeraldBand() {
         super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DiscardAction(p, p, 1, false));
-        //Wiz.applyToSelf(new VigorPower(p, magicNumber));
-        Wiz.applyToSelf(new StrengthPower(p, this.magicNumber));
-        Wiz.applyToSelf(new LoseStrengthPower(p, this.magicNumber));
+        Wiz.applyToSelf(new VigorPower(p, magicNumber));
+        //Wiz.applyToSelf(new StrengthPower(p, this.magicNumber));
+        //Wiz.applyToSelf(new LoseStrengthPower(p, this.magicNumber));
 
         //0 cost discard 1(2) gain 1(2) energy?
         //1 cost discard and buff
