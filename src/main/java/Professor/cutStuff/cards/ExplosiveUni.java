@@ -1,4 +1,4 @@
-package Professor.cutStuff;
+package Professor.cutStuff.cards;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.patches.CustomTags;

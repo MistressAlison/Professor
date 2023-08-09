@@ -1,4 +1,4 @@
-package Professor.cutStuff;
+package Professor.cutStuff.cards;
 
 import Professor.actions.BeginSynthesisAction;
 import Professor.cards.abstracts.AbstractCreationCard;

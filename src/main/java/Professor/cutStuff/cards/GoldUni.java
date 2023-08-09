@@ -1,4 +1,4 @@
-package Professor.cutStuff;
+package Professor.cutStuff.cards;
 
 import CardAugments.util.Wiz;
 import Professor.cards.abstracts.AbstractEasyCard;
