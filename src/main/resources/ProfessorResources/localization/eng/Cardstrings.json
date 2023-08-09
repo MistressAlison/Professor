@@ -237,6 +237,10 @@
     "NAME": "Ice Essence",
     "DESCRIPTION": "Whenever a card is Retained, gain !M! Block."
   },
+  "${ModID}:Ingot": {
+    "NAME": "Ingot",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable. NL Ignores Block."
+  },
   "${ModID}:LightningEssence": {
     "NAME": "Lightning Essence",
     "DESCRIPTION": "Whenever a card is Exhausted, apply !M! professor:Exposed to ALL enemies."
