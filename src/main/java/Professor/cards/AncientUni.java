@@ -1,9 +1,10 @@
 package Professor.cards;
 
+import Professor.actions.InfuseCardsInHandAction;
+import Professor.cardmods.DealDamageMod;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,24 +15,20 @@ public class AncientUni extends AbstractEasyCard {
     public final static String ID = makeID(AncientUni.class.getSimpleName());
 
     public AncientUni() {
-        super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 5;
-        baseMagicNumber = magicNumber = 3;
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 6;
         tags.add(CustomTags.PROF_UNI);
         exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0 ; i < magicNumber ; i++) {
-            dmg(m, i % 2 == 0 ? AbstractGameAction.AttackEffect.SLASH_HORIZONTAL : AbstractGameAction.AttackEffect.SLASH_VERTICAL);
-        }
+        addToBot(new InfuseCardsInHandAction(1, new DealDamageMod(magicNumber)));
     }
 
     @Override
     public void upp() {
-        //upgradeDamage(2);
-        upgradeMagicNumber(1);
+        upgradeMagicNumber(2);
     }
 
     @Override
