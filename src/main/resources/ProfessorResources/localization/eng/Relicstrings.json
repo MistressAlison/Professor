@@ -129,7 +129,7 @@
     "NAME": "Uni Charm",
     "FLAVOR": "People always comment how creepily real it looks, which makes sense because it's made with an actual Uni.",
     "DESCRIPTIONS": [
-      "At the start of combat, deal #b2 damage and apply #b2 #yprofessor:Exposed to ALL enemies."
+      "The first time you are attacked each combat, deal #b8 damage to ALL enemies."
     ]
   }
 }

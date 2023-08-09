@@ -1,7 +1,6 @@
 package Professor.relics;
 
 import Professor.TheProfessor;
-import Professor.powers.ExposedPower;
 import Professor.util.Wiz;
 import Professor.vfx.BarbExplodeEffect;
 import com.badlogic.gdx.graphics.Color;
@@ -11,23 +10,31 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import static Professor.MainModfile.makeID;
 
 public class UniCharm extends AbstractEasyRelic {
     public static final String ID = makeID(UniCharm.class.getSimpleName());
-    private static final int AMOUNT = 2;
+    private static final int AMOUNT = 8;
 
     public UniCharm() {
         super(ID, RelicTier.STARTER, LandingSound.FLAT, TheProfessor.Enums.MEDIUM_RUBY_COLOR);
     }
 
+    public void justEnteredRoom(AbstractRoom room) {
+        this.grayscale = false;
+    }
+
     @Override
-    public void atBattleStart() {
-        this.flash();
-        addToBot(new VFXAction(new BarbExplodeEffect(Color.BROWN), 0.2f));
-        this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(AMOUNT, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
-        Wiz.forAllMonstersLiving(m -> Wiz.applyToEnemy(m, new ExposedPower(m, AMOUNT)));
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if (info.owner != Wiz.adp() && info.type == DamageInfo.DamageType.NORMAL && !grayscale) {
+            flash();
+            addToBot(new VFXAction(new BarbExplodeEffect(Color.BROWN), 0.2f));
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(AMOUNT, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
+            grayscale = true;
+        }
+        return damageAmount;
     }
 }
