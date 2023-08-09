@@ -1,9 +1,8 @@
 package Professor.cards.tokens;
 
 import Professor.cards.abstracts.AbstractTokenCard;
-import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,13 +16,13 @@ public class GreenNeutralizer extends AbstractTokenCard {
     public GreenNeutralizer() {
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
-        tags.add(CustomTags.PROF_REACTANT);
+        //tags.add(CustomTags.PROF_REACTANT);
+        PurgeField.purge.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(magicNumber));
-        addToBot(new DiscardAction(p, p, magicNumber, false));
     }
 
     @Override

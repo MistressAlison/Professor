@@ -1,14 +1,13 @@
 package Professor.cards.tokens;
 
 import Professor.cards.abstracts.AbstractTokenCard;
-import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
-import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import static Professor.MainModfile.makeID;
 
@@ -16,14 +15,17 @@ public class YellowNeutralizer extends AbstractTokenCard {
     public final static String ID = makeID(YellowNeutralizer.class.getSimpleName());
 
     public YellowNeutralizer() {
-        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
-        tags.add(CustomTags.PROF_REACTANT);
+        //tags.add(CustomTags.PROF_REACTANT);
+        PurgeField.purge.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToEnemy(m, new VulnerablePower(m, magicNumber, false));
+        //Wiz.applyToSelf(new VigorPower(p, magicNumber));
+        //Wiz.applyToEnemy(m, new VulnerablePower(m, magicNumber, false));
+        addToBot(new GainEnergyAction(magicNumber));
     }
 
     @Override

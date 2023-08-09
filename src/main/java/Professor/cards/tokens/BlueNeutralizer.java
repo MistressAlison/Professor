@@ -1,8 +1,8 @@
 package Professor.cards.tokens;
 
 import Professor.cards.abstracts.AbstractTokenCard;
-import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,8 +14,10 @@ public class BlueNeutralizer extends AbstractTokenCard {
 
     public BlueNeutralizer() {
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
-        baseBlock = block = 5;
-        tags.add(CustomTags.PROF_REACTANT);
+        baseBlock = block = 4;
+        //tags.add(CustomTags.PROF_REACTANT);
+        PurgeField.purge.set(this, true);
+        selfRetain = true;
     }
 
     @Override
@@ -25,7 +27,7 @@ public class BlueNeutralizer extends AbstractTokenCard {
 
     @Override
     public void upp() {
-        upgradeBlock(3);
+        upgradeBlock(2);
     }
 
     @Override

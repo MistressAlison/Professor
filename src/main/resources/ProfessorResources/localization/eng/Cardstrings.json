@@ -7,19 +7,19 @@
   },
   "${ModID}:BlueNeutralizer": {
     "NAME": "Blue Neutralizer",
-    "DESCRIPTION": "professor:Reactant. NL Gain !B! Block."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Purge."
   },
   "${ModID}:GreenNeutralizer": {
     "NAME": "Green Neutralizer",
-    "DESCRIPTION": "professor:Reactant. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
+    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL Purge"
   },
   "${ModID}:RedNeutralizer": {
     "NAME": "Red Neutralizer",
-    "DESCRIPTION": "professor:Reactant. NL Deal !D! damage."
+    "DESCRIPTION": "ALL enemies lose !M! HP. NL Purge."
   },
   "${ModID}:YellowNeutralizer": {
     "NAME": "Yellow Neutralizer",
-    "DESCRIPTION": "professor:Reactant. NL Apply !M! Vulnerable."
+    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL Purge."
   },
   "${ModID}:HolyArborCrystal": {
     "NAME": "Holy Arbor Crystal",
