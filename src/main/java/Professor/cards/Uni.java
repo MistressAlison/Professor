@@ -18,9 +18,9 @@ public class Uni extends AbstractEasyCard {
     public final static String ID = makeID(Uni.class.getSimpleName());
 
     public Uni() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 4;
-        baseDamage = damage = 4;
+        super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        baseMagicNumber = magicNumber = 3;
+        baseDamage = damage = 3;
         tags.add(CustomTags.PROF_UNI);
     }
 
