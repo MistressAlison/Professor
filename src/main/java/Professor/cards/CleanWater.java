@@ -13,8 +13,8 @@ public class CleanWater extends AbstractEasyCard {
     public final static String ID = makeID(CleanWater.class.getSimpleName());
 
     public CleanWater() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 8;
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        baseBlock = block = 4;
         tags.add(CustomTags.PROF_REACTANT);
     }
 
