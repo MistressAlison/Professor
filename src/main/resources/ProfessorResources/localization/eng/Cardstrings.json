@@ -113,6 +113,10 @@
     "NAME": "Alchemy Fibers",
     "DESCRIPTION": "professor:Gather a{!Upgrades!|>0=n Upgraded}{@@} professor:Synthesis card. NL It costs 0 this turn. NL Exhaust."
   },
+  "${ModID}:Amalgam": {
+    "NAME": "Amalgam",
+    "DESCRIPTION": "Deal !D! damage. NL professor:Spectrumize adjacent cards. NL Exhaust"
+  },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
     "DESCRIPTION": "professor:Reactant. NL Whenever you play a professor:Fire or professor:Bolt card, deal !M! damage to a random enemy."
