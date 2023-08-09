@@ -1,9 +1,11 @@
 package Professor.cards.abstracts;
 
-import Professor.util.KeywordManager;
+import Professor.TheProfessor;
+import Professor.util.CardArtRoller;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.TooltipInfo;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -17,20 +19,17 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import Professor.TheProfessor;
-import Professor.util.CardArtRoller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static Professor.MainModfile.*;
+import static Professor.MainModfile.makeImagePath;
+import static Professor.MainModfile.modID;
 import static Professor.util.Wiz.atb;
 import static Professor.util.Wiz.att;
 
@@ -278,6 +277,16 @@ public abstract class AbstractEasyCard extends CustomCard {
             CardArtRoller.computeCard(this);
             if (cardsToPreview instanceof AbstractEasyCard) {
                 CardArtRoller.computeCard((AbstractEasyCard) cardsToPreview);
+            }
+            for (AbstractCard c : cyclePreviewCards) {
+                if (c instanceof AbstractEasyCard) {
+                    CardArtRoller.computeCard((AbstractEasyCard) c);
+                }
+            }
+            for (AbstractCard c : MultiCardPreview.multiCardPreview.get(this)) {
+                if (c instanceof AbstractEasyCard) {
+                    CardArtRoller.computeCard((AbstractEasyCard) c);
+                }
             }
         }
         if (!cyclePreviewCards.isEmpty()) {
