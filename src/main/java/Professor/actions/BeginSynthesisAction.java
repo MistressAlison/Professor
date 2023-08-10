@@ -15,14 +15,20 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class BeginSynthesisAction extends AbstractGameAction {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(MainModfile.makeID("SynthesisAction")).TEXT;
     protected final AbstractRecipeCard recipeCard;
+    protected final String extraInfo;
 
     public BeginSynthesisAction(AbstractRecipeCard recipe) {
+        this(recipe, "");
+    }
+
+    public BeginSynthesisAction(AbstractRecipeCard recipe, String info) {
         this.recipeCard = recipe;
+        this.extraInfo = info;
     }
 
     @Override
     public void update() {
-        addToTop(new BetterSelectCardsInHandAction(recipeCard.getValance(), TEXT[0], false, false, c -> true, l -> {
+        addToTop(new BetterSelectCardsInHandAction(recipeCard.getValance(), TEXT[0]+extraInfo, false, false, c -> true, l -> {
             int draw = 0;
             SynthesisPanel.addSynthesisItem(new SynthesisItem(recipeCard, l));
             EmpowerRedirectPatches.setRedirect(recipeCard, SynthesisPanel.BASE_X, SynthesisPanel.BASE_Y);
