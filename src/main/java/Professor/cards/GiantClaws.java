@@ -1,6 +1,6 @@
 package Professor.cards;
 
-import CardAugments.actions.ScaleAllByPredAction;
+import Professor.actions.ScaleAllByPredAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;

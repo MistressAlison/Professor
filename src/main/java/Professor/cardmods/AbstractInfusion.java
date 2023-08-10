@@ -1,6 +1,6 @@
 package Professor.cardmods;
 
-import CardAugments.util.CalcHelper;
+import Professor.util.CalcHelper;
 import Professor.util.FormatHelper;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
