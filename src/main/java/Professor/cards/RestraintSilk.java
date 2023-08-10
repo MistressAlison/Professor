@@ -5,11 +5,13 @@ import Professor.powers.ExposedPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.vfx.combat.EntangleEffect;
 
 import static Professor.MainModfile.makeID;
 
@@ -25,7 +27,8 @@ public class RestraintSilk extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.forAllMonstersLiving(mon -> {
-            addToBot(new SFXAction("POWER_SHACKLE", 0.05f));
+            addToBot(new VFXAction(new EntangleEffect(p.hb.cX, p.hb.cY, mon.hb.cX, mon.hb.cY)));
+            addToBot(new SFXAction("POWER_ENTANGLED", 0.05f));
             Wiz.applyToEnemy(mon, new ExposedPower(mon, magicNumber));
             Wiz.applyToEnemy(mon, new VulnerablePower(mon, magicNumber, false));
         });
