@@ -284,7 +284,7 @@
   },
   "${ModID}:Liquifier": {
     "NAME": "Liquifier",
-    "DESCRIPTION": "Retain. NL professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Exhaust"
+    "DESCRIPTION": "Retain. NL professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Exhaust."
   },
   "${ModID}:LunarDrop": {
     "NAME": "Lunar Drop",
