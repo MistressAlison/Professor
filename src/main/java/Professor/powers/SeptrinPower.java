@@ -33,7 +33,7 @@ public class SeptrinPower extends AbstractPower {
 
     @Override
     public void onExhaust(AbstractCard card) {
-        if (SpectrumizeAction.spectrumizing) {
+        if (!SpectrumizeAction.spectrumizing) {
             flash();
             addToBot(new AbstractGameAction() {
                 @Override
