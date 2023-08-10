@@ -3,9 +3,9 @@ package Professor.cards.creations;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
+import Professor.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 import static Professor.MainModfile.makeID;
@@ -27,21 +28,20 @@ public class Luft extends AbstractCreationCard {
     }
 
     public Luft(ElementData data) {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         updateElementData(data);
         addCustomKeyword(KeywordManager.LUFT);
     }
 
     @Override
     public void updateElementData(ElementData data) {
-        baseDamage = damage = 6;
-        baseMagicNumber = magicNumber = 1;
-        isMultiDamage = true;
+        baseMagicNumber = magicNumber = 2;
+        baseSecondMagic = secondMagic = 1;
         if (data != null) {
-            baseDamage += 3*data.g;
-            damage = baseDamage;
-            baseMagicNumber += data.b;
+            baseMagicNumber += data.g;
             magicNumber = baseMagicNumber;
+            baseSecondMagic += data.b;
+            secondMagic = baseSecondMagic;
         }
     }
 
@@ -58,8 +58,9 @@ public class Luft extends AbstractCreationCard {
         addToBot(new SFXAction("APPEAR"));
         addToBot(new SFXAction("ATTACK_WHIFF_2"));
         addToBot(new VFXAction(new WhirlwindEffect(), 0.2F));
-        allDmg(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        //allDmg(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         addToBot(new DrawCardAction(magicNumber));
+        Wiz.applyToSelf(new DrawCardNextTurnPower(p, secondMagic));
         //allDmg(AbstractGameAction.AttackEffect.FIRE);
         /*if (magicNumber > 0) {
             Wiz.applyToEnemy(m, new BurnPower(m, p, magicNumber));
@@ -68,8 +69,9 @@ public class Luft extends AbstractCreationCard {
 
     @Override
     public void upp() {
-        upgradeDamage(2);
+        //upgradeDamage(2);
         upgradeMagicNumber(1);
+        upgradeSecondMagic(1);
     }
 
     @Override

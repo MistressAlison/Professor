@@ -97,13 +97,13 @@
   },
   "${ModID}:Luft": {
     "NAME": "Luft",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Draw !M! card{!M!|>1=s}.{@@}"
+    "DESCRIPTION": "{@@}Draw !M! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) }card{!M!|>1=s}. NL Next turn, draw !Professor:M2! {!Location!|-2,4=NL (+1 per [Professor:IceIcon] ) }card{!Professor:M2!|>1=s}."
   },
   "${ModID}:SynthesizeLuft": {
     "NAME": "Luft",
     "DESCRIPTION": "professor:Synthesize a professor:Luft. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Luft+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 draw per Wind, +1 draw next turn per Ice"]
   },
   "${ModID}:NA": {
     "NAME": "N/A",

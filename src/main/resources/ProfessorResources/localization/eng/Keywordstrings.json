@@ -202,7 +202,7 @@
       "luft",
       "luft+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:WindIcon] . NL Draw #b+1 card per [Professor:IceIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Draw #b+1 card per [Professor:WindIcon] . NL Draw #b+1 card next turn per [Professor:IceIcon] ."
   },
   {
     "ID": "laute_plajig",
