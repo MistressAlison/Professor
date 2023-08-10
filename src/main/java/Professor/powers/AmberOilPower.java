@@ -1,12 +1,11 @@
 package Professor.powers;
 
 import Professor.MainModfile;
+import Professor.cards.AmberOil;
 import Professor.patches.ArchetypeHelper;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -25,20 +24,24 @@ public class AmberOilPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("combust");
+        PowerIconMaker.setIcons(this, AmberOil.class.getSimpleName());
         updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        if (amount == 1) {
+            this.description = DESCRIPTIONS[0];
+        } else {
+            this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+        }
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (ArchetypeHelper.isFire(card) || ArchetypeHelper.isBolt(card)) {
             flash();
-            addToBot(new DamageRandomEnemyAction(new DamageInfo(owner, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            card.upgrade();
         }
     }
 }

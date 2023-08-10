@@ -144,7 +144,7 @@
   },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
-    "DESCRIPTION": "Whenever you play a professor:Fire or professor:Bolt card, deal !M! damage to a random enemy."
+    "DESCRIPTION": "Whenever you play a professor:Fire or professor:Bolt card, Upgrade it{@@}{!M!|>1= !M! times}."
   },
   "${ModID}:AncientBlueWater": {
     "NAME": "Ancient Blue Water",

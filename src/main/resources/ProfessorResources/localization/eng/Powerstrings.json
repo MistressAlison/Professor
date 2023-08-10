@@ -5,7 +5,7 @@
   },
   "${ModID}:AmberOilPower": {
     "NAME": "Amber Oil",
-    "DESCRIPTIONS": ["Whenever you play a #rFire or #yBolt card, deal #b"," damage to a random enemy."]
+    "DESCRIPTIONS": ["Whenever you play a #rFire or #yBolt card, #yUpgrade it.","Whenever you play a #rFire or #yBolt card, #yUpgrade it #b"," times."]
   },
   "${ModID}:MistLiquidPower": {
     "NAME": "Mist Liquid",
