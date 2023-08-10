@@ -57,7 +57,7 @@
   },
   "${ModID}:DawnGrimoire": {
     "NAME": "Dawn Grimoire",
-    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+7 per [Professor:FireIcon] ) }damage to ALL enemies. Heal !M! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) }HP for each enemy in combat. NL Exhaust."
+    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+7 per [Professor:FireIcon] ) }damage to ALL enemies. Heal !M! {!Location!|-2,4=NL (+2 per [Professor:BoltIcon] ) }HP for each enemy in combat. NL Exhaust."
   },
   "${ModID}:SynthesizeDawnGrimoire": {
     "NAME": "Dawn Grimoire",
@@ -87,7 +87,7 @@
   },
   "${ModID}:LautePlajig": {
     "NAME": "Laute Plajig",
-    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) }damage and apply !M! {!Location!|-2,4=(+1 per [Professor:FireIcon] ) }professor:Exposed to a random enemy !Professor:M2! times."
+    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) }damage and apply !M! {!Location!|-2,4=NL (+1 per [Professor:FireIcon] ) }professor:Exposed to a random enemy !Professor:M2! times."
   },
   "${ModID}:SynthesizeLautePlajig": {
     "NAME": "Laute Plajig",
