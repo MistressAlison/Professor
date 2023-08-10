@@ -385,5 +385,9 @@
     "NAME": "Wind Essence",
     "DESCRIPTION": "Whenever you draw your sixth card each turn, draw !M! card{@@}{!M!|>1=s}.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you draw your sixth card each turn, draw !M! card{@@}{!M!|>1=s}."
+  },
+  "${ModID}:WindShoes": {
+    "NAME": "Wind Shoes",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. NL Discard !M! cards."
   }
 }
