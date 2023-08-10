@@ -1,14 +1,12 @@
 package Professor.cards;
 
 import Professor.actions.AncientBlueWaterAction;
-import Professor.actions.SpectrumizeAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.cards.tokens.BlueNeutralizer;
 import Professor.cards.tokens.GreenNeutralizer;
 import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
 import Professor.util.CardArtRoller;
-import basemod.BaseMod;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -22,7 +20,7 @@ public class AncientBlueWater extends AbstractEasyCard {
 
     public AncientBlueWater() {
         super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseBlock = block = 7;
+        baseBlock = block = 5;
         baseMagicNumber = magicNumber = 1;
         exhaust = true;
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
@@ -35,7 +33,8 @@ public class AncientBlueWater extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeBaseCost(1);
+        upgradeBlock(2);
+        //upgradeBaseCost(1);
     }
 
     @Override
