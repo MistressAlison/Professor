@@ -74,5 +74,9 @@
   "${ModID}:BroomPower": {
     "NAME": "Broom Flight",
     "DESCRIPTIONS": ["Take an extra turn after this one."]
+  },
+  "${ModID}:ThornyEmbracePower": {
+    "NAME": "Thorny Embrace",
+    "DESCRIPTIONS": ["At the end of your turn, deal #b"," damage to each enemy that intends to attack."]
   }
 }

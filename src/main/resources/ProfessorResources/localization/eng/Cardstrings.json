@@ -99,7 +99,7 @@
   },
   "${ModID}:ThornyEmbrace": {
     "NAME": "Thorny Embrace",
-    "DESCRIPTION": "Whenever you are attacked, deal !M! damage back."
+    "DESCRIPTION": "At the end of your turn, deal !M! damage to each enemy that intends to attack."
   },
   "${ModID}:SynthesizeThornyEmbrace": {
     "NAME": "Thorny Embrace",
@@ -124,7 +124,7 @@
   },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
-    "DESCRIPTION": "professor:Reactant. NL Whenever you play a professor:Fire or professor:Bolt card, deal !M! damage to a random enemy."
+    "DESCRIPTION": "Whenever you play a professor:Fire or professor:Bolt card, deal !M! damage to a random enemy."
   },
   "${ModID}:AncientBlueWater": {
     "NAME": "Ancient Blue Water",
@@ -205,7 +205,7 @@
   },
   "${ModID}:EternalFire": {
     "NAME": "Eternal Fire",
-    "DESCRIPTION": "Professor:Reactant. NL Enemy loses !M! HP. NL Replace a card in your hand with a copy of this.",
+    "DESCRIPTION": "Enemy loses !M! HP. NL Replace a card in your hand with a copy of this.",
     "EXTENDED_DESCRIPTION": ["Burn"]
   },
   "${ModID}:EtherealStone": {
@@ -294,7 +294,7 @@
   },
   "${ModID}:MistLiquid": {
     "NAME": "Mist Liquid",
-    "DESCRIPTION": "professor:Reactant. NL Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced."
+    "DESCRIPTION": "Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced."
   },
   "${ModID}:MysteriousBroom": {
     "NAME": "Mysterious Broom",
@@ -327,7 +327,7 @@
   },
   "${ModID}:SaintsDiamond": {
     "NAME": "Saint's Diamond",
-    "DESCRIPTION": "professor:Catalyst. NL Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL When used in professor:Synthesis, reduce this card's cost by 1 this combat."
   },
   "${ModID}:Septrin": {
     "NAME": "Septrin",

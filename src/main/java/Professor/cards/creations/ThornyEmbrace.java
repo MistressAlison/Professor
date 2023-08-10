@@ -1,6 +1,7 @@
 package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
+import Professor.powers.ThornyEmbracePower;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
@@ -11,7 +12,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import static Professor.MainModfile.makeID;
 
@@ -33,7 +33,7 @@ public class ThornyEmbrace extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseMagicNumber = magicNumber = 5;
+        baseMagicNumber = magicNumber = 4;
         if (data != null) {
             baseMagicNumber += data.g;
             baseMagicNumber += data.y;
@@ -51,12 +51,12 @@ public class ThornyEmbrace extends AbstractCreationCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new ThornsPower(p, magicNumber));
+        Wiz.applyToSelf(new ThornyEmbracePower(p, magicNumber));
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(3);
+        upgradeMagicNumber(2);
     }
 
     @Override
