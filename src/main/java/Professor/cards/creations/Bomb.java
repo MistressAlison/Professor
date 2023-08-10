@@ -63,7 +63,7 @@ public class Bomb extends AbstractCreationCard {
 
     @Override
     public void upp() {
-        upgradeDamage(3);
+        upgradeDamage(2);
         upgradeMagicNumber(2);
     }
 

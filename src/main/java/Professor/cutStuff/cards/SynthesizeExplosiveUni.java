@@ -42,7 +42,9 @@ public class SynthesizeExplosiveUni extends AbstractRecipeCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(1);
+        //upgradeMagicNumber(1);
+        uDesc();
+        cardsToPreview.upgrade();
     }
 
     @Override
@@ -67,6 +69,10 @@ public class SynthesizeExplosiveUni extends AbstractRecipeCard {
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        return new ExplosiveUni(new AbstractCreationCard.ElementData(red, blue, yellow, green));
+        AbstractCreationCard ret = new ExplosiveUni(new AbstractCreationCard.ElementData(red, blue, yellow, green));
+        if (upgraded) {
+            ret.upgrade();
+        }
+        return ret;
     }
 }

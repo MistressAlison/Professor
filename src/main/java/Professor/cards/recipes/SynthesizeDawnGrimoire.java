@@ -41,7 +41,9 @@ public class SynthesizeDawnGrimoire extends AbstractRecipeCard {
 
     @Override
     public void upp() {
-        upgradeBaseCost(0);
+        //upgradeBaseCost(0);
+        uDesc();
+        cardsToPreview.upgrade();
     }
 
     @Override
@@ -66,6 +68,10 @@ public class SynthesizeDawnGrimoire extends AbstractRecipeCard {
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        return new DawnGrimoire(new AbstractCreationCard.ElementData(red, blue, yellow, green));
+        AbstractCreationCard ret = new DawnGrimoire(new AbstractCreationCard.ElementData(red, blue, yellow, green));
+        if (upgraded) {
+            ret.upgrade();
+        }
+        return ret;
     }
 }

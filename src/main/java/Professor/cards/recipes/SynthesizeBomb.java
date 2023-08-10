@@ -40,7 +40,9 @@ public class SynthesizeBomb extends AbstractRecipeCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(1);
+        uDesc();
+        //upgradeMagicNumber(1);
+        cardsToPreview.upgrade();
     }
 
     @Override
@@ -65,6 +67,10 @@ public class SynthesizeBomb extends AbstractRecipeCard {
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        return new Bomb(new AbstractCreationCard.ElementData(red, blue, yellow, green));
+        AbstractCreationCard ret = new Bomb(new AbstractCreationCard.ElementData(red, blue, yellow, green));
+        if (upgraded) {
+            ret.upgrade();
+        }
+        return ret;
     }
 }

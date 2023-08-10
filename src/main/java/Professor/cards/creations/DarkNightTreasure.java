@@ -39,7 +39,7 @@ public class DarkNightTreasure extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseMagicNumber = magicNumber = 25;
+        baseMagicNumber = magicNumber = 20;
         if (data != null) {
             baseMagicNumber += 5*data.b;
             magicNumber = baseMagicNumber;

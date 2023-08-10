@@ -67,8 +67,8 @@ public class Luft extends AbstractCreationCard {
 
     @Override
     public void upp() {
-        upgradeDamage(3);
-        upgradeMagicNumber(2);
+        upgradeDamage(2);
+        upgradeMagicNumber(1);
     }
 
     @Override

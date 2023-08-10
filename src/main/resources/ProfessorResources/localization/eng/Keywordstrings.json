@@ -160,7 +160,8 @@
     "ID": "bomb",
     "PROPER_NAME": "Bomb",
     "NAMES": [
-      "bomb"
+      "bomb",
+      "bomb+"
     ],
     "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:FireIcon] . NL Enemies lose #b+2 HP per [Professor:BoltIcon] ."
   },
@@ -169,7 +170,8 @@
     "PROPER_NAME": "Explosive Uni",
     "NAMES": [
       "explosive uni",
-      "explosive_uni"
+      "explosive_uni",
+      "explosive_uni+"
     ],
     "DESCRIPTION": "Synthesis Benefits: NL Deals #b+2 damage per [Professor:FireIcon] . NL Apply #b+1 #yStagger per [Professor:IceIcon] ."
   },
@@ -178,7 +180,8 @@
     "PROPER_NAME": "N/A",
     "NAMES": [
       "n/a",
-      "na"
+      "na",
+      "n/a+"
     ],
     "DESCRIPTION": "Synthesis Benefits: NL [Professor:FireIcon] [Professor:FireIcon] - Costs #b1 less. NL [Professor:IceIcon] [Professor:IceIcon] - Costs #b1 less. NL [Professor:BoltIcon] [Professor:BoltIcon] - Costs #b1 less. NL [Professor:WindIcon] [Professor:WindIcon] - Costs #b1 less."
   },
@@ -187,7 +190,8 @@
     "PROPER_NAME": "Crystal Ice Bomb",
     "NAMES": [
       "crystal ice bomb",
-      "crystal_ice_bomb"
+      "crystal_ice_bomb",
+      "crystal_ice_bomb+"
     ],
     "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:IceIcon] . NL Applies #b+1 Weak per [Professor:WindIcon] ."
   },
@@ -195,7 +199,8 @@
     "ID": "luft",
     "PROPER_NAME": "Luft",
     "NAMES": [
-      "luft"
+      "luft",
+      "luft+"
     ],
     "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:WindIcon] . NL Draw #b+1 card per [Professor:IceIcon] ."
   },
@@ -204,7 +209,8 @@
     "PROPER_NAME": "Laute Plajig",
     "NAMES": [
       "laute plajig",
-      "laute_plajig"
+      "laute_plajig",
+      "laute_plajig+"
     ],
     "DESCRIPTION": "Synthesis Benefits: NL Deals #b+1 damage per [Professor:BoltIcon] . NL Applies #b+1 Exposed per [Professor:FireIcon] ."
   },
@@ -213,7 +219,8 @@
     "PROPER_NAME": "Dawn Grimoire",
     "NAMES": [
       "dawn grimoire",
-      "dawn_grimoire"
+      "dawn_grimoire",
+      "dawn_grimoire+"
     ],
     "DESCRIPTION": "Synthesis Benefits: NL Deals #b+4 damage per [Professor:FireIcon] . NL Heals #b+1 HP per [Professor:BoltIcon] ."
   },
@@ -222,7 +229,8 @@
     "PROPER_NAME": "Thorny Embrace",
     "NAMES": [
       "thorny embrace",
-      "thorny_embrace"
+      "thorny_embrace",
+      "thorny_embrace+"
     ],
     "DESCRIPTION": "Synthesis Benefits: NL Deals #b+1 damage per [Professor:WindIcon] or [Professor:BoltIcon] ."
   },
@@ -231,7 +239,8 @@
     "PROPER_NAME": "Elysium Harp",
     "NAMES": [
       "elysium harp",
-      "elysium_harp"
+      "elysium_harp",
+      "elysium_harp+"
     ],
     "DESCRIPTION": "Synthesis Benefits: NL Draw #b+1 card per [Professor:WindIcon] . NL Gain #b+2 additional damage NL per [Professor:BoltIcon] ."
   },
@@ -240,7 +249,8 @@
     "PROPER_NAME": "Dark Night Treasure",
     "NAMES": [
       "dark night treasure",
-      "dark_night_treasure"
+      "dark_night_treasure",
+      "dark_night_treasure+"
     ],
     "DESCRIPTION": "Synthesis Benefits: NL Threshold #b+5 per [Professor:IceIcon] ."
   }
