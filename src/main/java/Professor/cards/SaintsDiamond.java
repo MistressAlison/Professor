@@ -1,22 +1,25 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.patches.CustomTags;
+import Professor.cards.interfaces.OnUseInSynthesisCard;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class SaintsDiamond extends AbstractEasyCard {
+public class SaintsDiamond extends AbstractEasyCard implements OnUseInSynthesisCard {
     public final static String ID = makeID(SaintsDiamond.class.getSimpleName());
 
     public SaintsDiamond() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = block = 15;
-        tags.add(CustomTags.PROF_CATALYST);
+        baseMagicNumber = magicNumber = 1;
+        //tags.add(CustomTags.PROF_CATALYST);
     }
 
     @Override
@@ -42,5 +45,10 @@ public class SaintsDiamond extends AbstractEasyCard {
     @Override
     public String itemArt() {
         return SaintsDiamond.class.getSimpleName();
+    }
+
+    @Override
+    public void onSynthesis(AbstractCard createdCard) {
+        addToBot(new ReduceCostAction(this.uuid, this.magicNumber));
     }
 }
