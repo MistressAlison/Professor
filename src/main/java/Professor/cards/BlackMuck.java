@@ -16,7 +16,7 @@ public class BlackMuck extends AbstractEasyCard {
     public final static String ID = makeID(BlackMuck.class.getSimpleName());
 
     public BlackMuck() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 3;
         baseSecondMagic = secondMagic = 1;
     }
@@ -29,7 +29,7 @@ public class BlackMuck extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(1);
         upgradeSecondMagic(1);
     }
 
