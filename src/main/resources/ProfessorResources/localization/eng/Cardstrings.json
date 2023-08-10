@@ -245,6 +245,10 @@
     "NAME": "Lightning Essence",
     "DESCRIPTION": "Whenever a card is Exhausted, apply !M! professor:Exposed to ALL enemies."
   },
+  "${ModID}:LightningSand": {
+    "NAME": "Lightning Sand",
+    "DESCRIPTION": "Retain. NL Deal !D! damage to a random enemy !M! time{@@}{!M!|>1=s}. NL When Retained, increase this card's hits by 1 this combat."
+  },
   "${ModID}:Liquifier": {
     "NAME": "Liquifier",
     "DESCRIPTION": "professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Exhaust"
@@ -252,6 +256,10 @@
   "${ModID}:LunarDrop": {
     "NAME": "Lunar Drop",
     "DESCRIPTION": "Gain !B! Block for each professor:Ice card played this combat. NL Exhaust.{!Location!|0= NL (Gain !Professor:I! Block)}{@@}"
+  },
+  "${ModID}:MagmaPowder": {
+    "NAME": "Magma Powder",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When you draw this card, gain !M! Vigor."
   },
   "${ModID}:ManaEaterBranch": {
     "NAME": "Mana-Eater Branch",
