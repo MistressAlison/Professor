@@ -81,6 +81,7 @@ public abstract class AbstractEasyCard extends CustomCard {
     protected ArrayList<AbstractCard> cyclePreviewCards = new ArrayList<>();
 
     protected boolean needsArtRefresh = false;
+    protected boolean manualD2 = false;
 
     public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, TheProfessor.Enums.MEDIUM_RUBY_COLOR);
@@ -138,7 +139,7 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     @Override
     public void applyPowers() {
-        if (baseSecondDamage > -1) {
+        if (baseSecondDamage > -1 && !manualD2) {
             secondDamage = baseSecondDamage;
 
             int tmp = baseDamage;
@@ -178,7 +179,7 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        if (baseSecondDamage > -1) {
+        if (baseSecondDamage > -1 && !manualD2) {
             secondDamage = baseSecondDamage;
 
             int tmp = baseDamage;
