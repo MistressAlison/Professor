@@ -29,6 +29,7 @@ public class RainbowNeutralizer extends AbstractEasyCard {
 
     @Override
     public void upp() {
+        upgradeDamage(3);
         upgradeMagicNumber(3);
     }
 
