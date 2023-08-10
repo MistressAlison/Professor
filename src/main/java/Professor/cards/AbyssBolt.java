@@ -22,7 +22,7 @@ public class AbyssBolt extends AbstractEasyCard {
 
     public AbyssBolt() {
         super(ID, -2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.NONE);
-        baseDamage = damage = 18;
+        baseDamage = damage = 14;
         selfRetain = true;
     }
 
@@ -48,7 +48,7 @@ public class AbyssBolt extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeDamage(6);
+        upgradeDamage(4);
     }
 
     @Override
