@@ -66,5 +66,9 @@
   "${ModID}:FocusPower": {
     "NAME": "Focus",
     "DESCRIPTIONS": ["Your next #yAttack deals #b50% more damage."," Your next #b"," #yAttacks deal #b50% more damage."]
+  },
+  "${ModID}:AnotherPlanetPower": {
+    "NAME": "Another Planet",
+    "DESCRIPTIONS": ["Whenever you discard a card from your hand, draw #b"," card."," cards."]
   }
 }

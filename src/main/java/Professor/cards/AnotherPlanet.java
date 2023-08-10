@@ -1,7 +1,7 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.powers.DragonBloodPower;
+import Professor.powers.AnotherPlanetPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
@@ -21,12 +21,12 @@ public class AnotherPlanet extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new DragonBloodPower(p, magicNumber));
+        Wiz.applyToSelf(new AnotherPlanetPower(p, magicNumber));
     }
 
     @Override
     public void upp() {
-
+        upgradeBaseCost(0);
     }
 
     @Override

@@ -131,7 +131,7 @@
   },
   "${ModID}:AnotherPlanet": {
     "NAME": "Another Planet",
-    "DESCRIPTION": "???"
+    "DESCRIPTION": "Whenever you discard a card from your hand, draw !M! card{@@}{!M!|>1=s}."
   },
   "${ModID}:ArborIvy": {
     "NAME": "Arbor Ivy",
