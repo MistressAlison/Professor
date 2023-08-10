@@ -143,7 +143,7 @@
   },
   "${ModID}:CleanWater": {
     "NAME": "Clean Water",
-    "DESCRIPTION": "professor:Reactant. NL Gain !B! Block."
+    "DESCRIPTION": "Retain. NL Gain !B! Block."
   },
   "${ModID}:Clobber": {
     "NAME": "Clobber",
