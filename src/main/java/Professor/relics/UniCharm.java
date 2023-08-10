@@ -30,9 +30,9 @@ public class UniCharm extends AbstractEasyRelic {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.owner != Wiz.adp() && info.type == DamageInfo.DamageType.NORMAL && !grayscale) {
             flash();
-            addToBot(new VFXAction(new BarbExplodeEffect(Color.BROWN), 0.2f));
-            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(AMOUNT, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
+            addToTop(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(AMOUNT, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
+            addToTop(new VFXAction(new BarbExplodeEffect(Color.BROWN), 0.2f));
+            addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             grayscale = true;
         }
         return damageAmount;
