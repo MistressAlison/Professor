@@ -132,7 +132,7 @@
   },
   "${ModID}:AetherEssence": {
     "NAME": "Aether Essence",
-    "DESCRIPTION": "You may not receive additional debuffs this combat."
+    "DESCRIPTION": "Whenever you receive a buff, deal !M! damage to a random enemy."
   },
   "${ModID}:AirDrop": {
     "NAME": "Air Drop",
@@ -314,7 +314,8 @@
   },
   "${ModID}:MistLiquid": {
     "NAME": "Mist Liquid",
-    "DESCRIPTION": "Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced."
+    "DESCRIPTION": "Whenever you play an professor:Ice or professor:Wind card, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play an professor:Ice or professor:Wind card, gain !M! Block."
   },
   "${ModID}:MysteriousBroom": {
     "NAME": "Mysterious Broom",

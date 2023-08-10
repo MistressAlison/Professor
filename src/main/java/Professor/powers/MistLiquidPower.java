@@ -4,7 +4,7 @@ import Professor.MainModfile;
 import Professor.cards.MistLiquid;
 import Professor.patches.ArchetypeHelper;
 import Professor.util.PowerIconMaker;
-import Professor.util.Wiz;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class MistLiquidPower extends AbstractPower {
-
     public static final String POWER_ID = MainModfile.makeID(MistLiquidPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -38,7 +37,8 @@ public class MistLiquidPower extends AbstractPower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (ArchetypeHelper.isIce(card) || ArchetypeHelper.isWind(card)) {
             flash();
-            Wiz.applyToSelf(new BracedPower(owner, amount));
+            //Wiz.applyToSelf(new BracedPower(owner, amount));
+            addToBot(new GainBlockAction(owner, owner, amount));
         }
     }
 }
