@@ -39,12 +39,12 @@ public class DawnGrimoire extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseDamage = damage = 8;
-        baseMagicNumber = magicNumber = 4;
+        baseDamage = damage = 10;
+        baseMagicNumber = magicNumber = 6;
         if (data != null) {
-            baseDamage += 4*data.r;
+            baseDamage += 7*data.r;
             damage = baseDamage;
-            baseMagicNumber += data.y;
+            baseMagicNumber += 2*data.y;
             magicNumber = baseMagicNumber;
         }
     }

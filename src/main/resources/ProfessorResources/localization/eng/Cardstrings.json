@@ -47,23 +47,23 @@
   },
   "${ModID}:DarkNightTreasure": {
     "NAME": "Dark Night Treasure",
-    "DESCRIPTION": "Kill ALL enemies with !M! or less HP."
+    "DESCRIPTION": "{@@}Kill ALL enemies with !M! {!Location!|-2,4=(+5 per [Professor:IceIcon] ) }or less HP."
   },
   "${ModID}:SynthesizeDarkNightTreasure": {
     "NAME": "Dark Night Treasure",
     "DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +5 kill threshold per Ice"]
   },
   "${ModID}:DawnGrimoire": {
     "NAME": "Dawn Grimoire",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. Heal !M! HP for each enemy in combat. NL Exhaust."
+    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+7 per [Professor:FireIcon] ) }damage to ALL enemies. Heal !M! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) }HP for each enemy in combat. NL Exhaust."
   },
   "${ModID}:SynthesizeDawnGrimoire": {
     "NAME": "Dawn Grimoire",
     "DESCRIPTION": "professor:Synthesize a professor:Dawn_Grimoire. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Dawn_Grimoire+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +7 damage per Fire, +2 healing per Bolt"]
   },
   "${ModID}:ElysiumHarp": {
     "NAME": "Elysium Harp",
