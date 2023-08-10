@@ -1,7 +1,6 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.patches.CustomTags;
 import Professor.powers.AmberOilPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
@@ -17,7 +16,7 @@ public class AmberOil extends AbstractEasyCard {
     public AmberOil() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 2;
-        tags.add(CustomTags.PROF_REACTANT);
+        //tags.add(CustomTags.PROF_REACTANT);
     }
 
     @Override

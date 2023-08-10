@@ -1,7 +1,6 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.patches.CustomTags;
 import Professor.powers.MistLiquidPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
@@ -17,7 +16,7 @@ public class MistLiquid extends AbstractEasyCard {
     public MistLiquid() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
-        tags.add(CustomTags.PROF_REACTANT);
+        //tags.add(CustomTags.PROF_REACTANT);
     }
 
     @Override

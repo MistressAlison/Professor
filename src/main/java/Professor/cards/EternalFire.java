@@ -3,7 +3,6 @@ package Professor.cards;
 import Professor.actions.BetterSelectCardsInHandAction;
 import Professor.actions.BetterTransformCardInHandAction;
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -23,7 +22,7 @@ public class EternalFire extends AbstractEasyCard {
     public EternalFire() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 5;
-        tags.add(CustomTags.PROF_REACTANT);
+        //tags.add(CustomTags.PROF_REACTANT);
     }
 
     @Override
