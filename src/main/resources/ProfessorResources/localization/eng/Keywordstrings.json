@@ -232,7 +232,7 @@
       "thorny_embrace",
       "thorny_embrace+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+1 damage per [Professor:WindIcon] or [Professor:BoltIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:WindIcon] ."
   },
   {
     "ID": "elysium_harp",

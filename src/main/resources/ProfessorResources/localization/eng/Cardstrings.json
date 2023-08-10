@@ -113,17 +113,17 @@
     "NAME": "N/A",
     "DESCRIPTION": "professor:Synthesize an professor:N/A. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:N/A+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": -1 cost for each Element you add 2 or more of"]
   },
   "${ModID}:ThornyEmbrace": {
     "NAME": "Thorny Embrace",
-    "DESCRIPTION": "At the end of your turn, deal !M! damage to each enemy that intends to attack."
+    "DESCRIPTION": "{@@}At the end of your turn, deal !M! {!Location!|-2,4=(+3 per [Professor:WindIcon] ) }damage to each enemy that intends to attack."
   },
   "${ModID}:SynthesizeThornyEmbrace": {
     "NAME": "Thorny Embrace",
     "DESCRIPTION": "professor:Synthesize a professor:Thorny_Embrace. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Thorny_Embrace+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +3 damage per Wind, +1 damage per Bolt"]
   },
   "${ModID}:AbyssBolt": {
     "NAME": "Abyss Bolt",

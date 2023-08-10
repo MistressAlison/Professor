@@ -33,10 +33,9 @@ public class ThornyEmbrace extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = 6;
         if (data != null) {
-            baseMagicNumber += data.g;
-            baseMagicNumber += data.y;
+            baseMagicNumber += 3*data.g;
             magicNumber = baseMagicNumber;
         }
     }
@@ -56,7 +55,7 @@ public class ThornyEmbrace extends AbstractCreationCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(3);
     }
 
     @Override
