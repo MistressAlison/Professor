@@ -2,6 +2,7 @@ package Professor.powers;
 
 import Professor.MainModfile;
 import Professor.actions.SpectrumizeAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -32,7 +33,15 @@ public class SeptrinPower extends AbstractPower {
 
     @Override
     public void onExhaust(AbstractCard card) {
-        flash();
-        addToBot(new SpectrumizeAction(card));
+        if (SpectrumizeAction.spectrumizing) {
+            flash();
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    SpectrumizeAction.addCards(card);
+                    this.isDone = true;
+                }
+            });
+        }
     }
 }

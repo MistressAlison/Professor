@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 public class SpectrumizeAction extends AbstractGameAction {
     public static final String ID = MainModfile.makeID(SpectrumizeAction.class.getSimpleName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ID).TEXT;
+    public static boolean spectrumizing;
     public AbstractCard card;
 
     public SpectrumizeAction(int amount) {
@@ -33,21 +34,21 @@ public class SpectrumizeAction extends AbstractGameAction {
         if (card != null) {
             addCards(card);
             //addToTop(new ShowCardAndPoofAction(card));
-            Wiz.adp().hand.moveToExhaustPile(card);
+            exhaustCard(card);
         } else if (amount >= Wiz.adp().hand.size()) {
             int size = Wiz.adp().hand.size();
             for (int i = 0 ; i < size ; i++) {
                 AbstractCard c = Wiz.adp().hand.getTopCard();
                 addCards(c);
                 //addToTop(new ShowCardAndPoofAction(c));
-                Wiz.adp().hand.moveToExhaustPile(c);
+                exhaustCard(c);
             }
         } else {
             addToTop(new SelectCardsInHandAction(amount, TEXT[0], l -> {
                 for (AbstractCard c : l) {
                     addCards(c);
                     //addToTop(new ShowCardAndPoofAction(c));
-                    Wiz.adp().hand.moveToExhaustPile(c);
+                    exhaustCard(c);
                 }
                 //Clear to not put cards back in hand
                 l.clear();
@@ -56,18 +57,24 @@ public class SpectrumizeAction extends AbstractGameAction {
         this.isDone = true;
     }
 
-    private void addCards(AbstractCard card) {
+    private void exhaustCard(AbstractCard card) {
+        spectrumizing = true;
+        Wiz.adp().hand.moveToExhaustPile(card);
+        spectrumizing = false;
+    }
+
+    public static void addCards(AbstractCard card) {
         if (ArchetypeHelper.isWind(card)) {
-            addToTop(new MakeTempCardInHandAction(new GreenNeutralizer()));
+            Wiz.att(new MakeTempCardInHandAction(new GreenNeutralizer()));
         }
         if (ArchetypeHelper.isBolt(card)) {
-            addToTop(new MakeTempCardInHandAction(new YellowNeutralizer()));
+            Wiz.att(new MakeTempCardInHandAction(new YellowNeutralizer()));
         }
         if (ArchetypeHelper.isIce(card)) {
-            addToTop(new MakeTempCardInHandAction(new BlueNeutralizer()));
+            Wiz.att(new MakeTempCardInHandAction(new BlueNeutralizer()));
         }
         if (ArchetypeHelper.isFire(card)) {
-            addToTop(new MakeTempCardInHandAction(new RedNeutralizer()));
+            Wiz.att(new MakeTempCardInHandAction(new RedNeutralizer()));
         }
     }
 }
