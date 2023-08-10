@@ -29,6 +29,9 @@ public class GoldenCrown extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SelectCardsInHandAction(1, CardCrawlGame.languagePack.getUIString("DualWieldAction").TEXT[0], l -> {
             for (AbstractCard c : l) {
+                if (c.canUpgrade() && upgraded) {
+                    c.upgrade();
+                }
                 addToTop(new VFXAction(new ShowCardAndObtainEffect(c.makeSameInstanceOf(), Settings.WIDTH/2f, Settings.HEIGHT/2f)));
             }
         }));
