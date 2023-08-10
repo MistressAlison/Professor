@@ -31,7 +31,8 @@
   },
   "${ModID}:SynthesizeBomb": {
     "NAME": "Bomb",
-    "DESCRIPTION": "professor:Synthesize a professor:Bomb. NL professor:Valency !M!."
+    "DESCRIPTION": "professor:Synthesize a professor:Bomb. NL professor:Valency !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
   },
   "${ModID}:CrystalIceBomb": {
     "NAME": "Crystal Ice Bomb",
@@ -39,7 +40,8 @@
   },
   "${ModID}:SynthesizeCrystalIceBomb": {
     "NAME": "Crystal Ice Bomb",
-    "DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb. NL professor:Valency !M!."
+    "DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb. NL professor:Valency !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
   },
   "${ModID}:DarkNightTreasure": {
     "NAME": "Dark Night Treasure",
@@ -47,7 +49,8 @@
   },
   "${ModID}:SynthesizeDarkNightTreasure": {
     "NAME": "Dark Night Treasure",
-    "DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure. NL professor:Valency !M!."
+    "DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure. NL professor:Valency !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
   },
   "${ModID}:DawnGrimoire": {
     "NAME": "Dawn Grimoire",
@@ -55,7 +58,8 @@
   },
   "${ModID}:SynthesizeDawnGrimoire": {
     "NAME": "Dawn Grimoire",
-    "DESCRIPTION": "professor:Synthesize a professor:Dawn_Grimoire. NL professor:Valency !M!."
+    "DESCRIPTION": "professor:Synthesize a professor:Dawn_Grimoire. NL professor:Valency !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
   },
   "${ModID}:ElysiumHarp": {
     "NAME": "Elysium Harp",
@@ -63,11 +67,17 @@
   },
   "${ModID}:SynthesizeElysiumHarp": {
     "NAME": "Elysium Harp",
-    "DESCRIPTION": "professor:Synthesize an professor:Elysium_Harp. NL professor:Valency !M!."
+    "DESCRIPTION": "professor:Synthesize an professor:Elysium_Harp. NL professor:Valency !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
   },
   "${ModID}:ExplosiveUni": {
     "NAME": "Explosive Uni",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Stagger."
+  },
+  "${ModID}:SynthesizeExplosiveUni": {
+    "NAME": "Explosive Uni",
+    "DESCRIPTION": "professor:Synthesize an professor:Explosive_Uni. NL professor:Valency !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
   },
   "${ModID}:LautePlajig": {
     "NAME": "Laute Plajig",
@@ -75,11 +85,8 @@
   },
   "${ModID}:SynthesizeLautePlajig": {
     "NAME": "Laute Plajig",
-    "DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig. NL professor:Valency !M!."
-  },
-  "${ModID}:SynthesizeExplosiveUni": {
-    "NAME": "Explosive Uni",
-    "DESCRIPTION": "professor:Synthesize an professor:Explosive_Uni. NL professor:Valency !M!."
+    "DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig. NL professor:Valency !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
   },
   "${ModID}:Luft": {
     "NAME": "Luft",
@@ -87,7 +94,8 @@
   },
   "${ModID}:SynthesizeLuft": {
     "NAME": "Luft",
-    "DESCRIPTION": "professor:Synthesize a professor:Luft. NL professor:Valency !M!."
+    "DESCRIPTION": "professor:Synthesize a professor:Luft. NL professor:Valency !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
   },
   "${ModID}:NA": {
     "NAME": "N/A",
@@ -95,7 +103,8 @@
   },
   "${ModID}:SynthesizeNA": {
     "NAME": "N/A",
-    "DESCRIPTION": "professor:Synthesize an professor:N/A. NL professor:Valency !M!."
+    "DESCRIPTION": "professor:Synthesize an professor:N/A. NL professor:Valency !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
   },
   "${ModID}:ThornyEmbrace": {
     "NAME": "Thorny Embrace",
@@ -103,7 +112,8 @@
   },
   "${ModID}:SynthesizeThornyEmbrace": {
     "NAME": "Thorny Embrace",
-    "DESCRIPTION": "professor:Synthesize a professor:Thorny_Embrace. NL professor:Valency !M!."
+    "DESCRIPTION": "professor:Synthesize a professor:Thorny_Embrace. NL professor:Valency !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
   },
   "${ModID}:AbyssBolt": {
     "NAME": "Abyss Bolt",

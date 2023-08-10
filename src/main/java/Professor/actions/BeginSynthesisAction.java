@@ -22,7 +22,7 @@ public class BeginSynthesisAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        addToTop(new BetterSelectCardsInHandAction(recipeCard.getValance(), TEXT[0], true, true, c -> true, l -> {
+        addToTop(new BetterSelectCardsInHandAction(recipeCard.getValance(), TEXT[0], false, false, c -> true, l -> {
             int draw = 0;
             SynthesisPanel.addSynthesisItem(new SynthesisItem(recipeCard, l));
             EmpowerRedirectPatches.setRedirect(recipeCard, SynthesisPanel.BASE_X, SynthesisPanel.BASE_Y);

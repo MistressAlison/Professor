@@ -38,7 +38,7 @@
     "NAMES": [
       "valency"
     ],
-    "DESCRIPTION": "The number of cards you can contribute to #ySynthesis."
+    "DESCRIPTION": "The number of cards you must contribute to #ySynthesis."
   },
   {
     "ID": "synthesis",
@@ -47,7 +47,7 @@
       "synthesis",
       "synthesize"
     ],
-    "DESCRIPTION": "Remove up to X cards from your hand, contributing their #yElements towards this card. Next turn, add the completed version into your hand and discard the chosen cards."
+    "DESCRIPTION": "Remove X cards from your hand, contributing their #yElements towards this card. Next turn, add the completed version into your hand and discard the chosen cards."
   },
   {
     "ID": "spectrumize",

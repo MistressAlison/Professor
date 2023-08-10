@@ -14,7 +14,7 @@ import java.util.Collections;
 
 public class SynthesisPanel {
     public static final float ITEMS_PER_ROW = 4;
-    public static final float Y_OFFSET = 100f * Settings.scale;
+    public static final float Y_OFFSET = 200f * Settings.scale;
     public static final float BASE_X = Wiz.adp().hb.cX;
     public static final float BASE_Y = Wiz.adp().hb.cY + Wiz.adp().hb.height/2f + Y_OFFSET;
     public static final float PAD_X = SynthesisItem.ORBIT_R * 2 + 60f * Settings.scale;

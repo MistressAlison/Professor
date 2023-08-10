@@ -27,6 +27,19 @@ public class SynthesizeExplosiveUni extends AbstractRecipeCard {
         addToBot(new BeginSynthesisAction(this));
     }
 
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = super.canUse(p, m);
+        if (!canUse) {
+            return false;
+        } else {
+            if (p.hand.size() <= getValance()) {
+                canUse = false;
+                this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+            }
+            return canUse;
+        }
+    }
+
     @Override
     public void upp() {
         upgradeMagicNumber(1);
