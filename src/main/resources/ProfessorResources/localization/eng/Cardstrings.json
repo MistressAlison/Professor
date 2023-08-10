@@ -123,7 +123,7 @@
   },
   "${ModID}:AncientBlueWater": {
     "NAME": "Ancient Blue Water",
-    "DESCRIPTION": "professor:Spectrumize your hand. NL Exhaust"
+    "DESCRIPTION": "professor:Spectrumize your hand. NL Gain !B! Block for each card professor:Spectrumized. NL Exhaust"
   },
   "${ModID}:AncientUni": {
     "NAME": "Ancient Uni",

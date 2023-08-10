@@ -1,5 +1,6 @@
 package Professor.cards;
 
+import Professor.actions.AncientBlueWaterAction;
 import Professor.actions.SpectrumizeAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.cards.tokens.BlueNeutralizer;
@@ -21,6 +22,7 @@ public class AncientBlueWater extends AbstractEasyCard {
 
     public AncientBlueWater() {
         super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        baseBlock = block = 7;
         baseMagicNumber = magicNumber = 1;
         exhaust = true;
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
@@ -28,7 +30,7 @@ public class AncientBlueWater extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SpectrumizeAction(BaseMod.MAX_HAND_SIZE));
+        addToBot(new AncientBlueWaterAction(block));
     }
 
     @Override
@@ -38,7 +40,7 @@ public class AncientBlueWater extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), BLACK, BLUE, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), BLACK, lighten(BLUE), Color.ROYAL, false);
     }
 
     @Override
