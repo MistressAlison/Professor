@@ -70,8 +70,8 @@ public class DawnGrimoire extends AbstractCreationCard {
 
     @Override
     public void upp() {
-        upgradeDamage(2);
-        upgradeMagicNumber(1);
+        upgradeDamage(5);
+        upgradeMagicNumber(2);
     }
 
     @Override
