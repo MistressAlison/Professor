@@ -1,7 +1,9 @@
 package Professor.powers;
 
 import Professor.MainModfile;
+import Professor.cards.DragonBlood;
 import Professor.powers.interfaces.OnInfusionPower;
+import Professor.util.PowerIconMaker;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -22,7 +24,7 @@ public class DragonBloodPower extends AbstractPower implements OnInfusionPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("rupture");
+        PowerIconMaker.setIcons(this, DragonBlood.class.getSimpleName());
         updateDescription();
     }
 

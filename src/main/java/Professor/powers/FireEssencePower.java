@@ -1,6 +1,8 @@
 package Professor.powers;
 
 import Professor.MainModfile;
+import Professor.cards.FireEssence;
+import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -22,7 +24,7 @@ public class FireEssencePower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("flameBarrier");
+        PowerIconMaker.setIcons(this, FireEssence.class.getSimpleName());
         updateDescription();
     }
 

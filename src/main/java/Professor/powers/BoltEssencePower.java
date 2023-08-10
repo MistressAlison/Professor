@@ -1,6 +1,8 @@
 package Professor.powers;
 
 import Professor.MainModfile;
+import Professor.cards.LightningEssence;
+import Professor.util.PowerIconMaker;
 import Professor.util.Wiz;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -22,7 +24,7 @@ public class BoltEssencePower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("storm");
+        PowerIconMaker.setIcons(this, LightningEssence.class.getSimpleName());
         updateDescription();
     }
 

@@ -1,6 +1,8 @@
 package Professor.powers;
 
 import Professor.MainModfile;
+import Professor.cards.IceEssence;
+import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -23,7 +25,7 @@ public class IceEssencePower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("int");
+        PowerIconMaker.setIcons(this, IceEssence.class.getSimpleName());
         updateDescription();
     }
 

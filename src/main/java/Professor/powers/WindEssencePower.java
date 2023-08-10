@@ -1,7 +1,9 @@
 package Professor.powers;
 
 import Professor.MainModfile;
+import Professor.cards.WindEssence;
 import Professor.patches.CardCounterPatches;
+import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -22,7 +24,7 @@ public class WindEssencePower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("flight");
+        PowerIconMaker.setIcons(this, WindEssence.class.getSimpleName());
         updateDescription();
     }
 

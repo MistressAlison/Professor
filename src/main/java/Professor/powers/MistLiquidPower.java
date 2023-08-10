@@ -1,7 +1,9 @@
 package Professor.powers;
 
 import Professor.MainModfile;
+import Professor.cards.MistLiquid;
 import Professor.patches.ArchetypeHelper;
+import Professor.util.PowerIconMaker;
 import Professor.util.Wiz;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -23,7 +25,7 @@ public class MistLiquidPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("combust");
+        PowerIconMaker.setIcons(this, MistLiquid.class.getSimpleName());
         updateDescription();
     }
 

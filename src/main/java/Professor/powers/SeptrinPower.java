@@ -2,6 +2,8 @@ package Professor.powers;
 
 import Professor.MainModfile;
 import Professor.actions.SpectrumizeAction;
+import Professor.cards.Septrin;
+import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -22,7 +24,7 @@ public class SeptrinPower extends AbstractPower {
         this.owner = owner;
         this.amount = -1;
         this.type = PowerType.BUFF;
-        this.loadRegion("ai");
+        PowerIconMaker.setIcons(this, Septrin.class.getSimpleName());
         updateDescription();
     }
 
