@@ -79,7 +79,7 @@ public class ParticleEffect extends AbstractGameEffect implements CustomLighting
 
     @Override
     public float[] _lightsOutGetXYRI() {
-        return new float[] {x, y, 150f, 1.0f};
+        return new float[] {x, y, 150f, 0.05f};
     }
 
     @Override
