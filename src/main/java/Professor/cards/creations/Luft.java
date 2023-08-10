@@ -56,6 +56,7 @@ public class Luft extends AbstractCreationCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("APPEAR"));
+        addToBot(new SFXAction("ATTACK_WHIFF_2"));
         addToBot(new VFXAction(new WhirlwindEffect(), 0.2F));
         allDmg(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         addToBot(new DrawCardAction(magicNumber));
