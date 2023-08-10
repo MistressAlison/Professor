@@ -15,7 +15,7 @@ public class PolishingPowder extends AbstractEasyCard {
     public final static String ID = makeID(PolishingPowder.class.getSimpleName());
 
     public PolishingPowder() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 3, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         exhaust = true;
     }
 
@@ -30,7 +30,7 @@ public class PolishingPowder extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeBaseCost(1);
+        upgradeBaseCost(2);
     }
 
     @Override
