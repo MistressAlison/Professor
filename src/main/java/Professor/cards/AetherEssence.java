@@ -15,7 +15,7 @@ public class AetherEssence extends AbstractEasyCard {
     public final static String ID = makeID(AetherEssence.class.getSimpleName());
 
     public AetherEssence() {
-        super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         //baseMagicNumber = magicNumber = 1;
         //isEthereal = true;
     }
@@ -28,7 +28,7 @@ public class AetherEssence extends AbstractEasyCard {
     @Override
     public void upp() {
         //upgradeMagicNumber(1);
-        upgradeBaseCost(2);
+        upgradeBaseCost(1);
         //isEthereal = false;
         //uDesc();
     }
