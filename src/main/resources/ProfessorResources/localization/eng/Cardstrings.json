@@ -107,7 +107,7 @@
   },
   "${ModID}:NA": {
     "NAME": "N/A",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies.{!Location!|-2,4= NL Costs 1 less for each professor:Element you add 2+ of.}"
   },
   "${ModID}:SynthesizeNA": {
     "NAME": "N/A",
