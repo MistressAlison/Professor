@@ -2,14 +2,19 @@ package Professor.cards;
 
 import Professor.actions.EasyXCostAction;
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.patches.DelayedExhaustPatches;
+import Professor.powers.BroomPower;
 import Professor.util.CardArtRoller;
+import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.actions.watcher.SkipEnemiesTurnAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 import static Professor.MainModfile.makeID;
 
@@ -18,8 +23,7 @@ public class MysteriousBroom extends AbstractEasyCard {
 
     public MysteriousBroom() {
         super(ID, -1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
-        baseMagicNumber = magicNumber = 0;
-        exhaust = true;
+        baseMagicNumber = magicNumber = 4;
     }
 
     @Override
@@ -29,24 +33,23 @@ public class MysteriousBroom extends AbstractEasyCard {
             for (int i : params) {
                 effect += i;
             }
+            if (effect >= magicNumber) {
+                Wiz.applyToSelfTop(new BroomPower(p));
+                addToTop(new SkipEnemiesTurnAction());
+                addToTop(new VFXAction(new WhirlwindEffect(new Color(1.0F, 0.9F, 0.4F, 1.0F), true)));
+                addToTop(new SFXAction("ATTACK_WHIFF_2", 0.2f));
+                DelayedExhaustPatches.DelayedExhaustField.delayedExhaust.set(this, true);
+            }
             if (effect > 0) {
-                addToTop(new DrawCardAction(effect, new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        for (AbstractCard c : DrawCardAction.drawnCards) {
-                            c.setCostForTurn(0);
-                        }
-                        this.isDone = true;
-                    }
-                }));
+                addToTop(new ExhaustAction(effect, false, true, true));
             }
             return true;
-        }, magicNumber));
+        }));
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeMagicNumber(-1);
     }
 
     @Override

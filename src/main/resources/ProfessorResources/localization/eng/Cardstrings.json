@@ -285,7 +285,7 @@
   },
   "${ModID}:MysteriousBroom": {
     "NAME": "Mysterious Broom",
-    "DESCRIPTION": "???"
+    "DESCRIPTION": "Exhaust up to X cards in your hand. NL {@@}{!M!|>0=If X is !M! or more, take|@=Take} an extra turn after this one and Exhaust this."
   },
   "${ModID}:OldenPhilosophersStone": {
     "NAME": "Philosopher's Form",

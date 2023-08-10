@@ -70,5 +70,9 @@
   "${ModID}:AnotherPlanetPower": {
     "NAME": "Another Planet",
     "DESCRIPTIONS": ["Whenever you discard a card from your hand, draw #b"," card."," cards."]
+  },
+  "${ModID}:BroomPower": {
+    "NAME": "Broom Flight",
+    "DESCRIPTIONS": ["Take an extra turn after this one."]
   }
 }
