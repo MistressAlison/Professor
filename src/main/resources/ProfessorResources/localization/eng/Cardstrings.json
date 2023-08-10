@@ -114,9 +114,9 @@
     "NAME": "Aether Essence",
     "DESCRIPTION": "You may not receive additional debuffs this combat."
   },
-  "${ModID}:AlchemyFibers": {
-    "NAME": "Alchemy Fibers",
-    "DESCRIPTION": "professor:Gather a{!Upgrades!|>0=n Upgraded}{@@} professor:Synthesis card. NL It costs 0 this turn. NL Exhaust."
+  "${ModID}:AirDrop": {
+    "NAME": "Air Drop",
+    "DESCRIPTION": "Choose 1 of 3{!Upgrades!|>0= Upgraded}{@@} professor:Synthesis cards to add into your hand. NL It costs 0 this turn. NL Exhaust."
   },
   "${ModID}:Amalgam": {
     "NAME": "Amalgam",

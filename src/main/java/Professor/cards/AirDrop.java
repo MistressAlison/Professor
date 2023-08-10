@@ -11,10 +11,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class AlchemyFibers extends AbstractEasyCard {
-    public final static String ID = makeID(AlchemyFibers.class.getSimpleName());
+public class AirDrop extends AbstractEasyCard {
+    public final static String ID = makeID(AirDrop.class.getSimpleName());
 
-    public AlchemyFibers() {
+    public AirDrop() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         exhaust = true;
     }
@@ -31,7 +31,7 @@ public class AlchemyFibers extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.LIGHT_GRAY, WHITE, Color.LIGHT_GRAY, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, Color.LIGHT_GRAY, BLACK, Color.LIGHT_GRAY, pastel(BLUE), false);
     }
 
     @Override
@@ -41,6 +41,6 @@ public class AlchemyFibers extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return AlchemyFibers.class.getSimpleName();
+        return AirDrop.class.getSimpleName();
     }
 }
