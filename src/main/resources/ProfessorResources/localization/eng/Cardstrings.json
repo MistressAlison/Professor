@@ -221,7 +221,7 @@
   },
   "${ModID}:GoldUni": {
     "NAME": "Gold Uni",
-    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each professor:Bolt card played this combat."
+    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, draw !M! card{!M!|>1=s}{@@}. NL {!M!|1=It costs|1>=They cost} 0 this turn."
   },
   "${ModID}:HeroicSpirit": {
     "NAME": "Heroic Spirit",
