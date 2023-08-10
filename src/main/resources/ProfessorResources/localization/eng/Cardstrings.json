@@ -290,10 +290,6 @@
     "NAME": "Lunar Drop",
     "DESCRIPTION": "Gain !B! Block for each professor:Ice card played this combat. NL Exhaust.{!Location!|0= NL (Gain !Professor:I! Block)}{@@}"
   },
-  "${ModID}:MagmaPowder": {
-    "NAME": "Magma Powder",
-    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When you draw this card, gain !M! Vigor."
-  },
   "${ModID}:ManaEaterBranch": {
     "NAME": "Mana-Eater Branch",
     "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Exhaust."
@@ -341,6 +337,10 @@
   "${ModID}:PolishingPowder": {
     "NAME": "Polishing Powder",
     "DESCRIPTION": "Reduce the cost of all cards in your hand by 1 this turn. NL Exhaust."
+  },
+  "${ModID}:RainbowNeutralizer": {
+    "NAME": "Rainbow Neutralizer",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When you draw this card, gain !M! Vigor."
   },
   "${ModID}:RestraintSilk": {
     "NAME": "Restraint Silk",
