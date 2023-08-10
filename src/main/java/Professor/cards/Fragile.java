@@ -1,13 +1,10 @@
 package Professor.cards;
 
-import Professor.actions.ApplyCardModifierAction;
 import Professor.actions.InfuseCardsInHandAction;
-import Professor.actions.ModifyCardsInHandAction;
 import Professor.cardmods.GainBlockMod;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,7 +16,7 @@ public class Fragile extends AbstractEasyCard {
 
     public Fragile() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 5;
         exhaust = true;
     }
 

@@ -3,7 +3,9 @@ package Professor.cards;
 import Professor.actions.InfuseCardsInHandAction;
 import Professor.cardmods.GainBlockMod;
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.powers.BracedPower;
 import Professor.util.CardArtRoller;
+import Professor.util.Wiz;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -17,18 +19,21 @@ public class Eiche extends AbstractEasyCard {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseBlock = block = 3;
         baseMagicNumber = magicNumber = 3;
+        baseSecondMagic = secondMagic = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        addToBot(new InfuseCardsInHandAction(1, new GainBlockMod(magicNumber)));
+        Wiz.applyToSelf(new BracedPower(p, magicNumber));
+        addToBot(new InfuseCardsInHandAction(1, new GainBlockMod(secondMagic)));
     }
 
     @Override
     public void upp() {
         upgradeBlock(1);
         upgradeMagicNumber(1);
+        upgradeSecondMagic(1);
     }
 
     @Override
