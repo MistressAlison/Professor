@@ -36,11 +36,11 @@ public class LautePlajig extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseDamage = damage = 3;
-        baseMagicNumber = magicNumber = 2;
-        baseSecondMagic = secondMagic = 4;
+        baseDamage = damage = 4; // Damage
+        baseMagicNumber = magicNumber = 2; // Exposed
+        baseSecondMagic = secondMagic = 4; // Hits
         if (data != null) {
-            baseDamage += data.y;
+            baseDamage += 2*data.y;
             damage = baseDamage;
             baseMagicNumber += data.r;
             magicNumber = baseMagicNumber;
@@ -64,7 +64,8 @@ public class LautePlajig extends AbstractCreationCard {
 
     @Override
     public void upp() {
-        upgradeDamage(2);
+        //upgradeDamage(2);
+        upgradeSecondMagic(1);
     }
 
     @Override

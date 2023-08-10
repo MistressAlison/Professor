@@ -87,13 +87,13 @@
   },
   "${ModID}:LautePlajig": {
     "NAME": "Laute Plajig",
-    "DESCRIPTION": "Deal !D! damage and apply !M! professor:Exposed to a random enemy !Professor:M2! times."
+    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) }damage and apply !M! {!Location!|-2,4=(+1 per [Professor:FireIcon] ) }professor:Exposed to a random enemy !Professor:M2! times."
   },
   "${ModID}:SynthesizeLautePlajig": {
     "NAME": "Laute Plajig",
     "DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +2 damage per Bolt, +1 Exposed per Fire"]
   },
   "${ModID}:Luft": {
     "NAME": "Luft",

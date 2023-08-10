@@ -212,7 +212,7 @@
       "laute_plajig",
       "laute_plajig+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+1 damage per [Professor:BoltIcon] . NL Applies #b+1 Exposed per [Professor:FireIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+2 damage per [Professor:BoltIcon] . NL Applies #b+1 Exposed per [Professor:FireIcon] ."
   },
   {
     "ID": "dawn_grimoire",
