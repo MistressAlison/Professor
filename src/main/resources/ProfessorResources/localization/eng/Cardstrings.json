@@ -27,13 +27,13 @@
   },
   "${ModID}:Bomb": {
     "NAME": "Bomb",
-    "DESCRIPTION": "Deal !D! damage. NL ALL enemies lose !M! HP."
+    "DESCRIPTION": "{@@}Deal !Professor:D2! {!Location!|-2,4=(+5 per [Professor:FireIcon] ) }damage. NL Deal !D! {!Location!|-2,4=(+3 per [Professor:BoltIcon] ) }damage to ALL enemies."
   },
   "${ModID}:SynthesizeBomb": {
     "NAME": "Bomb",
     "DESCRIPTION": "professor:Synthesize a professor:Bomb. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Bomb+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +5 damage per Fire, +3 AoE damage per Bolt."]
   },
   "${ModID}:CrystalIceBomb": {
     "NAME": "Crystal Ice Bomb",
@@ -43,7 +43,7 @@
     "NAME": "Crystal Ice Bomb",
     "DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": "]
   },
   "${ModID}:DarkNightTreasure": {
     "NAME": "Dark Night Treasure",

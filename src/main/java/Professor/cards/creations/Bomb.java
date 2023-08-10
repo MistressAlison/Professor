@@ -1,11 +1,15 @@
 package Professor.cards.creations;
 
+import Professor.actions.ThrowObjectAction;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
+import Professor.vfx.BigExplosionVFX;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -33,13 +37,14 @@ public class Bomb extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseDamage = damage = 6;
-        baseMagicNumber = magicNumber = 4;
+        baseDamage = damage = 6; // AOE
+        baseSecondDamage = secondDamage = 10; // Single
+        manualD2 = true;
         if (data != null) {
-            baseDamage += 3*data.r;
+            baseDamage += 3*data.y;
             damage = baseDamage;
-            baseMagicNumber += 2*data.y;
-            magicNumber = baseMagicNumber;
+            baseSecondDamage += 5*data.r;
+            secondDamage = baseSecondDamage;
         }
     }
 
@@ -53,18 +58,44 @@ public class Bomb extends AbstractCreationCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE, true));
-        addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(magicNumber, true), DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
-        //allDmg(AbstractGameAction.AttackEffect.FIRE);
-        /*if (magicNumber > 0) {
-            Wiz.applyToEnemy(m, new BurnPower(m, p, magicNumber));
-        }*/
+        if (m != null) {
+            addToBot(new ThrowObjectAction("Bomb", 0.33f, m.hb, Color.RED, false));
+            addToBot(new BigExplosionVFX(m));
+        }
+        addToBot(new DamageAction(m, new DamageInfo(p, secondDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY, true));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
+    }
+
+    @Override
+    public void applyPowers() {
+        int baseBase = baseDamage;
+        isMultiDamage = false;
+        baseDamage = baseSecondDamage;
+        super.applyPowers();
+        secondDamage = damage;
+        isSecondDamageModified = secondDamage != baseSecondDamage;
+        baseDamage = baseBase;
+        isMultiDamage = true;
+        super.applyPowers();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        int baseBase = baseDamage;
+        isMultiDamage = false;
+        baseDamage = baseSecondDamage;
+        super.calculateCardDamage(mo);
+        secondDamage = damage;
+        isSecondDamageModified = secondDamage != baseSecondDamage;
+        baseDamage = baseBase;
+        isMultiDamage = true;
+        super.calculateCardDamage(null);
     }
 
     @Override
     public void upp() {
-        upgradeDamage(2);
-        upgradeMagicNumber(2);
+        upgradeSecondDamage(5);
+        upgradeDamage(3);
     }
 
     @Override

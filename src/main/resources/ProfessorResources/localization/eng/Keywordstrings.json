@@ -163,7 +163,7 @@
       "bomb",
       "bomb+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:FireIcon] . NL Enemies lose #b+2 HP per [Professor:BoltIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+5 single target damage per [Professor:FireIcon] . NL Deals #b+3 multi target damage per [Professor:BoltIcon] ."
   },
   {
     "ID": "explosive_uni",

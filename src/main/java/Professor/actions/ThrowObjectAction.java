@@ -20,24 +20,30 @@ public class ThrowObjectAction extends AbstractGameAction {
     private final float scale;
     private final Hitbox target;
     public boolean spawned = false;
+    private boolean bounceOff;
     private AbstractGameEffect e;
 
     public ThrowObjectAction(String item, float scale, Hitbox target, Color color) {
-        this(TexLoader.getTexture(MainModfile.makeImagePath("items/"+item+".png")), scale, target, color);
+        this(TexLoader.getTexture(MainModfile.makeImagePath("items/"+item+".png")), scale, target, color, true);
     }
 
-    public ThrowObjectAction(Texture tex, float scale, Hitbox target, Color color) {
+    public ThrowObjectAction(String item, float scale, Hitbox target, Color color, boolean bounceOff) {
+        this(TexLoader.getTexture(MainModfile.makeImagePath("items/"+item+".png")), scale, target, color, bounceOff);
+    }
+
+    public ThrowObjectAction(Texture tex, float scale, Hitbox target, Color color, boolean bounceOff) {
         this.tex = tex;
         this.target = target;
         this.color = color;
         this.scale = scale;
+        this.bounceOff = bounceOff;
     }
 
     @Override
     public void update() {
         if (!spawned) {
             spawned = true;
-            AbstractGameEffect hitBounce = new VfxBuilder(tex, target.cX, target.cY, 1.5f)
+            AbstractGameEffect hitBounce = new VfxBuilder(tex, target.cX, target.cY, bounceOff ? 1.5f : 0f)
                     .setScale(scale)
                     .gravity(50f)
                     .velocity(MathUtils.random(45f, 135f), MathUtils.random(600f, 800f))
