@@ -1,6 +1,7 @@
-package Professor.relics;
+package Professor.cutStuff.relics;
 
 import Professor.TheProfessor;
+import Professor.relics.AbstractEasyRelic;
 
 import static Professor.MainModfile.makeID;
 
