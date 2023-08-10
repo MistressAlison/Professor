@@ -163,7 +163,7 @@
       "bomb",
       "bomb+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+5 single target damage per [Professor:FireIcon] . NL Deals #b+3 multi target damage per [Professor:BoltIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+5 damage per [Professor:FireIcon] . NL Deals #b+3 AoE damage per [Professor:BoltIcon] ."
   },
   {
     "ID": "explosive_uni",
@@ -193,7 +193,7 @@
       "crystal_ice_bomb",
       "crystal_ice_bomb+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:IceIcon] . NL Applies #b+1 Weak per [Professor:WindIcon] ."
+    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+6 damage per [Professor:IceIcon] . NL Applies #b+1 Weak per [Professor:WindIcon] ."
   },
   {
     "ID": "luft",

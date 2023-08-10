@@ -37,13 +37,13 @@
   },
   "${ModID}:CrystalIceBomb": {
     "NAME": "Crystal Ice Bomb",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
+    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+6 per [Professor:IceIcon] ) }damage and apply !M! {!Location!|-2,4= NL (+1 per [Professor:WindIcon] ) }Weak to ALL enemies."
   },
   "${ModID}:SynthesizeCrystalIceBomb": {
     "NAME": "Crystal Ice Bomb",
     "DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": "]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +6 damage per Ice, +1 Weak per Wind."]
   },
   "${ModID}:DarkNightTreasure": {
     "NAME": "Dark Night Treasure",

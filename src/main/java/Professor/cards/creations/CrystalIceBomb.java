@@ -37,11 +37,11 @@ public class CrystalIceBomb extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseDamage = damage = 6;
+        baseDamage = damage = 10;
         baseMagicNumber = magicNumber = 1;
         isMultiDamage = true;
         if (data != null) {
-            baseDamage += 3*data.b;
+            baseDamage += 6*data.b;
             damage = baseDamage;
             baseMagicNumber += data.g;
             magicNumber = baseMagicNumber;

@@ -22,7 +22,7 @@ public class SynthesizeCrystalIceBomb extends AbstractRecipeCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new BeginSynthesisAction(this));
+        addToBot(new BeginSynthesisAction(this, cardStrings.EXTENDED_DESCRIPTION[1]));
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
