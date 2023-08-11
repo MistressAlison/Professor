@@ -47,7 +47,7 @@ public class MainModfile implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        EditCharactersSubscriber, PostInitializeSubscriber, PostUpdateSubscriber, AddAudioSubscriber, OnPlayerTurnStartSubscriber {
+        EditCharactersSubscriber, PostInitializeSubscriber, PostUpdateSubscriber, AddAudioSubscriber, OnPlayerTurnStartSubscriber, StartGameSubscriber {
 
     public static final String modID = "Professor";
     public static final Logger logger = LogManager.getLogger(MainModfile.class.getName());
@@ -453,5 +453,10 @@ public class MainModfile implements
     @Override
     public void receiveOnPlayerTurnStart() {
         SynthesisPanel.performSynthesis();
+    }
+
+    @Override
+    public void receiveStartGame() {
+        SynthesisPanel.clear();
     }
 }
