@@ -1,9 +1,9 @@
 package Professor.powers;
 
 import Professor.MainModfile;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.BetterOnApplyPowerPower;
+import Professor.cardmods.GainBlockMod;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.RitualDagger;
@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.RitualPower;
 
 public class BracedPower extends AbstractPower {
 
@@ -40,7 +39,7 @@ public class BracedPower extends AbstractPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.baseBlock > -1 && !(card instanceof RitualDagger)) {
+        if ((card.baseBlock > -1 && !(card instanceof RitualDagger)) || CardModifierManager.hasModifier(card, GainBlockMod.ID)) {
             this.flash();
             addToBot(new ReducePowerAction(owner, owner, this, amount));
         }

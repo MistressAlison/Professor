@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public abstract class AbstractInfusion extends AbstractCardModifier implements DynvarInterface {
     public enum InfusionType {
@@ -37,6 +39,16 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
         this.baseVal = this.val = baseAmount;
         this.modText = modText;
         this.modIcon = modIcon;
+    }
+
+    @Override
+    public List<String> extraDescriptors(AbstractCard card) {
+        if (type == InfusionType.DAMAGE_ALL || type == InfusionType.DAMAGE_RANDOM || type == InfusionType.DAMAGE_DIRECT) {
+            if (card.type != AbstractCard.CardType.ATTACK) {
+                return Collections.singletonList(AbstractCard.TEXT[0]);
+            }
+        }
+        return super.extraDescriptors(card);
     }
 
     @Override
