@@ -63,7 +63,7 @@ public class Bomb extends AbstractCreationCard {
             addToBot(new BigExplosionVFX(m));
         }
         addToBot(new DamageAction(m, new DamageInfo(p, secondDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY, true));
-        addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
     }
 
     @Override

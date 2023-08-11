@@ -58,7 +58,7 @@ public class DarkNightTreasure extends AbstractCreationCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("INTIMIDATE"));
         //addToBot(new VFXAction(p, new IntimidateEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.5F));
-        addToBot(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.PURPLE_RELIC_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 0.3F));
+        addToBot(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.PURPLE_RELIC_COLOR.cpy(), ShockWaveEffect.ShockWaveType.CHAOTIC), 0.3F));
         Wiz.forAllMonstersLiving(mon -> {
             if (mon.currentHealth <= magicNumber) {
                 addToBot(new SFXAction("MONSTER_COLLECTOR_DEBUFF"));

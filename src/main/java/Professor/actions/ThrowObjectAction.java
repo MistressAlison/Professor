@@ -34,7 +34,7 @@ public class ThrowObjectAction extends AbstractGameAction {
     public ThrowObjectAction(Texture tex, float scale, Hitbox target, Color color, boolean bounceOff) {
         this.tex = tex;
         this.target = target;
-        this.color = color;
+        this.color = color.cpy();
         this.scale = scale;
         this.bounceOff = bounceOff;
     }
