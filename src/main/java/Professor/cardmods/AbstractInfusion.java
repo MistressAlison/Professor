@@ -103,6 +103,7 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
         if (!mods.isEmpty()) {
             AbstractInfusion mod = (AbstractInfusion) mods.get(0);
             mod.baseVal += this.baseVal;
+            mod.val = mod.baseVal;
             return false;
         }
         return true;
