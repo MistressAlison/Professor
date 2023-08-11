@@ -31,7 +31,7 @@ public class DemonClaws extends AbstractEasyCard {
         }
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, true));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, true));
-        Wiz.applyToSelf(new FreeAttackPower(p, magicNumber));
+        Wiz.applyToSelf(new FreeAttackPower(p, 1));
     }
 
     @Override
