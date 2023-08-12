@@ -1,28 +1,26 @@
 package Professor.ui;
 
 import Professor.actions.PerformSynthesisAction;
+import Professor.cardmods.AbstractInfusion;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.cards.abstracts.AbstractRecipeCard;
 import Professor.patches.ArchetypeHelper;
 import Professor.util.ChimeraHelper;
-import Professor.util.Wiz;
+import basemod.abstracts.AbstractCardModifier;
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
-import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.OverlayMenu;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
-import com.megacrit.cardcrawl.ui.panels.ExhaustPanel;
 import com.megacrit.cardcrawl.vfx.BobEffect;
-import javassist.CtBehavior;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SynthesisItem {
     public static final float ORBIT_R = 120f * Settings.scale;
@@ -65,9 +63,18 @@ public class SynthesisItem {
         this.currentCreation.current_x = cX;
         this.currentCreation.current_y = cY;
         this.currentCreation.drawScale = 0.2f;
+        for (AbstractCardModifier mod : CardModifierManager.modifiers(currentRecipe)) {
+            if (mod instanceof AbstractInfusion) {
+                CardModifierManager.addModifier(currentCreation, mod.makeCopy());
+            }
+        }
         if (Loader.isModLoaded("ChimeraCards")) {
             ChimeraHelper.rollOnSynthesisCard(currentCreation);
         }
+    }
+
+    public List<AbstractCard> getAddedCards() {
+        return slots.stream().map(slot -> slot.card).collect(Collectors.toList());
     }
 
     public void update() {
@@ -108,7 +115,9 @@ public class SynthesisItem {
 
 
     public void performSynthesis() {
-        AbstractDungeon.actionManager.addToTop(new PerformSynthesisAction(this));
+        if (!processing) {
+            AbstractDungeon.actionManager.addToTop(new PerformSynthesisAction(this));
+        }
     }
 
     public void updateCreation() {
