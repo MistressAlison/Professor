@@ -348,7 +348,7 @@
   },
   "${ModID}:SaintsDiamond": {
     "NAME": "Saint's Diamond",
-    "DESCRIPTION": "Gain !B! Block. NL When used in professor:Synthesis, reduce this card's cost by !M! this combat."
+    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Reduce this card's cost by !M! this combat."
   },
   "${ModID}:Septrin": {
     "NAME": "Septrin",

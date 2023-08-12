@@ -21,7 +21,7 @@
       "catalyze",
       "catalytic"
     ],
-    "DESCRIPTION": "Catalysts are not discarded during #ySynthesis and instead return to your hand on completion."
+    "DESCRIPTION": "When added to #ySynthesis, trigger an extra effect."
   },
   {
     "ID": "reactant",
