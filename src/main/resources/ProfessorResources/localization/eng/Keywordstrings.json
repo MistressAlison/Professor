@@ -222,7 +222,7 @@
       "dawn_grimoire",
       "dawn_grimoire+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+7 damage per [Professor:FireIcon] . NL Heals #b+2 HP per [Professor:BoltIcon] ."
+    "DESCRIPTION": "Deals multi target damage and heals. NL Scales with [Professor:FireIcon] and [Professor:BoltIcon] ."
   },
   {
     "ID": "thorny_embrace",

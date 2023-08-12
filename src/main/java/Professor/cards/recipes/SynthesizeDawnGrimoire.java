@@ -16,7 +16,7 @@ public class SynthesizeDawnGrimoire extends AbstractRecipeCard {
 
     public SynthesizeDawnGrimoire() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 3;
+        baseInfo = info = 3;
         cardsToPreview = new DawnGrimoire();
         tags.add(CardTags.HEALING);
     }
@@ -42,8 +42,8 @@ public class SynthesizeDawnGrimoire extends AbstractRecipeCard {
     @Override
     public void upp() {
         //upgradeBaseCost(0);
+        selfRetain = true;
         uDesc();
-        cardsToPreview.upgrade();
     }
 
     @Override
@@ -63,15 +63,11 @@ public class SynthesizeDawnGrimoire extends AbstractRecipeCard {
 
     @Override
     public int getValance() {
-        return magicNumber;
+        return info;
     }
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        AbstractCreationCard ret = new DawnGrimoire(new AbstractCreationCard.ElementData(red, blue, yellow, green));
-        if (upgraded) {
-            ret.upgrade();
-        }
-        return ret;
+        return new DawnGrimoire(new AbstractCreationCard.ElementData(red, blue, yellow, green));
     }
 }

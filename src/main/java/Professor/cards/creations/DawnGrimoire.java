@@ -39,14 +39,16 @@ public class DawnGrimoire extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseDamage = damage = 10;
-        baseMagicNumber = magicNumber = 6;
+        baseDamage = damage = 8;
+        baseMagicNumber = magicNumber = 4;
         if (data != null) {
-            baseDamage += 7*data.r;
+            baseDamage += 3*data.r;
             damage = baseDamage;
-            baseMagicNumber += 2*data.y;
+            baseMagicNumber += data.y;
             magicNumber = baseMagicNumber;
         }
+        //Worst: 8 AOE, 4 AOE Heal
+        //Beat: 17 AOE, 7 AOE Heal
     }
 
     @Override
@@ -70,8 +72,8 @@ public class DawnGrimoire extends AbstractCreationCard {
 
     @Override
     public void upp() {
-        upgradeDamage(5);
-        upgradeMagicNumber(2);
+        upgradeDamage(3);
+        upgradeMagicNumber(1);
     }
 
     @Override

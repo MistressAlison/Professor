@@ -57,13 +57,13 @@
   },
   "${ModID}:DawnGrimoire": {
     "NAME": "Dawn Grimoire",
-    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+7 per [Professor:FireIcon] ) }damage to ALL enemies. Heal !M! {!Location!|-2,4=NL (+2 per [Professor:BoltIcon] ) }HP for each enemy in combat. NL Exhaust."
+    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+3 per [Professor:FireIcon] ) }damage to ALL enemies. Heal !M! {!Location!|-2,4=NL (+1 per [Professor:BoltIcon] ) }HP for each enemy in combat. NL Exhaust."
   },
   "${ModID}:SynthesizeDawnGrimoire": {
     "NAME": "Grim Blueprint",
-    "DESCRIPTION": "professor:Synthesize a professor:Dawn_Grimoire. NL professor:Valency !M!.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Dawn_Grimoire+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +7 damage per Fire, +2 healing per Bolt"]
+    "DESCRIPTION": "professor:Synthesize a professor:Dawn_Grimoire. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "Retain. NL professor:Synthesize a professor:Dawn_Grimoire. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +3 damage per Fire, +1 healing per Bolt"]
   },
   "${ModID}:ElysiumHarp": {
     "NAME": "Elysium Harp",
