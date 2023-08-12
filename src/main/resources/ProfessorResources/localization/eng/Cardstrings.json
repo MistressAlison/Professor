@@ -30,7 +30,7 @@
     "DESCRIPTION": "{@@}Deal !Professor:D2! {!Location!|-2,4=(+3 per [Professor:FireIcon] ) }damage. NL Deal !D! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) }damage to ALL enemies."
   },
   "${ModID}:SynthesizeBomb": {
-    "NAME": "Bomb Blueprint",
+    "NAME": "Explosive Blueprint",
     "DESCRIPTION": "professor:Synthesize a professor:Bomb. NL Requires !Professor:I! cards.",
     "UPGRADE_DESCRIPTION": "Retain. NL professor:Synthesize a professor:Bomb. NL Requires !Professor:I! cards.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +3 damage per Fire, +2 AoE damage per Bolt"]
@@ -40,7 +40,7 @@
     "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+4 per [Professor:IceIcon] ) }damage and apply !M! {!Location!|-2,4= NL (+1 per [Professor:WindIcon] ) }Weak to ALL enemies."
   },
   "${ModID}:SynthesizeCrystalIceBomb": {
-    "NAME": "Crystal Ice Bomb Blueprint",
+    "NAME": "Crystallized Blueprint",
     "DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb. NL Requires !Professor:I! cards.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb+. NL Requires !Professor:I! cards.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +4 damage per Ice, +1 Weak per Wind"]
@@ -50,7 +50,7 @@
     "DESCRIPTION": "{@@}Kill ALL enemies with !M! {!Location!|-2,4=(+5 per [Professor:IceIcon] ) }or less HP."
   },
   "${ModID}:SynthesizeDarkNightTreasure": {
-    "NAME": "Dark Night Treasure Blueprint",
+    "NAME": "Vorpal Blueprint",
     "DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure. NL Requires !Professor:I! cards.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure+. NL Requires !Professor:I! cards.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +5 kill threshold per Ice"]
@@ -60,7 +60,7 @@
     "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+7 per [Professor:FireIcon] ) }damage to ALL enemies. Heal !M! {!Location!|-2,4=NL (+2 per [Professor:BoltIcon] ) }HP for each enemy in combat. NL Exhaust."
   },
   "${ModID}:SynthesizeDawnGrimoire": {
-    "NAME": "Dawn Grimoire",
+    "NAME": "Grim Blueprint",
     "DESCRIPTION": "professor:Synthesize a professor:Dawn_Grimoire. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Dawn_Grimoire+. NL professor:Valency !M!.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +7 damage per Fire, +2 healing per Bolt"]
@@ -70,7 +70,7 @@
     "DESCRIPTION": "{@@}Draw !Professor:M2! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) }cards. NL Your next Attack deals !M! {!Location!|-2,4=(+4 per [Professor:BoltIcon] ) }additional damage."
   },
   "${ModID}:SynthesizeElysiumHarp": {
-    "NAME": "Elysium Harp",
+    "NAME": "Peaceful Blueprint",
     "DESCRIPTION": "professor:Synthesize an professor:Elysium_Harp. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize an professor:Elysium_Harp+. NL professor:Valency !M!.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 draw per Wind, +4 Vigor per Bolt"]
@@ -80,7 +80,7 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Stagger."
   },
   "${ModID}:SynthesizeExplosiveUni": {
-    "NAME": "Explosive Uni",
+    "NAME": "Sharp Blueprint",
     "DESCRIPTION": "professor:Synthesize an professor:Explosive_Uni. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize an professor:Explosive_Uni+. NL professor:Valency !M!.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
@@ -90,7 +90,7 @@
     "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) }damage and apply !M! {!Location!|-2,4=NL (+1 per [Professor:FireIcon] ) }professor:Exposed to a random enemy !Professor:M2! times."
   },
   "${ModID}:SynthesizeLautePlajig": {
-    "NAME": "Laute Plajig",
+    "NAME": "Shocking Blueprint",
     "DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig+. NL professor:Valency !M!.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +2 damage per Bolt, +1 Exposed per Fire"]
@@ -100,7 +100,7 @@
     "DESCRIPTION": "{@@}Draw !M! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) }card{!M!|>1=s}. NL Next turn, draw !Professor:M2! {!Location!|-2,4=NL (+1 per [Professor:IceIcon] ) }card{!Professor:M2!|>1=s}."
   },
   "${ModID}:SynthesizeLuft": {
-    "NAME": "Luft",
+    "NAME": "Breezy Blueprint",
     "DESCRIPTION": "professor:Synthesize a professor:Luft. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Luft+. NL professor:Valency !M!.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 draw per Wind, +1 draw next turn per Ice"]
@@ -110,7 +110,7 @@
     "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies.{!Location!|-2,4= NL Costs 1 less for each professor:Element you add 2+ of.}"
   },
   "${ModID}:SynthesizeNA": {
-    "NAME": "N/A",
+    "NAME": "Enigmatic Blueprint",
     "DESCRIPTION": "professor:Synthesize an professor:N/A. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:N/A+. NL professor:Valency !M!.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": -1 cost for each Element you add 2 or more of"]
@@ -120,7 +120,7 @@
     "DESCRIPTION": "{@@}At the end of your turn, deal !M! {!Location!|-2,4=(+3 per [Professor:WindIcon] ) }damage to each enemy that intends to attack."
   },
   "${ModID}:SynthesizeThornyEmbrace": {
-    "NAME": "Thorny Embrace",
+    "NAME": "Pointy Blueprint",
     "DESCRIPTION": "professor:Synthesize a professor:Thorny_Embrace. NL professor:Valency !M!.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Thorny_Embrace+. NL professor:Valency !M!.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +3 damage per Wind, +1 damage per Bolt"]
