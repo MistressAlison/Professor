@@ -371,7 +371,7 @@
   },
   "${ModID}:TabooDrop": {
     "NAME": "Taboo Drop",
-    "DESCRIPTION": "ALL enemies lose !M! Strength this turn. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage and apply !M! professor:Stagger to ALL enemies."
   },
   "${ModID}:TemptingSap": {
     "NAME": "Tempting Sap",
