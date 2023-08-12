@@ -1,9 +1,14 @@
 package Professor.actions;
 
+import Professor.MainModfile;
+import Professor.util.TextureSniper;
 import Professor.util.Wiz;
+import Professor.vfx.VFXContainer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -27,6 +32,9 @@ public class TransportCannonAction extends AbstractGameAction {
             addToTop(new DamageAction(target, info, AttackEffect.SLASH_DIAGONAL));
         }
         Wiz.applyToSelfTop(new DrawCardNextTurnPower(Wiz.adp(), size));
+        for (AbstractCard c : Wiz.adp().hand.group) {
+            addToTop(new VFXAction(VFXContainer.throwEffect(TextureSniper.snipeCard(c), 0.25f, target.hb, MainModfile.MEDIUM_RUBY_COLOR, true, false)));
+        }
         addToTop(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player, size, false));
         this.isDone = true;
     }
