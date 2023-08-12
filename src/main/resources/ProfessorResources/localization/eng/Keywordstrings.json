@@ -163,7 +163,7 @@
       "bomb",
       "bomb+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+5 damage per [Professor:FireIcon] . NL Deals #b+3 AoE damage per [Professor:BoltIcon] ."
+    "DESCRIPTION": "Bombs deal single target and AoE damage that scale with [Professor:FireIcon] and [Professor:BoltIcon] ."
   },
   {
     "ID": "explosive_uni",

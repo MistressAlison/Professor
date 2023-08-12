@@ -9,7 +9,6 @@ import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -38,14 +37,16 @@ public class Bomb extends AbstractCreationCard {
     @Override
     public void updateElementData(ElementData data) {
         baseDamage = damage = 6; // AOE
-        baseSecondDamage = secondDamage = 10; // Single
+        baseSecondDamage = secondDamage = 8; // Single
         manualD2 = true;
         if (data != null) {
-            baseDamage += 3*data.y;
+            baseDamage += 2*data.y;
             damage = baseDamage;
-            baseSecondDamage += 5*data.r;
+            baseSecondDamage += 3*data.r;
             secondDamage = baseSecondDamage;
         }
+        //Worst: Deal 8, 6 AOE
+        //Best: Deal 14, 10 AOE
     }
 
     @Override
@@ -94,8 +95,8 @@ public class Bomb extends AbstractCreationCard {
 
     @Override
     public void upp() {
-        upgradeSecondDamage(5);
-        upgradeDamage(3);
+        upgradeSecondDamage(3);
+        upgradeDamage(2);
     }
 
     @Override

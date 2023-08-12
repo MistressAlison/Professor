@@ -27,13 +27,13 @@
   },
   "${ModID}:Bomb": {
     "NAME": "Bomb",
-    "DESCRIPTION": "{@@}Deal !Professor:D2! {!Location!|-2,4=(+5 per [Professor:FireIcon] ) }damage. NL Deal !D! {!Location!|-2,4=(+3 per [Professor:BoltIcon] ) }damage to ALL enemies."
+    "DESCRIPTION": "{@@}Deal !Professor:D2! {!Location!|-2,4=(+3 per [Professor:FireIcon] ) }damage. NL Deal !D! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) }damage to ALL enemies."
   },
   "${ModID}:SynthesizeBomb": {
-    "NAME": "Bomb",
-    "DESCRIPTION": "professor:Synthesize a professor:Bomb. NL professor:Valency !M!.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Bomb+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +5 damage per Fire, +3 AoE damage per Bolt"]
+    "NAME": "Bomb Blueprint",
+    "DESCRIPTION": "professor:Synthesize a professor:Bomb. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "Retain. NL professor:Synthesize a professor:Bomb. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +3 damage per Fire, +2 AoE damage per Bolt"]
   },
   "${ModID}:CrystalIceBomb": {
     "NAME": "Crystal Ice Bomb",

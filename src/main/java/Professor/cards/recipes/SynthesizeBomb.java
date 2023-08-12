@@ -16,7 +16,8 @@ public class SynthesizeBomb extends AbstractRecipeCard {
 
     public SynthesizeBomb() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        //baseMagicNumber = magicNumber = 2;
+        baseInfo = info = 2;
         cardsToPreview = new Bomb();
     }
 
@@ -41,8 +42,7 @@ public class SynthesizeBomb extends AbstractRecipeCard {
     @Override
     public void upp() {
         uDesc();
-        //upgradeMagicNumber(1);
-        cardsToPreview.upgrade();
+        selfRetain = true;
     }
 
     @Override
