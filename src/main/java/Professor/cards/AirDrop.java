@@ -27,6 +27,7 @@ public class AirDrop extends AbstractEasyCard {
     @Override
     public void upp() {
         //upgradeBaseCost(0);
+        uDesc();
     }
 
     @Override

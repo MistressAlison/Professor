@@ -137,7 +137,8 @@
   },
   "${ModID}:AirDrop": {
     "NAME": "Air Drop",
-    "DESCRIPTION": "Choose 1 of 3{!Upgrades!|>0= Upgraded}{@@} professor:Synthesis cards to add into your hand. NL It costs 0 this turn. NL Exhaust."
+    "DESCRIPTION": "Choose 1 of 3 professor:Synthesis cards to add into your hand. NL It costs 0 this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 Upgraded professor:Synthesis cards to add into your hand. NL It costs 0 this turn. NL Exhaust."
   },
   "${ModID}:Amalgam": {
     "NAME": "Amalgam",
@@ -290,7 +291,7 @@
   "${ModID}:LunarDrop": {
     "NAME": "Lunar Drop",
     "DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis finishes instantly.",
-    "UPGRADE_DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis finishes instantly and the output is upgraded.",
+    "UPGRADE_DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis finishes instantly and the completed card is Upgraded.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:ManaEaterBranch": {
