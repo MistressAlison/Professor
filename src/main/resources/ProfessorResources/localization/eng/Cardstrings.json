@@ -315,7 +315,8 @@
   },
   "${ModID}:MysteriousBroom": {
     "NAME": "Mysterious Broom",
-    "DESCRIPTION": "Exhaust up to X cards in your hand. NL {@@}{!M!|>0=If X is !M! or more, take|@=Take} an extra turn after this one and Exhaust this."
+    "DESCRIPTION": "Exhaust up to X cards in your hand. NL {@@}{!M!|>0=If X is !M! or more, take|@=Take} an extra turn after this one and Exhaust this.",
+    "FLAVOR": "It can be used for normal cleaning, of course, but it is also said that if you use its hidden ability to store mana, it will allow you to fly when you straddle it."
   },
   "${ModID}:OldenPhilosophersStone": {
     "NAME": "Philosopher's Form",

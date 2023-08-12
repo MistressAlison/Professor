@@ -1,5 +1,6 @@
 package Professor.cards.abstracts;
 
+import Professor.MainModfile;
 import Professor.TheProfessor;
 import Professor.util.CardArtRoller;
 import basemod.BaseMod;
@@ -10,6 +11,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -105,6 +107,9 @@ public abstract class AbstractEasyCard extends CustomCard {
             } else
                 needsArtRefresh = true;
         }
+
+        FlavorText.AbstractCardFlavorFields.boxColor.set(this, mix(BLACK.cpy(), MainModfile.MEDIUM_RUBY_COLOR.cpy()));
+        FlavorText.AbstractCardFlavorFields.textColor.set(this, new Color(1.0F, 0.9725F, 0.8745F, 1.0F));
     }
 
 
