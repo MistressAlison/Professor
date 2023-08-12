@@ -15,22 +15,23 @@ public class AetherEssence extends AbstractEasyCard {
     public final static String ID = makeID(AetherEssence.class.getSimpleName());
 
     public AetherEssence() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 8;
+        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        //isInnate = true;
         //isEthereal = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new AetherPower(p, magicNumber));
+        Wiz.applyToSelf(new AetherPower(p, upgraded ? 1 : 0));
     }
 
     @Override
     public void upp() {
         //upgradeMagicNumber(2);
-        upgradeBaseCost(1);
+        //upgradeBaseCost(0);
+        //isInnate = true;
         //isEthereal = false;
-        //uDesc();
+        uDesc();
     }
 
     @Override

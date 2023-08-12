@@ -132,7 +132,8 @@
   },
   "${ModID}:AetherEssence": {
     "NAME": "Aether Essence",
-    "DESCRIPTION": "Whenever you receive a buff, deal !M! damage to a random enemy."
+    "DESCRIPTION": "When professor:Synthesis is completed, contributed cards are returned to your hand instead.",
+    "UPGRADE_DESCRIPTION": "When professor:Synthesis is completed, contributed cards are Upgraded and returned to your hand instead."
   },
   "${ModID}:AirDrop": {
     "NAME": "Air Drop",

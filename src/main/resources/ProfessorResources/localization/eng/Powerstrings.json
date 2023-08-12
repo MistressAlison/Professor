@@ -21,7 +21,7 @@
   },
   "${ModID}:AetherPower": {
     "NAME": "Aether Essence",
-    "DESCRIPTIONS": ["Whenever you receive a buff, deal #b"," damage to a random enemy."]
+    "DESCRIPTIONS": ["Cards contributed to #ySynthesis are returned to your hand.","Cards contributed to #ySynthesis are returned to your hand and #yUpgraded #b"," time."," times."]
   },
   "${ModID}:PhilosophersPower": {
     "NAME": "Philosopher's Form",
