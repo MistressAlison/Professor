@@ -1,7 +1,10 @@
 package Professor.cards.tokens;
 
 import Professor.cards.abstracts.AbstractTokenCard;
+import Professor.cards.interfaces.OnUseInSynthesisCard;
+import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
+import Professor.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -12,25 +15,24 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class RedNeutralizer extends AbstractTokenCard {
+public class RedNeutralizer extends AbstractTokenCard implements OnUseInSynthesisCard {
     public final static String ID = makeID(RedNeutralizer.class.getSimpleName());
 
     public RedNeutralizer() {
-        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.ALL_ENEMY, CardColor.COLORLESS);
-        baseMagicNumber = magicNumber = 5;
-        //tags.add(CustomTags.PROF_REACTANT);
+        super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
+        baseDamage = damage = 8;
+        baseMagicNumber = magicNumber = 4;
         PurgeField.purge.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //dmg(m, AbstractGameAction.AttackEffect.FIRE);
-        addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(magicNumber, true), DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
+        dmg(m, AbstractGameAction.AttackEffect.FIRE);
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(3);
+        upgradeDamage(4);
     }
 
     @Override
@@ -46,5 +48,12 @@ public class RedNeutralizer extends AbstractTokenCard {
     @Override
     public String itemArt() {
         return RedNeutralizer.class.getSimpleName();
+    }
+
+    @Override
+    public boolean onAdded(SynthesisItem item) {
+        superFlash();
+        addToBot(new DamageAllEnemiesAction(Wiz.adp(), DamageInfo.createDamageMatrix(magicNumber, true), DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
+        return false;
     }
 }

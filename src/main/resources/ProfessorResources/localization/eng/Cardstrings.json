@@ -7,19 +7,19 @@
   },
   "${ModID}:BlueNeutralizer": {
     "NAME": "Blue Neutralizer",
-    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Purge."
+    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Gain !M! professor:Braced. NL Purge."
   },
   "${ModID}:GreenNeutralizer": {
     "NAME": "Green Neutralizer",
-    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL Purge"
+    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL professor:Catalyst: Upgrade !Professor:M2! random card{!Professor:M2!|>1=s} for the rest of combat. NL Purge"
   },
   "${ModID}:RedNeutralizer": {
     "NAME": "Red Neutralizer",
-    "DESCRIPTION": "ALL enemies lose !M! HP. NL Purge."
+    "DESCRIPTION": "Deal !D! damage. NL professor:Catalyst: ALL enemies lose !M! HP. NL Purge."
   },
   "${ModID}:YellowNeutralizer": {
     "NAME": "Yellow Neutralizer",
-    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL Purge."
+    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL professor:Catalyst: Your next Attack deals !Professor:M2! additional damage. NL Purge."
   },
   "${ModID}:HolyArborCrystal": {
     "NAME": "Holy Arbor Crystal",

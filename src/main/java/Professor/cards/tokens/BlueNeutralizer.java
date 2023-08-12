@@ -1,7 +1,11 @@
 package Professor.cards.tokens;
 
 import Professor.cards.abstracts.AbstractTokenCard;
+import Professor.cards.interfaces.OnUseInSynthesisCard;
+import Professor.powers.BracedPower;
+import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
+import Professor.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,15 +13,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class BlueNeutralizer extends AbstractTokenCard {
+public class BlueNeutralizer extends AbstractTokenCard implements OnUseInSynthesisCard {
     public final static String ID = makeID(BlueNeutralizer.class.getSimpleName());
 
     public BlueNeutralizer() {
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
-        baseBlock = block = 4;
-        //tags.add(CustomTags.PROF_REACTANT);
+        baseBlock = block = 6;
+        baseMagicNumber = magicNumber = 3;
         PurgeField.purge.set(this, true);
-        selfRetain = true;
     }
 
     @Override
@@ -27,7 +30,7 @@ public class BlueNeutralizer extends AbstractTokenCard {
 
     @Override
     public void upp() {
-        upgradeBlock(2);
+        upgradeBlock(3);
     }
 
     @Override
@@ -43,5 +46,12 @@ public class BlueNeutralizer extends AbstractTokenCard {
     @Override
     public String itemArt() {
         return BlueNeutralizer.class.getSimpleName();
+    }
+
+    @Override
+    public boolean onAdded(SynthesisItem item) {
+        superFlash();
+        Wiz.applyToSelf(new BracedPower(Wiz.adp(), magicNumber));
+        return false;
     }
 }

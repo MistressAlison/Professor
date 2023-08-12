@@ -1,21 +1,25 @@
 package Professor.cards.tokens;
 
 import Professor.cards.abstracts.AbstractTokenCard;
+import Professor.cards.interfaces.OnUseInSynthesisCard;
+import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.UpgradeRandomCardAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class GreenNeutralizer extends AbstractTokenCard {
+public class GreenNeutralizer extends AbstractTokenCard implements OnUseInSynthesisCard {
     public final static String ID = makeID(GreenNeutralizer.class.getSimpleName());
 
     public GreenNeutralizer() {
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
         baseMagicNumber = magicNumber = 1;
+        baseSecondMagic = secondMagic = 2;
         //tags.add(CustomTags.PROF_REACTANT);
         PurgeField.purge.set(this, true);
     }
@@ -43,5 +47,14 @@ public class GreenNeutralizer extends AbstractTokenCard {
     @Override
     public String itemArt() {
         return GreenNeutralizer.class.getSimpleName();
+    }
+
+    @Override
+    public boolean onAdded(SynthesisItem item) {
+        superFlash();
+        for (int i = 0 ; i < secondMagic ; i++) {
+            addToBot(new UpgradeRandomCardAction());
+        }
+        return false;
     }
 }
