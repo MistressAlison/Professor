@@ -163,7 +163,7 @@
       "bomb",
       "bomb+"
     ],
-    "DESCRIPTION": "Bombs deal single target and AoE damage that scale with [Professor:FireIcon] and [Professor:BoltIcon] ."
+    "DESCRIPTION": "Deals both single target and multi target damage. NL Scales with [Professor:FireIcon] and [Professor:BoltIcon] ."
   },
   {
     "ID": "explosive_uni",
