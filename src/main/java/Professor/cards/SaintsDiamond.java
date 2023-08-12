@@ -2,10 +2,9 @@ package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.cards.interfaces.OnUseInSynthesisCard;
+import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -48,7 +47,9 @@ public class SaintsDiamond extends AbstractEasyCard implements OnUseInSynthesisC
     }
 
     @Override
-    public void onSynthesis(AbstractCard createdCard) {
-        addToBot(new ReduceCostAction(this.uuid, this.magicNumber));
+    public boolean onAdded(SynthesisItem item) {
+        this.modifyCostForCombat(-1);
+        superFlash();
+        return false;
     }
 }
