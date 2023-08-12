@@ -97,7 +97,7 @@
   },
   "${ModID}:Luft": {
     "NAME": "Luft",
-    "DESCRIPTION": "{@@}Draw !M! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) }card{!M!|>1=s} and Upgrade {!M!|1=it|@=them}."
+    "DESCRIPTION": "{@@}Draw !M! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) }card{!M!|>1=s} and Upgrade {!M!|1=it|@=them} for the rest of combat."
   },
   "${ModID}:SynthesizeLuft": {
     "NAME": "Breezy Blueprint",
@@ -133,7 +133,7 @@
   "${ModID}:AetherEssence": {
     "NAME": "Aether Essence",
     "DESCRIPTION": "When professor:Synthesis is completed, contributed cards are returned to your hand instead.",
-    "UPGRADE_DESCRIPTION": "When professor:Synthesis is completed, contributed cards are Upgraded and returned to your hand instead."
+    "UPGRADE_DESCRIPTION": "When professor:Synthesis is completed, contributed cards are Upgraded for the rest of combat and returned to your hand instead."
   },
   "${ModID}:AirDrop": {
     "NAME": "Air Drop",
@@ -146,7 +146,7 @@
   },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
-    "DESCRIPTION": "Whenever you play a professor:Fire or professor:Bolt card, Upgrade it{@@}{!M!|>1= !M! times}."
+    "DESCRIPTION": "Whenever you play a professor:Fire or professor:Bolt card, Upgrade it{@@}{!M!|>1= !M! times} for the rest of combat."
   },
   "${ModID}:AncientBlueWater": {
     "NAME": "Ancient Blue Water",
@@ -329,7 +329,7 @@
   },
   "${ModID}:OldMagicTome": {
     "NAME": "Old Magic Tome",
-    "DESCRIPTION": "professor:Unlock a card. NL Upgrade it !M! times this combat. NL Exhaust."
+    "DESCRIPTION": "professor:Unlock and Upgrade a card !M! times for the rest of combat. NL Exhaust."
   },
   "${ModID}:PoisonGrass": {
     "NAME": "Poison Grass",
