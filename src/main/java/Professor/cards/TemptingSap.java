@@ -16,7 +16,7 @@ public class TemptingSap extends AbstractEasyCard {
 
     public TemptingSap() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = 3;
         exhaust = true;
     }
 
