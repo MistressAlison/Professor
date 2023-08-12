@@ -174,7 +174,7 @@
   },
   "${ModID}:CleanWater": {
     "NAME": "Clean Water",
-    "DESCRIPTION": "Retain. NL Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Increase this card's Block by !M! this combat."
   },
   "${ModID}:Clobber": {
     "NAME": "Clobber",
@@ -274,7 +274,8 @@
   },
   "${ModID}:Ingot": {
     "NAME": "Ingot",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable. NL Ignores Block."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable. NL Ignores Block.",
+    "FLAVOR": "A dense bar of metal, perfect for throwing."
   },
   "${ModID}:LightningEssence": {
     "NAME": "Lightning Essence",
@@ -325,11 +326,13 @@
   "${ModID}:OldenPhilosophersStone": {
     "NAME": "Philosopher's Form",
     "DESCRIPTION": "Ethereal. NL You may play a card you do not have the Energy for {!M!|1=once|>1=!M! times} per turn.{@@}",
-    "UPGRADE_DESCRIPTION": "You may play a card you do not have the Energy for {!M!|1=once|>1=!M! times} per turn.{@@}"
+    "UPGRADE_DESCRIPTION": "You may play a card you do not have the Energy for {!M!|1=once|>1=!M! times} per turn.{@@}",
+    "FLAVOR": "It pulses with a vast amount of energy, but isn't stable. As such, it's quite difficult to handle."
   },
   "${ModID}:OldMagicTome": {
     "NAME": "Old Magic Tome",
-    "DESCRIPTION": "professor:Unlock and Upgrade a card !M! times for the rest of combat. NL Exhaust."
+    "DESCRIPTION": "professor:Unlock and Upgrade a card !M! times for the rest of combat. NL Exhaust.",
+    "FLAVOR": "Even those who have no magic abilities can feel the mana coursing through it."
   },
   "${ModID}:PoisonGrass": {
     "NAME": "Poison Grass",
@@ -381,7 +384,8 @@
   },
   "${ModID}:TorchGrass": {
     "NAME": "Torch Grass",
-    "DESCRIPTION": "Deal !D! damage. NL Put !M! card{!M!|>1=s}{@@} from your discard pile into your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Put !M! card{!M!|>1=s}{@@} from your discard pile into your hand.",
+    "EXTENDED_DESCRIPTION": ["Touch Grass"]
   },
   "${ModID}:TransportCannon": {
     "NAME": "Transport Cannon",
@@ -393,7 +397,8 @@
   },
   "${ModID}:VirgoRequiemFlower": {
     "NAME": "Requiem Flower",
-    "DESCRIPTION": "Fetch a card from your exhaust pile. NL Exhaust."
+    "DESCRIPTION": "Fetch a card from your exhaust pile. NL Exhaust.",
+    "FLAVOR": "Its faint bluish-white blossom is said to console the dead."
   },
   "${ModID}:Volley": {
     "NAME": "Volley",
@@ -414,6 +419,7 @@
   },
   "${ModID}:WindShoes": {
     "NAME": "Wind Shoes",
-    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}",
+    "FLAVOR": "Shoes so light they're said to contain the very spirit of the wind."
   }
 }
