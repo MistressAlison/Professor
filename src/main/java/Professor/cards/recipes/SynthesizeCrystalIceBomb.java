@@ -7,6 +7,7 @@ import Professor.cards.creations.CrystalIceBomb;
 import Professor.util.CardArtRoller;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
@@ -18,6 +19,7 @@ public class SynthesizeCrystalIceBomb extends AbstractRecipeCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseInfo = info = 2;
         cardsToPreview = new CrystalIceBomb();
+        addVanillaKeyword(GameDictionary.WEAK);
     }
 
     @Override
@@ -41,9 +43,6 @@ public class SynthesizeCrystalIceBomb extends AbstractRecipeCard {
     @Override
     public void upp() {
         upgradeBaseCost(0);
-        //upgradeMagicNumber(1);
-        //uDesc();
-        //cardsToPreview.upgrade();
     }
 
     @Override
