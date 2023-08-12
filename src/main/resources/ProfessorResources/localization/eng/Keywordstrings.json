@@ -232,7 +232,7 @@
       "thorny_embrace",
       "thorny_embrace+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+3 damage per [Professor:WindIcon] ."
+    "DESCRIPTION": "Deals damage to enemies that intend to attack. NL Scales with [Professor:WindIcon] ."
   },
   {
     "ID": "elysium_harp",

@@ -17,7 +17,7 @@ public class SynthesizeThornyEmbrace extends AbstractRecipeCard {
 
     public SynthesizeThornyEmbrace() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        baseInfo = info = 2;
         cardsToPreview = new ThornyEmbrace();
     }
 
@@ -41,9 +41,7 @@ public class SynthesizeThornyEmbrace extends AbstractRecipeCard {
 
     @Override
     public void upp() {
-        //upgradeMagicNumber(1);
-        uDesc();
-        cardsToPreview.upgrade();
+        upgradeBaseCost(0);
     }
 
     @Override
@@ -63,15 +61,11 @@ public class SynthesizeThornyEmbrace extends AbstractRecipeCard {
 
     @Override
     public int getValance() {
-        return magicNumber;
+        return info;
     }
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        AbstractCreationCard ret = new ThornyEmbrace(new AbstractCreationCard.ElementData(red, blue, yellow, green));
-        if (upgraded) {
-            ret.upgrade();
-        }
-        return ret;
+        return new ThornyEmbrace(new AbstractCreationCard.ElementData(red, blue, yellow, green));
     }
 }
