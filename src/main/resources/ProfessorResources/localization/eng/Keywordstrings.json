@@ -242,7 +242,7 @@
       "elysium_harp",
       "elysium_harp+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Draw #b+1 card per [Professor:WindIcon] . NL Gain #b+4 additional damage NL per [Professor:BoltIcon] ."
+    "DESCRIPTION": "Draws cards and grants Vigor. NL Scales with [Professor:WindIcon] and [Professor:BoltIcon] ."
   },
   {
     "ID": "dark_night_treasure",

@@ -17,8 +17,9 @@ public class SynthesizeElysiumHarp extends AbstractRecipeCard {
 
     public SynthesizeElysiumHarp() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        baseInfo = info = 2;
         cardsToPreview = new ElysiumHarp();
+        isEthereal = true;
     }
 
     @Override
@@ -41,9 +42,10 @@ public class SynthesizeElysiumHarp extends AbstractRecipeCard {
 
     @Override
     public void upp() {
+        isEthereal = false;
         //upgradeMagicNumber(1);
         uDesc();
-        cardsToPreview.upgrade();
+        //cardsToPreview.upgrade();
     }
 
     @Override
@@ -63,15 +65,11 @@ public class SynthesizeElysiumHarp extends AbstractRecipeCard {
 
     @Override
     public int getValance() {
-        return magicNumber;
+        return info;
     }
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        AbstractCreationCard ret = new ElysiumHarp(new AbstractCreationCard.ElementData(red, blue, yellow, green));
-        if (upgraded) {
-            ret.upgrade();
-        }
-        return ret;
+        return new ElysiumHarp(new AbstractCreationCard.ElementData(red, blue, yellow, green));
     }
 }

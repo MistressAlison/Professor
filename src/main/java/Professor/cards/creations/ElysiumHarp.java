@@ -34,14 +34,16 @@ public class ElysiumHarp extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseMagicNumber = magicNumber = 8;
-        baseSecondMagic = secondMagic = 2;
+        baseMagicNumber = magicNumber = 5;
+        baseSecondMagic = secondMagic = 1;
         if (data != null) {
-            baseMagicNumber += 4*data.y;
+            baseMagicNumber += 2*data.y;
             magicNumber = baseMagicNumber;
             baseSecondMagic += data.g;
             secondMagic = baseSecondMagic;
         }
+        //Worst: 5 Vigor, 1 draw
+        //Best: 9 Vigor, 3 draw
     }
 
     @Override
@@ -60,7 +62,7 @@ public class ElysiumHarp extends AbstractCreationCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(4);
+        //upgradeMagicNumber(4);
         upgradeSecondMagic(1);
     }
 
