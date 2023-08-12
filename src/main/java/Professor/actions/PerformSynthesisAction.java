@@ -28,8 +28,15 @@ public class PerformSynthesisAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        //Wait until snapped, don't start ticking duration
         if (item.slots.stream().allMatch(s -> s.isSnapped() || s.isEmpty())) {
+            //Actually start the process
             if (duration == startDuration) {
+                if (item.processing) {
+                    //We are already processing, don't proceed
+                    this.isDone = true;
+                    return;
+                }
                 item.processing = true;
                 CardCrawlGame.sound.play(CustomSounds.SYNTH_START_KEY2, 0.1f);
             }
