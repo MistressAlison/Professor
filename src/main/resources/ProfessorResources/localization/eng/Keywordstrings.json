@@ -183,7 +183,7 @@
       "na",
       "n/a+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL [Professor:FireIcon] [Professor:FireIcon] - Costs #b1 less. NL [Professor:IceIcon] [Professor:IceIcon] - Costs #b1 less. NL [Professor:BoltIcon] [Professor:BoltIcon] - Costs #b1 less. NL [Professor:WindIcon] [Professor:WindIcon] - Costs #b1 less."
+    "DESCRIPTION": "Deals multi target damage. NL Costs 1 less for each Element you add 2 or more of."
   },
   {
     "ID": "crystal_ice_bomb",

@@ -107,12 +107,12 @@
   },
   "${ModID}:NA": {
     "NAME": "N/A",
-    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies.{!Location!|-2,4= NL Costs 1 less for each professor:Element you add 2+ of.}"
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies.{!Location!|-2,4= NL Costs 1 less for each professor:Element you add 2 or more of.}"
   },
   "${ModID}:SynthesizeNA": {
     "NAME": "Enigmatic Blueprint",
-    "DESCRIPTION": "professor:Synthesize an professor:N/A. NL professor:Valency !M!.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:N/A+. NL professor:Valency !M!.",
+    "DESCRIPTION": "professor:Synthesize an professor:N/A. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:N/A+. NL Requires !Professor:I! cards.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": -1 cost for each Element you add 2 or more of"]
   },
   "${ModID}:ThornyEmbrace": {

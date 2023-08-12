@@ -16,7 +16,7 @@ public class SynthesizeNA extends AbstractRecipeCard {
 
     public SynthesizeNA() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 6;
+        baseInfo = info = 6;
         cardsToPreview = new NA();
     }
 
@@ -61,15 +61,11 @@ public class SynthesizeNA extends AbstractRecipeCard {
 
     @Override
     public int getValance() {
-        return magicNumber;
+        return info;
     }
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        AbstractCreationCard ret = new NA(new AbstractCreationCard.ElementData(red, blue, yellow, green));
-        if (upgraded) {
-            ret.upgrade();
-        }
-        return ret;
+        return new NA(new AbstractCreationCard.ElementData(red, blue, yellow, green));
     }
 }
