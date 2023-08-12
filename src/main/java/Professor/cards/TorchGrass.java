@@ -3,12 +3,14 @@ package Professor.cards;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
@@ -20,6 +22,10 @@ public class TorchGrass extends AbstractEasyCard {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = damage = 4;
         baseMagicNumber = magicNumber = 1;
+        if (CardCrawlGame.playerName.equals("rorDev") && MathUtils.random(4) == 0) {
+            this.originalName = this.name = cardStrings.EXTENDED_DESCRIPTION[0];
+            initializeTitle();
+        }
     }
 
     @Override
