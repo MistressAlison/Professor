@@ -212,7 +212,7 @@
       "laute_plajig",
       "laute_plajig+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+2 damage per [Professor:BoltIcon] . NL Applies #b+1 Exposed per [Professor:FireIcon] ."
+    "DESCRIPTION": "Deals damage to random enemies and applies Stagger. NL Scales with [Professor:BoltIcon] and [Professor:FireIcon] ."
   },
   {
     "ID": "dawn_grimoire",

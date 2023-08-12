@@ -87,13 +87,13 @@
   },
   "${ModID}:LautePlajig": {
     "NAME": "Laute Plajig",
-    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) }damage and apply !M! {!Location!|-2,4=NL (+1 per [Professor:FireIcon] ) }professor:Exposed to a random enemy !Professor:M2! times."
+    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+1 per [Professor:BoltIcon] ) }damage and apply !M! {!Location!|-2,4=NL (+1 per [Professor:FireIcon] ) }professor:Stagger to a random enemy !Professor:M2! times."
   },
   "${ModID}:SynthesizeLautePlajig": {
     "NAME": "Shocking Blueprint",
-    "DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig. NL professor:Valency !M!.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +2 damage per Bolt, +1 Exposed per Fire"]
+    "DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig+. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 damage per Bolt, +1 Stagger per Fire"]
   },
   "${ModID}:Luft": {
     "NAME": "Luft",

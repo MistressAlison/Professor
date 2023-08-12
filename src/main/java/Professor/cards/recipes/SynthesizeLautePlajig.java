@@ -5,6 +5,7 @@ import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.cards.abstracts.AbstractRecipeCard;
 import Professor.cards.creations.LautePlajig;
 import Professor.util.CardArtRoller;
+import Professor.util.KeywordManager;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,8 +18,9 @@ public class SynthesizeLautePlajig extends AbstractRecipeCard {
 
     public SynthesizeLautePlajig() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        baseInfo = info = 2;
         cardsToPreview = new LautePlajig();
+        addCustomKeyword(KeywordManager.STAGGER);
     }
 
     @Override
@@ -41,14 +43,12 @@ public class SynthesizeLautePlajig extends AbstractRecipeCard {
 
     @Override
     public void upp() {
-        //upgradeMagicNumber(1);
-        uDesc();
-        cardsToPreview.upgrade();
+        upgradeBaseCost(0);
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.GOLD, WHITE, Color.GOLD, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, Color.GOLDENROD, WHITE, Color.BROWN, Color.GOLD, false);
     }
 
     @Override
@@ -63,15 +63,11 @@ public class SynthesizeLautePlajig extends AbstractRecipeCard {
 
     @Override
     public int getValance() {
-        return magicNumber;
+        return info;
     }
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        AbstractCreationCard ret = new LautePlajig(new AbstractCreationCard.ElementData(red, blue, yellow, green));
-        if (upgraded) {
-            ret.upgrade();
-        }
-        return ret;
+        return new LautePlajig(new AbstractCreationCard.ElementData(red, blue, yellow, green));
     }
 }

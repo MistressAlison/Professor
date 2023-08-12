@@ -2,6 +2,7 @@ package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.damageMods.ExposedDamage;
+import Professor.damageMods.StaggerDamage;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -37,14 +38,17 @@ public class LautePlajig extends AbstractCreationCard {
     @Override
     public void updateElementData(ElementData data) {
         baseDamage = damage = 4; // Damage
-        baseMagicNumber = magicNumber = 2; // Exposed
+        baseMagicNumber = magicNumber = 1; // Stagger
         baseSecondMagic = secondMagic = 4; // Hits
         if (data != null) {
-            baseDamage += 2*data.y;
+            baseDamage += data.y;
             damage = baseDamage;
             baseMagicNumber += data.r;
             magicNumber = baseMagicNumber;
         }
+        //Worst: Deal 4x4, 1x4 Stagger = 16, 4
+        //Best: Deal 6x4, 3x4 Stagger = 24, 12
+
     }
 
     @Override
@@ -58,7 +62,7 @@ public class LautePlajig extends AbstractCreationCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0 ; i < secondMagic ; i ++) {
-            addToBot(BindingHelper.makeAction(Collections.singletonList(new ExposedDamage(magicNumber)), new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.LIGHTNING)));
+            addToBot(BindingHelper.makeAction(Collections.singletonList(new StaggerDamage(magicNumber)), new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.LIGHTNING)));
         }
     }
 
