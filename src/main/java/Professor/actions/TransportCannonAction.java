@@ -1,6 +1,7 @@
 package Professor.actions;
 
 import Professor.MainModfile;
+import Professor.powers.StaggerPower;
 import Professor.util.TextureSniper;
 import Professor.util.Wiz;
 import Professor.vfx.VFXContainer;
@@ -10,15 +11,14 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TransportCannonAction extends AbstractGameAction {
     private final DamageInfo info;
 
-    public TransportCannonAction(AbstractCreature target, DamageInfo info) {
+    public TransportCannonAction(AbstractMonster target, DamageInfo info) {
         this.info = info;
         this.target = target;
         this.source = AbstractDungeon.player;
@@ -28,10 +28,11 @@ public class TransportCannonAction extends AbstractGameAction {
     public void update() {
         CardCrawlGame.sound.play("GHOST_ORB_IGNITE_1");
         int size = Wiz.adp().hand.size();
+        Wiz.applyToEnemyTop((AbstractMonster) target, new StaggerPower(target, size));
         for (int i = 0; i < size; i++) {
             addToTop(new DamageAction(target, info, AttackEffect.SLASH_DIAGONAL));
         }
-        Wiz.applyToSelfTop(new DrawCardNextTurnPower(Wiz.adp(), size));
+        //Wiz.applyToSelfTop(new DrawCardNextTurnPower(Wiz.adp(), size));
         for (AbstractCard c : Wiz.adp().hand.group) {
             addToTop(new VFXAction(VFXContainer.throwEffect(TextureSniper.snipeCard(c), 0.25f, target.hb, MainModfile.MEDIUM_RUBY_COLOR, true, false)));
         }

@@ -16,7 +16,7 @@ public class TransportCannon extends AbstractEasyCard {
 
     public TransportCannon() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = damage = 7;
+        baseDamage = damage = 8;
     }
 
     @Override
