@@ -54,7 +54,7 @@ public class PerformSynthesisAction extends AbstractGameAction {
                         temp.moveToDiscardPile(s.card);
                     }
                     if (s.card instanceof OnUseInSynthesisCard) {
-                        ((OnUseInSynthesisCard) s.card).onSynthesis(card);
+                        ((OnUseInSynthesisCard) s.card).onComplete(card);
                     }
                 }
             }

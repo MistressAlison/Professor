@@ -40,6 +40,14 @@ public class BeginSynthesisAction extends AbstractGameAction {
                 if (c.hasTag(CustomTags.PROF_REACTANT)) {
                     draw++;
                 }
+                if (c instanceof OnUseInSynthesisCard) {
+                    if (((OnUseInSynthesisCard) c).onAdded(item)) {
+                        AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
+                    }
+                }
+                if (c instanceof InstantSynthesisCard) {
+                    instant |= ((InstantSynthesisCard) c).isInstant(item);
+                }
             }
             l.clear();
             if (draw > 0) {
