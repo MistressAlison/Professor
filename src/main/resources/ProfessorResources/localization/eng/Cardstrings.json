@@ -412,6 +412,6 @@
   },
   "${ModID}:WindShoes": {
     "NAME": "Wind Shoes",
-    "DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. NL Discard !M! cards."
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
   }
 }
