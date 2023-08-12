@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class ShaderTest implements ScreenPostProcessor {
-    public static ShaderProgram sp = new ShaderProgram(SpriteBatch.createDefaultShader().getVertexShaderSource(), Gdx.files.internal(MainModfile.makePath("shaders/flashlight2.frag")).readString(String.valueOf(StandardCharsets.UTF_8)));
+    public static ShaderProgram sp = new ShaderProgram(SpriteBatch.createDefaultShader().getVertexShaderSource(), Gdx.files.internal(MainModfile.makePath("shaders/sobel.frag")).readString(String.valueOf(StandardCharsets.UTF_8)));
     public static float time;
 
     @Override
