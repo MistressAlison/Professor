@@ -44,6 +44,8 @@ public class DarkNightTreasure extends AbstractCreationCard {
             baseMagicNumber += 5*data.b;
             magicNumber = baseMagicNumber;
         }
+        //Worst: 20 or less
+        //Best: 30 or less
     }
 
     @Override
@@ -71,7 +73,7 @@ public class DarkNightTreasure extends AbstractCreationCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(10);
+        upgradeMagicNumber(5);
     }
 
     @Override

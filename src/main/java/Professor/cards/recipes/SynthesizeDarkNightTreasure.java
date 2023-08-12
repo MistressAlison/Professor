@@ -17,7 +17,7 @@ public class SynthesizeDarkNightTreasure extends AbstractRecipeCard {
 
     public SynthesizeDarkNightTreasure() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        baseInfo = info = 2;
         cardsToPreview = new DarkNightTreasure();
     }
 
@@ -64,15 +64,11 @@ public class SynthesizeDarkNightTreasure extends AbstractRecipeCard {
 
     @Override
     public int getValance() {
-        return magicNumber;
+        return info;
     }
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        AbstractCreationCard ret = new DarkNightTreasure(new AbstractCreationCard.ElementData(red, blue, yellow, green));
-        if (upgraded) {
-            ret.upgrade();
-        }
-        return ret;
+        return new DarkNightTreasure(new AbstractCreationCard.ElementData(red, blue, yellow, green));
     }
 }

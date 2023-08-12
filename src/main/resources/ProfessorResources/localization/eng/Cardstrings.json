@@ -40,7 +40,7 @@
     "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+4 per [Professor:IceIcon] ) }damage and apply !M! {!Location!|-2,4= NL (+1 per [Professor:WindIcon] ) }Weak to ALL enemies."
   },
   "${ModID}:SynthesizeCrystalIceBomb": {
-    "NAME": "Crystal Ice Bomb",
+    "NAME": "Crystal Ice Bomb Blueprint",
     "DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb. NL Requires !Professor:I! cards.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb+. NL Requires !Professor:I! cards.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +4 damage per Ice, +1 Weak per Wind"]
@@ -50,9 +50,9 @@
     "DESCRIPTION": "{@@}Kill ALL enemies with !M! {!Location!|-2,4=(+5 per [Professor:IceIcon] ) }or less HP."
   },
   "${ModID}:SynthesizeDarkNightTreasure": {
-    "NAME": "Dark Night Treasure",
-    "DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure. NL professor:Valency !M!.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure+. NL professor:Valency !M!.",
+    "NAME": "Dark Night Treasure Blueprint",
+    "DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure+. NL Requires !Professor:I! cards.",
     "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +5 kill threshold per Ice"]
   },
   "${ModID}:DawnGrimoire": {

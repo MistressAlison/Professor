@@ -252,6 +252,6 @@
       "dark_night_treasure",
       "dark_night_treasure+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Threshold #b+5 per [Professor:IceIcon] ."
+    "DESCRIPTION": "Kills all enemies below a certain HP. NL Scales with [Professor:IceIcon] ."
   }
 ]
