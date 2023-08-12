@@ -280,7 +280,7 @@
   },
   "${ModID}:LightningSand": {
     "NAME": "Lightning Sand",
-    "DESCRIPTION": "Retain. NL Deal !D! damage to a random enemy !M! time{@@}{!M!|>1=s}. NL When Retained, increase this card's hits by 1 this combat."
+    "DESCRIPTION": "Retain. NL Deal !D! damage to a random enemy !M! time{@@}{!M!|>1=s}. NL When Retained, lower its cost by 1 this combat."
   },
   "${ModID}:Liquifier": {
     "NAME": "Liquifier",

@@ -1,11 +1,11 @@
 package Professor.cards;
 
-import Professor.actions.ModifyMagicAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.cards.tempCards.Omega;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,10 +16,10 @@ public class LightningSand extends AbstractEasyCard {
     public final static String ID = makeID(LightningSand.class.getSimpleName());
 
     public LightningSand() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        super(ID, 5, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         selfRetain = true;
         baseDamage = damage = 5;
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 4;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class LightningSand extends AbstractEasyCard {
     @Override
     public void onRetained() {
         flash();
-        addToBot(new ModifyMagicAction(this.uuid, 1));
+        addToBot(new ReduceCostAction(this));
     }
 
     @Override
