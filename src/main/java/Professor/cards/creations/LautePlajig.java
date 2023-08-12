@@ -1,7 +1,6 @@
 package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
-import Professor.damageMods.ExposedDamage;
 import Professor.damageMods.StaggerDamage;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
