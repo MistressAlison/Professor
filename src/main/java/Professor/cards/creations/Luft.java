@@ -3,9 +3,9 @@ package Professor.cards.creations;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
-import Professor.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 import static Professor.MainModfile.makeID;
@@ -36,13 +35,12 @@ public class Luft extends AbstractCreationCard {
     @Override
     public void updateElementData(ElementData data) {
         baseMagicNumber = magicNumber = 2;
-        baseSecondMagic = secondMagic = 1;
         if (data != null) {
             baseMagicNumber += data.g;
             magicNumber = baseMagicNumber;
-            baseSecondMagic += data.b;
-            secondMagic = baseSecondMagic;
         }
+        //Worst: 2 draw
+        //Best: 4 draw
     }
 
     @Override
@@ -58,20 +56,23 @@ public class Luft extends AbstractCreationCard {
         addToBot(new SFXAction("APPEAR"));
         addToBot(new SFXAction("ATTACK_WHIFF_2"));
         addToBot(new VFXAction(new WhirlwindEffect(), 0.2F));
-        //allDmg(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        addToBot(new DrawCardAction(magicNumber));
-        Wiz.applyToSelf(new DrawCardNextTurnPower(p, secondMagic));
-        //allDmg(AbstractGameAction.AttackEffect.FIRE);
-        /*if (magicNumber > 0) {
-            Wiz.applyToEnemy(m, new BurnPower(m, p, magicNumber));
-        }*/
+        addToBot(new DrawCardAction(magicNumber, new AbstractGameAction() {
+            @Override
+            public void update() {
+                for (AbstractCard c : DrawCardAction.drawnCards) {
+                    if (c.canUpgrade()) {
+                        c.upgrade();
+                    }
+                }
+                this.isDone = true;
+            }
+        }));
     }
 
     @Override
     public void upp() {
-        //upgradeDamage(2);
         upgradeMagicNumber(1);
-        upgradeSecondMagic(1);
+        //upgradeSecondMagic(1);
     }
 
     @Override

@@ -7,6 +7,7 @@ import Professor.cards.creations.Luft;
 import Professor.util.CardArtRoller;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
@@ -15,9 +16,10 @@ public class SynthesizeLuft extends AbstractRecipeCard {
     public final static String ID = makeID(SynthesizeLuft.class.getSimpleName());
 
     public SynthesizeLuft() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        baseInfo = info = 2;
         cardsToPreview = new Luft();
+        addVanillaKeyword(GameDictionary.UPGRADE);
     }
 
     @Override
@@ -40,9 +42,9 @@ public class SynthesizeLuft extends AbstractRecipeCard {
 
     @Override
     public void upp() {
-        //upgradeMagicNumber(1);
         uDesc();
-        cardsToPreview.upgrade();
+        selfRetain = true;
+        //upgradeBaseCost(0);
     }
 
     @Override
@@ -62,15 +64,11 @@ public class SynthesizeLuft extends AbstractRecipeCard {
 
     @Override
     public int getValance() {
-        return magicNumber;
+        return info;
     }
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        AbstractCreationCard ret = new Luft(new AbstractCreationCard.ElementData(red, blue, yellow, green));
-        if (upgraded) {
-            ret.upgrade();
-        }
-        return ret;
+        return new Luft(new AbstractCreationCard.ElementData(red, blue, yellow, green));
     }
 }

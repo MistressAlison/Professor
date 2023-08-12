@@ -202,7 +202,7 @@
       "luft",
       "luft+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Draw #b+1 card per [Professor:WindIcon] . NL Draw #b+1 card next turn per [Professor:IceIcon] ."
+    "DESCRIPTION": "Draws and Upgrades cards. NL Scales with [Professor:WindIcon] ."
   },
   {
     "ID": "laute_plajig",
