@@ -288,7 +288,9 @@
   },
   "${ModID}:LunarDrop": {
     "NAME": "Lunar Drop",
-    "DESCRIPTION": "Gain !B! Block for each professor:Ice card played this combat. NL Exhaust.{!Location!|0= NL (Gain !Professor:I! Block)}{@@}"
+    "DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis finishes instantly.",
+    "UPGRADE_DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis finishes instantly and the output is upgraded.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:ManaEaterBranch": {
     "NAME": "Mana-Eater Branch",
