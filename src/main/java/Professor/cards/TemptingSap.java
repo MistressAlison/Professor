@@ -27,7 +27,7 @@ public class TemptingSap extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(4);
     }
 
     @Override
