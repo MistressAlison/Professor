@@ -31,7 +31,7 @@ public class BlueFlameEmber extends AbstractEasyCard {
     @Override
     public void upp() {
         upgradeDamage(2);
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(1);
     }
 
     @Override
