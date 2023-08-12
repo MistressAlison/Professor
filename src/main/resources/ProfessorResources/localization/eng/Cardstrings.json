@@ -312,8 +312,8 @@
   },
   "${ModID}:MistLiquid": {
     "NAME": "Mist Liquid",
-    "DESCRIPTION": "Whenever you play an professor:Ice or professor:Wind card, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play an professor:Ice or professor:Wind card, gain !M! Block."
+    "DESCRIPTION": "Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced."
   },
   "${ModID}:MysteriousBroom": {
     "NAME": "Mysterious Broom",

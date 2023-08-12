@@ -4,6 +4,7 @@ import Professor.MainModfile;
 import Professor.cards.MistLiquid;
 import Professor.patches.ArchetypeHelper;
 import Professor.util.PowerIconMaker;
+import Professor.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -37,8 +38,8 @@ public class MistLiquidPower extends AbstractPower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (ArchetypeHelper.isIce(card) || ArchetypeHelper.isWind(card)) {
             flash();
-            //Wiz.applyToSelf(new BracedPower(owner, amount));
-            addToBot(new GainBlockAction(owner, owner, amount));
+            Wiz.applyToSelf(new BracedPower(owner, amount));
+            //addToBot(new GainBlockAction(owner, owner, amount));
         }
     }
 }
