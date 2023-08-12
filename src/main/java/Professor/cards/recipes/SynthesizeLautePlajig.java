@@ -48,7 +48,7 @@ public class SynthesizeLautePlajig extends AbstractRecipeCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.GOLDENROD, WHITE, Color.BROWN, Color.GOLD, false);
+        return new CardArtRoller.ReskinInfo(ID, Color.BROWN, WHITE, Color.BROWN, WHITE, false);
     }
 
     @Override
