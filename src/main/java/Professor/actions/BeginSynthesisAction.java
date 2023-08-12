@@ -6,13 +6,16 @@ import Professor.cards.interfaces.InstantSynthesisCard;
 import Professor.cards.interfaces.OnUseInSynthesisCard;
 import Professor.patches.CustomTags;
 import Professor.patches.EmpowerRedirectPatches;
+import Professor.powers.interfaces.OnSetupSynthesisPower;
 import Professor.ui.SynthesisItem;
 import Professor.ui.SynthesisPanel;
+import Professor.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 public class BeginSynthesisAction extends AbstractGameAction {
@@ -32,7 +35,6 @@ public class BeginSynthesisAction extends AbstractGameAction {
     @Override
     public void update() {
         addToTop(new BetterSelectCardsInHandAction(recipeCard.getValance(), TEXT[0]+extraInfo, false, false, c -> true, l -> {
-            int draw = 0;
             boolean instant = false;
             SynthesisItem item = new SynthesisItem(recipeCard, l);
             SynthesisPanel.addSynthesisItem(item);
@@ -42,9 +44,6 @@ public class BeginSynthesisAction extends AbstractGameAction {
             for (AbstractCard c : l) {
                 EmpowerRedirectPatches.setRedirect(c, SynthesisPanel.BASE_X, SynthesisPanel.BASE_Y);
                 AbstractDungeon.player.hand.empower(c);
-                if (c.hasTag(CustomTags.PROF_REACTANT)) {
-                    draw++;
-                }
                 if (c instanceof OnUseInSynthesisCard) {
                     if (((OnUseInSynthesisCard) c).onAdded(item)) {
                         AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
@@ -54,10 +53,12 @@ public class BeginSynthesisAction extends AbstractGameAction {
                     instant |= ((InstantSynthesisCard) c).isInstant(item);
                 }
             }
-            l.clear();
-            if (draw > 0) {
-                addToTop(new DrawCardAction(draw));
+            for (AbstractPower p : Wiz.adp().powers) {
+                if (p instanceof OnSetupSynthesisPower) {
+                    ((OnSetupSynthesisPower) p).onSetupSynthesis(item);
+                }
             }
+            l.clear();
             if (instant) {
                 addToBot(new PerformSynthesisAction(item));
             }

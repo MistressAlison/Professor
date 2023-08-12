@@ -1,17 +1,19 @@
 package Professor.actions;
 
 import Professor.cards.interfaces.OnUseInSynthesisCard;
-import Professor.patches.CustomTags;
+import Professor.powers.interfaces.OnFinishSynthesisPower;
 import Professor.ui.SynthesisItem;
 import Professor.ui.SynthesisPanel;
 import Professor.ui.SynthesisSlot;
 import Professor.util.CustomSounds;
+import Professor.util.Wiz;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
 
 public class PerformSynthesisAction extends AbstractGameAction {
@@ -45,10 +47,16 @@ public class PerformSynthesisAction extends AbstractGameAction {
         if (isDone) {
             //card.setCostForTurn(0);
             cardToHand(card);
+            boolean toHand = false;
+            for (AbstractPower p : Wiz.adp().powers) {
+                if (p instanceof OnFinishSynthesisPower) {
+                    toHand |= ((OnFinishSynthesisPower) p).returnCardsToHand(item);
+                }
+            }
             CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             for (SynthesisSlot s : item.slots) {
                 if (s.card != null) {
-                    if (s.card.hasTag(CustomTags.PROF_CATALYST)) {
+                    if (toHand) {
                         cardToHand(s.card);
                     } else {
                         temp.moveToDiscardPile(s.card);
