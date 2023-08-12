@@ -16,7 +16,7 @@ public class SynthesizeCrystalIceBomb extends AbstractRecipeCard {
 
     public SynthesizeCrystalIceBomb() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        baseInfo = info = 2;
         cardsToPreview = new CrystalIceBomb();
     }
 
@@ -40,9 +40,10 @@ public class SynthesizeCrystalIceBomb extends AbstractRecipeCard {
 
     @Override
     public void upp() {
+        upgradeBaseCost(0);
         //upgradeMagicNumber(1);
-        uDesc();
-        cardsToPreview.upgrade();
+        //uDesc();
+        //cardsToPreview.upgrade();
     }
 
     @Override
@@ -62,15 +63,11 @@ public class SynthesizeCrystalIceBomb extends AbstractRecipeCard {
 
     @Override
     public int getValance() {
-        return magicNumber;
+        return info;
     }
 
     @Override
     public AbstractCreationCard getCreation(int red, int blue, int yellow, int green) {
-        AbstractCreationCard ret = new CrystalIceBomb(new AbstractCreationCard.ElementData(red, blue, yellow, green));
-        if (upgraded) {
-            ret.upgrade();
-        }
-        return ret;
+        return new CrystalIceBomb(new AbstractCreationCard.ElementData(red, blue, yellow, green));
     }
 }

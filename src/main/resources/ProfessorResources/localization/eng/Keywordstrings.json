@@ -193,7 +193,7 @@
       "crystal_ice_bomb",
       "crystal_ice_bomb+"
     ],
-    "DESCRIPTION": "Synthesis Benefits: NL Deals #b+6 damage per [Professor:IceIcon] . NL Applies #b+1 Weak per [Professor:WindIcon] ."
+    "DESCRIPTION": "Deals multi target damage and applies Weak. NL Scales with [Professor:IceIcon] and [Professor:WindIcon] ."
   },
   {
     "ID": "luft",
