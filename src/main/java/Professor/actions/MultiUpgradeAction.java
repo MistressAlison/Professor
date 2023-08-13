@@ -1,6 +1,6 @@
 package Professor.actions;
 
-import Professor.cardmods.UpgradeFlagMod;
+import Professor.cardmods.UnlockedMod;
 import Professor.patches.ForcedUpgradesPatches;
 import Professor.util.ChimeraHelper;
 import basemod.helpers.CardModifierManager;
@@ -72,9 +72,9 @@ public class MultiUpgradeAction extends AbstractGameAction {
 
     private void performUpgrades(List<AbstractCard> cards) {
         for (AbstractCard card : cards) {
-            if (!(card instanceof SearingBlow) && !CardModifierManager.hasModifier(card, UpgradeFlagMod.ID)) {
+            if (!(card instanceof SearingBlow) && !CardModifierManager.hasModifier(card, UnlockedMod.ID)) {
                 if (!(Loader.isModLoaded("CardAugments") && ChimeraHelper.hasSearing(card))) {
-                    CardModifierManager.addModifier(card, new UpgradeFlagMod());
+                    CardModifierManager.addModifier(card, new UnlockedMod());
                 }
             }
             AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));

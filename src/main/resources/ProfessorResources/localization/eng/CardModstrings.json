@@ -23,7 +23,7 @@
   "${ModID}:DealAOEDamageMod": {
     "EXTENDED_DESCRIPTION": [" NL Deal %s damage to ALL enemies."]
   },
-  "${ModID}:UpgradeFlagMod": {
+  "${ModID}:UnlockedMod": {
     "EXTENDED_DESCRIPTION": [" NL Can be Upgraded any number of times."]
   }
 }

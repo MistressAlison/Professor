@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 import static Professor.MainModfile.makeID;
 
-public class UpgradeFlagMod extends AbstractCardModifier {
-    public static String ID = makeID(UpgradeFlagMod.class.getSimpleName());
+public class UnlockedMod extends AbstractCardModifier {
+    public static String ID = makeID(UnlockedMod.class.getSimpleName());
     public static String[] TEXT = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
 
     @Override
@@ -23,7 +23,7 @@ public class UpgradeFlagMod extends AbstractCardModifier {
     }
 
     public AbstractCardModifier makeCopy() {
-        return new UpgradeFlagMod();
+        return new UnlockedMod();
     }
 
     public String identifier(AbstractCard card) {

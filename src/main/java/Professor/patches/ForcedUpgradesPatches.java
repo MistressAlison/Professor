@@ -1,6 +1,6 @@
 package Professor.patches;
 
-import Professor.cardmods.UpgradeFlagMod;
+import Professor.cardmods.UnlockedMod;
 import Professor.util.ChimeraHelper;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import com.megacrit.cardcrawl.screens.select.HandCardSelectScreen;
 import javassist.*;
 import org.clapper.util.classutil.*;
@@ -37,9 +38,34 @@ public class ForcedUpgradesPatches {
         @SpireInsertPatch(locator = Locator.class)
         public static void plz(HandCardSelectScreen __instance) {
             if (previewMultipleUpgrade) {
-                if (!(__instance.upgradePreviewCard instanceof SearingBlow) && !CardModifierManager.hasModifier(__instance.upgradePreviewCard, UpgradeFlagMod.ID)) {
+                if (!(__instance.upgradePreviewCard instanceof SearingBlow) && !CardModifierManager.hasModifier(__instance.upgradePreviewCard, UnlockedMod.ID)) {
                     if (!(Loader.isModLoaded("CardAugments") && ChimeraHelper.hasSearing(__instance.upgradePreviewCard))) {
-                        CardModifierManager.addModifier(__instance.upgradePreviewCard, new UpgradeFlagMod());
+                        CardModifierManager.addModifier(__instance.upgradePreviewCard, new UnlockedMod());
+                    }
+                }
+                for (int i = 0 ; i < upgradeTimes-1 ; i++) {
+                    __instance.upgradePreviewCard.upgrade();
+                }
+            }
+        }
+
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher m = new Matcher.MethodCallMatcher(AbstractCard.class, "upgrade");
+                return LineFinder.findInOrder(ctBehavior, m);
+            }
+        }
+    }
+
+    @SpirePatch2(clz = GridCardSelectScreen.class, method = "update")
+    public static class ShowMultipleUpgrades2 {
+        @SpireInsertPatch(locator = Locator.class)
+        public static void plz(GridCardSelectScreen __instance) {
+            if (previewMultipleUpgrade) {
+                if (!(__instance.upgradePreviewCard instanceof SearingBlow) && !CardModifierManager.hasModifier(__instance.upgradePreviewCard, UnlockedMod.ID)) {
+                    if (!(Loader.isModLoaded("CardAugments") && ChimeraHelper.hasSearing(__instance.upgradePreviewCard))) {
+                        CardModifierManager.addModifier(__instance.upgradePreviewCard, new UnlockedMod());
                     }
                 }
                 for (int i = 0 ; i < upgradeTimes-1 ; i++) {
@@ -121,7 +147,7 @@ public class ForcedUpgradesPatches {
                             try {
                                 cardModifier = gson.fromJson(element, new TypeToken<AbstractCardModifier>() {}.getType());
                             } catch (Exception ignored) {}
-                            if (cardModifier instanceof UpgradeFlagMod) {
+                            if (cardModifier instanceof UnlockedMod) {
                                 ForcedUpgradeField.inf.set(retVal, true);
                             }
                         }
