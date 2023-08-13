@@ -1,5 +1,6 @@
 package Professor.util;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -8,7 +9,9 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 
@@ -26,6 +29,19 @@ public class TextureSniper {
         ImageHelper.beginBuffer(fb);
         sb.begin();
         toRender.render(sb);
+        sb.end();
+        fb.end();
+        return flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
+    }
+
+    public static Texture snipePower(AbstractPower p) {
+        FrameBuffer fb = ImageHelper.createBuffer(50, 50);
+        SpriteBatch sb = new SpriteBatch();
+        sb.setProjectionMatrix(new OrthographicCamera(50, 50).combined);
+        ImageHelper.beginBuffer(fb);
+        sb.begin();
+        p.renderIcons(sb, 0, 0, Color.WHITE.cpy());
+        p.renderAmount(sb, 32, -18, Color.WHITE.cpy());
         sb.end();
         fb.end();
         return flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
