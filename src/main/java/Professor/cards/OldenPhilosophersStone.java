@@ -1,6 +1,6 @@
 package Professor.cards;
 
-import Professor.actions.ApplyShaderEffect;
+import Professor.vfx.ApplyShaderEffect;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.powers.PhilosophersPower;
 import Professor.shaders.SobelShader;

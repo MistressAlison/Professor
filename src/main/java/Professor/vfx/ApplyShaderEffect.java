@@ -1,4 +1,4 @@
-package Professor.actions;
+package Professor.vfx;
 
 import basemod.helpers.ScreenPostProcessorManager;
 import basemod.interfaces.ScreenPostProcessor;
