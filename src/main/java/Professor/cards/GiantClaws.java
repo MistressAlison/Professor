@@ -17,9 +17,9 @@ public class GiantClaws extends AbstractEasyCard {
     public final static String ID = makeID(GiantClaws.class.getSimpleName());
 
     public GiantClaws() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 8;
-        baseMagicNumber = magicNumber = 4;
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        baseDamage = damage = 6;
+        baseMagicNumber = magicNumber = 3;
     }
 
     @Override

@@ -215,7 +215,7 @@
   },
   "${ModID}:EmberStone": {
     "NAME": "Ember Stone",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Vulnerable, deal !M! additional damage."
   },
   "${ModID}:EmeraldBand": {
     "NAME": "Emerald Band",
