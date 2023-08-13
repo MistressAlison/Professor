@@ -85,7 +85,7 @@ public class TheProfessor extends CustomPlayer {
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
-        retVal.add(Volley.ID);
+        retVal.add(Catch.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
@@ -139,7 +139,7 @@ public class TheProfessor extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Volley();
+        return new Catch();
     }
 
     @Override

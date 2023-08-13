@@ -1,9 +1,7 @@
-package Professor.cards;
+package Professor.cutStuff.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.powers.ExposedPower;
 import Professor.util.CardArtRoller;
-import Professor.util.Wiz;
 import Professor.vfx.ColoredFlyingDaggerEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
