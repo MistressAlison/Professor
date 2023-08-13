@@ -3,6 +3,7 @@ package Professor.cards;
 import Professor.actions.ApplyShaderEffect;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.powers.PhilosophersPower;
+import Professor.shaders.SobelShader;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import basemod.helpers.BaseModCardTags;
@@ -28,7 +29,7 @@ public class OldenPhilosophersStone extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("HEART_BEAT", 0.1f));
-        addToBot(new VFXAction(new ApplyShaderEffect(ApplyShaderEffect.getFragShader("sobel"), 0.5f)));
+        addToBot(new VFXAction(new ApplyShaderEffect(SobelShader.get(), 0.5f)));
         Wiz.applyToSelf(new PhilosophersPower(p, magicNumber));
     }
 
