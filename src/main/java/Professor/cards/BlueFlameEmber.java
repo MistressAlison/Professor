@@ -16,9 +16,9 @@ public class BlueFlameEmber extends AbstractEasyCard {
     public final static String ID = makeID(BlueFlameEmber.class.getSimpleName());
 
     public BlueFlameEmber() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 9;
-        baseMagicNumber = magicNumber = 3;
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        baseDamage = damage = 7;
+        baseMagicNumber = magicNumber = 2;
     }
 
     @Override
