@@ -1,5 +1,6 @@
 package Professor.actions;
 
+import Professor.cardmods.AbstractInfusion;
 import Professor.powers.interfaces.OnInfusionPower;
 import Professor.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
@@ -16,7 +17,7 @@ public class InfuseCardsInHandAction extends ModifyCardsInHandAction {
     }
 
     public InfuseCardsInHandAction(int amount, boolean anyAmount, Predicate<AbstractCard> filter, AbstractCardModifier mod) {
-        super(amount, anyAmount, filter, l -> {
+        super(amount, anyAmount, filter.and(AbstractInfusion::usesVanillaTargeting), l -> {
             for (AbstractCard c : l) {
                 int times = 1;
                 for (AbstractPower p : Wiz.adp().powers) {
