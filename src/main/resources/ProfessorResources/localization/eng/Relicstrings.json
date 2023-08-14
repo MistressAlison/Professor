@@ -26,7 +26,7 @@
     "NAME": "Energy Pendant",
     "FLAVOR": "Just putting it on makes you feel less tired, so it's recommended for adventurers.",
     "DESCRIPTIONS": [
-      "???"
+      "Unspent Energy conditional?"
     ]
   },
   "${ModID}:EnlightenedBandana": {
@@ -40,7 +40,7 @@
     "NAME": "Fluffy Tail",
     "FLAVOR": "Once you put it on, you can't remove it unless you get it wet, so you don't need to worry about losing it. Unless it's raining, of course.",
     "DESCRIPTIONS": [
-      "???"
+      "Start of combat Draw and Block?"
     ]
   },
   "${ModID}:FocusGlass": {
@@ -68,7 +68,7 @@
     "NAME": "Gnade Ring",
     "FLAVOR": "A ring popular among adventurers. Its specific effects change according to how it's made.",
     "DESCRIPTIONS": [
-      "???"
+      "Start combat Vigor and Braced?"
     ]
   },
   "${ModID}:HotBloodedBandana": {
@@ -134,7 +134,7 @@
     "NAME": "Samasten Necklace",
     "FLAVOR": "A choker decorated with Samasten, a surprisingly brittle ore.",
     "DESCRIPTIONS": [
-      "???"
+      "Some per turn effect, lost when attacked"
     ]
   },
   "${ModID}:SoulOfFortitude": {
