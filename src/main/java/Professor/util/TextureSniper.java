@@ -9,8 +9,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
@@ -42,6 +42,24 @@ public class TextureSniper {
         sb.begin();
         p.renderIcons(sb, 0, 0, Color.WHITE.cpy());
         p.renderAmount(sb, 32, -18, Color.WHITE.cpy());
+        sb.end();
+        fb.end();
+        return flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
+    }
+
+    public static Texture snipePotion(AbstractPotion p) {
+        FrameBuffer fb = ImageHelper.createBuffer(64, 64);
+        SpriteBatch sb = new SpriteBatch();
+        sb.setProjectionMatrix(new OrthographicCamera(64, 64).combined);
+        ImageHelper.beginBuffer(fb);
+        sb.begin();
+        float x = p.posX;
+        float y = p.posY;
+        p.posX = 0;
+        p.posY = 0;
+        p.render(sb);
+        p.posX = x;
+        p.posY = y;
         sb.end();
         fb.end();
         return flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());

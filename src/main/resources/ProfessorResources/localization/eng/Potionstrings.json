@@ -1,0 +1,6 @@
+{
+  "${ModID}:TabooPotion": {
+    "NAME": "Taboo Potion",
+    "DESCRIPTIONS": ["Apply #b"," #yStagger."]
+  }
+}

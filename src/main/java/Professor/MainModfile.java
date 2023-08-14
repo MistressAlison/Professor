@@ -5,6 +5,7 @@ import Professor.cardmods.DealDamageMod;
 import Professor.cards.cardvars.*;
 import Professor.icons.IconContainer;
 import Professor.patches.ArchetypeHelper;
+import Professor.potion.TabooPotion;
 import Professor.powers.BracedPower;
 import Professor.powers.ExposedPower;
 import Professor.powers.FocusPower;
@@ -14,10 +15,7 @@ import Professor.relics.AbstractEasyRelic;
 import Professor.relics.LocketOfDevotion;
 import Professor.relics.MemoriaBracelet;
 import Professor.ui.SynthesisPanel;
-import Professor.util.CustomSounds;
-import Professor.util.KeywordManager;
-import Professor.util.TexLoader;
-import Professor.util.Wiz;
+import Professor.util.*;
 import Professor.vfx.ShaderTest;
 import basemod.AutoAdd;
 import basemod.BaseMod;
@@ -32,6 +30,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -159,6 +158,8 @@ public class MainModfile implements
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new TheProfessor(TheProfessor.characterStrings.NAMES[1], TheProfessor.Enums.THE_PROFESSOR),
                 CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, TheProfessor.Enums.THE_PROFESSOR);
+
+        BaseMod.addPotion(TabooPotion.class, new Color(95/255f,46/255f,209/255f,1), new Color(40/255f,20/255f,107/255f,1), null, TabooPotion.POTION_ID, TheProfessor.Enums.THE_PROFESSOR);
     }
 
     @Override
@@ -237,6 +238,7 @@ public class MainModfile implements
         tryLoadStringsFile(CardStrings.class, path + "CardModstrings.json");
         tryLoadStringsFile(CardStrings.class, path + "Chatterstrings.json");
         tryLoadStringsFile(UIStrings.class, path + "UIstrings.json");
+        tryLoadStringsFile(PotionStrings.class, path +"Potionstrings.json");
     }
 
     private void tryLoadStringsFile(Class<?> stringType, String filepath) {
@@ -278,6 +280,9 @@ public class MainModfile implements
         BaseMod.addPower(StaggerPower.class, StaggerPower.POWER_ID);
 
         //Wide Potions
+        if (Loader.isModLoaded("widepotions")) {
+            WidePotionLoader.loadCrossoverContent();
+        }
 
         //Add Config stuff
 
