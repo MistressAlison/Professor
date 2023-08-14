@@ -1,5 +1,6 @@
 package Professor.patches;
 
+import Professor.MainModfile;
 import Professor.cardmods.UnlockedMod;
 import Professor.util.ChimeraHelper;
 import basemod.abstracts.AbstractCardModifier;
@@ -91,6 +92,9 @@ public class ForcedUpgradesPatches {
     public static void infCheck(AbstractCard card) {
         if (ForcedUpgradeField.inf.get(card)) {
             card.upgraded = false;
+        }
+        if (!card.upgraded) {
+            MainModfile.onUpgradeTrigger(card);
         }
     }
 

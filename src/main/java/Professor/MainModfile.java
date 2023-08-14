@@ -9,6 +9,7 @@ import Professor.powers.BracedPower;
 import Professor.powers.ExposedPower;
 import Professor.powers.FocusPower;
 import Professor.powers.StaggerPower;
+import Professor.powers.interfaces.OnUpgradePower;
 import Professor.relics.AbstractEasyRelic;
 import Professor.relics.LocketOfDevotion;
 import Professor.relics.MemoriaBracelet;
@@ -16,6 +17,7 @@ import Professor.ui.SynthesisPanel;
 import Professor.util.CustomSounds;
 import Professor.util.KeywordManager;
 import Professor.util.TexLoader;
+import Professor.util.Wiz;
 import Professor.vfx.ShaderTest;
 import basemod.AutoAdd;
 import basemod.BaseMod;
@@ -35,9 +37,11 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -474,6 +478,16 @@ public class MainModfile implements
         if (infusion instanceof DealDamageMod) {
             MemoriaBracelet.onInfusionTrigger(relicAmount);
             LocketOfDevotion.onInfusionTrigger(relicAmount);
+        }
+    }
+
+    public static void onUpgradeTrigger(AbstractCard c) {
+        if (CardCrawlGame.isInARun() && Wiz.adp() != null) {
+            for (AbstractPower p : Wiz.adp().powers) {
+                if (p instanceof OnUpgradePower) {
+                    ((OnUpgradePower) p).onUpgrade(c);
+                }
+            }
         }
     }
 }
