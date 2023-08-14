@@ -314,7 +314,7 @@
   },
   "${ModID}:Meltstone": {
     "NAME": "Meltstone",
-    "DESCRIPTION": "Deal !D! damage. Exhaust !M! card{@@}{!M!|>1=s} at random.",
+    "DESCRIPTION": "Deal !D! damage. Exhaust !M! card{@@}{!M!|>1=s}.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Exhaust !M! card{@@}{!M!|>1=s}."
   },
   "${ModID}:MistLiquid": {
