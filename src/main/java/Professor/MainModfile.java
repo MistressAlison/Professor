@@ -5,7 +5,6 @@ import Professor.cardmods.DealDamageMod;
 import Professor.cards.cardvars.*;
 import Professor.icons.IconContainer;
 import Professor.patches.ArchetypeHelper;
-import Professor.potion.TabooPotion;
 import Professor.powers.BracedPower;
 import Professor.powers.ExposedPower;
 import Professor.powers.FocusPower;
@@ -36,7 +35,6 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
@@ -158,8 +156,7 @@ public class MainModfile implements
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new TheProfessor(TheProfessor.characterStrings.NAMES[1], TheProfessor.Enums.THE_PROFESSOR),
                 CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, TheProfessor.Enums.THE_PROFESSOR);
-
-        BaseMod.addPotion(TabooPotion.class, new Color(95/255f,46/255f,209/255f,1), new Color(40/255f,20/255f,107/255f,1), null, TabooPotion.POTION_ID, TheProfessor.Enums.THE_PROFESSOR);
+        PotionLoader.loadContent();
     }
 
     @Override
