@@ -2,7 +2,7 @@ package Professor.relics;
 
 import Professor.TheProfessor;
 import Professor.actions.InfuseRandomCardAction;
-import Professor.cardmods.GainBlockMod;
+import Professor.cardmods.DealDamageMod;
 import Professor.util.Wiz;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -22,9 +22,9 @@ import static Professor.MainModfile.makeID;
 public class LocketOfDevotion extends AbstractEasyRelic {
     public static final String ID = makeID(LocketOfDevotion.class.getSimpleName());
     HashMap<String, Integer> stats = new HashMap<>();
-    private final String BLOCK_STAT = DESCRIPTIONS[1];
-    private final String BLOCK_PER_TURN = DESCRIPTIONS[2];
-    private final String BLOCK_PER_COMBAT = DESCRIPTIONS[3];
+    private final String STAT = DESCRIPTIONS[1];
+    private final String PER_TURN = DESCRIPTIONS[2];
+    private final String PER_COMBAT = DESCRIPTIONS[3];
 
     public LocketOfDevotion() {
         super(ID, RelicTier.BOSS, LandingSound.MAGICAL, TheProfessor.Enums.MEDIUM_RUBY_COLOR);
@@ -35,7 +35,7 @@ public class LocketOfDevotion extends AbstractEasyRelic {
     public void atTurnStartPostDraw() {
         flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        addToBot(new InfuseRandomCardAction(1, new GainBlockMod(2, 2)));
+        addToBot(new InfuseRandomCardAction(1, new DealDamageMod(3, 3)));
     }
 
     @Override //Should replace default relic.
@@ -46,7 +46,7 @@ public class LocketOfDevotion extends AbstractEasyRelic {
         if (p.hasRelic(MemoriaBracelet.ID)) {
             //Grab its data for relic stats if you want to carry the stats over to the boss relic
             MemoriaBracelet mb = (MemoriaBracelet) p.getRelic(MemoriaBracelet.ID);
-            stats.put(BLOCK_STAT, mb.getBlockStat());
+            stats.put(STAT, mb.getStat());
             //Find it...
             for (int i = 0; i < p.relics.size(); ++i) {
                 if (p.relics.get(i).relicId.equals(MemoriaBracelet.ID)) {
@@ -65,50 +65,50 @@ public class LocketOfDevotion extends AbstractEasyRelic {
         return AbstractDungeon.player.hasRelic(MemoriaBracelet.ID);
     }
 
-    public void incrementBlock(int amount) {
-        stats.put(BLOCK_STAT, stats.get(BLOCK_STAT) + amount);
+    public void incrementStat(int amount) {
+        stats.put(STAT, stats.get(STAT) + amount);
     }
 
-    public static void onBlockModTrigger(int amount) {
+    public static void onInfusionTrigger(int amount) {
         if (CardCrawlGame.isInARun() && Wiz.adp() != null && Wiz.adp().hasRelic(LocketOfDevotion.ID)) {
-            ((LocketOfDevotion) Wiz.adp().getRelic(LocketOfDevotion.ID)).incrementBlock(amount);
+            ((LocketOfDevotion) Wiz.adp().getRelic(LocketOfDevotion.ID)).incrementStat(amount);
         }
     }
 
     public String getStatsDescription() {
-        return BLOCK_STAT + stats.get(BLOCK_STAT);
+        return STAT + stats.get(STAT);
     }
 
     public String getExtendedStatsDescription(int totalCombats, int totalTurns) {
         // You would just return getStatsDescription() if you don't want to display per-combat and per-turn stats
         StringBuilder builder = new StringBuilder();
         builder.append(getStatsDescription());
-        float stat = (float)stats.get(BLOCK_STAT);
+        float stat = (float)stats.get(STAT);
         // Relic Stats truncates these extended stats to 3 decimal places, so we do the same
         DecimalFormat perTurnFormat = new DecimalFormat("#.###");
-        builder.append(BLOCK_PER_TURN);
+        builder.append(PER_TURN);
         builder.append(perTurnFormat.format(stat / Math.max(totalTurns, 1)));
-        builder.append(BLOCK_PER_COMBAT);
+        builder.append(PER_COMBAT);
         builder.append(perTurnFormat.format(stat / Math.max(totalCombats, 1)));
         return builder.toString();
     }
 
     public void resetStats() {
-        stats.put(BLOCK_STAT, 0);
+        stats.put(STAT, 0);
     }
 
     public JsonElement onSaveStats() {
         // An array makes more sense if you want to store more than one stat
         Gson gson = new Gson();
         ArrayList<Integer> statsToSave = new ArrayList<>();
-        statsToSave.add(stats.get(BLOCK_STAT));
+        statsToSave.add(stats.get(STAT));
         return gson.toJsonTree(statsToSave);
     }
 
     public void onLoadStats(JsonElement jsonElement) {
         if (jsonElement != null) {
             JsonArray jsonArray = jsonElement.getAsJsonArray();
-            stats.put(BLOCK_STAT, jsonArray.get(0).getAsInt());
+            stats.put(STAT, jsonArray.get(0).getAsInt());
         } else {
             resetStats();
         }

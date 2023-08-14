@@ -1,6 +1,7 @@
 package Professor;
 
 import Professor.cardmods.AbstractInfusion;
+import Professor.cardmods.DealDamageMod;
 import Professor.cards.cardvars.*;
 import Professor.icons.IconContainer;
 import Professor.patches.ArchetypeHelper;
@@ -9,6 +10,8 @@ import Professor.powers.ExposedPower;
 import Professor.powers.FocusPower;
 import Professor.powers.StaggerPower;
 import Professor.relics.AbstractEasyRelic;
+import Professor.relics.LocketOfDevotion;
+import Professor.relics.MemoriaBracelet;
 import Professor.ui.SynthesisPanel;
 import Professor.util.CustomSounds;
 import Professor.util.KeywordManager;
@@ -468,6 +471,9 @@ public class MainModfile implements
     }
 
     public static void infusionTrigger(AbstractInfusion infusion, int directAmount, int relicAmount) {
-
+        if (infusion instanceof DealDamageMod) {
+            MemoriaBracelet.onInfusionTrigger(relicAmount);
+            LocketOfDevotion.onInfusionTrigger(relicAmount);
+        }
     }
 }

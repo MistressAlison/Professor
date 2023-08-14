@@ -95,16 +95,16 @@
     "NAME": "Locket of Devotion",
     "FLAVOR": "If you place a photo of someone you want to protect inside, it will allow you to shoulder their hardships.",
     "DESCRIPTIONS": [
-      "At the start of each turn, #yprofessor:Infuse \"Gain 2 #yBlock [REMOVE_SPACE]\" into a random card in your hand.",
-      "Block gained: "," NL Per turn: "," NL Per combat: "
+      "At the start of each turn, #yprofessor:Infuse \"Deal 3 damage\" into a random card in your hand.",
+      "Damage dealt: "," NL Per turn: "," NL Per combat: "
     ]
   },
   "${ModID}:MemoriaBracelet": {
     "NAME": "Memoria Bracelet",
     "FLAVOR": "The bracelet made as a symbol of affection. It was designed with fashion in mind more than practical use.",
     "DESCRIPTIONS": [
-      "At the start of each combat, #yprofessor:Infuse \"Gain 3 #yBlock [REMOVE_SPACE]\" into a random card in your hand.",
-      "Block gained: "," NL Per turn: "," NL Per combat: "
+      "At the start of each combat, #yprofessor:Infuse \"Deal 4 damage\" into a random card in your hand.",
+      "Damage dealt: "," NL Per turn: "," NL Per combat: "
 
     ]
   },
