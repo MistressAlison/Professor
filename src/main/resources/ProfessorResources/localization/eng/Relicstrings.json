@@ -4,7 +4,8 @@
     "FLAVOR": "Wearing this crown will make anyone look more important.",
     "DESCRIPTIONS": [
       "On pickup, choose a card. #yprofessor:Unlock and #yUpgrade it.",
-      "Choose a card to Unlock and Upgrade."
+      "Choose a card to Unlock and Upgrade.",
+      "Card chosen: "
     ]
   },
   "${ModID}:Cosmos": {
