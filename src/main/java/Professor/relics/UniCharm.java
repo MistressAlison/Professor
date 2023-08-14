@@ -4,6 +4,8 @@ import Professor.TheProfessor;
 import Professor.util.Wiz;
 import Professor.vfx.BarbExplodeEffect;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.damagemods.AbstractDamageModifier;
+import com.evacipated.cardcrawl.mod.stslib.damagemods.BindingHelper;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -12,6 +14,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -19,7 +22,9 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 import static Professor.MainModfile.makeID;
 
@@ -29,6 +34,7 @@ public class UniCharm extends AbstractEasyRelic {
     HashMap<String, Integer> stats = new HashMap<>();
     private final String DAMAGE_STAT = DESCRIPTIONS[1];
     private final String DAMAGE_PER_COMBAT = DESCRIPTIONS[2];
+    private static final List<AbstractDamageModifier> uniDamage = Collections.singletonList(new UniDamage());
 
     public UniCharm() {
         super(ID, RelicTier.COMMON, LandingSound.FLAT, TheProfessor.Enums.MEDIUM_RUBY_COLOR);
@@ -43,7 +49,7 @@ public class UniCharm extends AbstractEasyRelic {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.owner != Wiz.adp() && info.type == DamageInfo.DamageType.NORMAL && !grayscale) {
             flash();
-            addToTop(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(AMOUNT, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
+            addToTop(BindingHelper.makeAction(uniDamage, new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(AMOUNT, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE)));
             addToTop(new VFXAction(new BarbExplodeEffect(Color.BROWN), 0.2f));
             addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             grayscale = true;
@@ -104,5 +110,20 @@ public class UniCharm extends AbstractEasyRelic {
         UniCharm newRelic = new UniCharm();
         newRelic.stats = this.stats;
         return newRelic;
+    }
+
+    private static class UniDamage extends AbstractDamageModifier {
+        @Override
+        public void onLastDamageTakenUpdate(DamageInfo info, int lastDamageTaken, int overkillAmount, AbstractCreature target) {
+            if (Wiz.adp().hasRelic(UniCharm.ID)) {
+                UniCharm uc = (UniCharm) Wiz.adp().getRelic(UniCharm.ID);
+                uc.updateDamage(lastDamageTaken);
+            }
+        }
+
+        @Override
+        public AbstractDamageModifier makeCopy() {
+            return new UniDamage();
+        }
     }
 }
