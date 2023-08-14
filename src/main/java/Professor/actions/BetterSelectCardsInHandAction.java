@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class BetterSelectCardsInHandAction extends AbstractGameAction {
     private final Predicate<AbstractCard> predicate;
@@ -36,6 +37,11 @@ public class BetterSelectCardsInHandAction extends AbstractGameAction {
     public void update() {
         if (this.duration == this.startDuration) {
             if (this.hand.size() != 0 && this.hand.stream().anyMatch(this.predicate) && this.callback != null) {
+                if (hand.stream().filter(predicate).count() <= amount) {
+                    callback.accept(hand.stream().filter(predicate).collect(Collectors.toList()));
+                    this.isDone = true;
+                    return;
+                }
                 this.tempHand.removeIf(this.predicate);
                 if (this.tempHand.size() > 0) {
                     this.hand.removeIf(this.tempHand::contains);
