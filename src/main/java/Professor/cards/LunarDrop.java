@@ -3,6 +3,7 @@ package Professor.cards;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.cards.interfaces.InstantSynthesisCard;
 import Professor.cards.interfaces.OnUseInSynthesisCard;
+import Professor.patches.CustomTags;
 import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -17,6 +18,8 @@ public class LunarDrop extends AbstractEasyCard implements OnUseInSynthesisCard,
     public LunarDrop() {
         super(ID, -2, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
         selfRetain = true;
+        // TODO Upgrade is Wind but not being detected.
+        tags.add(CustomTags.PROF_WIND);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {}

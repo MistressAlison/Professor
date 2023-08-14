@@ -17,7 +17,7 @@ public class AmberOil extends AbstractEasyCard {
     public AmberOil() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
-        //tags.add(CustomTags.PROF_REACTANT);
+        // TODO this should actually be a Wind card given its effect
         tags.add(CustomTags.PROF_BOLT);
     }
 
