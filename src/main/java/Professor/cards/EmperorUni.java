@@ -19,21 +19,20 @@ public class EmperorUni extends AbstractEasyCard {
     public EmperorUni() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         baseDamage = damage = 8;
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 5;
         tags.add(CustomTags.PROF_UNI);
-        exhaust = true;
         isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         allDmg(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        addToBot(new InfuseCardsInHandAction(p.hand.size(), new DealAOEDamageMod(magicNumber)));
+        addToBot(new InfuseCardsInHandAction(1,  new DealAOEDamageMod(magicNumber)));
     }
 
     @Override
     public void upp() {
-        upgradeDamage(3);
+        upgradeDamage(2);
         upgradeMagicNumber(2);
     }
 

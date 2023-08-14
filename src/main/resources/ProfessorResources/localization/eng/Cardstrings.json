@@ -223,7 +223,7 @@
   },
   "${ModID}:EmperorUni": {
     "NAME": "Emperor Uni",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL professor:Infuse \"Deal !M! damage to ALL enemies\" into all cards in your hand. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL professor:Infuse \"Deal !M! damage to ALL enemies\" into a card."
   },
   "${ModID}:EternalCrystal": {
     "NAME": "Eternal Crystal",
