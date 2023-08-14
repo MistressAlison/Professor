@@ -1,5 +1,6 @@
 package Professor;
 
+import Professor.cardmods.AbstractInfusion;
 import Professor.cards.cardvars.*;
 import Professor.icons.IconContainer;
 import Professor.patches.ArchetypeHelper;
@@ -464,5 +465,9 @@ public class MainModfile implements
     @Override
     public void receiveStartGame() {
         SynthesisPanel.clear();
+    }
+
+    public static void infusionTrigger(AbstractInfusion infusion, int directAmount, int relicAmount) {
+
     }
 }

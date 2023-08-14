@@ -1,6 +1,7 @@
 package Professor.cardmods;
 
 import Professor.MainModfile;
+import Professor.actions.InfusionTriggerAction;
 import Professor.cards.cardvars.DynvarInterfaceManager;
 import Professor.util.TextureScaler;
 import Professor.util.Wiz;
@@ -27,6 +28,11 @@ public class ApplyPoisonMod extends AbstractInfusion {
         super(ID, InfusionType.MAGIC, baseAmount, TEXT[0], ICON);
     }
 
+    public ApplyPoisonMod(int baseAmount, int relicStatsVal) {
+        super(ID, InfusionType.MAGIC, baseAmount, TEXT[0], ICON);
+        this.relicStatsVal = relicStatsVal;
+    }
+
     @Override
     public void onInitialApplication(AbstractCard card) {
         if (card.target == AbstractCard.CardTarget.ALL_ENEMY || card.target == AbstractCard.CardTarget.NONE) {
@@ -39,6 +45,7 @@ public class ApplyPoisonMod extends AbstractInfusion {
 
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
+        Wiz.atb(new InfusionTriggerAction(this, val, relicStatsVal));
         Wiz.atb(new ApplyPowerAction(target, Wiz.adp(), new PoisonPower(target, Wiz.adp(), val)));
     }
 
@@ -53,6 +60,6 @@ public class ApplyPoisonMod extends AbstractInfusion {
 
     @Override
     public AbstractCardModifier makeCopy() {
-        return new ApplyPoisonMod(baseVal);
+        return new ApplyPoisonMod(baseVal, relicStatsVal);
     }
 }

@@ -32,6 +32,7 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
     public boolean valUpgraded;
     public transient Texture modIcon;
     public String modText;
+    public int relicStatsVal;
 
     public AbstractInfusion(String key, InfusionType type, int baseAmount, String modText, Texture modIcon) {
         this.key = key;
@@ -114,6 +115,7 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
         ArrayList<AbstractCardModifier> mods = CardModifierManager.getModifiers(card, key);
         if (!mods.isEmpty()) {
             AbstractInfusion mod = (AbstractInfusion) mods.get(0);
+            mod.relicStatsVal += this.relicStatsVal;
             mod.baseVal += this.baseVal;
             mod.val = mod.baseVal;
             return false;
