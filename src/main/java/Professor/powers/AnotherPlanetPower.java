@@ -2,15 +2,16 @@ package Professor.powers;
 
 import Professor.MainModfile;
 import Professor.cards.AnotherPlanet;
-import Professor.powers.interfaces.OnDiscardPower;
+import Professor.powers.interfaces.OnUpgradePower;
 import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class AnotherPlanetPower extends AbstractPower implements OnDiscardPower {
+public class AnotherPlanetPower extends AbstractPower implements OnUpgradePower {
     public static final String POWER_ID = MainModfile.makeID(AnotherPlanetPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -36,7 +37,7 @@ public class AnotherPlanetPower extends AbstractPower implements OnDiscardPower 
     }
 
     @Override
-    public void onManualDiscard() {
+    public void onUpgrade(AbstractCard c) {
         flash();
         addToBot(new DrawCardAction(amount));
     }
