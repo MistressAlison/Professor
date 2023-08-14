@@ -178,7 +178,7 @@
   },
   "${ModID}:CleanWater": {
     "NAME": "Clean Water",
-    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Increase this card's Block by !M! this combat."
+    "DESCRIPTION": "Gain !B! Block. NL Discard 1 card."
   },
   "${ModID}:Clobber": {
     "NAME": "Clobber",
