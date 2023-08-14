@@ -1,21 +1,16 @@
 package Professor.relics;
 
 import Professor.TheProfessor;
+import Professor.actions.InfuseRandomCardAction;
+import Professor.cardmods.GainBlockMod;
 import Professor.util.Wiz;
-import Professor.vfx.BarbExplodeEffect;
-import com.badlogic.gdx.graphics.Color;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -23,75 +18,73 @@ import java.util.HashMap;
 
 import static Professor.MainModfile.makeID;
 
-public class UniCharm extends AbstractEasyRelic {
-    public static final String ID = makeID(UniCharm.class.getSimpleName());
-    private static final int AMOUNT = 8;
+public class MemoriaBracelet extends AbstractEasyRelic {
+    public static final String ID = makeID(MemoriaBracelet.class.getSimpleName());
     HashMap<String, Integer> stats = new HashMap<>();
-    private final String DAMAGE_STAT = DESCRIPTIONS[1];
-    private final String DAMAGE_PER_COMBAT = DESCRIPTIONS[2];
+    private final String BLOCK_STAT = DESCRIPTIONS[1];
+    private final String BLOCK_PER_TURN = DESCRIPTIONS[2];
+    private final String BLOCK_PER_COMBAT = DESCRIPTIONS[3];
 
-    public UniCharm() {
-        super(ID, RelicTier.COMMON, LandingSound.FLAT, TheProfessor.Enums.MEDIUM_RUBY_COLOR);
+    public MemoriaBracelet() {
+        super(ID, RelicTier.STARTER, LandingSound.MAGICAL, TheProfessor.Enums.MEDIUM_RUBY_COLOR);
         resetStats();
     }
 
-    public void justEnteredRoom(AbstractRoom room) {
-        this.grayscale = false;
+    @Override
+    public void atBattleStart() {
+        flash();
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new InfuseRandomCardAction(1, new GainBlockMod(3, 3)));
     }
 
-    @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        if (info.owner != Wiz.adp() && info.type == DamageInfo.DamageType.NORMAL && !grayscale) {
-            flash();
-            addToTop(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(AMOUNT, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
-            addToTop(new VFXAction(new BarbExplodeEffect(Color.BROWN), 0.2f));
-            addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            grayscale = true;
+    public int getBlockStat() {
+        return stats.get(BLOCK_STAT);
+    }
+
+    public void incrementBlock(int amount) {
+        stats.put(BLOCK_STAT, stats.get(BLOCK_STAT) + amount);
+    }
+
+    public static void onBlockModTrigger(int amount) {
+        if (CardCrawlGame.isInARun() && Wiz.adp() != null && Wiz.adp().hasRelic(MemoriaBracelet.ID)) {
+            ((MemoriaBracelet) Wiz.adp().getRelic(MemoriaBracelet.ID)).incrementBlock(amount);
         }
-        return damageAmount;
-    }
-
-    @Override
-    public void playLandingSFX() {
-        CardCrawlGame.sound.play("ATTACK_FAST");
-    }
-
-    public void updateDamage(int damage) {
-        stats.put(DAMAGE_STAT, stats.get(DAMAGE_STAT) + damage);
     }
 
     public String getStatsDescription() {
-        return DAMAGE_STAT + stats.get(DAMAGE_STAT);
+        return BLOCK_STAT + stats.get(BLOCK_STAT);
     }
 
     public String getExtendedStatsDescription(int totalCombats, int totalTurns) {
         // You would just return getStatsDescription() if you don't want to display per-combat and per-turn stats
         StringBuilder builder = new StringBuilder();
         builder.append(getStatsDescription());
-        float stat = stats.get(DAMAGE_STAT);
+        float stat = (float)stats.get(BLOCK_STAT);
         // Relic Stats truncates these extended stats to 3 decimal places, so we do the same
         DecimalFormat perTurnFormat = new DecimalFormat("#.###");
-        builder.append(DAMAGE_PER_COMBAT);
+        builder.append(BLOCK_PER_TURN);
+        builder.append(perTurnFormat.format(stat / Math.max(totalTurns, 1)));
+        builder.append(BLOCK_PER_COMBAT);
         builder.append(perTurnFormat.format(stat / Math.max(totalCombats, 1)));
         return builder.toString();
     }
 
     public void resetStats() {
-        stats.put(DAMAGE_STAT, 0);
+        stats.put(BLOCK_STAT, 0);
     }
 
     public JsonElement onSaveStats() {
         // An array makes more sense if you want to store more than one stat
         Gson gson = new Gson();
         ArrayList<Integer> statsToSave = new ArrayList<>();
-        statsToSave.add(stats.get(DAMAGE_STAT));
+        statsToSave.add(stats.get(BLOCK_STAT));
         return gson.toJsonTree(statsToSave);
     }
 
     public void onLoadStats(JsonElement jsonElement) {
         if (jsonElement != null) {
             JsonArray jsonArray = jsonElement.getAsJsonArray();
-            stats.put(DAMAGE_STAT, jsonArray.get(0).getAsInt());
+            stats.put(BLOCK_STAT, jsonArray.get(0).getAsInt());
         } else {
             resetStats();
         }
@@ -101,7 +94,7 @@ public class UniCharm extends AbstractEasyRelic {
     public AbstractRelic makeCopy() {
         // Relic Stats will always query the stats from the instance passed to BaseMod.addRelic()
         // Therefore, we make sure all copies share the same stats by copying the HashMap.
-        UniCharm newRelic = new UniCharm();
+        MemoriaBracelet newRelic = new MemoriaBracelet();
         newRelic.stats = this.stats;
         return newRelic;
     }

@@ -1,7 +1,11 @@
 package Professor;
 
-import Professor.cards.*;
+import Professor.cards.Catch;
+import Professor.cards.Defend;
+import Professor.cards.EmeraldBand;
+import Professor.cards.Strike;
 import Professor.cards.interfaces.SkillAnimationAttack;
+import Professor.relics.MemoriaBracelet;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -25,7 +29,6 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import Professor.relics.UniCharm;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,7 +99,7 @@ public class TheProfessor extends CustomPlayer {
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(UniCharm.ID);
+        retVal.add(MemoriaBracelet.ID);
         return retVal;
     }
 

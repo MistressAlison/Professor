@@ -18,7 +18,7 @@
     "NAME": "Elixir Ring",
     "FLAVOR": "An exclusive ring for alchemists. It takes two Philosopher's Stones to craft.",
     "DESCRIPTIONS": [
-      "???"
+      "Rest sites heal?"
     ]
   },
   "${ModID}:EnergyPendant": {
@@ -93,16 +93,19 @@
   },
   "${ModID}:LocketOfDevotion": {
     "NAME": "Locket of Devotion",
-    "FLAVOR": "If you place a photo of someone you want to protect inside, it will allow you to shoulder their hardships for them.",
+    "FLAVOR": "If you place a photo of someone you want to protect inside, it will allow you to shoulder their hardships.",
     "DESCRIPTIONS": [
-      "???"
+      "At the start of each turn, #yprofessor:Infuse \"Gain 2 #yBlock [REMOVE_SPACE]\" into a random card.",
+      "Block gained: "," NL Per turn: "," NL Per combat: "
     ]
   },
   "${ModID}:MemoriaBracelet": {
     "NAME": "Memoria Bracelet",
     "FLAVOR": "The bracelet made as a symbol of affection. It was designed with fashion in mind more than practical use.",
     "DESCRIPTIONS": [
-      "???"
+      "At the start of each combat, #yprofessor:Infuse \"Gain 3 #yBlock [REMOVE_SPACE]\" into a random card.",
+      "Block gained: "," NL Per turn: "," NL Per combat: "
+
     ]
   },
   "${ModID}:MigratoryCharm": {
@@ -144,7 +147,8 @@
     "NAME": "Uni Charm",
     "FLAVOR": "People always comment how creepily real it looks, which makes sense because it's made with an actual Uni.",
     "DESCRIPTIONS": [
-      "The first time you are attacked each combat, deal #b8 damage to ALL enemies."
+      "The first time you are attacked each combat, deal #b8 damage to ALL enemies.",
+      "Damage dealt: "," NL Damage per combat: "
     ]
   }
 }
