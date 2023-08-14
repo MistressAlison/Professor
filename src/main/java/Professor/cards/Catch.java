@@ -4,7 +4,6 @@ import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.red.Shockwave;
@@ -19,8 +18,8 @@ public class Catch extends AbstractEasyCard {
     public final static String ID = makeID(Catch.class.getSimpleName());
 
     public Catch() {
-        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-        baseDamage = damage = 4;
+        super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.ENEMY);
+        //baseDamage = damage = 4;
         baseMagicNumber = magicNumber = 1;
     }
 
@@ -30,13 +29,13 @@ public class Catch extends AbstractEasyCard {
             addToBot(new VFXAction(new EntangleEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY)));
             addToBot(new SFXAction("POWER_ENTANGLED", 0.05f));
         }
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        //dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         Wiz.applyToEnemy(m, new VulnerablePower(m, magicNumber, false));
     }
 
     @Override
     public void upp() {
-        upgradeDamage(1);
+        //upgradeDamage(1);
         upgradeMagicNumber(1);
         needsArtRefresh = true;
     }

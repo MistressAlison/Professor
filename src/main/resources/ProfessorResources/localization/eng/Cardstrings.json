@@ -174,7 +174,7 @@
   },
   "${ModID}:Catch": {
     "NAME": "Catch",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+    "DESCRIPTION": "Apply !M! Vulnerable."
   },
   "${ModID}:CleanWater": {
     "NAME": "Clean Water",
@@ -219,7 +219,7 @@
   },
   "${ModID}:EmeraldBand": {
     "NAME": "Emerald Band",
-    "DESCRIPTION": "Discard 1 card. NL Your next Attack deals !M! additional damage."
+    "DESCRIPTION": "Upgrade !M! random card{@@}{!M!|>1=s} in your hand."
   },
   "${ModID}:EmperorUni": {
     "NAME": "Emperor Uni",
