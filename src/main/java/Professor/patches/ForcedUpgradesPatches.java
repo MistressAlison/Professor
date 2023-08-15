@@ -33,17 +33,21 @@ public class ForcedUpgradesPatches {
     public static boolean previewMultipleUpgrade = false;
     public static int upgradeTimes = 0;
 
+    public static void applyUnlockIfNeeded(AbstractCard card) {
+        if (!(card instanceof SearingBlow) && !CardModifierManager.hasModifier(card, UnlockedMod.ID)) {
+            if (!(Loader.isModLoaded("CardAugments") && ChimeraHelper.hasSearing(card))) {
+                CardModifierManager.addModifier(card, new UnlockedMod());
+            }
+        }
+    }
+
     @SpirePatch2(clz = HandCardSelectScreen.class, method = "selectHoveredCard")
     @SpirePatch2(clz = HandCardSelectScreen.class, method = "updateMessage")
     public static class ShowMultipleUpgrades {
         @SpireInsertPatch(locator = Locator.class)
         public static void plz(HandCardSelectScreen __instance) {
             if (previewMultipleUpgrade) {
-                if (!(__instance.upgradePreviewCard instanceof SearingBlow) && !CardModifierManager.hasModifier(__instance.upgradePreviewCard, UnlockedMod.ID)) {
-                    if (!(Loader.isModLoaded("CardAugments") && ChimeraHelper.hasSearing(__instance.upgradePreviewCard))) {
-                        CardModifierManager.addModifier(__instance.upgradePreviewCard, new UnlockedMod());
-                    }
-                }
+                applyUnlockIfNeeded(__instance.upgradePreviewCard);
                 for (int i = 0 ; i < upgradeTimes-1 ; i++) {
                     __instance.upgradePreviewCard.upgrade();
                 }
@@ -64,11 +68,7 @@ public class ForcedUpgradesPatches {
         @SpireInsertPatch(locator = Locator.class)
         public static void plz(GridCardSelectScreen __instance) {
             if (previewMultipleUpgrade) {
-                if (!(__instance.upgradePreviewCard instanceof SearingBlow) && !CardModifierManager.hasModifier(__instance.upgradePreviewCard, UnlockedMod.ID)) {
-                    if (!(Loader.isModLoaded("CardAugments") && ChimeraHelper.hasSearing(__instance.upgradePreviewCard))) {
-                        CardModifierManager.addModifier(__instance.upgradePreviewCard, new UnlockedMod());
-                    }
-                }
+                applyUnlockIfNeeded(__instance.upgradePreviewCard);
                 for (int i = 0 ; i < upgradeTimes-1 ; i++) {
                     __instance.upgradePreviewCard.upgrade();
                 }
