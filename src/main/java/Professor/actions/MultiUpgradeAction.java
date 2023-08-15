@@ -31,7 +31,7 @@ public class MultiUpgradeAction extends AbstractGameAction {
         if (this.duration == this.startDuration) {
             if (this.hand.size() != 0 && this.hand.stream().anyMatch(this.predicate)) {
                 if (hand.stream().filter(predicate).count() == 1) {
-                    performUpgrades(hand.stream().filter(predicate).collect(Collectors.toList()));
+                    performUpgrades(hand.stream().filter(predicate).collect(Collectors.toList()), amount);
                     this.isDone = true;
                 } else {
                     this.tempHand.removeIf(this.predicate);
@@ -49,7 +49,7 @@ public class MultiUpgradeAction extends AbstractGameAction {
         } else if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             ForcedUpgradesPatches.previewMultipleUpgrade = false;
             ForcedUpgradesPatches.upgradeTimes = 0;
-            performUpgrades(AbstractDungeon.handCardSelectScreen.selectedCards.group);
+            performUpgrades(AbstractDungeon.handCardSelectScreen.selectedCards.group, amount);
             this.hand.addAll(AbstractDungeon.handCardSelectScreen.selectedCards.group);
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
@@ -65,13 +65,13 @@ public class MultiUpgradeAction extends AbstractGameAction {
         }
     }
 
-    private void performUpgrades(List<AbstractCard> cards) {
+    public static void performUpgrades(List<AbstractCard> cards, int times) {
         for (AbstractCard card : cards) {
             ForcedUpgradesPatches.applyUnlockIfNeeded(card);
             AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
             card.superFlash();
             card.applyPowers();
-            for (int i = 0 ; i < amount ; i++) {
+            for (int i = 0 ; i < times ; i++) {
                 card.upgrade();
             }
         }

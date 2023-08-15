@@ -1,4 +1,4 @@
-package Professor.potion;
+package Professor.potions;
 
 import Professor.MainModfile;
 import Professor.actions.AnimationAction;
