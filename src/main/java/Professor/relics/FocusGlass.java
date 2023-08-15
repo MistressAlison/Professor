@@ -1,7 +1,7 @@
 package Professor.relics;
 
 import Professor.TheProfessor;
-import Professor.powers.FocusPower;
+import Professor.powers.FocusedPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -28,7 +28,7 @@ public class FocusGlass extends AbstractEasyRelic {
                 this.counter = 0;
                 this.flash();
                 this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FocusPower(AbstractDungeon.player, 1)));
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FocusedPower(AbstractDungeon.player, 1)));
             }
         }
     }

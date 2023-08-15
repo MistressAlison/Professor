@@ -63,8 +63,8 @@
     "NAME": "Staggered",
     "DESCRIPTIONS": ["Deals #b"," less damage with Attacks this turn."]
   },
-  "${ModID}:FocusPower": {
-    "NAME": "Focus",
+  "${ModID}:FocusedPower": {
+    "NAME": "Focused",
     "DESCRIPTIONS": ["Your next #yAttack deals #b50% more damage."," Your next #b"," #yAttacks deal #b50% more damage."]
   },
   "${ModID}:AnotherPlanetPower": {

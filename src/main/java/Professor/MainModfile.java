@@ -7,7 +7,7 @@ import Professor.icons.IconContainer;
 import Professor.patches.ArchetypeHelper;
 import Professor.powers.BracedPower;
 import Professor.powers.ExposedPower;
-import Professor.powers.FocusPower;
+import Professor.powers.FocusedPower;
 import Professor.powers.StaggerPower;
 import Professor.powers.interfaces.OnUpgradePower;
 import Professor.relics.AbstractEasyRelic;
@@ -271,7 +271,7 @@ public class MainModfile implements
         BaseMod.registerModBadge(badgeTexture, EXTRA_TEXT[0], AUTHOR, EXTRA_TEXT[1], settingsPanel);
 
         //Add Powers
-        BaseMod.addPower(FocusPower.class, FocusPower.POWER_ID);
+        BaseMod.addPower(FocusedPower.class, FocusedPower.POWER_ID);
         BaseMod.addPower(ExposedPower.class, ExposedPower.POWER_ID);
         BaseMod.addPower(BracedPower.class, BracedPower.POWER_ID);
         BaseMod.addPower(StaggerPower.class, StaggerPower.POWER_ID);
