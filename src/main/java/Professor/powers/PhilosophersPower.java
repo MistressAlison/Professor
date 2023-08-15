@@ -3,17 +3,19 @@ package Professor.powers;
 import Professor.MainModfile;
 import Professor.cards.OldenPhilosophersStone;
 import Professor.powers.interfaces.CheatCostPower;
+import Professor.util.CustomLighting;
 import Professor.util.PowerIconMaker;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class PhilosophersPower extends AbstractPower implements CheatCostPower {
+public class PhilosophersPower extends AbstractPower implements CheatCostPower, CustomLighting {
 
     public static final String POWER_ID = MainModfile.makeID(PhilosophersPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -61,5 +63,15 @@ public class PhilosophersPower extends AbstractPower implements CheatCostPower {
     @Override
     public void onActivate(AbstractCard card) {
         triggers++;
+    }
+
+    @Override
+    public float[] _lightsOutGetXYRI() {
+        return new float[] {owner.hb.cX, owner.hb.cY, (100f+10*amount)* Settings.scale, (0.5f+0.05f*amount)};
+    }
+
+    @Override
+    public Color[] _lightsOutGetColor() {
+        return new Color[] {MainModfile.MEDIUM_RUBY_COLOR};
     }
 }
