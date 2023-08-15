@@ -41,6 +41,7 @@ public class DawnGrimoire extends AbstractCreationCard {
     public void updateElementData(ElementData data) {
         baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 4;
+        isMultiDamage = true;
         if (data != null) {
             baseDamage += 3*data.r;
             damage = baseDamage;
