@@ -274,7 +274,8 @@
   },
   "${ModID}:IceEssence": {
     "NAME": "Ice Essence",
-    "DESCRIPTION": "Whenever a card is Retained, gain !M! Block."
+    "DESCRIPTION": "Whenever a card is Retained, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever a card is Retained, gain !M! Block."
   },
   "${ModID}:Ingot": {
     "NAME": "Ingot",
