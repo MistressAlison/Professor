@@ -1,6 +1,7 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.patches.CustomTags;
 import Professor.powers.AetherPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
@@ -18,6 +19,11 @@ public class AetherEssence extends AbstractEasyCard {
         super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         //isInnate = true;
         //isEthereal = true;
+        // TODO no elements being picked up, make it rainbow for now
+        tags.add(CustomTags.PROF_FIRE);
+        tags.add(CustomTags.PROF_ICE);
+        tags.add(CustomTags.PROF_BOLT);
+        tags.add(CustomTags.PROF_WIND);
     }
 
     @Override
