@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
+import com.badlogic.gdx.utils.Disposable;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,12 +15,21 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class TextureSniper {
-    private static final ArrayList<Texture> tempTextures = new ArrayList<>();
+    private static final int CARD_W = AbstractCard.RAW_W+50;
+    private static final int CARD_H = AbstractCard.RAW_H+50;
+    private static final int POWER_W = 50;
+    private static final int POWER_H = 50;
+    private static final int POTION_W = 64;
+    private static final int POTION_H = 64;
+    private static final FrameBuffer cardBuffer = ImageHelper.createBuffer(CARD_W, CARD_H);
+    private static final OrthographicCamera cardCamera = new OrthographicCamera(CARD_W, CARD_H);
+    private static final FrameBuffer powerBuffer = ImageHelper.createBuffer(POWER_W, POWER_H);
+    private static final OrthographicCamera powerCamera = new OrthographicCamera(POWER_W, POWER_H);
+    private static final FrameBuffer potionBuffer = ImageHelper.createBuffer(POTION_W, POTION_H);
+    private static final OrthographicCamera potionCamera = new OrthographicCamera(POTION_W, POTION_H);
+    private static final ArrayList<Disposable> disposables = new ArrayList<>();
 
     public static Texture snipeCard(AbstractCard card) {
         AbstractCard toRender = card.makeStatEquivalentCopy();
@@ -34,10 +44,9 @@ public class TextureSniper {
         toRender.render(sb);
         sb.end();
         fb.end();
-        Texture t = flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
-        fb.dispose();
-        tempTextures.add(t);
-        return t;
+        disposables.add(fb);
+        disposables.add(sb);
+        return flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
     }
 
     public static Texture snipePower(AbstractPower p) {
@@ -50,10 +59,9 @@ public class TextureSniper {
         p.renderAmount(sb, 32, -18, Color.WHITE.cpy());
         sb.end();
         fb.end();
-        Texture t = flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
-        fb.dispose();
-        tempTextures.add(t);
-        return t;
+        disposables.add(fb);
+        disposables.add(sb);
+        return flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
     }
 
     public static Texture snipePotion(AbstractPotion p) {
@@ -71,10 +79,9 @@ public class TextureSniper {
         p.posY = y;
         sb.end();
         fb.end();
-        Texture t = flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
-        fb.dispose();
-        tempTextures.add(t);
-        return t;
+        disposables.add(fb);
+        disposables.add(sb);
+        return flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
     }
 
     private static Texture flipRawTexture(Texture t) {
@@ -93,19 +100,21 @@ public class TextureSniper {
         fb.end();
         t.dispose();
         Texture ret = ImageHelper.getBufferTexture(fb).getTexture();
-        fb.dispose();
+        disposables.add(ret);
+        disposables.add(fb);
+        disposables.add(sb);
         return ret;
     }
 
     @SpirePatch2(clz = AbstractPlayer.class, method = "preBattlePrep")
     @SpirePatch2(clz = AbstractPlayer.class, method = "onVictory")
-    public static class ClearTempTextures {
+    public static class ClearDisposables {
         @SpirePostfixPatch
         public static void yeet() {
-            for (Texture t : tempTextures) {
-                t.dispose();
+            for (Disposable d : disposables) {
+                d.dispose();
             }
-            tempTextures.clear();
+            disposables.clear();
         }
     }
 }
