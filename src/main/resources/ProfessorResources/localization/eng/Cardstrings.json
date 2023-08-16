@@ -168,6 +168,10 @@
     "NAME": "Black Muck",
     "DESCRIPTION": "Apply !M! Poison. NL Apply !Professor:M2! Weak."
   },
+  "${ModID}:BlueStarRobe": {
+    "NAME": "Blue Star Robe",
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, draw !M! additional card{@@}{!M!|>1=s}."
+  },
   "${ModID}:BlueFlameEmber": {
     "NAME": "Blue Flame Ember",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Strength. NL At the end of this turn, lose !M! Strength."
