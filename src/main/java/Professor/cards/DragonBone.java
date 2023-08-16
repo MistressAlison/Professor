@@ -29,11 +29,7 @@ public class DragonBone extends AbstractEasyCard {
         if (m != null) {
             addToBot(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy()), 0.1F));
         }
-        addToBot(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, mon -> {
-            if (mon.lastDamageTaken > 0) {
-                addToTop(new GainBlockAction(p, mon.lastDamageTaken));
-            }
-        }));
+        addToBot(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, mon -> addToTop(new GainBlockAction(p, damage))));
     }
 
     @Override
