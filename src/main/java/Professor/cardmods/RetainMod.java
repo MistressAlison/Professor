@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import static Professor.MainModfile.makeID;
 
 public class RetainMod extends AbstractCardModifier {
-    public static String ID = makeID("RetainMod");
+    public static String ID = makeID(RetainMod.class.getSimpleName());
     public static String[] TEXT = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
 
     public String modifyDescription(String rawDescription, AbstractCard card) {

@@ -5,6 +5,9 @@
   "${ModID}:ExhaustMod": {
     "EXTENDED_DESCRIPTION": [" NL Exhaust."]
   },
+  "${ModID}:PurgeMod": {
+    "EXTENDED_DESCRIPTION": [" NL Purge."]
+  },
   "${ModID}:RetainMod": {
     "EXTENDED_DESCRIPTION": ["Retain. NL "]
   },

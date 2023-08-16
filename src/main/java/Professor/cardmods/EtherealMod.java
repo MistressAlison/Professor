@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import static Professor.MainModfile.makeID;
 
 public class EtherealMod extends AbstractCardModifier {
-    public static String ID = makeID("EtherealMod");
+    public static String ID = makeID(EtherealMod.class.getSimpleName());
     public static String[] TEXT = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
