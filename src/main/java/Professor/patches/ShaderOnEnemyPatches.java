@@ -2,6 +2,7 @@ package Professor.patches;
 
 import Professor.MainModfile;
 import Professor.powers.ExposedPower;
+import Professor.powers.PhasedPower;
 import Professor.util.ImageHelper;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.Gdx;
@@ -26,7 +27,8 @@ public class ShaderOnEnemyPatches {
 
         @SpirePrefixPatch
         public static void capture(AbstractMonster __instance, SpriteBatch sb) {
-            if (__instance.hasPower(ExposedPower.POWER_ID)) {
+            capturing = false;
+            if (__instance.hasPower(PhasedPower.POWER_ID)) {
                 capturing = true;
                 sb.end();
                 ImageHelper.beginBuffer(fb);

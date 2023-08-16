@@ -59,6 +59,10 @@
     "NAME": "Exposed",
     "DESCRIPTIONS": ["Takes #b"," more damage from Attacks this turn."]
   },
+  "${ModID}:PhasedPower": {
+    "NAME": "Phased",
+    "DESCRIPTIONS": ["Takes #b"," more damage from Attacks."]
+  },
   "${ModID}:StaggerPower": {
     "NAME": "Staggered",
     "DESCRIPTIONS": ["Deals #b"," less damage with Attacks this turn."]

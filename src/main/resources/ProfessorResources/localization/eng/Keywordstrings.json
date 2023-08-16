@@ -120,6 +120,14 @@
     "DESCRIPTION": "Exposed creatures take more damage from Attacks this turn."
   },
   {
+    "ID": "phased",
+    "PROPER_NAME": "Phased",
+    "NAMES": [
+      "phased"
+    ],
+    "DESCRIPTION": "Phased creatures take more damage from Attacks."
+  },
+  {
     "ID": "stagger",
     "PROPER_NAME": "Staggered",
     "NAMES": [
