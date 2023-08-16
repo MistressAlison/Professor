@@ -14,6 +14,9 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class TextureSniper {
     private static final ArrayList<Texture> tempTextures = new ArrayList<>();
@@ -31,7 +34,10 @@ public class TextureSniper {
         toRender.render(sb);
         sb.end();
         fb.end();
-        return flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
+        Texture t = flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
+        fb.dispose();
+        tempTextures.add(t);
+        return t;
     }
 
     public static Texture snipePower(AbstractPower p) {
@@ -44,7 +50,10 @@ public class TextureSniper {
         p.renderAmount(sb, 32, -18, Color.WHITE.cpy());
         sb.end();
         fb.end();
-        return flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
+        Texture t = flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
+        fb.dispose();
+        tempTextures.add(t);
+        return t;
     }
 
     public static Texture snipePotion(AbstractPotion p) {
@@ -62,7 +71,10 @@ public class TextureSniper {
         p.posY = y;
         sb.end();
         fb.end();
-        return flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
+        Texture t = flipRawTexture(ImageHelper.getBufferTexture(fb).getTexture());
+        fb.dispose();
+        tempTextures.add(t);
+        return t;
     }
 
     private static Texture flipRawTexture(Texture t) {
@@ -81,7 +93,7 @@ public class TextureSniper {
         fb.end();
         t.dispose();
         Texture ret = ImageHelper.getBufferTexture(fb).getTexture();
-        tempTextures.add(ret);
+        fb.dispose();
         return ret;
     }
 
