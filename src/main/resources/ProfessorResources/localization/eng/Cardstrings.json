@@ -67,7 +67,7 @@
   },
   "${ModID}:ElysiumHarp": {
     "NAME": "Elysium Harp",
-    "DESCRIPTION": "{@@}Draw !Professor:M2! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) }card{!Professor:M2!|>1=s}. NL Your next Attack deals !M! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) }additional damage."
+    "DESCRIPTION": "{@@}Draw !Professor:M2! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) }card{!Professor:M2!|>1=s}. NL Gain !M! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) } Vigor."
   },
   "${ModID}:SynthesizeElysiumHarp": {
     "NAME": "Peaceful Blueprint",
