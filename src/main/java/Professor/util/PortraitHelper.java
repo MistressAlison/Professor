@@ -1,4 +1,4 @@
-/*
+
 package Professor.util;
 
 import basemod.Pair;
@@ -76,6 +76,7 @@ public class PortraitHelper {
                 og.translate(-3, 0);
             }
             //Skill, Status, Curse to Attack is free
+            og.translate(-3, 0);
         }
 
         og.update();
@@ -112,7 +113,7 @@ public class PortraitHelper {
         public static void dontExplode(SingleCardViewPopup __instance, @ByRef Texture[] ___portraitImg, AbstractCard ___card) {
             Pair<String, AbstractCard.CardType> key = new Pair<>(___card.cardID, ___card.type);
             if (hashedTextures.containsKey(key)) {
-                ___portraitImg[0] = makeMaskedTexture(___card, 2);
+                ___portraitImg[0] = TextureScaler.rescale(hashedTextures.get(key).getKey(), 2f);
             }
         }
     }
@@ -127,4 +128,4 @@ public class PortraitHelper {
             }
         }
     }
-}*/
+}

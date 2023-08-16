@@ -35,6 +35,7 @@ public class ApplyPoisonMod extends AbstractInfusion {
 
     @Override
     public void onInitialApplication(AbstractCard card) {
+        super.onInitialApplication(card);
         if (card.target == AbstractCard.CardTarget.ALL_ENEMY || card.target == AbstractCard.CardTarget.NONE) {
             card.target = AbstractCard.CardTarget.ENEMY;
         }

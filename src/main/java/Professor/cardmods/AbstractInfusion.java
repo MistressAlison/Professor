@@ -1,7 +1,10 @@
 package Professor.cardmods;
 
+import Professor.actions.ApplyCardModifierAction;
 import Professor.util.CalcHelper;
 import Professor.util.FormatHelper;
+import Professor.util.PortraitHelper;
+import Professor.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Color;
@@ -12,8 +15,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public abstract class AbstractInfusion extends AbstractCardModifier implements DynvarInterface {
     public enum InfusionType {
@@ -43,6 +44,19 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
     }
 
     @Override
+    public void onInitialApplication(AbstractCard card) {
+        if (type == InfusionType.DAMAGE_ALL || type == InfusionType.DAMAGE_DIRECT || type == InfusionType.DAMAGE_RANDOM) {
+            if (card.type != AbstractCard.CardType.ATTACK) {
+                if (card.type == AbstractCard.CardType.POWER) {
+                    Wiz.att(new ApplyCardModifierAction(card, new PurgeMod()));
+                }
+                card.type = AbstractCard.CardType.ATTACK;
+                PortraitHelper.setMaskedPortrait(card);
+            }
+        }
+    }
+
+    /*@Override
     public List<String> extraDescriptors(AbstractCard card) {
         if (type == InfusionType.DAMAGE_ALL || type == InfusionType.DAMAGE_RANDOM || type == InfusionType.DAMAGE_DIRECT) {
             if (card.type != AbstractCard.CardType.ATTACK) {
@@ -50,7 +64,7 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
             }
         }
         return super.extraDescriptors(card);
-    }
+    }*/
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
