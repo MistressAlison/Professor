@@ -99,7 +99,10 @@ void main()
 
 
     gl_FragColor = (texture(u_texture, uv + offset.xy)*0.4) + (texture(u_texture, uv)*0.6);
-    gl_FragColor += length(bumpFromDepth(uv, u_screenSize.xy, .1))*0.25;
+    if (gl_FragColor.a > 0.0) {
+        gl_FragColor += length(bumpFromDepth(uv, u_screenSize.xy, .1))*0.25;
+    }
+    //
     //fragColor += smoothstep(-0.4, 0.0, sdRoundedBox((uv + offset.xy) - vec2(0.5), vec2(0.65), vec4(0.25)));
 
 }
