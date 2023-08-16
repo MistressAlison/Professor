@@ -398,7 +398,7 @@
   },
   "${ModID}:Uni": {
     "NAME": "Uni",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Exposed."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak."
   },
   "${ModID}:VirgoRequiemFlower": {
     "NAME": "Requiem Flower",

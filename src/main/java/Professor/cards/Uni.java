@@ -3,7 +3,6 @@ package Professor.cards;
 import Professor.actions.ThrowObjectAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.patches.CustomTags;
-import Professor.powers.ExposedPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
@@ -11,6 +10,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Professor.MainModfile.makeID;
 
@@ -19,7 +19,7 @@ public class Uni extends AbstractEasyCard {
 
     public Uni() {
         super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 1;
         baseDamage = damage = 4;
         tags.add(CustomTags.PROF_UNI);
     }
@@ -28,7 +28,7 @@ public class Uni extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ThrowObjectAction(itemArt(), 1/3f, m.hb, Color.BROWN));
         dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        Wiz.applyToEnemy(m, new ExposedPower(m, magicNumber));
+        Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
     }
 
     @Override
