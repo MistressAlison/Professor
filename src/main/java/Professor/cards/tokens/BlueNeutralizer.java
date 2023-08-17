@@ -2,11 +2,10 @@ package Professor.cards.tokens;
 
 import Professor.cards.abstracts.AbstractTokenCard;
 import Professor.cards.interfaces.OnUseInSynthesisCard;
-import Professor.powers.BracedPower;
 import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
-import Professor.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
+import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -51,7 +50,8 @@ public class BlueNeutralizer extends AbstractTokenCard implements OnUseInSynthes
     @Override
     public boolean onAdded(SynthesisItem item) {
         superFlash();
-        Wiz.applyToSelf(new BracedPower(Wiz.adp(), magicNumber));
+        addToBot(new NewQueueCardAction(makeStatEquivalentCopy(), true, false, true));
+        //Wiz.applyToSelf(new BracedPower(Wiz.adp(), magicNumber));
         return false;
     }
 }

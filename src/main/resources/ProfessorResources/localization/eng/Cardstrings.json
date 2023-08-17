@@ -7,19 +7,19 @@
   },
   "${ModID}:BlueNeutralizer": {
     "NAME": "Blue Neutralizer",
-    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Gain !M! professor:Braced. NL Purge."
+    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Play a copy of this card. NL Purge."
   },
   "${ModID}:GreenNeutralizer": {
     "NAME": "Green Neutralizer",
-    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL professor:Catalyst: Upgrade !Professor:M2! random card{!Professor:M2!|>1=s} for the rest of combat. NL Purge"
+    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL Discard !M! card{!M!|>1=s}{@@}. NL professor:Catalyst: Play a copy of this card. NL Purge"
   },
   "${ModID}:RedNeutralizer": {
     "NAME": "Red Neutralizer",
-    "DESCRIPTION": "Deal !D! damage. NL professor:Catalyst: ALL enemies lose !M! HP. NL Purge."
+    "DESCRIPTION": "Deal !D! damage. NL professor:Catalyst: Play a copy of this card. NL Purge."
   },
   "${ModID}:YellowNeutralizer": {
     "NAME": "Yellow Neutralizer",
-    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL professor:Catalyst: Your next Attack deals !Professor:M2! additional damage. NL Purge."
+    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL professor:Catalyst: Play a copy of this card. NL Purge."
   },
   "${ModID}:HolyArborCrystal": {
     "NAME": "Holy Arbor Crystal",
@@ -67,13 +67,13 @@
   },
   "${ModID}:ElysiumHarp": {
     "NAME": "Elysium Harp",
-    "DESCRIPTION": "{@@}Draw !Professor:M2! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) }card{!Professor:M2!|>1=s}. NL Gain !M! {!Location!|-2,4=(+2 per [Professor:BoltIcon] ) } Vigor."
+    "DESCRIPTION": "{@@}Draw !Professor:M2! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) }card{!Professor:M2!|>1=s}. NL Apply !M! {!Location!|-2,4=(+1 per [Professor:BoltIcon] ) } professor:Exposed to ALL enemies."
   },
   "${ModID}:SynthesizeElysiumHarp": {
     "NAME": "Peaceful Blueprint",
     "DESCRIPTION": "Ethereal. NL professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 draw per Wind, +2 Vigor per Bolt"]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 draw per Wind, +1 Exposed per Bolt"]
   },
   "${ModID}:ExplosiveUni": {
     "NAME": "Explosive Uni",
@@ -198,7 +198,7 @@
   },
   "${ModID}:DarkCrystalFragment": {
     "NAME": "Dark Crystal",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Destabilized."
+    "DESCRIPTION": "Deal !D! damage twice. NL Apply !M! professor:Destabilized."
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
@@ -374,7 +374,7 @@
   },
   "${ModID}:RainbowNeutralizer": {
     "NAME": "Rainbow Neutralizer",
-    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When you draw this card, gain !M! Vigor."
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When you draw this card, apply !M! professor:Exposed to ALL enemies."
   },
   "${ModID}:RestraintSilk": {
     "NAME": "Restraint Silk",

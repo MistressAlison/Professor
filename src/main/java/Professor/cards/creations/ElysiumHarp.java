@@ -1,18 +1,21 @@
 package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
+import Professor.powers.ExposedPower;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 import static Professor.MainModfile.makeID;
 
@@ -34,10 +37,10 @@ public class ElysiumHarp extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseMagicNumber = magicNumber = 5;
+        baseMagicNumber = magicNumber = 4;
         baseSecondMagic = secondMagic = 1;
         if (data != null) {
-            baseMagicNumber += 2*data.y;
+            baseMagicNumber += data.y;
             magicNumber = baseMagicNumber;
             baseSecondMagic += data.g;
             secondMagic = baseSecondMagic;
@@ -56,8 +59,11 @@ public class ElysiumHarp extends AbstractCreationCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction("TINGSHA"));
+        addToBot(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Color.GOLD.cpy(), ShockWaveEffect.ShockWaveType.CHAOTIC), 0.3F));
         addToBot(new DrawCardAction(secondMagic));
-        Wiz.applyToSelf(new VigorPower(p, magicNumber));
+        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new ExposedPower(mon, magicNumber)));
+        //Wiz.applyToSelf(new VigorPower(p, magicNumber));
     }
 
     @Override

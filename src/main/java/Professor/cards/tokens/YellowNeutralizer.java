@@ -4,14 +4,13 @@ import Professor.cards.abstracts.AbstractTokenCard;
 import Professor.cards.interfaces.OnUseInSynthesisCard;
 import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
-import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static Professor.MainModfile.makeID;
 
@@ -56,7 +55,8 @@ public class YellowNeutralizer extends AbstractTokenCard implements OnUseInSynth
     @Override
     public boolean onAdded(SynthesisItem item) {
         superFlash();
-        Wiz.applyToSelf(new VigorPower(Wiz.adp(), secondMagic));
+        addToBot(new NewQueueCardAction(makeStatEquivalentCopy(), true, false, true));
+        //Wiz.applyToSelf(new VigorPower(Wiz.adp(), secondMagic));
         return false;
     }
 }
