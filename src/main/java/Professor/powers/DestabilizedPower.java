@@ -8,6 +8,7 @@ import Professor.vfx.BigExplosionVFX;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -48,6 +49,7 @@ public class DestabilizedPower extends AbstractPower implements HealthBarRenderP
 
     public void onDeath() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() && owner.currentHealth <= 0) {
+            addToBot(new AnimateShakeAction(owner, 0.4f, 0.2f));
             addToBot(new BigExplosionVFX(owner));
             addToBot(new DamageAllEnemiesAction(source, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
         }
