@@ -22,7 +22,7 @@ public class GreenNeutralizer extends AbstractTokenCard implements OnUseInSynthe
         baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 2;
         //tags.add(CustomTags.PROF_REACTANT);
-        PurgeField.purge.set(this, true);
+        //PurgeField.purge.set(this, true);
     }
 
     @Override
