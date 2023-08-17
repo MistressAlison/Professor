@@ -22,13 +22,13 @@ public class GreenNeutralizer extends AbstractTokenCard implements OnUseInSynthe
         baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 2;
         //tags.add(CustomTags.PROF_REACTANT);
-        //PurgeField.purge.set(this, true);
+        PurgeField.purge.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(magicNumber));
-        addToBot(new DiscardAction(p, p, magicNumber, false, false));
+        //addToBot(new DiscardAction(p, p, magicNumber, false, false));
     }
 
     @Override

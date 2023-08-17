@@ -22,7 +22,7 @@ public class YellowNeutralizer extends AbstractTokenCard implements OnUseInSynth
         baseMagicNumber = magicNumber = 1;
         baseSecondMagic = secondMagic = 4;
         //tags.add(CustomTags.PROF_REACTANT);
-        //PurgeField.purge.set(this, true);
+        PurgeField.purge.set(this, true);
     }
 
     @Override

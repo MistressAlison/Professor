@@ -20,7 +20,7 @@ public class RedNeutralizer extends AbstractTokenCard implements OnUseInSynthesi
         super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
         baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 4;
-        //PurgeField.purge.set(this, true);
+        PurgeField.purge.set(this, true);
     }
 
     @Override

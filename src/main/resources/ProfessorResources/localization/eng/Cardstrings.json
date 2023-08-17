@@ -7,19 +7,19 @@
   },
   "${ModID}:BlueNeutralizer": {
     "NAME": "Blue Neutralizer",
-    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Play a copy of this card."
+    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Play a copy of this card. NL Purge."
   },
   "${ModID}:GreenNeutralizer": {
     "NAME": "Green Neutralizer",
-    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL Discard !M! card{!M!|>1=s}{@@}. NL professor:Catalyst: Play a copy of this card."
+    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL professor:Catalyst: Play a copy of this card. NL Purge."
   },
   "${ModID}:RedNeutralizer": {
     "NAME": "Red Neutralizer",
-    "DESCRIPTION": "Deal !D! damage. NL professor:Catalyst: Play a copy of this card."
+    "DESCRIPTION": "Deal !D! damage. NL professor:Catalyst: Play a copy of this card. NL Purge."
   },
   "${ModID}:YellowNeutralizer": {
     "NAME": "Yellow Neutralizer",
-    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL professor:Catalyst: Play a copy of this card."
+    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL professor:Catalyst: Play a copy of this card. NL Purge."
   },
   "${ModID}:HolyArborCrystal": {
     "NAME": "Holy Arbor Crystal",

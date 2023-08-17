@@ -19,7 +19,7 @@ public class BlueNeutralizer extends AbstractTokenCard implements OnUseInSynthes
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
         baseBlock = block = 6;
         baseMagicNumber = magicNumber = 3;
-        //PurgeField.purge.set(this, true);
+        PurgeField.purge.set(this, true);
     }
 
     @Override
