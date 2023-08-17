@@ -127,7 +127,7 @@
   },
   "${ModID}:AbyssBolt": {
     "NAME": "Abyss Bolt",
-    "DESCRIPTION": "Unplayable. Retain. NL If this card is discarded from your hand, deal !D! damage to ALL enemies.",
+    "DESCRIPTION": "Unplayable. Retain. NL Whenever this card enters your discard pile, deal !D! damage to ALL enemies.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:AetherEssence": {
