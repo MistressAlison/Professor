@@ -142,7 +142,7 @@
   },
   "${ModID}:Amalgam": {
     "NAME": "Amalgam",
-    "DESCRIPTION": "Deal !D! damage. NL professor:Spectrumize adjacent cards. NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage. NL professor:Spectrumize adjacent cards. NL Exhaust."
   },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
