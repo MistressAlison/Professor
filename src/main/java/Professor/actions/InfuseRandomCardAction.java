@@ -1,6 +1,5 @@
 package Professor.actions;
 
-import Professor.cardmods.AbstractInfusion;
 import Professor.powers.interfaces.OnInfusionPower;
 import Professor.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
@@ -25,7 +24,7 @@ public class InfuseRandomCardAction extends AbstractGameAction {
     public InfuseRandomCardAction(int amount, AbstractCardModifier mod, Predicate<AbstractCard> filter) {
         this.mod = mod;
         this.amount = amount;
-        this.filter = filter.and(AbstractInfusion::usesVanillaTargeting).and(c -> c.costForTurn > -2);
+        this.filter = filter.and(InfuseCardsInHandAction.shenaniganFilter);
     }
 
     @Override
