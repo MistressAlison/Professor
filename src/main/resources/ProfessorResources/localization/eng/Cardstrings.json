@@ -304,6 +304,11 @@
     "UPGRADE_DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis finishes instantly and the completed card is Upgraded.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
+  "${ModID}:MagmaPowder": {
+    "NAME": "Magma Powder",
+    "DESCRIPTION": "Unplayable. While in hand, deal !M! damage to ALL enemies whenever you play a card.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
+  },
   "${ModID}:ManaEaterBranch": {
     "NAME": "Mana-Eater Branch",
     "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Exhaust."
