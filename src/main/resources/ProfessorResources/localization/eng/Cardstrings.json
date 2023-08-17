@@ -166,7 +166,7 @@
   },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",
-    "DESCRIPTION": "Apply !M! Poison. NL Apply !Professor:M2! Weak."
+    "DESCRIPTION": "Apply !M! professor:Destabilized."
   },
   "${ModID}:BlueStarRobe": {
     "NAME": "Blue Star Robe",

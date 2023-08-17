@@ -1,14 +1,13 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.powers.DestabilizedPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Professor.MainModfile.makeID;
 
@@ -16,21 +15,18 @@ public class BlackMuck extends AbstractEasyCard {
     public final static String ID = makeID(BlackMuck.class.getSimpleName());
 
     public BlackMuck() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 3;
-        baseSecondMagic = secondMagic = 1;
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
+        baseMagicNumber = magicNumber = 4;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToEnemy(m, new PoisonPower(m, p, magicNumber));
-        Wiz.applyToEnemy(m, new WeakPower(m, secondMagic, false));
+        Wiz.applyToEnemy(m, new DestabilizedPower(m, p, magicNumber));
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(1);
-        upgradeSecondMagic(1);
+        upgradeMagicNumber(2);
     }
 
     @Override
