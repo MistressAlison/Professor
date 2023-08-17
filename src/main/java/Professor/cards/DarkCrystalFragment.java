@@ -18,7 +18,7 @@ public class DarkCrystalFragment extends AbstractEasyCard {
 
     public DarkCrystalFragment() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 2;
         baseDamage = damage = 3;
     }
 
