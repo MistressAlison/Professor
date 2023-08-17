@@ -16,7 +16,7 @@ public class MedicinalMoss extends AbstractEasyCard {
 
     public MedicinalMoss() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = block = 5;
+        baseBlock = block = 7;
         baseMagicNumber = magicNumber = 1;
     }
 
