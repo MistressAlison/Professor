@@ -213,6 +213,10 @@
     "NAME": "Dream Flower",
     "DESCRIPTION": "Gain !B! Block. NL Next turn, gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}."
   },
+  "${ModID}:DuskyPowder": {
+    "NAME": "Dusk Powder",
+    "DESCRIPTION": "Infuse \"Apply !M! professor:Destabilized\" into all cards in your hand. NL Exhaust."
+  },
   "${ModID}:Eiche": {
     "NAME": "Eiche",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! professor:Braced. NL professor:Infuse \"Gain !Professor:M2! Block\" into a card."
