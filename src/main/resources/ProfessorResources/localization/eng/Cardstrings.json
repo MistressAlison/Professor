@@ -342,8 +342,8 @@
   },
   "${ModID}:MistLiquid": {
     "NAME": "Mist Liquid",
-    "DESCRIPTION": "Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play an professor:Ice or professor:Wind card, gain !M! professor:Braced."
+    "DESCRIPTION": "Whenever you draw an Unplayable card, gain !M! professor:Braced.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you draw an Unplayable card, gain !M! professor:Braced."
   },
   "${ModID}:MysteriousBroom": {
     "NAME": "Mysterious Broom",

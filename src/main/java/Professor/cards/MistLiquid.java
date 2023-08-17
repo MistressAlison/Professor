@@ -15,7 +15,7 @@ public class MistLiquid extends AbstractEasyCard {
 
     public MistLiquid() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 3;
         //tags.add(CustomTags.PROF_REACTANT);
     }
 
@@ -26,8 +26,8 @@ public class MistLiquid extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        //upgradeMagicNumber(1);
-        upgradeBaseCost(0);
+        upgradeMagicNumber(1);
+        //upgradeBaseCost(0);
         //isInnate = true;
         //uDesc();
     }

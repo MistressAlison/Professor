@@ -9,7 +9,7 @@
   },
   "${ModID}:MistLiquidPower": {
     "NAME": "Mist Liquid",
-    "DESCRIPTIONS": ["Whenever you play an #bIce or #gWind card, gain #b"," #yBraced."]
+    "DESCRIPTIONS": ["Whenever you draw an #yUnplayable card, gain #b"," #yBraced."]
   },
   "${ModID}:SeptrinPower": {
     "NAME": "Septrin",
