@@ -15,7 +15,7 @@ public class BlueStarRobe extends AbstractEasyCard {
     public final static String ID = makeID(BlueStarRobe.class.getSimpleName());
 
     public BlueStarRobe() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = block = 13;
         baseMagicNumber = magicNumber = 2;
         //tags.add(CustomTags.PROF_REACTANT);
