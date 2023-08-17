@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
-public class BurnDamageAction extends AbstractGameAction {
+public class DestabilizeDamageAction extends AbstractGameAction {
     private static final float DURATION = 0.33F;
 
-    public BurnDamageAction(AbstractCreature target, AbstractCreature source, int amount, AbstractGameAction.AttackEffect effect) {
+    public DestabilizeDamageAction(AbstractCreature target, AbstractCreature source, int amount, AbstractGameAction.AttackEffect effect) {
         this.setValues(target, source, amount);
         this.actionType = ActionType.DAMAGE;
         this.attackEffect = effect;
@@ -30,9 +30,9 @@ public class BurnDamageAction extends AbstractGameAction {
             this.tickDuration();
             if (this.isDone) {
                 if (this.target.currentHealth > 0) {
-                    this.target.tint.color.set(Color.RED);
+                    this.target.tint.color.set(Color.PURPLE.cpy());
                     this.target.tint.changeColor(Color.WHITE.cpy());
-                    this.target.damage(new DamageInfo(this.source, this.amount, DamageInfo.DamageType.THORNS));
+                    this.target.damage(new DamageInfo(this.source, this.amount, DamageInfo.DamageType.HP_LOSS));
                 }
                 if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                     AbstractDungeon.actionManager.clearPostCombatActions();

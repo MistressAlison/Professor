@@ -28,5 +28,8 @@
   },
   "${ModID}:UnlockedMod": {
     "EXTENDED_DESCRIPTION": [" NL Can be Upgraded any number of times."]
+  },
+  "${ModID}:ApplyDestabilizedMod": {
+    "EXTENDED_DESCRIPTION": [" NL Apply %s professor:Destabilized."]
   }
 }

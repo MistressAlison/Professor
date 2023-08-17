@@ -128,6 +128,14 @@
     "DESCRIPTION": "Phased creatures take more damage from Attacks."
   },
   {
+    "ID": "destabilized",
+    "PROPER_NAME": "Destabilized",
+    "NAMES": [
+      "destabilized"
+    ],
+    "DESCRIPTION": "Destabilized creatures lose HP at the start of their turn and explode on death."
+  },
+  {
     "ID": "stagger",
     "PROPER_NAME": "Staggered",
     "NAMES": [

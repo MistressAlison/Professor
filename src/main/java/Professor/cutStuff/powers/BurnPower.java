@@ -1,7 +1,7 @@
-package Professor.powers;
+package Professor.cutStuff.powers;
 
 import Professor.MainModfile;
-import Professor.actions.BurnDamageAction;
+import Professor.actions.DestabilizeDamageAction;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
@@ -39,7 +39,7 @@ public class BurnPower extends AbstractPower implements HealthBarRenderPower {
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            Wiz.atb(new BurnDamageAction(owner, source, amount, AbstractGameAction.AttackEffect.FIRE));
+            Wiz.atb(new DestabilizeDamageAction(owner, source, amount, AbstractGameAction.AttackEffect.FIRE));
         }
     }
 

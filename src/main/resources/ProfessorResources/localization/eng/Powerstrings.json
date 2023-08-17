@@ -59,9 +59,9 @@
     "NAME": "Exposed",
     "DESCRIPTIONS": ["Takes #b"," more damage from Attacks this turn."]
   },
-  "${ModID}:PhasedPower": {
-    "NAME": "Phased",
-    "DESCRIPTIONS": ["Takes #b"," more damage from Attacks."]
+  "${ModID}:DestabilizedPower": {
+    "NAME": "Destabilized",
+    "DESCRIPTIONS": ["At the start of its turn, loses #b"," HP. On death, deals #b"," damage to ALL enemies."]
   },
   "${ModID}:StaggerPower": {
     "NAME": "Staggered",
