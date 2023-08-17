@@ -20,8 +20,8 @@ public class Amalgam extends AbstractEasyCard {
     public final static String ID = makeID(Amalgam.class.getSimpleName());
 
     public Amalgam() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 13;
+        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = damage = 5;
         exhaust = true;
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
     }
@@ -42,7 +42,7 @@ public class Amalgam extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeDamage(4);
+        upgradeDamage(3);
     }
 
     @Override

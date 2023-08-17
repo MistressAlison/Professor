@@ -17,8 +17,8 @@ public class EmberStone extends AbstractEasyCard {
     public final static String ID = makeID(EmberStone.class.getSimpleName());
 
     public EmberStone() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 12;
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = damage = 9;
         baseMagicNumber = magicNumber = 6;
     }
 
@@ -32,7 +32,7 @@ public class EmberStone extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeDamage(4);
+        upgradeDamage(2);
         upgradeMagicNumber(2);
     }
 
