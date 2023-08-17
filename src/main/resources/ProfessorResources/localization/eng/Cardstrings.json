@@ -192,6 +192,10 @@
     "NAME": "Cross Daggers",
     "DESCRIPTION": "???"
   },
+  "${ModID}:DarkCrystalFragment": {
+    "NAME": "Dark Crystal",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Destabilized."
+  },
   "${ModID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
