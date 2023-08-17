@@ -1,13 +1,11 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.patches.OnUseEnergyPatches;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
@@ -16,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class MagmaPowder extends AbstractEasyCard implements OnUseEnergyPatches.OnUseEnergyObject {
+public class MagmaPowder extends AbstractEasyCard {
     public final static String ID = makeID(MagmaPowder.class.getSimpleName());
 
     public MagmaPowder() {
@@ -41,14 +39,6 @@ public class MagmaPowder extends AbstractEasyCard implements OnUseEnergyPatches.
     @Override
     public void upp() {
         upgradeMagicNumber(1);
-    }
-
-    @Override
-    public void onUseEnergy(int amount) {
-        if (amount > 0 && Wiz.adp().hand.contains(this)) {
-            flash();
-            addToBot(new DrawCardAction(magicNumber));
-        }
     }
 
     @Override
