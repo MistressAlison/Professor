@@ -376,6 +376,10 @@
     "NAME": "Restraint Silk",
     "DESCRIPTION": "Apply !M! professor:Exposed and Vulnerable to ALL enemies. NL Exhaust."
   },
+  "${ModID}:RotwoodMiasma": {
+    "NAME": "Rotwood Miasma",
+    "DESCRIPTION": "Apply !M! professor:Destabilized and !Professor:M2! Weak to ALL enemies."
+  },
   "${ModID}:SaintsDiamond": {
     "NAME": "Saint's Diamond",
     "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Reduce this card's cost by !M! this combat."
