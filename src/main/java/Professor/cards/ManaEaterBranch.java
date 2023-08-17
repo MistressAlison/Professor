@@ -1,8 +1,10 @@
 package Professor.cards;
 
 import Professor.actions.EasyXCostAction;
+import Professor.cardmods.UnlockedMod;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
@@ -17,8 +19,9 @@ public class ManaEaterBranch extends AbstractEasyCard {
 
     public ManaEaterBranch() {
         super(ID, -1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        baseDamage = damage = 11;
+        baseDamage = damage = 10;
         exhaust = true;
+        CardModifierManager.addModifier(this, new UnlockedMod());
     }
 
     @Override
