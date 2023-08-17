@@ -73,7 +73,7 @@
   },
   "${ModID}:AnotherPlanetPower": {
     "NAME": "Another Planet",
-    "DESCRIPTIONS": ["Whenever you #yUpgrade a card, draw #b"," card."," cards."]
+    "DESCRIPTIONS": ["Whenever you #yUpgrade a card, #yUnlock it.","Whenever you #yUpgrade a card, #yUnlock it and #yUpgrade it #b"," additional time."," additional times."]
   },
   "${ModID}:BroomPower": {
     "NAME": "Broom Flight",

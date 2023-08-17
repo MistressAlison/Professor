@@ -15,18 +15,17 @@ public class AnotherPlanet extends AbstractEasyCard {
     public final static String ID = makeID(AnotherPlanet.class.getSimpleName());
 
     public AnotherPlanet() {
-        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 1;
+        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new AnotherPlanetPower(p, magicNumber));
+        Wiz.applyToSelf(new AnotherPlanetPower(p, upgraded ? 1 : 0));
     }
 
     @Override
     public void upp() {
-        upgradeBaseCost(0);
+        uDesc();
     }
 
     @Override

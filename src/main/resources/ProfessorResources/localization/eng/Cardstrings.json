@@ -158,7 +158,8 @@
   },
   "${ModID}:AnotherPlanet": {
     "NAME": "Another Planet",
-    "DESCRIPTION": "Whenever you Upgrade a card, draw !M! card{@@}{!M!|>1=s}."
+    "DESCRIPTION": "Whenever you Upgrade a card, professor:Unlock it.",
+    "UPGRADE_DESCRIPTION": "Whenever you Upgrade a card, professor:Unlock it and Upgrade it an additional time."
   },
   "${ModID}:ArborIvy": {
     "NAME": "Arbor Ivy",
