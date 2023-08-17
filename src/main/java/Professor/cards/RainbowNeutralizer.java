@@ -18,7 +18,7 @@ public class RainbowNeutralizer extends AbstractEasyCard {
     public RainbowNeutralizer() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         selfRetain = true;
-        baseDamage = damage = 15;
+        baseDamage = damage = 13;
         baseMagicNumber = magicNumber = 5;
     }
 
@@ -29,7 +29,7 @@ public class RainbowNeutralizer extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeDamage(5);
+        upgradeDamage(4);
         //upgradeMagicNumber(3);
     }
 
