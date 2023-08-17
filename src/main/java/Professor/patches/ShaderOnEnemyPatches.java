@@ -9,10 +9,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import javassist.CtBehavior;
 
 import java.nio.charset.StandardCharsets;
 
@@ -35,7 +35,7 @@ public class ShaderOnEnemyPatches {
             }
         }
 
-        @SpirePostfixPatch
+        @SpireInsertPatch(locator = Locator.class)
         public static void render(SpriteBatch sb) {
             if (capturing) {
                 fb.end();
@@ -46,6 +46,14 @@ public class ShaderOnEnemyPatches {
                 shader.setUniformf("x_time", MainModfile.time);
                 sb.draw(r, 0, 0);
                 sb.setShader(back);
+            }
+        }
+
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher m = new Matcher.MethodCallMatcher(Hitbox.class, "render");
+                return LineFinder.findInOrder(ctBehavior, m);
             }
         }
     }
