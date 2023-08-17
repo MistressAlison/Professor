@@ -82,5 +82,9 @@
   "${ModID}:ThornyEmbracePower": {
     "NAME": "Thorny Embrace",
     "DESCRIPTIONS": ["At the end of your turn, deal #b"," damage to each enemy that intends to attack."]
+  },
+  "${ModID}:BlackWaterPower": {
+    "NAME": "Black Water",
+    "DESCRIPTIONS": ["Whenever you apply a debuff to an enemy, also apply #b"," #yDestabilized."]
   }
 }

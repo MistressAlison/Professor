@@ -168,6 +168,10 @@
     "NAME": "Black Muck",
     "DESCRIPTION": "Apply !M! professor:Destabilized."
   },
+  "${ModID}:BlackWater": {
+    "NAME": "Black Water",
+    "DESCRIPTION": "Whenever you apply a debuff to an enemy, also apply !M! professor:Destabilized."
+  },
   "${ModID}:BlueStarRobe": {
     "NAME": "Blue Star Robe",
     "DESCRIPTION": "Gain !B! Block. NL Next turn, draw !M! additional card{@@}{!M!|>1=s}."
