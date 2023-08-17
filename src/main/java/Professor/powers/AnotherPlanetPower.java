@@ -59,4 +59,9 @@ public class AnotherPlanetPower extends AbstractPower implements OnUpgradePower,
             ForcedUpgradesPatches.ForcedUpgradeField.looping.set(c, false);
         }
     }
+
+    @Override
+    public boolean allowUpgrade(AbstractCard c) {
+        return c.type != AbstractCard.CardType.CURSE && c.type != AbstractCard.CardType.STATUS;
+    }
 }

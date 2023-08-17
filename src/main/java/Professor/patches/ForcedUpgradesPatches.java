@@ -2,7 +2,9 @@ package Professor.patches;
 
 import Professor.MainModfile;
 import Professor.cardmods.UnlockedMod;
+import Professor.powers.interfaces.OnUpgradePower;
 import Professor.util.ChimeraHelper;
+import Professor.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CardModifierPatches;
@@ -20,6 +22,7 @@ import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import com.megacrit.cardcrawl.screens.select.HandCardSelectScreen;
 import javassist.*;
@@ -94,9 +97,14 @@ public class ForcedUpgradesPatches {
         if (ForcedUpgradeField.inf.get(card)) {
             card.upgraded = false;
         }
-        if (!card.upgraded) {
-            MainModfile.onUpgradeTrigger(card);
+        if (Wiz.adp() != null) {
+            for (AbstractPower p : Wiz.adp().powers) {
+                if (p instanceof OnUpgradePower && ((OnUpgradePower) p).allowUpgrade(card)) {
+                    card.upgraded = false;
+                }
+            }
         }
+        MainModfile.onUpgradeTrigger(card);
     }
 
     @SpirePatch2(clz = AbstractCard.class, method = "makeStatEquivalentCopy")
@@ -123,6 +131,13 @@ public class ForcedUpgradesPatches {
         public static SpireReturn<?> plz(AbstractCard __instance) {
             if (ForcedUpgradeField.inf.get(__instance)) {
                 return SpireReturn.Return(true);
+            }
+            if (Wiz.adp() != null) {
+                for (AbstractPower p : Wiz.adp().powers) {
+                    if (p instanceof OnUpgradePower && ((OnUpgradePower) p).allowUpgrade(__instance)) {
+                        return SpireReturn.Return(true);
+                    }
+                }
             }
             return SpireReturn.Continue();
         }
