@@ -34,7 +34,8 @@ public class RotwoodMiasma extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(1);
+        upgradeSecondMagic(1);
     }
 
     @Override
