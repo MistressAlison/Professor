@@ -1,9 +1,8 @@
-package Professor.cards.recipes;
+package Professor.cutStuff.cards;
 
 import Professor.actions.BeginSynthesisAction;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.cards.abstracts.AbstractRecipeCard;
-import Professor.cards.creations.ThornyEmbrace;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;

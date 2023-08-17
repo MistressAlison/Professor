@@ -1,4 +1,4 @@
-package Professor.cards.creations;
+package Professor.cutStuff.cards;
 
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.powers.ThornyEmbracePower;

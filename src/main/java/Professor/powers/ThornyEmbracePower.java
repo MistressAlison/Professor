@@ -1,7 +1,7 @@
 package Professor.powers;
 
 import Professor.MainModfile;
-import Professor.cards.creations.ThornyEmbrace;
+import Professor.cutStuff.cards.ThornyEmbrace;
 import Professor.util.PowerIconMaker;
 import Professor.util.Wiz;
 import Professor.vfx.BarbExplodeEffect;
