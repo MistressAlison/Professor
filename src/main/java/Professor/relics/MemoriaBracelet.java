@@ -20,6 +20,7 @@ import static Professor.MainModfile.makeID;
 
 public class MemoriaBracelet extends AbstractEasyRelic {
     public static final String ID = makeID(MemoriaBracelet.class.getSimpleName());
+    private static final int DAMAGE = 5;
     HashMap<String, Integer> stats = new HashMap<>();
     private final String STAT = DESCRIPTIONS[1];
     private final String PER_TURN = DESCRIPTIONS[2];
@@ -34,7 +35,7 @@ public class MemoriaBracelet extends AbstractEasyRelic {
     public void atBattleStart() {
         flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        addToBot(new InfuseRandomCardAction(1, new DealDamageMod(4, 4)));
+        addToBot(new InfuseRandomCardAction(1, new DealDamageMod(DAMAGE, DAMAGE)));
     }
 
     public int getStat() {
