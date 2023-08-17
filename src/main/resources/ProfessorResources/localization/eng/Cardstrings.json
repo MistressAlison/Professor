@@ -219,7 +219,7 @@
   },
   "${ModID}:DuskyPowder": {
     "NAME": "Dusk Powder",
-    "DESCRIPTION": "Infuse \"Apply !M! professor:Destabilized\" into all cards in your hand. NL Exhaust."
+    "DESCRIPTION": "professor:Infuse \"Apply !M! professor:Destabilized\" into all cards in your hand. NL Exhaust."
   },
   "${ModID}:Eiche": {
     "NAME": "Eiche",
