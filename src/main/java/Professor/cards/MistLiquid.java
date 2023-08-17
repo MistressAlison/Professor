@@ -1,6 +1,7 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.patches.CustomTags;
 import Professor.powers.MistLiquidPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
@@ -16,7 +17,8 @@ public class MistLiquid extends AbstractEasyCard {
     public MistLiquid() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 3;
-        //tags.add(CustomTags.PROF_REACTANT);
+        // TODO check for unplayable counts as energy detection
+        tags.add(CustomTags.PROF_NOT_BOLT);
     }
 
     @Override

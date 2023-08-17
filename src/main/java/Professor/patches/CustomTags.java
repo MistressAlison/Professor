@@ -20,4 +20,12 @@ public class CustomTags {
     public static AbstractCard.CardTags PROF_WIND;
     @SpireEnum
     public static AbstractCard.CardTags PROF_UNI;
+    @SpireEnum
+    public static AbstractCard.CardTags PROF_NOT_FIRE;
+    @SpireEnum
+    public static AbstractCard.CardTags PROF_NOT_ICE;
+    @SpireEnum
+    public static AbstractCard.CardTags PROF_NOT_BOLT;
+    @SpireEnum
+    public static AbstractCard.CardTags PROF_NOT_WIND;
 }

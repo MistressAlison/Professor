@@ -1,6 +1,7 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.patches.CustomTags;
 import Professor.powers.AnotherPlanetPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
@@ -16,6 +17,9 @@ public class AnotherPlanet extends AbstractEasyCard {
 
     public AnotherPlanet() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        // TODO not being picked up as an element
+        tags.add(CustomTags.PROF_BOLT);
+        tags.add(CustomTags.PROF_WIND);
     }
 
     @Override

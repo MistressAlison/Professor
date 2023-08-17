@@ -178,6 +178,9 @@ public class ArchetypeHelper {
         if (card.hasTag(CustomTags.PROF_FIRE)) {
             return true;
         }
+        if (card.hasTag(CustomTags.PROF_NOT_FIRE)) {
+            return false;
+        }
         if (testCard(card, fireMatchers)) {
             return true;
         }
@@ -188,6 +191,9 @@ public class ArchetypeHelper {
         //Block, Weak, Intangible, Temp HP
         if (card.hasTag(CustomTags.PROF_ICE)) {
             return true;
+        }
+        if (card.hasTag(CustomTags.PROF_NOT_ICE)) {
+            return false;
         }
         if (cardCheck(card, (c,l) -> c.selfRetain || l.stream().anyMatch(u ->  u.selfRetain))) {
             return true;
@@ -208,6 +214,9 @@ public class ArchetypeHelper {
         //Energy, Exhaust, Vulnerable
         if (card.hasTag(CustomTags.PROF_BOLT)) {
             return true;
+        }
+        if (card.hasTag(CustomTags.PROF_NOT_BOLT)) {
+            return false;
         }
         if (cardCheck(card, (c,l) -> c.exhaust || ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c) > -1 || FleetingField.fleeting.get(c) || l.stream().anyMatch(u ->  u.exhaust || ExhaustiveField.ExhaustiveFields.baseExhaustive.get(u) > -1 || FleetingField.fleeting.get(u)))) {
             return true;
@@ -234,6 +243,9 @@ public class ArchetypeHelper {
         //Healing, Ethereal, Draw
         if (card.hasTag(CustomTags.PROF_WIND)) {
             return true;
+        }
+        if (card.hasTag(CustomTags.PROF_NOT_WIND)) {
+            return false;
         }
         if (card.hasTag(AbstractCard.CardTags.HEALING)) {
             return true;
