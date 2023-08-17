@@ -2,23 +2,17 @@ package Professor.powers;
 
 import Professor.MainModfile;
 import Professor.cards.AetherEssence;
+import Professor.patches.ZeroAmountPowerPatches;
 import Professor.powers.interfaces.OnFinishSynthesisPower;
 import Professor.ui.SynthesisItem;
 import Professor.util.PowerIconMaker;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.combat.PowerBuffEffect;
-import javassist.CannotCompileException;
-import javassist.expr.ExprEditor;
-import javassist.expr.NewExpr;
 
-public class AetherPower extends AbstractPower implements OnFinishSynthesisPower {
+public class AetherPower extends AbstractPower implements OnFinishSynthesisPower, ZeroAmountPowerPatches.ZeroAmountPower {
     public static final String POWER_ID = MainModfile.makeID(AetherPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -66,32 +60,5 @@ public class AetherPower extends AbstractPower implements OnFinishSynthesisPower
             }
         }
         return true;
-    }
-
-    @SpirePatch2(clz = ApplyPowerAction.class, method = "update")
-    public static class FixText {
-        static int match = 0;
-        @SpireInstrumentPatch
-        public static ExprEditor patch() {
-            return new ExprEditor() {
-
-                @Override
-                public void edit(NewExpr e) throws CannotCompileException {
-                    if (e.getClassName().equals(PowerBuffEffect.class.getName())) {
-                        match++;
-                        if (match == 2) {
-                            e.replace("$3 = Professor.powers.AetherPower.changeText(powerToApply, $3); $_ = $proceed($$);");
-                        }
-                    }
-                }
-            };
-        }
-    }
-
-    public static String changeText(AbstractPower p, String orig) {
-        if (p instanceof AetherPower && p.amount == 0) {
-            return p.name;
-        }
-        return orig;
     }
 }
