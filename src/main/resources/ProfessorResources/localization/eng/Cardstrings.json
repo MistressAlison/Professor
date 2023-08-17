@@ -318,7 +318,7 @@
   },
   "${ModID}:MagmaPowder": {
     "NAME": "Magma Powder",
-    "DESCRIPTION": "Unplayable. While in hand, deal !M! damage to ALL enemies whenever you play a card.",
+    "DESCRIPTION": "Unplayable. NL While in hand, deal !M! damage to ALL enemies whenever you play a card.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:ManaEaterBranch": {
