@@ -2,10 +2,8 @@ package Professor.powers;
 
 import Professor.MainModfile;
 import Professor.cards.AmberOil;
-import Professor.patches.ArchetypeHelper;
 import Professor.util.PowerIconMaker;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.common.UpgradeRandomCardAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -31,17 +29,17 @@ public class AmberOilPower extends AbstractPower {
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            this.description = DESCRIPTIONS[0];
+            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
         } else {
-            this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 
     @Override
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (ArchetypeHelper.isFire(card) || ArchetypeHelper.isBolt(card)) {
-            flash();
-            card.upgrade();
+    public void atStartOfTurnPostDraw() {
+        flash();
+        for (int i = 0 ; i < amount ; i++) {
+            addToBot(new UpgradeRandomCardAction());
         }
     }
 }

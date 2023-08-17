@@ -146,7 +146,7 @@
   },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
-    "DESCRIPTION": "Whenever you play a professor:Fire or professor:Bolt card, Upgrade it{@@}{!M!|>1= !M! times} for the rest of combat."
+    "DESCRIPTION": "At the start of your turn, Upgrade !M! random card{@@}{!M!|>1=s} in your hand for the rest of combat."
   },
   "${ModID}:AncientBlueWater": {
     "NAME": "Ancient Blue Water",
