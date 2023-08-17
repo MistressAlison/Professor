@@ -17,7 +17,7 @@ public class InfuseCardsInHandAction extends ModifyCardsInHandAction {
     }
 
     public InfuseCardsInHandAction(int amount, boolean anyAmount, Predicate<AbstractCard> filter, AbstractCardModifier mod) {
-        super(amount, anyAmount, filter.and(AbstractInfusion::usesVanillaTargeting), l -> {
+        super(amount, anyAmount, filter.and(AbstractInfusion::usesVanillaTargeting).and(c -> c.costForTurn > -2), l -> {
             for (AbstractCard c : l) {
                 int times = 1;
                 for (AbstractPower p : Wiz.adp().powers) {
