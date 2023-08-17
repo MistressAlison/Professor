@@ -18,7 +18,6 @@ public class AncientUni extends AbstractEasyCard {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 6;
         tags.add(CustomTags.PROF_UNI);
-        exhaust = true;
     }
 
     @Override

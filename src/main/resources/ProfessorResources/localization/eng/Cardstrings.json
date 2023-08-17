@@ -154,7 +154,7 @@
   },
   "${ModID}:AncientUni": {
     "NAME": "Ancient Uni",
-    "DESCRIPTION": "professor:Infuse \"Deal !M! damage\" into a card. NL Exhaust."
+    "DESCRIPTION": "professor:Infuse \"Deal !M! damage\" into a card."
   },
   "${ModID}:AnotherPlanet": {
     "NAME": "Another Planet",
