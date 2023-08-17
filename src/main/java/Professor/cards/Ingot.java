@@ -28,7 +28,9 @@ public class Ingot extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ThrowObjectAction(itemArt(), 2/5f, m.hb, HALF_GRAY));
+        if (m != null) {
+            addToBot(new ThrowObjectAction(itemArt(), 2/5f, m.hb, HALF_GRAY));
+        }
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
         Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
         Wiz.applyToEnemy(m, new VulnerablePower(m, magicNumber, false));

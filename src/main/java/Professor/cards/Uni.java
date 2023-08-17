@@ -26,7 +26,9 @@ public class Uni extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ThrowObjectAction(itemArt(), 1/3f, m.hb, Color.BROWN));
+        if (m != null) {
+            addToBot(new ThrowObjectAction(itemArt(), 1/3f, m.hb, Color.BROWN));
+        }
         dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
     }
