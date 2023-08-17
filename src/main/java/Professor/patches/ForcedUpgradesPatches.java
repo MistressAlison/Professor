@@ -87,6 +87,7 @@ public class ForcedUpgradesPatches {
     @SpirePatch(clz = AbstractCard.class, method = SpirePatch.CLASS)
     public static class ForcedUpgradeField {
         public static SpireField<Boolean> inf = new SpireField<>(() -> false);
+        public static SpireField<Boolean> looping =  new SpireField<>(() -> false);
     }
 
     public static void infCheck(AbstractCard card) {

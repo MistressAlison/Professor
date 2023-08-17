@@ -6,11 +6,9 @@ import Professor.patches.ForcedUpgradesPatches;
 import Professor.patches.ZeroAmountPowerPatches;
 import Professor.powers.interfaces.OnUpgradePower;
 import Professor.util.PowerIconMaker;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -45,21 +43,20 @@ public class AnotherPlanetPower extends AbstractPower implements OnUpgradePower,
         }
     }
 
-    private static boolean looping = false;
     @Override
     public void onUpgrade(AbstractCard c) {
-        if (!looping) {
+        if (!ForcedUpgradesPatches.ForcedUpgradeField.looping.get(c)) {
             flash();
             ForcedUpgradesPatches.applyUnlockIfNeeded(c);
             AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(c.hb.cX, c.hb.cY));
             c.superFlash();
             c.applyPowers();
-            looping = true;
+            ForcedUpgradesPatches.ForcedUpgradeField.looping.set(c, true);
             for (int i = 0 ; i < amount ; i++) {
                 c.upgrade();
                 c.upgraded = false;
             }
-            looping = false;
+            ForcedUpgradesPatches.ForcedUpgradeField.looping.set(c, false);
         }
     }
 }
