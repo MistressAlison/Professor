@@ -166,7 +166,7 @@
   },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",
-    "DESCRIPTION": "Apply !M! professor:Destabilized."
+    "DESCRIPTION": "Apply !M! professor:Destabilized. NL Apply !Professor:M2! professor:Exposed."
   },
   "${ModID}:BlackWater": {
     "NAME": "Black Water",
