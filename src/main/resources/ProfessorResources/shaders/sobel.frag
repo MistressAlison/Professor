@@ -1,5 +1,9 @@
-
+#ifdef GL_ES
+#define LOWP
 precision mediump float;
+#else
+#define LOWP
+#endif
 
 varying vec4 v_color;
 varying vec2 v_texCoords;
