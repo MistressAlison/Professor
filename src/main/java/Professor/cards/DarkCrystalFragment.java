@@ -2,7 +2,7 @@ package Professor.cards;
 
 import Professor.actions.ThrowObjectAction;
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.powers.DestabilizedPower;
+import Professor.powers.UnstablePower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
@@ -30,7 +30,7 @@ public class DarkCrystalFragment extends AbstractEasyCard {
         }
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
         dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
-        Wiz.applyToEnemy(m, new DestabilizedPower(m, p, magicNumber));
+        Wiz.applyToEnemy(m, new UnstablePower(m, p, magicNumber));
     }
 
     @Override

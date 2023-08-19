@@ -1,7 +1,7 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.powers.DestabilizedPower;
+import Professor.powers.UnstablePower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import Professor.vfx.ColoredSmokeBombEffect;
@@ -27,7 +27,7 @@ public class RotwoodMiasma extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.forAllMonstersLiving(mon -> addToBot(new VFXAction(new ColoredSmokeBombEffect(mon.hb.cX, mon.hb.cY, AbstractEasyCard.darken(Color.PURPLE)))));
         Wiz.forAllMonstersLiving(mon -> {
-            Wiz.applyToEnemy(mon, new DestabilizedPower(mon, p,  magicNumber));
+            Wiz.applyToEnemy(mon, new UnstablePower(mon, p,  magicNumber));
             Wiz.applyToEnemy(mon, new WeakPower(mon, magicNumber, false));
         });
     }

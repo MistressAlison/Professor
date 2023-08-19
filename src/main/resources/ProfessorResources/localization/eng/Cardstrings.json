@@ -167,11 +167,11 @@
   },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",
-    "DESCRIPTION": "Apply !M! professor:Destabilized. NL Apply !Professor:M2! professor:Exposed."
+    "DESCRIPTION": "Apply !M! professor:Unstable. NL Apply !Professor:M2! professor:Exposed."
   },
   "${ModID}:BlackWater": {
     "NAME": "Black Water",
-    "DESCRIPTION": "Whenever you apply Weak or Vulnerable to an enemy, also apply !M! professor:Destabilized."
+    "DESCRIPTION": "Attacks deal {@@}{!M!|@=a lot|0=0%|1=25%|2=50%|3=75%|4=100%|5=125%|6=150%|7=175%|8=200%|9=225%|10=250%|11=275%|12=300%} more damage to professor:Unstable enemies."
   },
   "${ModID}:BlueStarRobe": {
     "NAME": "Blue Star Robe",
@@ -199,7 +199,7 @@
   },
   "${ModID}:DarkCrystalFragment": {
     "NAME": "Dark Crystal",
-    "DESCRIPTION": "Deal !D! damage twice. NL Apply !M! professor:Destabilized."
+    "DESCRIPTION": "Deal !D! damage twice. NL Apply !M! professor:Unstable."
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
@@ -224,7 +224,7 @@
   },
   "${ModID}:DuskyPowder": {
     "NAME": "Dusk Powder",
-    "DESCRIPTION": "professor:Infuse \"Apply !M! professor:Destabilized\" into a card. NL Exhaust."
+    "DESCRIPTION": "professor:Infuse \"Apply !M! professor:Unstable\" into a card. NL Exhaust."
   },
   "${ModID}:Eiche": {
     "NAME": "Eiche",
@@ -383,7 +383,7 @@
   },
   "${ModID}:RotwoodMiasma": {
     "NAME": "Rotwood Miasma",
-    "DESCRIPTION": "Apply !M! professor:Destabilized and Weak to ALL enemies."
+    "DESCRIPTION": "Apply !M! professor:Unstable and Weak to ALL enemies."
   },
   "${ModID}:SaintsDiamond": {
     "NAME": "Saint's Diamond",

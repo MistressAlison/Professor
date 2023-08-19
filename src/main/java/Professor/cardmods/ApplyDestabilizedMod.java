@@ -3,7 +3,7 @@ package Professor.cardmods;
 import Professor.MainModfile;
 import Professor.actions.InfusionTriggerAction;
 import Professor.cards.cardvars.DynvarInterfaceManager;
-import Professor.powers.DestabilizedPower;
+import Professor.powers.UnstablePower;
 import Professor.util.TexLoader;
 import Professor.util.TextureScaler;
 import Professor.util.Wiz;
@@ -47,7 +47,7 @@ public class ApplyDestabilizedMod extends AbstractInfusion {
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         Wiz.atb(new InfusionTriggerAction(this, val, relicStatsVal));
-        Wiz.atb(new ApplyPowerAction(target, Wiz.adp(), new DestabilizedPower(target, Wiz.adp(), val)));
+        Wiz.atb(new ApplyPowerAction(target, Wiz.adp(), new UnstablePower(target, Wiz.adp(), val)));
     }
 
 

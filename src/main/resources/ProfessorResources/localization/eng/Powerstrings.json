@@ -59,8 +59,8 @@
     "NAME": "Exposed",
     "DESCRIPTIONS": ["Takes #b"," more damage from Attacks this turn."]
   },
-  "${ModID}:DestabilizedPower": {
-    "NAME": "Destabilized",
+  "${ModID}:UnstablePower": {
+    "NAME": "Unstable",
     "DESCRIPTIONS": ["Receive #b25% more damage from #yAttacks and deals half of unblocked damage taken to ALL other enemies for #b"," turn."," turns."]
   },
   "${ModID}:StaggerPower": {
@@ -85,6 +85,6 @@
   },
   "${ModID}:BlackWaterPower": {
     "NAME": "Black Water",
-    "DESCRIPTIONS": ["Whenever you apply #yWeak or #yVulnerable to an enemy, also apply #b"," #yDestabilized."]
+    "DESCRIPTIONS": ["Attacks deal#b","% more damage to #yUnstable enemies."]
   }
 }

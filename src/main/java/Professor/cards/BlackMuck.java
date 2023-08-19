@@ -1,7 +1,7 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.powers.DestabilizedPower;
+import Professor.powers.UnstablePower;
 import Professor.powers.ExposedPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
@@ -30,7 +30,7 @@ public class BlackMuck extends AbstractEasyCard {
             addToBot(new SFXAction("POWER_POISON", 0.2f));
             addToBot(new VFXAction(new ColoredWaterDropEffect(m.hb.cX, m.hb.cY, Color.DARK_GRAY.cpy()), 0.2f));
         }
-        Wiz.applyToEnemy(m, new DestabilizedPower(m, p, magicNumber));
+        Wiz.applyToEnemy(m, new UnstablePower(m, p, magicNumber));
         Wiz.applyToEnemy(m, new ExposedPower(m, secondMagic));
     }
 

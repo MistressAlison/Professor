@@ -128,12 +128,14 @@
     "DESCRIPTION": "Phased creatures take more damage from Attacks."
   },
   {
-    "ID": "destabilized",
-    "PROPER_NAME": "Destabilized",
+    "ID": "unstable",
+    "PROPER_NAME": "unstable",
     "NAMES": [
+      "unstable",
+      "destabilize",
       "destabilized"
     ],
-    "DESCRIPTION": "Destabilized creatures take #b25% more damage from Attacks, and deal half of unblocked damage taken to ALL other enemies."
+    "DESCRIPTION": "Unstable creatures take #b25% more damage from Attacks, and deal half of unblocked damage taken to ALL other enemies."
   },
   {
     "ID": "stagger",

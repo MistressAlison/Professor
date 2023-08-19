@@ -1,24 +1,20 @@
 package Professor.patches;
 
 import Professor.MainModfile;
-import Professor.powers.DestabilizedPower;
+import Professor.powers.UnstablePower;
 import Professor.util.ImageHelper;
 import basemod.abstracts.CustomMonster;
-import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
-import com.evacipated.cardcrawl.mod.stslib.patches.RenderStackedBlockInstances;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CtBehavior;
 
 import java.nio.charset.StandardCharsets;
@@ -30,7 +26,7 @@ public class ShaderOnEnemyPatches {
 
     public static void begin(AbstractCreature __instance, SpriteBatch sb) {
         capturing = false;
-        if (__instance.hasPower(DestabilizedPower.POWER_ID)) {
+        if (__instance.hasPower(UnstablePower.POWER_ID)) {
             capturing = true;
             sb.end();
             ImageHelper.beginBuffer(fb);

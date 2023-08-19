@@ -4,7 +4,6 @@ import Professor.MainModfile;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.PowerIconMaker;
 import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -16,8 +15,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
-public class DestabilizedPower extends AbstractPower {
-    public static final String POWER_ID = MainModfile.makeID(DestabilizedPower.class.getSimpleName());
+public class UnstablePower extends AbstractPower {
+    public static final String POWER_ID = MainModfile.makeID(UnstablePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -26,7 +25,7 @@ public class DestabilizedPower extends AbstractPower {
 
     // TODO ideas:
     //Stores damage received, explodes at the start of its next turn?
-    public DestabilizedPower(AbstractCreature owner, AbstractCreature source, int amount) {
+    public UnstablePower(AbstractCreature owner, AbstractCreature source, int amount) {
         this.ID = POWER_ID;
         this.name = NAME;
         this.owner = owner;
