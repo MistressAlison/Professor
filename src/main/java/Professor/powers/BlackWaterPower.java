@@ -15,6 +15,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class BlackWaterPower extends AbstractPower implements BetterOnApplyPowerPower {
     public static final String POWER_ID = MainModfile.makeID(BlackWaterPower.class.getSimpleName());
@@ -46,6 +48,15 @@ public class BlackWaterPower extends AbstractPower implements BetterOnApplyPower
 
     @Override
     public boolean betterOnApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (source == owner && target != owner && (power instanceof WeakPower || power instanceof VulnerablePower)) {
+            flash();
+            addToBot(new ApplyPowerAction(target, owner, new DestabilizedPower(target, owner, amount)));
+        }
+        return true;
+    }
+
+    /*@Override
+    public boolean betterOnApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (source == owner && target != owner && power.type == PowerType.DEBUFF && !LoopField.looping.get(power)) {
             flash();
             AbstractPower p =  new DestabilizedPower(target, owner, amount);
@@ -55,13 +66,8 @@ public class BlackWaterPower extends AbstractPower implements BetterOnApplyPower
         return true;
     }
 
-    @Override
-    public int betterOnApplyPowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount) {
-        return BetterOnApplyPowerPower.super.betterOnApplyPowerStacks(power, target, source, stackAmount);
-    }
-
     @SpirePatch2(clz = AbstractPower.class, method = SpirePatch.CLASS)
     public static class LoopField {
         public static SpireField<Boolean> looping = new SpireField<>(() -> false);
-    }
+    }*/
 }

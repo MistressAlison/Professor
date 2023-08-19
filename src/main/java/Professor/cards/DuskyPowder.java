@@ -15,14 +15,14 @@ public class DuskyPowder extends AbstractEasyCard {
     public final static String ID = makeID(DuskyPowder.class.getSimpleName());
 
     public DuskyPowder() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        baseMagicNumber = magicNumber = 2;
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        baseMagicNumber = magicNumber = 1;
         exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new InfuseCardsInHandAction(p.hand.size(), new ApplyDestabilizedMod(magicNumber)));
+        addToBot(new InfuseCardsInHandAction(1, new ApplyDestabilizedMod(magicNumber)));
     }
 
     @Override

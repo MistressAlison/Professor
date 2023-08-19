@@ -19,8 +19,8 @@ public class RotwoodMiasma extends AbstractEasyCard {
 
     public RotwoodMiasma() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        baseMagicNumber = magicNumber = 4;
-        baseSecondMagic = secondMagic = 1;
+        baseMagicNumber = magicNumber = 1;
+        //baseSecondMagic = secondMagic = 1;
     }
 
     @Override
@@ -28,14 +28,14 @@ public class RotwoodMiasma extends AbstractEasyCard {
         Wiz.forAllMonstersLiving(mon -> addToBot(new VFXAction(new ColoredSmokeBombEffect(mon.hb.cX, mon.hb.cY, AbstractEasyCard.darken(Color.PURPLE)))));
         Wiz.forAllMonstersLiving(mon -> {
             Wiz.applyToEnemy(mon, new DestabilizedPower(mon, p,  magicNumber));
-            Wiz.applyToEnemy(mon, new WeakPower(mon, secondMagic, false));
+            Wiz.applyToEnemy(mon, new WeakPower(mon, magicNumber, false));
         });
     }
 
     @Override
     public void upp() {
         upgradeMagicNumber(1);
-        upgradeSecondMagic(1);
+        //upgradeSecondMagic(1);
     }
 
     @Override

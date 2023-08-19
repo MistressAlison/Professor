@@ -171,7 +171,7 @@
   },
   "${ModID}:BlackWater": {
     "NAME": "Black Water",
-    "DESCRIPTION": "Whenever you apply a debuff to an enemy, also apply !M! professor:Destabilized."
+    "DESCRIPTION": "Whenever you apply Weak or Vulnerable to an enemy, also apply !M! professor:Destabilized."
   },
   "${ModID}:BlueStarRobe": {
     "NAME": "Blue Star Robe",
@@ -224,7 +224,7 @@
   },
   "${ModID}:DuskyPowder": {
     "NAME": "Dusk Powder",
-    "DESCRIPTION": "professor:Infuse \"Apply !M! professor:Destabilized\" into all cards in your hand. NL Exhaust."
+    "DESCRIPTION": "professor:Infuse \"Apply !M! professor:Destabilized\" into a card. NL Exhaust."
   },
   "${ModID}:Eiche": {
     "NAME": "Eiche",
@@ -383,7 +383,7 @@
   },
   "${ModID}:RotwoodMiasma": {
     "NAME": "Rotwood Miasma",
-    "DESCRIPTION": "Apply !M! professor:Destabilized and !Professor:M2! Weak to ALL enemies."
+    "DESCRIPTION": "Apply !M! professor:Destabilized and Weak to ALL enemies."
   },
   "${ModID}:SaintsDiamond": {
     "NAME": "Saint's Diamond",

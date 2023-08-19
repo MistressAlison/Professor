@@ -20,8 +20,8 @@ public class BlackMuck extends AbstractEasyCard {
 
     public BlackMuck() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 4;
-        baseSecondMagic = secondMagic = 2;
+        baseMagicNumber = magicNumber = 1;
+        baseSecondMagic = secondMagic = 4;
     }
 
     @Override
@@ -36,8 +36,8 @@ public class BlackMuck extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
-        upgradeSecondMagic(1);
+        upgradeMagicNumber(1);
+        upgradeSecondMagic(2);
     }
 
     @Override

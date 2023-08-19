@@ -133,7 +133,7 @@
     "NAMES": [
       "destabilized"
     ],
-    "DESCRIPTION": "Destabilized creatures lose HP at the start of their turn and explode on death."
+    "DESCRIPTION": "Destabilized creatures take #b25% more damage from Attacks, and deal half of unblocked damage taken to ALL other enemies."
   },
   {
     "ID": "stagger",

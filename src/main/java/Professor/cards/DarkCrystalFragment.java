@@ -17,9 +17,9 @@ public class DarkCrystalFragment extends AbstractEasyCard {
     public final static String ID = makeID(DarkCrystalFragment.class.getSimpleName());
 
     public DarkCrystalFragment() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 2;
-        baseDamage = damage = 3;
+        baseDamage = damage = 6;
     }
 
     @Override
