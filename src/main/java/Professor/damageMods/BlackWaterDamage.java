@@ -15,7 +15,7 @@ public class BlackWaterDamage extends AbstractDamageModifier {
     @Override
     public float atDamageFinalGive(float damage, DamageInfo.DamageType type, AbstractCreature target, AbstractCard card) {
         if (target != null && target.hasPower(UnstablePower.POWER_ID)) {
-            damage *= (amount)/100f;
+            damage *= (amount+100)/100f;
         }
         return damage;
     }
