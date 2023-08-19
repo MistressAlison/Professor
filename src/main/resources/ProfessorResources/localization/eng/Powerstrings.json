@@ -85,6 +85,6 @@
   },
   "${ModID}:BlackWaterPower": {
     "NAME": "Black Water",
-    "DESCRIPTIONS": ["Attacks deal#b","% more damage to #yUnstable enemies."]
+    "DESCRIPTIONS": ["Attacks deal #b","% more damage to #yUnstable enemies."]
   }
 }
