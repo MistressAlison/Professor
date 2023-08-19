@@ -97,7 +97,7 @@ public class ForcedUpgradesPatches {
         if (ForcedUpgradeField.inf.get(card)) {
             card.upgraded = false;
         }
-        if (Wiz.adp() != null) {
+        if (Wiz.adp() != null && Wiz.isInCombat()) {
             for (AbstractPower p : Wiz.adp().powers) {
                 if (p instanceof OnUpgradePower && ((OnUpgradePower) p).allowUpgrade(card)) {
                     card.upgraded = false;
@@ -132,7 +132,7 @@ public class ForcedUpgradesPatches {
             if (ForcedUpgradeField.inf.get(__instance)) {
                 return SpireReturn.Return(true);
             }
-            if (Wiz.adp() != null) {
+            if (Wiz.adp() != null && Wiz.isInCombat()) {
                 for (AbstractPower p : Wiz.adp().powers) {
                     if (p instanceof OnUpgradePower && ((OnUpgradePower) p).allowUpgrade(__instance)) {
                         return SpireReturn.Return(true);
