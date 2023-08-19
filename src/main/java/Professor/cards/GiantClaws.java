@@ -25,7 +25,7 @@ public class GiantClaws extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null) {
-            addToBot(new VFXAction(new ClawEffect(m.hb.cX, m.hb.cY, Color.CYAN, Color.WHITE), 0.1F));
+            addToBot(new VFXAction(new ClawEffect(m.hb.cX, m.hb.cY, Color.CYAN.cpy(), Color.WHITE.cpy()), 0.1F));
         }
         dmg(m, AbstractGameAction.AttackEffect.NONE);
         addToBot(new ScaleAllByPredAction(this, magicNumber, ScaleAllByPredAction.StatBoost.DAMAGE, c -> c instanceof GiantClaws));
