@@ -4,12 +4,15 @@ import Professor.actions.BetterSelectCardsInHandAction;
 import Professor.actions.BetterTransformCardInHandAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
+import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.curses.Necronomicurse;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -28,12 +31,11 @@ public class EternalFire extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, magicNumber, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
-        addToBot(new BetterSelectCardsInHandAction(1, cardStrings.EXTENDED_DESCRIPTION[0], false, false, c -> true, l -> {
-            for (AbstractCard c : l) {
-                addToTop(new BetterTransformCardInHandAction(c, makeStatEquivalentCopy()));
-                addToTop(new SFXAction("CARD_BURN", 0.2F));
-            }
-        }));
+        Wiz.forAdjacentCards(this, c -> addToBot(new ExhaustSpecificCardAction(c, p.hand)));
+        if (Wiz.getAdjacentCards(this).stream().anyMatch(c -> !(c instanceof Necronomicurse))) {
+            addToBot(new SFXAction("CARD_BURN", 0.2F));
+            Wiz.makeInHand(this.makeStatEquivalentCopy());
+        }
     }
 
     @Override
