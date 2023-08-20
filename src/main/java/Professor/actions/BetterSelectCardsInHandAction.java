@@ -18,6 +18,7 @@ public class BetterSelectCardsInHandAction extends AbstractGameAction {
     private final String text;
     private final boolean anyNumber;
     private final boolean canPickZero;
+    private final ArrayList<AbstractCard> cardOrder = new ArrayList<>();
     private final ArrayList<AbstractCard> hand;
     private final ArrayList<AbstractCard> tempHand;
 
@@ -36,6 +37,7 @@ public class BetterSelectCardsInHandAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == this.startDuration) {
+            cardOrder.addAll(hand);
             if (this.hand.size() != 0 && this.hand.stream().anyMatch(this.predicate) && this.callback != null) {
                 if (hand.stream().filter(predicate).count() <= amount) {
                     callback.accept(hand.stream().filter(predicate).collect(Collectors.toList()));
@@ -63,6 +65,9 @@ public class BetterSelectCardsInHandAction extends AbstractGameAction {
                 this.hand.addAll(this.tempHand);
             }
 
+            ArrayList<AbstractCard> newCards = cardOrder.stream().filter(hand::contains).collect(Collectors.toCollection(ArrayList::new));
+            hand.removeAll(newCards);
+            hand.addAll(newCards);
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.player.hand.applyPowers();
             this.isDone = true;

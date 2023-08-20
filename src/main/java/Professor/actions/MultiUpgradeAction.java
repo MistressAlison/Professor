@@ -1,6 +1,7 @@
 package Professor.actions;
 
 import Professor.patches.ForcedUpgradesPatches;
+import Professor.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 
 public class MultiUpgradeAction extends AbstractGameAction {
     private final Predicate<AbstractCard> predicate;
+    private final ArrayList<AbstractCard> cardOrder = new ArrayList<>();
     private final ArrayList<AbstractCard> hand;
     private final ArrayList<AbstractCard> tempHand;
 
@@ -29,6 +31,7 @@ public class MultiUpgradeAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == this.startDuration) {
+            cardOrder.addAll(hand);
             if (this.hand.size() != 0 && this.hand.stream().anyMatch(this.predicate)) {
                 if (hand.stream().filter(predicate).count() == 1) {
                     performUpgrades(hand.stream().filter(predicate).collect(Collectors.toList()), amount);
@@ -57,6 +60,9 @@ public class MultiUpgradeAction extends AbstractGameAction {
                 this.hand.addAll(this.tempHand);
             }
 
+            ArrayList<AbstractCard> newCards = cardOrder.stream().filter(hand::contains).collect(Collectors.toCollection(ArrayList::new));
+            hand.removeAll(newCards);
+            hand.addAll(newCards);
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.player.hand.applyPowers();
             this.isDone = true;
