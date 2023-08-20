@@ -275,4 +275,10 @@ public class Wiz {
             }
         }
     }
+
+    public static ArrayList<AbstractCard> getAdjacentCards(AbstractCard thisCard) {
+        ArrayList<AbstractCard> ret = new ArrayList<>();
+        forAdjacentCards(thisCard, ret::add);
+        return ret;
+    }
 }
