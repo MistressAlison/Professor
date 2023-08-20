@@ -16,8 +16,8 @@ public class Eiche extends AbstractEasyCard {
     public Eiche() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseBlock = block = 6;
-        //baseMagicNumber = magicNumber = 3;
-        baseSecondMagic = secondMagic = 3;
+        baseMagicNumber = magicNumber = 3;
+        //baseSecondMagic = secondMagic = 3;
     }
 
     @Override
@@ -29,9 +29,9 @@ public class Eiche extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeBlock(1);
+        upgradeBlock(2);
         upgradeMagicNumber(1);
-        upgradeSecondMagic(1);
+        //upgradeSecondMagic(1);
     }
 
     @Override
