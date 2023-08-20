@@ -1,9 +1,11 @@
 package Professor.cards;
 
 import Professor.actions.InfuseCardsInHandAction;
+import Professor.actions.InfuseSpecificCardsAction;
 import Professor.cardmods.GainBlockMod;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
+import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,14 +17,14 @@ public class Fragile extends AbstractEasyCard {
     public final static String ID = makeID(Fragile.class.getSimpleName());
 
     public Fragile() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 5;
         exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new InfuseCardsInHandAction(p.hand.size(), new GainBlockMod(magicNumber)));
+        addToBot(new InfuseSpecificCardsAction(Wiz.getAdjacentCards(this), new GainBlockMod(magicNumber)));
     }
 
     @Override
