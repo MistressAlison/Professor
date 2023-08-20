@@ -3,6 +3,7 @@ package Professor.patches;
 import Professor.MainModfile;
 import Professor.powers.UnstablePower;
 import Professor.util.ImageHelper;
+import Professor.util.Wiz;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -52,6 +53,13 @@ public class ShaderOnEnemyPatches {
         @SpirePrefixPatch
         public static void onAtStart(AbstractMonster __instance, SpriteBatch sb) {
             begin(__instance, sb);
+        }
+
+        @SpirePostfixPatch
+        public static void failsafe(SpriteBatch sb) {
+            if (capturing) {
+                draw(sb);
+            }
         }
     }
 
