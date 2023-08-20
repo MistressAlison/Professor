@@ -32,20 +32,9 @@ public class InfuseRandomCardAction extends AbstractGameAction {
         ArrayList<AbstractCard> validCards = Wiz.adp().hand.group.stream().filter(filter).collect(Collectors.toCollection(ArrayList::new));
         for (int i = 0 ; i < amount ; i++) {
             AbstractCard c = Wiz.getRandomItem(validCards);
-            int times = 1;
-            for (AbstractPower p : Wiz.adp().powers) {
-                if (p instanceof OnInfusionPower) {
-                    times += ((OnInfusionPower) p).increaseTimes(c, mod);
-                }
-            }
-            for (int k = 0 ; k < times ; k++) {
-                CardModifierManager.addModifier(c, mod.makeCopy());
-                //Wiz.att(new ApplyCardModifierAction(c, mod.makeCopy()));
-            }
-            c.superFlash();
+            InfuseCardsInHandAction.doInfusion(c, mod);
         }
-        CardCrawlGame.sound.play("MONSTER_COLLECTOR_SUMMON", 0.2f);
-        CardCrawlGame.sound.play("RELIC_DROP_MAGICAL", 0.2f);
+        InfuseCardsInHandAction.infusionSFX();
         this.isDone = true;
     }
 }

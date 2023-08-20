@@ -20,20 +20,28 @@ public class InfuseCardsInHandAction extends ModifyCardsInHandAction {
     public InfuseCardsInHandAction(int amount, boolean anyAmount, Predicate<AbstractCard> filter, AbstractCardModifier mod) {
         super(amount, anyAmount, filter.and(shenaniganFilter), l -> {
             for (AbstractCard c : l) {
-                int times = 1;
-                for (AbstractPower p : Wiz.adp().powers) {
-                    if (p instanceof OnInfusionPower) {
-                        times += ((OnInfusionPower) p).increaseTimes(c, mod);
-                    }
-                }
-                for (int i = 0 ; i < times ; i++) {
-                    CardModifierManager.addModifier(c, mod.makeCopy());
-                    //Wiz.att(new ApplyCardModifierAction(c, mod.makeCopy()));
-                }
-                c.superFlash();
+                doInfusion(c, mod);
             }
-            CardCrawlGame.sound.play("MONSTER_COLLECTOR_SUMMON", 0.2f);
-            CardCrawlGame.sound.play("RELIC_DROP_MAGICAL", 0.2f);
+            infusionSFX();
         });
+    }
+
+    public static void doInfusion(AbstractCard c, AbstractCardModifier mod) {
+        int times = 1;
+        for (AbstractPower p : Wiz.adp().powers) {
+            if (p instanceof OnInfusionPower) {
+                times += ((OnInfusionPower) p).increaseTimes(c, mod);
+            }
+        }
+        for (int i = 0 ; i < times ; i++) {
+            CardModifierManager.addModifier(c, mod.makeCopy());
+            //Wiz.att(new ApplyCardModifierAction(c, mod.makeCopy()));
+        }
+        c.superFlash();
+    }
+
+    public static void infusionSFX() {
+        CardCrawlGame.sound.play("MONSTER_COLLECTOR_SUMMON", 0.2f);
+        CardCrawlGame.sound.play("RELIC_DROP_MAGICAL", 0.2f);
     }
 }
