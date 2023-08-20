@@ -5,6 +5,8 @@ import Professor.cardmods.DealDamageMod;
 import Professor.cards.cardvars.*;
 import Professor.icons.IconContainer;
 import Professor.patches.ArchetypeHelper;
+import Professor.patches.CustomTags;
+import Professor.patches.GlowChangePatch;
 import Professor.powers.BracedPower;
 import Professor.powers.ExposedPower;
 import Professor.powers.FocusedPower;
@@ -19,6 +21,7 @@ import Professor.vfx.ShaderTest;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModPanel;
+import basemod.helpers.CardBorderGlowManager;
 import basemod.helpers.RelicType;
 import basemod.helpers.ScreenPostProcessorManager;
 import basemod.interfaces.*;
@@ -33,6 +36,7 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -285,6 +289,32 @@ public class MainModfile implements
 
         //Other Setup stuff
         processElements();
+        CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
+            private final Color c = Color.RED.cpy();
+            @Override
+            public boolean test(AbstractCard card) {
+                if (Wiz.adp().hoveredCard == null) {
+                    GlowChangePatch.GlowCheckField.glowActive.set(card, false);
+                    return false;
+                }
+                boolean isActive = Wiz.getAdjacentCards(card).stream().anyMatch(c -> Wiz.adp().hoveredCard == c && c.hasTag(CustomTags.PROF_EXHAUST_ADJACENT));
+                if (isActive != GlowChangePatch.GlowCheckField.glowActive.get(card)) {
+                    GlowChangePatch.GlowCheckField.glowActive.set(card, isActive);
+                    card.superFlash(c);
+                }
+                return isActive;
+            }
+
+            @Override
+            public Color getColor(AbstractCard card) {
+                return c;
+            }
+
+            @Override
+            public String glowID() {
+                return makeID("AdjacentExhaust");
+            }
+        });
 
         if (shaderTest) {
             ScreenPostProcessor postProcessor = new ShaderTest();

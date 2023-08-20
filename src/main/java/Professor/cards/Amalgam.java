@@ -6,6 +6,7 @@ import Professor.cards.tokens.BlueNeutralizer;
 import Professor.cards.tokens.GreenNeutralizer;
 import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
+import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
@@ -25,6 +26,7 @@ public class Amalgam extends AbstractEasyCard {
         baseDamage = damage = 5;
         exhaust = true;
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
+        tags.add(CustomTags.PROF_EXHAUST_ADJACENT);
     }
 
     @Override
