@@ -228,7 +228,7 @@
   },
   "${ModID}:Eiche": {
     "NAME": "Eiche",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! professor:Braced. NL professor:Infuse \"Gain !Professor:M2! Block\" into a card."
+    "DESCRIPTION": "Gain !B! Block. NL professor:Infuse \"Gain !Professor:M2! Block\" into a card."
   },
   "${ModID}:EmberStone": {
     "NAME": "Ember Stone",
@@ -342,8 +342,8 @@
   },
   "${ModID}:MistLiquid": {
     "NAME": "Mist Liquid",
-    "DESCRIPTION": "Whenever you draw an Unplayable card, gain !M! professor:Braced.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you draw an Unplayable card, gain !M! professor:Braced."
+    "DESCRIPTION": "Whenever you draw an Unplayable card, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you draw an Unplayable card, gain !M! Block."
   },
   "${ModID}:MysteriousBroom": {
     "NAME": "Mysterious Broom",

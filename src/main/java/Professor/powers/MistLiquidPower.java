@@ -3,7 +3,7 @@ package Professor.powers;
 import Professor.MainModfile;
 import Professor.cards.MistLiquid;
 import Professor.util.PowerIconMaker;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -35,8 +35,8 @@ public class MistLiquidPower extends AbstractPower {
     public void onCardDraw(AbstractCard card) {
         if (card.cost == -2 || card.costForTurn == -2) {
             flash();
-            //addToBot(new GainBlockAction(owner, amount));
-            addToBot(new ApplyPowerAction(owner, owner, new BracedPower(owner, amount)));
+            addToBot(new GainBlockAction(owner, amount));
+            //addToBot(new ApplyPowerAction(owner, owner, new BracedPower(owner, amount)));
             /*Wiz.forAllMonstersLiving(m -> {
                 Wiz.applyToEnemy(m, new WeakPower(m, amount, false));
             });*/
