@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import java.util.ArrayList;
 
 public class ElementRenderPatches {
+    private static final Color WHITEISH = Color.WHITE.cpy();
     private static final Texture fire = TexLoader.getTexture(MainModfile.makeImagePath("elements/FireSmall.png"));
     private static final Texture ice = TexLoader.getTexture(MainModfile.makeImagePath("elements/IceSmall.png"));
     private static final Texture bolt = TexLoader.getTexture(MainModfile.makeImagePath("elements/BoltSmall.png"));
@@ -69,7 +70,8 @@ public class ElementRenderPatches {
             elements.add(wind);
         }
         if (!elements.isEmpty()) {
-            sb.setColor(Color.WHITE.cpy());
+            WHITEISH.a = card.transparency;
+            sb.setColor(WHITEISH);
             float dx = -(elements.size()-1) * spacing / 2F;
             float dy = 210f;
             for (Texture t : elements) {
@@ -79,6 +81,7 @@ public class ElementRenderPatches {
                         0, 0, t.getWidth(), t.getHeight(), false, false);
                 dx += spacing;
             }
+            sb.setColor(Color.WHITE);
         }
     }
 
