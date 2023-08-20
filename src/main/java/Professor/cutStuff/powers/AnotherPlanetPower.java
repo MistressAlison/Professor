@@ -1,7 +1,7 @@
-package Professor.powers;
+package Professor.cutStuff.powers;
 
 import Professor.MainModfile;
-import Professor.cards.AnotherPlanet;
+import Professor.cutStuff.cards.AnotherPlanet;
 import Professor.patches.ForcedUpgradesPatches;
 import Professor.patches.ZeroAmountPowerPatches;
 import Professor.powers.interfaces.OnUpgradePower;

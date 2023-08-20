@@ -1,8 +1,8 @@
-package Professor.cards;
+package Professor.cutStuff.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.patches.CustomTags;
-import Professor.powers.AnotherPlanetPower;
+import Professor.cutStuff.powers.AnotherPlanetPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
