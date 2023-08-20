@@ -484,7 +484,7 @@ public class MainModfile implements
     }
 
     public static void onUpgradeTrigger(AbstractCard c) {
-        if (Wiz.adp() != null && Wiz.isInCombat()) {
+        if (Wiz.adp() != null && Wiz.isInCombat() && Wiz.isCombatCard(c)) {
             for (AbstractPower p : Wiz.adp().powers) {
                 if (p instanceof OnUpgradePower) {
                     ((OnUpgradePower) p).onUpgrade(c);

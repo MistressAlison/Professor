@@ -97,7 +97,7 @@ public class ForcedUpgradesPatches {
         if (ForcedUpgradeField.inf.get(card)) {
             card.upgraded = false;
         }
-        if (Wiz.adp() != null && Wiz.isInCombat()) {
+        if (Wiz.adp() != null && Wiz.isInCombat() && Wiz.isCombatCard(card)) {
             for (AbstractPower p : Wiz.adp().powers) {
                 if (p instanceof OnUpgradePower && ((OnUpgradePower) p).allowUpgrade(card)) {
                     card.upgraded = false;
