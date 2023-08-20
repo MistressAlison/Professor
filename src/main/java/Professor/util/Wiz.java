@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,7 +20,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
@@ -264,5 +262,17 @@ public class Wiz {
             return cardsPlayedThisCombat().get(cardsPlayedThisCombat().size()-2);
         }
         return null;
+    }
+
+    public static void forAdjacentCards(AbstractCard thisCard, Consumer<AbstractCard> consumer) {
+        int lastIndex = Wiz.adp().hand.group.indexOf(thisCard);
+        if (lastIndex != -1) {
+            if (lastIndex > 0) {
+                consumer.accept(Wiz.adp().hand.group.get(lastIndex - 1));
+            }
+            if (lastIndex < Wiz.adp().hand.group.size()-1) {
+                consumer.accept(Wiz.adp().hand.group.get(lastIndex + 1));
+            }
+        }
     }
 }

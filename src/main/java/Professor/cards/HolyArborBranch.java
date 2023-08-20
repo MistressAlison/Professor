@@ -36,15 +36,7 @@ public class HolyArborBranch extends AbstractEasyCard {
 
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
-        int index = Wiz.adp().hand.group.indexOf(this);
-        if (index != -1) {
-            if (index >= 1) {
-                Wiz.adp().hand.group.get(index-1).retain = true;
-            }
-            if (index < Wiz.adp().hand.group.size()-1) {
-                Wiz.adp().hand.group.get(index+1).retain = true;
-            }
-        }
+        Wiz.forAdjacentCards(this, c -> c.retain = true);
     }
 
     @Override

@@ -7,6 +7,7 @@ import Professor.cards.tokens.GreenNeutralizer;
 import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
 import Professor.util.CardArtRoller;
+import Professor.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -29,15 +30,7 @@ public class Amalgam extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
-        int lastIndex = p.hand.group.indexOf(this);
-        if (lastIndex != -1) {
-            if (lastIndex > 0) {
-                addToBot(new SpectrumizeAction(p.hand.group.get(lastIndex -1)));
-            }
-            if (lastIndex < p.hand.group.size()-1) {
-                addToBot(new SpectrumizeAction(p.hand.group.get(lastIndex +1)));
-            }
-        }
+        Wiz.forAdjacentCards(this, c -> addToBot(new SpectrumizeAction(c)));
     }
 
     @Override
