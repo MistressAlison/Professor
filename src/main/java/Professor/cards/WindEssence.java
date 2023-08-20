@@ -1,6 +1,7 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.patches.CustomTags;
 import Professor.powers.WindEssencePower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
@@ -16,6 +17,7 @@ public class WindEssence extends AbstractEasyCard {
     public WindEssence() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
+        tags.add(CustomTags.PROF_WIND);
     }
 
     @Override

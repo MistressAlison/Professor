@@ -41,7 +41,7 @@
   },
   "${ModID}:WindEssencePower": {
     "NAME": "Wind Essence",
-    "DESCRIPTIONS": ["Whenever you draw your #b6th card each turn, draw #b"," card."," cards."]
+    "DESCRIPTIONS": ["The first time your draw during each turn, draw #b"," additional card."," additional cards."]
   },
   "${ModID}:PoisonPowderPower": {
     "NAME": "Poison Powder",
