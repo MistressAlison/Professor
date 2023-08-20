@@ -19,13 +19,14 @@ public class TorchGrass extends AbstractEasyCard {
     public final static String ID = makeID(TorchGrass.class.getSimpleName());
 
     public TorchGrass() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 4;
-        baseMagicNumber = magicNumber = 1;
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = damage = 8;
+        baseMagicNumber = magicNumber = 2;
         if (CardCrawlGame.playerName.equals("rorDev") && MathUtils.random(4) == 0) {
             this.originalName = this.name = cardStrings.EXTENDED_DESCRIPTION[0];
             initializeTitle();
         }
+        exhaust = true;
     }
 
     @Override
@@ -41,7 +42,8 @@ public class TorchGrass extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeDamage(3);
+        upgradeDamage(2);
+        upgradeMagicNumber(1);
     }
 
     @Override

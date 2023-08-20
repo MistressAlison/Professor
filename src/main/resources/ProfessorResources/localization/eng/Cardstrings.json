@@ -232,7 +232,7 @@
   },
   "${ModID}:EmberStone": {
     "NAME": "Ember Stone",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Vulnerable, deal !M! additional damage."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Vulnerable, deal !D! damage again."
   },
   "${ModID}:EmeraldBand": {
     "NAME": "Emerald Band",
@@ -415,7 +415,7 @@
   },
   "${ModID}:TorchGrass": {
     "NAME": "Torch Grass",
-    "DESCRIPTION": "Deal !D! damage. NL Put !M! card{!M!|>1=s}{@@} from your discard pile into your hand.",
+    "DESCRIPTION": "Deal !D! damage. NL Put !M! card{!M!|>1=s}{@@} from your discard pile into your hand. NL Exhaust.",
     "EXTENDED_DESCRIPTION": ["Touch Grass"]
   },
   "${ModID}:TransportCannon": {

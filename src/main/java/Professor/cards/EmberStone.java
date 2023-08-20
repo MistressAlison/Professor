@@ -1,10 +1,13 @@
 package Professor.cards;
 
+import Professor.actions.DoIfAction;
 import Professor.actions.ThrowObjectAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
+import Professor.vfx.SmallerExplosionEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,9 +20,9 @@ public class EmberStone extends AbstractEasyCard {
     public final static String ID = makeID(EmberStone.class.getSimpleName());
 
     public EmberStone() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 9;
-        baseMagicNumber = magicNumber = 6;
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        baseDamage = damage = 7;
+        //baseMagicNumber = magicNumber = 5;
     }
 
     @Override
@@ -28,15 +31,21 @@ public class EmberStone extends AbstractEasyCard {
             addToBot(new ThrowObjectAction(EmberStone.class.getSimpleName(), 1/3f, m.hb, ORANGE));
         }
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
+        if (m != null) {
+            addToBot(new DoIfAction(() -> m.hasPower(VulnerablePower.POWER_ID), () -> {
+                dmgTop(m, AbstractGameAction.AttackEffect.FIRE);
+                addToTop(new VFXAction(new SmallerExplosionEffect(m.hb.cX, m.hb.cY)));
+            }));
+        }
     }
 
     @Override
     public void upp() {
-        upgradeDamage(2);
-        upgradeMagicNumber(2);
+        upgradeDamage(3);
+        //upgradeMagicNumber(2);
     }
 
-    @Override
+    /*@Override
     public void calculateCardDamage(AbstractMonster mo) {
         int baseBase = baseDamage;
         int lastMagic = magicNumber;
@@ -49,7 +58,7 @@ public class EmberStone extends AbstractEasyCard {
         if (lastMagic != magicNumber) {
             calculateCardDamage(mo);
         }
-    }
+    }*/
 
     public void triggerOnGlowCheck() {
         glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
