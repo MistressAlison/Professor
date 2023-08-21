@@ -260,7 +260,7 @@
       "elysium_harp",
       "elysium_harp+"
     ],
-    "DESCRIPTION": "Draws cards and grants Vigor. NL Scales with [Professor:WindIcon] and [Professor:BoltIcon] ."
+    "DESCRIPTION": "Grants Block when entering your hand. NL Scales with [Professor:WindIcon] ."
   },
   {
     "ID": "dark_night_treasure",
