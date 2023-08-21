@@ -153,6 +153,10 @@
     "NAME": "Ancient Blue Water",
     "DESCRIPTION": "professor:Spectrumize your hand. NL Gain !B! Block for each card professor:Spectrumized. NL Exhaust"
   },
+  "${ModID}:AncientSolution": {
+    "NAME": "Ancient Solution",
+    "DESCRIPTION": "professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Gain [E] equal to its cost."
+  },
   "${ModID}:AncientUni": {
     "NAME": "Ancient Uni",
     "DESCRIPTION": "professor:Infuse \"Deal !M! damage\" into a card."
