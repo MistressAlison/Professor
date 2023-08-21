@@ -1,4 +1,4 @@
-package Professor.powers;
+package Professor.cutStuff.powers;
 
 import Professor.MainModfile;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -26,6 +26,7 @@ public class ExposedPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.DEBUFF;
+        this.isTurnBased = true;
         this.priority = -1;
         this.loadRegion("brutality");
         this.appliedOffTurn = appliedOffTurn;

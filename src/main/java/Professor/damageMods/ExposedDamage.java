@@ -1,6 +1,6 @@
 package Professor.damageMods;
 
-import Professor.powers.ExposedPower;
+import Professor.cutStuff.powers.ExposedPower;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.AbstractDamageModifier;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;

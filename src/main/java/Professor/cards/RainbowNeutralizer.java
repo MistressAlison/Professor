@@ -1,10 +1,16 @@
 package Professor.cards;
 
+import Professor.actions.SpectrumizeAction;
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.powers.ExposedPower;
+import Professor.cards.tokens.BlueNeutralizer;
+import Professor.cards.tokens.GreenNeutralizer;
+import Professor.cards.tokens.RedNeutralizer;
+import Professor.cards.tokens.YellowNeutralizer;
+import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
-import Professor.util.Wiz;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.tempCards.Omega;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,27 +23,26 @@ public class RainbowNeutralizer extends AbstractEasyCard {
 
     public RainbowNeutralizer() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        selfRetain = true;
-        baseDamage = damage = 13;
-        baseMagicNumber = magicNumber = 3;
+        baseDamage = damage = 5;
+        //baseMagicNumber = magicNumber = 3;
+        PurgeField.purge.set(this, true);
+        // Not picked up as Bolt since we cant set Exhaust, or else we duplicate the card
+        tags.add(CustomTags.PROF_BOLT);
+        MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
+        addToBot(new SpectrumizeAction(this));
     }
 
     @Override
     public void upp() {
-        upgradeDamage(2);
-        upgradeMagicNumber(2);
-    }
-
-    @Override
-    public void triggerWhenDrawn() {
-        flash();
-        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new ExposedPower(mon, magicNumber)));
-        //Wiz.applyToSelf(new VigorPower(Wiz.adp(), magicNumber));
+        //upgradeDamage(2);
+        selfRetain = true;
+        uDesc();
+        //upgradeMagicNumber(2);
     }
 
     @Override

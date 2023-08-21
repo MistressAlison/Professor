@@ -14,8 +14,8 @@ public class LightningEssence extends AbstractEasyCard {
     public final static String ID = makeID(LightningEssence.class.getSimpleName());
 
     public LightningEssence() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 3;
+        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 1;
     }
 
     @Override
@@ -25,7 +25,8 @@ public class LightningEssence extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(1);
+        //upgradeMagicNumber(1);
+        upgradeBaseCost(0);
     }
 
     @Override

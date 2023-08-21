@@ -37,7 +37,7 @@
   },
   "${ModID}:BoltEssencePower": {
     "NAME": "Lightning Essence",
-    "DESCRIPTIONS": ["Whenever a card is #yExhausted, apply #b"," #yExposed to ALL enemies."]
+    "DESCRIPTIONS": ["Whenever a card is #yExhausted, gain #b"," [E] ."]
   },
   "${ModID}:WindEssencePower": {
     "NAME": "Wind Essence",

@@ -67,13 +67,14 @@
   },
   "${ModID}:ElysiumHarp": {
     "NAME": "Elysium Harp",
-    "DESCRIPTION": "{@@}Draw !Professor:M2! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) }card{!Professor:M2!|>1=s}. NL Apply !M! {!Location!|-2,4=(+1 per [Professor:BoltIcon] ) } professor:Exposed to ALL enemies."
+    "DESCRIPTION": "{@@}Whenever this card enters your hand, apply !M! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) } professor:Stagger to ALL enemies.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:SynthesizeElysiumHarp": {
     "NAME": "Peaceful Blueprint",
     "DESCRIPTION": "Ethereal. NL professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 draw per Wind, +1 Exposed per Bolt"]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 Stagger per Wind"]
   },
   "${ModID}:ExplosiveUni": {
     "NAME": "Explosive Uni",
@@ -305,7 +306,7 @@
   },
   "${ModID}:LightningEssence": {
     "NAME": "Lightning Essence",
-    "DESCRIPTION": "Whenever a card is Exhausted, apply !M! professor:Exposed to ALL enemies."
+    "DESCRIPTION": "Whenever a card is Exhausted, gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}."
   },
   "${ModID}:LightningSand": {
     "NAME": "Lightning Sand",
@@ -379,7 +380,8 @@
   },
   "${ModID}:RainbowNeutralizer": {
     "NAME": "Rainbow Neutralizer",
-    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When you draw this card, apply !M! professor:Exposed to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage. NL professor:Spectrumize this card.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Deal !D! damage. NL professor:Spectrumize this card."
   },
   "${ModID}:RestraintSilk": {
     "NAME": "Restraint Silk",

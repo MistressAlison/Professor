@@ -2,6 +2,7 @@ package Professor.powers;
 
 import Professor.MainModfile;
 import Professor.cards.LightningEssence;
+import Professor.cutStuff.powers.ExposedPower;
 import Professor.util.PowerIconMaker;
 import Professor.util.Wiz;
 import com.megacrit.cardcrawl.cards.AbstractCard;
