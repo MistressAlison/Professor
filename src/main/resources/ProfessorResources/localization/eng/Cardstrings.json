@@ -265,7 +265,7 @@
   },
   "${ModID}:Fragile": {
     "NAME": "Fragile",
-    "DESCRIPTION": "professor:Infuse \"Gain !M! Block\" into adjacent cards. NL Exhaust."
+    "DESCRIPTION": "professor:Infuse \"Gain !M! Block\" into !Professor:M2! card{@@}{!Professor:M2!|>1=s}. NL Exhaust."
   },
   "${ModID}:GiantClaws": {
     "NAME": "Giant Claws",
