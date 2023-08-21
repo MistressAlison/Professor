@@ -163,7 +163,7 @@
   },
   "${ModID}:ArborIvy": {
     "NAME": "Arbor Ivy",
-    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}.{@@}"
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
   },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",
@@ -187,7 +187,7 @@
   },
   "${ModID}:CleanWater": {
     "NAME": "Clean Water",
-    "DESCRIPTION": "Gain !B! Block. NL Discard 1 card."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Discard 1 card."
   },
   "${ModID}:Clobber": {
     "NAME": "Clobber",
@@ -450,7 +450,7 @@
   },
   "${ModID}:WindShoes": {
     "NAME": "Wind Shoes",
-    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}.{@@}",
     "FLAVOR": "Shoes so light they're said to contain the very spirit of the wind."
   }
 }

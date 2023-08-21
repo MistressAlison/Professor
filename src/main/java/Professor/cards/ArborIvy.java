@@ -2,6 +2,7 @@ package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,7 +15,7 @@ public class ArborIvy extends AbstractEasyCard {
 
     public ArborIvy() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 8;
+        baseBlock = block = 9;
         baseMagicNumber = magicNumber = 1;
     }
 
@@ -22,12 +23,13 @@ public class ArborIvy extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         addToBot(new DrawCardAction(magicNumber));
+        addToBot(new DiscardAction(p, p, magicNumber, false));
     }
 
     @Override
     public void upp() {
-        //upgradeBlock(3);
-        upgradeMagicNumber(1);
+        upgradeBlock(3);
+        //upgradeMagicNumber(1);
     }
 
     @Override

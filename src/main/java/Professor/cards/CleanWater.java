@@ -14,8 +14,9 @@ public class CleanWater extends AbstractEasyCard {
 
     public CleanWater() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 8;
+        baseBlock = block = 5;
         //tags.add(CustomTags.PROF_REACTANT);
+        selfRetain = true;
     }
 
     @Override
