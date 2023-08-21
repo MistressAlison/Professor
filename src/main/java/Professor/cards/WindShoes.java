@@ -18,7 +18,7 @@ public class WindShoes extends AbstractEasyCard {
 
     public WindShoes() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = block = 7;
+        baseBlock = block = 6;
         baseMagicNumber = magicNumber = 2;
     }
 
