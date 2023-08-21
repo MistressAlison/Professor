@@ -29,7 +29,7 @@ public class OldenPhilosophersStone extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("HEART_BEAT", 0.1f));
-        addToBot(new VFXAction(new ApplyShaderEffect(SobelShader.get(), 0.5f)));
+        //addToBot(new VFXAction(new ApplyShaderEffect(SobelShader.get(), 0.5f)));
         Wiz.applyToSelf(new PhilosophersPower(p, magicNumber));
     }
 
