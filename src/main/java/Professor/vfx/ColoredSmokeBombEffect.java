@@ -12,7 +12,7 @@ public class ColoredSmokeBombEffect extends SmokeBombEffect {
         super(x, y);
         this.x = x;
         this.y = y;
-        this.color = c;
+        this.color = c.cpy();
     }
 
     @Override
