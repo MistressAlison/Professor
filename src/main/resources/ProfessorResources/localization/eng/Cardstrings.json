@@ -167,11 +167,11 @@
   },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",
-    "DESCRIPTION": "Apply !M! professor:Unstable. NL Apply !Professor:M2! professor:Exposed."
+    "DESCRIPTION": "Apply !M! professor:Unstable. NL Draw !Professor:M2! card{@@}{!Professor:M2!|>1=s}."
   },
   "${ModID}:BlackWater": {
     "NAME": "Black Water",
-    "DESCRIPTION": "Attacks deal {@@}{!M!|@=a lot|0=0%|1=25%|2=50%|3=75%|4=100%|5=125%|6=150%|7=175%|8=200%|9=225%|10=250%|11=275%|12=300%} more damage to professor:Unstable enemies."
+    "DESCRIPTION": "Whenever you apply Weak or Vulnerable to an enemy, also apply !M! professor:Unstable."
   },
   "${ModID}:BlueStarRobe": {
     "NAME": "Blue Star Robe",
@@ -199,7 +199,7 @@
   },
   "${ModID}:DarkCrystalFragment": {
     "NAME": "Dark Crystal",
-    "DESCRIPTION": "Deal !D! damage twice. NL Apply !M! professor:Unstable."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Unstable."
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
@@ -262,6 +262,10 @@
   "${ModID}:FlamingBlackSand": {
     "NAME": "Flaming Black Sand",
     "DESCRIPTION": "Deal !D! damage. NL If an adjacent card is professor:Fire, gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}."
+  },
+  "${ModID}:ForbiddenElixir": {
+    "NAME": "Forbidden Elixir",
+    "DESCRIPTION": "Apply !M! professor:Unstable. NL Attacks against this enemy hit ALL enemies this turn."
   },
   "${ModID}:Fragile": {
     "NAME": "Fragile",
@@ -383,7 +387,7 @@
   },
   "${ModID}:RotwoodMiasma": {
     "NAME": "Rotwood Miasma",
-    "DESCRIPTION": "Apply !M! professor:Unstable and Weak to ALL enemies."
+    "DESCRIPTION": "Apply !M! professor:Unstable and Weak to ALL enemies. NL Exhaust."
   },
   "${ModID}:SaintsDiamond": {
     "NAME": "Saint's Diamond",

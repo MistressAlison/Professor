@@ -19,7 +19,7 @@ public class DarkCrystalFragment extends AbstractEasyCard {
     public DarkCrystalFragment() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 2;
-        baseDamage = damage = 6;
+        baseDamage = damage = 12;
     }
 
     @Override
@@ -28,15 +28,14 @@ public class DarkCrystalFragment extends AbstractEasyCard {
             //addToBot(new ThrowObjectAction(itemArt(), 1/3f, m.hb, Color.PURPLE));
             addToBot(new ThrowObjectAction(itemArt(), 1/3f, m.hb, Color.PURPLE));
         }
-        dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-        dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
-        Wiz.applyToEnemy(m, new UnstablePower(m, p, magicNumber));
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        Wiz.applyToEnemy(m, new UnstablePower(m, magicNumber));
     }
 
     @Override
     public void upp() {
-        upgradeDamage(1);
-        upgradeMagicNumber(1);
+        upgradeDamage(4);
+        //upgradeMagicNumber(1);
     }
 
     @Override

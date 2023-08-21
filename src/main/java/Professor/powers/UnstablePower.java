@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.defect.DamageAllButOneEnemyAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -20,78 +21,45 @@ public class UnstablePower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Color hpColor = AbstractEasyCard.pastel(Color.PURPLE);
-    public AbstractCreature source;
+    private boolean appliedOffTurn;
 
     // TODO ideas:
     //Stores damage received, explodes at the start of its next turn?
-    public UnstablePower(AbstractCreature owner, AbstractCreature source, int amount) {
+    public UnstablePower(AbstractCreature owner, int amount) {
+        this(owner, amount, false);
+    }
+
+    public UnstablePower(AbstractCreature owner, int amount, boolean appliedOffTurn) {
         this.ID = POWER_ID;
         this.name = NAME;
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.DEBUFF;
-        this.source = source;
+        this.priority = -1;
         this.isTurnBased = true;
+        this.appliedOffTurn = appliedOffTurn;
         PowerIconMaker.setIcons(this, "MosaicHope");
         updateDescription();
     }
 
     @Override
-    public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
-        if (type == DamageInfo.DamageType.NORMAL) {
-            damage *= 1.25f;
+    public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
+        if (damageType == DamageInfo.DamageType.NORMAL) {
+            return damage + amount;
         }
         return damage;
     }
 
     @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        if (info.type == DamageInfo.DamageType.NORMAL) {
-            flash();
-            addToBot(new VFXAction(new ExplosionSmallEffect(owner.hb.cX, owner.hb.cY)));
-            addToBot(new DamageAllButOneEnemyAction(source, owner, DamageInfo.createDamageMatrix(damageAmount/2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
-        }
-        return damageAmount;
-    }
-
-    @Override
     public void atEndOfRound() {
-        addToBot(new ReducePowerAction(owner, owner, this, 1));
-    }
-
-    /*public void atStartOfTurn() {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            flashWithoutSound();
-            addToBot(new VFXAction(new ViceCrushEffect(owner.hb.cX, owner.hb.cY), 0.5F));
-            addToBot(new DestabilizeDamageAction(owner, source, amount, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        if (!appliedOffTurn) {
+            addToBot(new ReducePowerAction(owner, owner, this, 1));
         }
+        appliedOffTurn = false;
     }
-
-    public void onDeath() {
-        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() && owner.currentHealth <= 0) {
-            addToBot(new AnimateShakeAction(owner, 0.4f, 0.2f));
-            addToBot(new BigExplosionVFX(owner));
-            addToBot(new DamageAllEnemiesAction(source, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-        }
-    }*/
 
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else {
-            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
+        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
-
-    /*@Override
-    public int getHealthBarAmount() {
-        return amount;
-    }
-
-    @Override
-    public Color getColor() {
-        return hpColor;
-    }*/
 }

@@ -135,7 +135,7 @@
       "destabilize",
       "destabilized"
     ],
-    "DESCRIPTION": "Unstable creatures take #b25% more damage from Attacks, and deal half of unblocked damage taken to ALL other enemies."
+    "DESCRIPTION": "Unstable creatures take more damage from Attacks. Each turn, Unstable is reduced by #b1."
   },
   {
     "ID": "stagger",

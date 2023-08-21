@@ -47,7 +47,7 @@ public class ApplyDestabilizedMod extends AbstractInfusion {
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         Wiz.atb(new InfusionTriggerAction(this, val, relicStatsVal));
-        Wiz.atb(new ApplyPowerAction(target, Wiz.adp(), new UnstablePower(target, Wiz.adp(), val)));
+        Wiz.atb(new ApplyPowerAction(target, Wiz.adp(), new UnstablePower(target, val)));
     }
 
 

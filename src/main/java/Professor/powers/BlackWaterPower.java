@@ -25,12 +25,12 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import java.util.Collections;
 import java.util.List;
 
-public class BlackWaterPower extends AbstractPower implements DamageModApplyingPower {
+public class BlackWaterPower extends AbstractPower implements BetterOnApplyPowerPower{
     public static final String POWER_ID = MainModfile.makeID(BlackWaterPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private final BlackWaterDamage bwd = new BlackWaterDamage(0);
+    //private final BlackWaterDamage bwd = new BlackWaterDamage(0);
 
     public BlackWaterPower(AbstractCreature owner, int amount) {
         this.ID = POWER_ID;
@@ -44,10 +44,10 @@ public class BlackWaterPower extends AbstractPower implements DamageModApplyingP
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + 25*amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
-    @Override
+    /*@Override
     public boolean shouldPushMods(DamageInfo damageInfo, Object o, List<AbstractDamageModifier> list) {
         return o instanceof AbstractCard && ((AbstractCard) o).type == AbstractCard.CardType.ATTACK;
     }
@@ -56,32 +56,15 @@ public class BlackWaterPower extends AbstractPower implements DamageModApplyingP
     public List<AbstractDamageModifier> modsToPush(DamageInfo damageInfo, Object o, List<AbstractDamageModifier> list) {
         bwd.setAmount(25*amount);
         return Collections.singletonList(bwd);
-    }
+    }*/
 
-/*
+
     @Override
     public boolean betterOnApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (source == owner && target != owner && (power instanceof WeakPower || power instanceof VulnerablePower)) {
             flash();
-            addToBot(new ApplyPowerAction(target, owner, new DestabilizedPower(target, owner, amount)));
+            addToBot(new ApplyPowerAction(target, owner, new UnstablePower(target, amount)));
         }
         return true;
     }
-*/
-
-    /*@Override
-    public boolean betterOnApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (source == owner && target != owner && power.type == PowerType.DEBUFF && !LoopField.looping.get(power)) {
-            flash();
-            AbstractPower p =  new DestabilizedPower(target, owner, amount);
-            LoopField.looping.set(p, true);
-            addToBot(new ApplyPowerAction(target, owner, p));
-        }
-        return true;
-    }
-
-    @SpirePatch2(clz = AbstractPower.class, method = SpirePatch.CLASS)
-    public static class LoopField {
-        public static SpireField<Boolean> looping = new SpireField<>(() -> false);
-    }*/
 }

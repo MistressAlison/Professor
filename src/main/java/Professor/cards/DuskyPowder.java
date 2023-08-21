@@ -16,7 +16,7 @@ public class DuskyPowder extends AbstractEasyCard {
 
     public DuskyPowder() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
         exhaust = true;
     }
 

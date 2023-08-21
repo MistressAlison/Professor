@@ -61,7 +61,7 @@
   },
   "${ModID}:UnstablePower": {
     "NAME": "Unstable",
-    "DESCRIPTIONS": ["Receive #b25% more damage from #yAttacks and deals half of unblocked damage taken to ALL other enemies for #b"," turn."," turns."]
+    "DESCRIPTIONS": ["Takes #b"," more damage from Attacks. At the end of its turn, reduce #yUnstable by #b1."]
   },
   "${ModID}:StaggerPower": {
     "NAME": "Staggered",
@@ -85,6 +85,10 @@
   },
   "${ModID}:BlackWaterPower": {
     "NAME": "Black Water",
-    "DESCRIPTIONS": ["Attacks deal #b","% more damage to #yUnstable enemies."]
+    "DESCRIPTIONS": ["Whenever you apply Weak of Vulnerable to an enemy, also apply #b"," #yUnstable."]
+  },
+  "${ModID}:ForbiddenElixirPower": {
+    "NAME": "Forbidden Elixir",
+    "DESCRIPTIONS": ["For the next #b"," turns, #yAttacks against this enemy also hit ALL other enemies.","#yAttacks against this enemy also hit ALL other enemies this turn."]
   }
 }
