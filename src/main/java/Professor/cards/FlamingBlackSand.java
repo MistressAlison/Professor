@@ -26,16 +26,15 @@ public class FlamingBlackSand extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                AbstractCard c = Wiz.secondLastCardPlayed();
-                if (c != null && ArchetypeHelper.isFire(c)) {
-                    addToTop(new GainEnergyAction(magicNumber));
-                }
-                this.isDone = true;
+        boolean energy = false;
+        for (AbstractCard c : Wiz.getAdjacentCards(this)) {
+            if (ArchetypeHelper.isFire(c)) {
+                energy = true;
             }
-        });
+        }
+        if (energy) {
+            addToBot(new GainEnergyAction(magicNumber));
+        }
     }
 
     @Override
@@ -46,7 +45,7 @@ public class FlamingBlackSand extends AbstractEasyCard {
 
     public void triggerOnGlowCheck() {
         glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (!Wiz.cardsPlayedThisCombat().isEmpty() && ArchetypeHelper.isFire(Wiz.lastCardPlayed())) {
+        if (Wiz.getAdjacentCards(this).stream().anyMatch(ArchetypeHelper::isFire)) {
             glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
