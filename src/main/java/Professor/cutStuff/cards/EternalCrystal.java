@@ -17,7 +17,6 @@ public class EternalCrystal extends AbstractEasyCard {
     public EternalCrystal() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 5;
-        tags.add(CustomTags.PROF_CATALYST);
     }
 
     @Override
