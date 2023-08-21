@@ -2,31 +2,32 @@ package Professor.cards;
 
 import Professor.actions.SpectrumizeAction;
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.cards.interfaces.GlowAdjacentCard;
 import Professor.cards.tokens.BlueNeutralizer;
 import Professor.cards.tokens.GreenNeutralizer;
 import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
-import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class Amalgam extends AbstractEasyCard {
+public class Amalgam extends AbstractEasyCard implements GlowAdjacentCard {
     public final static String ID = makeID(Amalgam.class.getSimpleName());
+    private static final Color c = Color.RED.cpy();
 
     public Amalgam() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = damage = 5;
         exhaust = true;
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
-        tags.add(CustomTags.PROF_EXHAUST_ADJACENT);
     }
 
     @Override
@@ -58,5 +59,10 @@ public class Amalgam extends AbstractEasyCard {
     @Override
     public float itemScale() {
         return 0.85f;
+    }
+
+    @Override
+    public Color getGlowColor(AbstractCard card) {
+        return c;
     }
 }

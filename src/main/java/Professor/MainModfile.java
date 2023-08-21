@@ -3,9 +3,9 @@ package Professor;
 import Professor.cardmods.AbstractInfusion;
 import Professor.cardmods.DealDamageMod;
 import Professor.cards.cardvars.*;
+import Professor.cards.interfaces.GlowAdjacentCard;
 import Professor.icons.IconContainer;
 import Professor.patches.ArchetypeHelper;
-import Professor.patches.CustomTags;
 import Professor.patches.GlowChangePatch;
 import Professor.powers.BracedPower;
 import Professor.powers.ExposedPower;
@@ -36,7 +36,6 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -293,26 +292,30 @@ public class MainModfile implements
             private final Color c = Color.RED.cpy();
             @Override
             public boolean test(AbstractCard card) {
-                if (Wiz.adp().hoveredCard == null) {
-                    GlowChangePatch.GlowCheckField.glowActive.set(card, false);
-                    return false;
+                if (Wiz.adp().hoveredCard instanceof GlowAdjacentCard && ((GlowAdjacentCard) Wiz.adp().hoveredCard).glowAdjacent(card)) {
+                    if (GlowChangePatch.GlowCheckField.lastChecked.get(card) != Wiz.adp().hoveredCard) {
+                        GlowChangePatch.GlowCheckField.lastChecked.set(card, Wiz.adp().hoveredCard);
+                        if (((GlowAdjacentCard) Wiz.adp().hoveredCard).flashAdjacent(card)) {
+                            card.superFlash(((GlowAdjacentCard) Wiz.adp().hoveredCard).getGlowColor(card));
+                        }
+                    }
+                    return true;
                 }
-                boolean isActive = Wiz.getAdjacentCards(card).stream().anyMatch(c -> Wiz.adp().hoveredCard == c && c.hasTag(CustomTags.PROF_EXHAUST_ADJACENT));
-                if (isActive != GlowChangePatch.GlowCheckField.glowActive.get(card)) {
-                    GlowChangePatch.GlowCheckField.glowActive.set(card, isActive);
-                    card.superFlash(c);
-                }
-                return isActive;
+                GlowChangePatch.GlowCheckField.lastChecked.set(card, Wiz.adp().hoveredCard);
+                return false;
             }
 
             @Override
             public Color getColor(AbstractCard card) {
+                if (Wiz.adp().hoveredCard instanceof GlowAdjacentCard) {
+                    return ((GlowAdjacentCard) Wiz.adp().hoveredCard).getGlowColor(card);
+                }
                 return c;
             }
 
             @Override
             public String glowID() {
-                return makeID("AdjacentExhaust");
+                return makeID("AdjacentGlow");
             }
         });
 
