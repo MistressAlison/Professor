@@ -91,7 +91,7 @@ void main()
 {
     // Normalized pixel coordinates (from 0 to 1)
     vec2 uv = v_texCoords;
-    vec4 offset = bumpFromDepth(uv + vec2(floor(x_time*4.0)/4.0), u_screenSize.xy, .1)/80.0;
+    vec4 offset = bumpFromDepth(uv + vec2(floor(mod(x_time, 10.0)*4.0)/4.0), u_screenSize.xy, .1)/80.0;
 
 
     // Output to screen
