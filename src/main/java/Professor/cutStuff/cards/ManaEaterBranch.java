@@ -1,4 +1,4 @@
-package Professor.cards;
+package Professor.cutStuff.cards;
 
 import Professor.actions.EasyXCostAction;
 import Professor.cardmods.UnlockedMod;
