@@ -76,22 +76,18 @@ public class ShaderOnEnemyPatches {
         }
     }
 
-    /*@SpirePatch2(clz = AbstractCreature.class, method = "renderBlockIconAndValue")
+    @SpirePatch2(clz = AbstractCreature.class, method = "renderBlockIconAndValue")
     public static class ShaderTime3 {
-        @SpirePrefixPatch
+        /*@SpirePrefixPatch
         public static void backOn(AbstractCreature __instance, SpriteBatch sb) {
             begin(__instance, sb);
-        }
+        }*/
 
-        @SpireInsertPatch(locator = BlockTextLocator.class)
+        @SpirePrefixPatch
+        //@SpireInsertPatch(locator = BlockTextLocator.class)
         public static void offForBlockText(SpriteBatch sb) {
             draw(sb);
         }
-
-        *//*@SpirePostfixPatch
-        public static void backOnAgain(AbstractCreature __instance, SpriteBatch sb) {
-            begin(__instance, sb);
-        }*//*
 
         public static class BlockTextLocator extends SpireInsertLocator {
             @Override
@@ -100,24 +96,29 @@ public class ShaderOnEnemyPatches {
                 return LineFinder.findInOrder(ctBehavior, m);
             }
         }
-    }*/
+    }
 
     @SpirePatch2(clz = AbstractCreature.class, method = "renderPowerIcons")
     public static class ShaderTime5 {
+        private static final Color blockTextColor = new Color(0.9F, 0.9F, 0.9F, 1.0F);
         /*@SpirePrefixPatch
         public static void backOn(AbstractCreature __instance, SpriteBatch sb) {
             begin(__instance, sb);
         }*/
 
-        @SpireInsertPatch(locator = PowerTextLocator.class)
+        //@SpireInsertPatch(locator = PowerTextLocator.class)
+        @SpirePrefixPatch
         public static void offForPowerText(AbstractCreature __instance, SpriteBatch sb, float ___hbYOffset, float ___BLOCK_ICON_X, Color ___blockTextColor, float ___blockScale) {
-            boolean fix = capturing;
-            draw(sb);
-            if (fix && __instance.currentBlock != 0 && __instance.hbAlpha != 0.0F) {
+            //boolean fix = capturing;
+            if (capturing) {
+                draw(sb);
+            }
+
+            /*if (__instance.currentBlock != 0 && __instance.hbAlpha != 0.0F) {
                 float x = __instance.hb.cX - __instance.hb.width / 2.0F;
                 float y = __instance.hb.cY - __instance.hb.height / 2.0F + ___hbYOffset;
-                FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(__instance.currentBlock), x + ___BLOCK_ICON_X, y - 16.0F * Settings.scale, ___blockTextColor, ___blockScale);
-            }
+                FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(__instance.currentBlock), x + ___BLOCK_ICON_X, y - 16.0F * Settings.scale, Color.WHITE, ___blockScale);
+            }*/
         }
         public static class PowerTextLocator extends SpireInsertLocator {
             @Override
