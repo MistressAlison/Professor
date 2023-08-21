@@ -29,7 +29,8 @@ public class Strike extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null) {
-            addToBot(new VFXAction(new ColoredAngledFlashAtkImgEffect(m.hb.cX, m.hb.cY, 180f, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, upgraded ? L_RED : WHITE), 0.1f));
+            addToBot(new SFXAction("ATTACK_FAST"));
+            addToBot(new VFXAction(new ColoredAngledFlashAtkImgEffect(m.hb.cX, m.hb.cY, 180f, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, upgraded ? L_RED : WHITE, true), 0.1f));
             addToBot(new SFXAction("ATTACK_FAST"));
             addToBot(new VFXAction(new ColoredAngledFlashAtkImgEffect(m.hb.cX, m.hb.cY, 0f, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, upgraded ? L_BLUE : WHITE, true)));
             dmg(m, AbstractGameAction.AttackEffect.NONE);
