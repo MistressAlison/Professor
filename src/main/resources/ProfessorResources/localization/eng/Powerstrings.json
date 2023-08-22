@@ -5,7 +5,7 @@
   },
   "${ModID}:AmberOilPower": {
     "NAME": "Amber Oil",
-    "DESCRIPTIONS": ["At the start of your turn, #yUpgrade #b"," random card in your hand."," random cards in your hand."]
+    "DESCRIPTIONS": ["At the end of your turn, deal #b"," damage to ALL enemies for each card in your hand."]
   },
   "${ModID}:MistLiquidPower": {
     "NAME": "Mist Liquid",

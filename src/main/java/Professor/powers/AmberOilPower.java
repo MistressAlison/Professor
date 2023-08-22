@@ -3,9 +3,15 @@ package Professor.powers;
 import Professor.MainModfile;
 import Professor.cards.AmberOil;
 import Professor.util.PowerIconMaker;
+import Professor.util.Wiz;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.UpgradeRandomCardAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -28,18 +34,14 @@ public class AmberOilPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else {
-            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
+        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override
-    public void atStartOfTurnPostDraw() {
-        flash();
-        for (int i = 0 ; i < amount ; i++) {
-            addToBot(new UpgradeRandomCardAction());
+    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
+        if (!Wiz.adp().hand.isEmpty()) {
+            this.flash();
+            addToTop(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(amount*Wiz.adp().hand.size(), true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }
     }
 }
