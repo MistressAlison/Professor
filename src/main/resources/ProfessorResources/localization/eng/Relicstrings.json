@@ -96,7 +96,7 @@
     "NAME": "Locket of Devotion",
     "FLAVOR": "If you place a photo of someone you want to protect inside, it will allow you to shoulder their hardships.",
     "DESCRIPTIONS": [
-      "At the start of each turn, #yprofessor:Infuse \"Deal 3 damage\" into a random card in your hand.",
+      "Replaces [#c66c8d]Memoria [#c66c8d]Bracelet. At the start of each turn, #yprofessor:Infuse \"Deal 3 damage\" into a random card in your hand.",
       "Damage dealt: "," NL Per turn: "," NL Per combat: "
     ]
   },
