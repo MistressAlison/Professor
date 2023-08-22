@@ -13,15 +13,15 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class ParticleEffect extends AbstractGameEffect implements CustomLighting {
-    private float x;
-    private float y;
-    private float oX;
-    private float oY;
-    private final float vX;
-    private final float vY;
-    private final float dur_div2;
-    private final Hitbox hb;
-    private final TextureAtlas.AtlasRegion img;
+    protected float x;
+    protected float y;
+    protected float oX;
+    protected float oY;
+    protected float vX;
+    protected float vY;
+    protected final float dur_div2;
+    protected final Hitbox hb;
+    protected final TextureAtlas.AtlasRegion img;
 
     public ParticleEffect(Color c, float x, float y) {
         this(c, (Hitbox)null);// 20
@@ -79,7 +79,10 @@ public class ParticleEffect extends AbstractGameEffect implements CustomLighting
 
     @Override
     public float[] _lightsOutGetXYRI() {
-        return new float[] {x, y, 150f, 0.05f};
+        if (hb != null) {
+            return new float[] {hb.cX + oX, hb.cY + oY, 150f, 0.05f};
+        }
+        return new float[] {x + oX, y + oY, 150f, 0.05f};
     }
 
     @Override
