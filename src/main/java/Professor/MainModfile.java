@@ -11,6 +11,7 @@ import Professor.powers.BracedPower;
 import Professor.powers.FocusedPower;
 import Professor.powers.StaggerPower;
 import Professor.powers.UnstablePower;
+import Professor.powers.interfaces.InfusionTriggerPower;
 import Professor.powers.interfaces.OnUpgradePower;
 import Professor.relics.AbstractEasyRelic;
 import Professor.relics.LocketOfDevotion;
@@ -513,6 +514,11 @@ public class MainModfile implements
         if (infusion instanceof DealDamageMod) {
             MemoriaBracelet.onInfusionTrigger(relicAmount);
             LocketOfDevotion.onInfusionTrigger(relicAmount);
+        }
+        for (AbstractPower p : Wiz.adp().powers) {
+            if (p instanceof InfusionTriggerPower) {
+                ((InfusionTriggerPower) p).infusionTrigger(infusion, directAmount);
+            }
         }
     }
 

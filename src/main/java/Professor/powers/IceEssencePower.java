@@ -1,18 +1,24 @@
 package Professor.powers;
 
 import Professor.MainModfile;
+import Professor.cardmods.AbstractInfusion;
+import Professor.cardmods.GainBlockMod;
 import Professor.cards.IceEssence;
+import Professor.powers.interfaces.InfusionTriggerPower;
 import Professor.util.PowerIconMaker;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.evacipated.cardcrawl.mod.stslib.blockmods.AbstractBlockModifier;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnCreateBlockInstancePower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 
-public class IceEssencePower extends AbstractPower {
+import java.util.HashSet;
+
+public class IceEssencePower extends AbstractPower implements OnCreateBlockInstancePower, InfusionTriggerPower {
 
     public static final String POWER_ID = MainModfile.makeID(IceEssencePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -35,17 +41,25 @@ public class IceEssencePower extends AbstractPower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                    if (c.selfRetain || c.retain) {
-                        addToBot(new GainBlockAction(owner, owner, IceEssencePower.this.amount));
-                    }
-                }
-                this.isDone = true;
-            }
-        });
+    public void onCreateBlockInstance(HashSet<AbstractBlockModifier> hashSet, Object o) {
+        if (o instanceof AbstractCard) {
+            flash();
+            addToBot(new ApplyPowerAction(owner, owner, new NextTurnBlockPower(owner, amount), amount, true));
+        }
     }
+
+    @Override
+    public void infusionTrigger(AbstractInfusion i, int infusionAmount) {
+        if (i instanceof GainBlockMod) {
+            addToBot(new ApplyPowerAction(owner, owner, new NextTurnBlockPower(owner, amount), amount, true));
+        }
+    }
+
+    /*@Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.type == AbstractCard.CardType.SKILL) {
+            this.addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
+            this.flash();
+        }
+    }*/
 }

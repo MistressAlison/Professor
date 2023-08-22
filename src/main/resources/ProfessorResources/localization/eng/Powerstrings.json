@@ -33,7 +33,7 @@
   },
   "${ModID}:IceEssencePower": {
     "NAME": "Ice Essence",
-    "DESCRIPTIONS": ["Whenever a card is #yRetained, gain #b"," #yBlock."]
+    "DESCRIPTIONS": ["Whenever you gain #yBlock from a card, also gain #b"," #yBlock next turn."]
   },
   "${ModID}:BoltEssencePower": {
     "NAME": "Lightning Essence",

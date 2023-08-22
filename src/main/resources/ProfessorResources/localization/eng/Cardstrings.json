@@ -301,8 +301,8 @@
   },
   "${ModID}:IceEssence": {
     "NAME": "Ice Essence",
-    "DESCRIPTION": "???",
-    "UPGRADE_DESCRIPTION": "Innate. NL ???"
+    "DESCRIPTION": "Whenever you gain Block from a card, also gain !M! Block next turn.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain Block from a card, also gain !M! Block next turn."
   },
   "${ModID}:Ingot": {
     "NAME": "Ingot",

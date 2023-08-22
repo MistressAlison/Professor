@@ -15,7 +15,7 @@ public class IceEssence extends AbstractEasyCard {
 
     public IceEssence() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 2;
     }
 
     @Override
@@ -25,9 +25,9 @@ public class IceEssence extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        //upgradeMagicNumber(1);
-        isInnate = true;
-        uDesc();
+        upgradeMagicNumber(1);
+        //isInnate = true;
+        //uDesc();
     }
 
     @Override
