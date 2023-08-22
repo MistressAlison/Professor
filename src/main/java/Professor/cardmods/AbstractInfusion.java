@@ -1,6 +1,7 @@
 package Professor.cardmods;
 
 import Professor.actions.ApplyCardModifierAction;
+import Professor.powers.interfaces.InfusionBoostingPower;
 import Professor.util.CalcHelper;
 import Professor.util.FormatHelper;
 import Professor.util.PortraitHelper;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.util.extraicons.ExtraIcons;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 
@@ -77,19 +79,40 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
 
     @Override
     public void onApplyPowers(AbstractCard card) {
+        int base = baseVal;
         switch (type) {
             case DAMAGE_DIRECT:
             case DAMAGE_RANDOM:
-                val = CalcHelper.applyPowers(baseVal);
+                for (AbstractPower p : Wiz.adp().powers) {
+                    if (p instanceof InfusionBoostingPower) {
+                        base += ((InfusionBoostingPower) p).damageBoost(card);
+                    }
+                }
+                val = CalcHelper.applyPowers(base);
                 break;
             case DAMAGE_ALL:
-                multiVal = CalcHelper.applyPowersMulti(baseVal);
+                for (AbstractPower p : Wiz.adp().powers) {
+                    if (p instanceof InfusionBoostingPower) {
+                        base += ((InfusionBoostingPower) p).damageBoost(card);
+                    }
+                }
+                multiVal = CalcHelper.applyPowersMulti(base);
                 val = multiVal[0];
                 break;
             case BLOCK:
-                val = CalcHelper.applyPowersToBlock(baseVal);
+                for (AbstractPower p : Wiz.adp().powers) {
+                    if (p instanceof InfusionBoostingPower) {
+                        base += ((InfusionBoostingPower) p).blockBoost(card);
+                    }
+                }
+                val = CalcHelper.applyPowersToBlock(base);
                 break;
             case MAGIC:
+                for (AbstractPower p : Wiz.adp().powers) {
+                    if (p instanceof InfusionBoostingPower) {
+                        val += ((InfusionBoostingPower) p).magicBoost(card);
+                    }
+                }
                 break;
         }
         valModified = val != baseVal;
@@ -97,21 +120,47 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
 
     @Override
     public void onCalculateCardDamage(AbstractCard card, AbstractMonster mo) {
+        int base = baseVal;
         switch (type) {
             case DAMAGE_DIRECT:
-                val = CalcHelper.calculateCardDamage(baseVal, mo);
+                for (AbstractPower p : Wiz.adp().powers) {
+                    if (p instanceof InfusionBoostingPower) {
+                        base += ((InfusionBoostingPower) p).damageBoost(card);
+                    }
+                }
+                val = CalcHelper.calculateCardDamage(base, mo);
                 break;
             case DAMAGE_RANDOM:
-                val = CalcHelper.calculateCardDamage(baseVal, null);
+                for (AbstractPower p : Wiz.adp().powers) {
+                    if (p instanceof InfusionBoostingPower) {
+                        base += ((InfusionBoostingPower) p).damageBoost(card);
+                    }
+                }
+                val = CalcHelper.calculateCardDamage(base, null);
                 break;
             case DAMAGE_ALL:
-                multiVal = CalcHelper.calculateCardDamageMulti(baseVal);
+                for (AbstractPower p : Wiz.adp().powers) {
+                    if (p instanceof InfusionBoostingPower) {
+                        base += ((InfusionBoostingPower) p).damageBoost(card);
+                    }
+                }
+                multiVal = CalcHelper.calculateCardDamageMulti(base);
                 val = multiVal[0];
                 break;
             case BLOCK:
-                val = CalcHelper.applyPowersToBlock(baseVal);
+                for (AbstractPower p : Wiz.adp().powers) {
+                    if (p instanceof InfusionBoostingPower) {
+                        base += ((InfusionBoostingPower) p).blockBoost(card);
+                    }
+                }
+                val = CalcHelper.applyPowersToBlock(base);
                 break;
             case MAGIC:
+                for (AbstractPower p : Wiz.adp().powers) {
+                    if (p instanceof InfusionBoostingPower) {
+                        val += ((InfusionBoostingPower) p).magicBoost(card);
+                    }
+                }
                 break;
         }
         valModified = val != baseVal;

@@ -311,7 +311,7 @@
   },
   "${ModID}:LightningEssence": {
     "NAME": "Lightning Essence",
-    "DESCRIPTION": "Whenever a card is Exhausted, gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}."
+    "DESCRIPTION": "Attacks that cost 0 deal !M! additional damage."
   },
   "${ModID}:LightningSand": {
     "NAME": "Lightning Sand",
