@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Professor.MainModfile.makeID;
 
@@ -18,8 +19,8 @@ public class TabooDrop extends AbstractEasyCard {
 
     public TabooDrop() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
-        baseDamage = damage = 7;
-        baseBlock = block = 7;
+        baseDamage = damage = 8;
+        baseMagicNumber = magicNumber = 1;
         isMultiDamage = true;
     }
 
@@ -29,13 +30,13 @@ public class TabooDrop extends AbstractEasyCard {
         Wiz.forAllMonstersLiving(mon -> addToBot(new VFXAction(new ColoredSmokeBombEffect(mon.hb.cX, mon.hb.cY, Color.PURPLE))));
         allDmg(AbstractGameAction.AttackEffect.POISON);
         //Wiz.forAllMonstersLiving(mon -> addToBot(new ApplyPowerActionWithFollowup(new ApplyPowerAction(mon, p, new StrengthPower(mon, -this.magicNumber)), new ApplyPowerAction(mon, p, new GainStrengthPower(mon, this.magicNumber)))));
-        //Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new StaggerPower(mon, magicNumber)));
+        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new WeakPower(mon, magicNumber, false)));
     }
 
     @Override
     public void upp() {
         upgradeDamage(2);
-        upgradeBlock(2);
+        upgradeMagicNumber(1);
     }
 
     @Override
