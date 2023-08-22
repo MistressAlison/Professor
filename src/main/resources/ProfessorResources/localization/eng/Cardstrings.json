@@ -318,7 +318,7 @@
   },
   "${ModID}:Liquifier": {
     "NAME": "Liquifier",
-    "DESCRIPTION": "Retain. NL professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Exhaust."
+    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL professor:Spectrumize all Curse and Status cards in your hand. NL Exhaust."
   },
   "${ModID}:LunarDrop": {
     "NAME": "Lunar Drop",

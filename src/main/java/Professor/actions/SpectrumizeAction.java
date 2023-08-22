@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
@@ -23,15 +24,25 @@ public class SpectrumizeAction extends AbstractGameAction {
     public static boolean spectrumizing;
     public AbstractCard card;
     private final Consumer<List<AbstractCard>> callback;
+    private boolean random;
 
     public SpectrumizeAction(int amount) {
-        this(amount, c -> {});
+        this(amount, false, c -> {});
+    }
+
+    public SpectrumizeAction(int amount, boolean random) {
+        this(amount, random, c -> {});
     }
 
     public SpectrumizeAction(int amount, Consumer<List<AbstractCard>> callback) {
+        this(amount, false, callback);
+    }
+
+    public SpectrumizeAction(int amount, boolean random, Consumer<List<AbstractCard>> callback) {
         this.amount = amount;
         this.actionType = ActionType.EXHAUST;
         this.callback = callback;
+        this.random = random;
     }
 
     public SpectrumizeAction(AbstractCard card) {
@@ -60,6 +71,15 @@ public class SpectrumizeAction extends AbstractGameAction {
                 exhaustCard(c);
             }
             callback.accept(Wiz.adp().hand.group);
+        } else if (random) {
+            List<AbstractCard> hit = new ArrayList<>();
+            for (int i = 0 ; i < amount ; i++) {
+                AbstractCard c = Wiz.adp().hand.getRandomCard(true);
+                addCards(c);
+                exhaustCard(c);
+                hit.add(c);
+            }
+            callback.accept(hit);
         } else {
             addToTop(new SelectCardsInHandAction(amount, TEXT[0], l -> {
                 for (AbstractCard c : l) {
@@ -75,7 +95,7 @@ public class SpectrumizeAction extends AbstractGameAction {
         this.isDone = true;
     }
 
-    private void exhaustCard(AbstractCard card) {
+    public static void exhaustCard(AbstractCard card) {
         spectrumizing = true;
         Wiz.adp().hand.moveToExhaustPile(card);
         spectrumizing = false;
