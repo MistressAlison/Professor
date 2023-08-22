@@ -20,7 +20,7 @@ public class Septrin extends AbstractEasyCard {
     public final static String ID = makeID(Septrin.class.getSimpleName());
 
     public Septrin() {
-        super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
     }
 
@@ -31,7 +31,7 @@ public class Septrin extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeBaseCost(2);
+        upgradeBaseCost(1);
     }
 
     @Override
