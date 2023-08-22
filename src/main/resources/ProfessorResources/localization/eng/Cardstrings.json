@@ -370,6 +370,11 @@
     "DESCRIPTION": "professor:Unlock and Upgrade a card !M! times for the rest of combat. NL Exhaust.",
     "FLAVOR": "Even those who have no magic abilities can feel the mana coursing through it."
   },
+  "${ModID}:OldScroll": {
+    "NAME": "Old Scroll",
+    "DESCRIPTION": "Move the !M! most recent card{!M!|>1=s}{@@} from your discard pile into your hand. NL Exhaust.",
+    "FLAVOR": "\"Ajanoputo kad ib ed'c desa du cmys huf Fa kud y naym zys kueh' tufh Famlusa du dra Cbyla Zys\" NL NL It seems to refer to the Age of Legends, but is written in a dead language, so it will take some time to translate."
+  },
   "${ModID}:PoisonGrass": {
     "NAME": "Poison Grass",
     "DESCRIPTION": "Apply !M! Poison. NL professor:Infuse \"Apply !M! Poison\" into a card."
