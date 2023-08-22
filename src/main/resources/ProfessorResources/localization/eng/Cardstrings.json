@@ -222,7 +222,7 @@
   },
   "${ModID}:DragonBone": {
     "NAME": "Dragon Bone",
-    "DESCRIPTION": "Deal !D! damage. NL Gain an equal amount of Block."
+    "DESCRIPTION": "Deal !D! damage. NL Ignores Block."
   },
   "${ModID}:DreamFlower": {
     "NAME": "Dream Flower",
