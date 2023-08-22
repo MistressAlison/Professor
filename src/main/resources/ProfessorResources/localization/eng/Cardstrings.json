@@ -172,7 +172,8 @@
   },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",
-    "DESCRIPTION": "Apply !M! professor:Unstable. NL Draw !Professor:M2! card{@@}{!Professor:M2!|>1=s}."
+    "DESCRIPTION": "Apply !M! professor:Unstable. NL Spectrumize !Professor:M2! card{@@}{!Professor:M2!|>1=s} at random.",
+    "UPGRADE_DESCRIPTION": "Apply !M! professor:Unstable. NL Spectrumize !Professor:M2! card{@@}{!Professor:M2!|>1=s}."
   },
   "${ModID}:BlackWater": {
     "NAME": "Black Water",

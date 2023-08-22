@@ -1,14 +1,13 @@
 package Professor.cards;
 
+import Professor.actions.SpectrumizeAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.powers.UnstablePower;
-import Professor.cutStuff.powers.ExposedPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import Professor.vfx.ColoredWaterDropEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -32,14 +31,14 @@ public class BlackMuck extends AbstractEasyCard {
             addToBot(new VFXAction(new ColoredWaterDropEffect(m.hb.cX, m.hb.cY, Color.DARK_GRAY.cpy()), 0.2f));
         }
         Wiz.applyToEnemy(m, new UnstablePower(m, magicNumber));
-        addToBot(new DrawCardAction(p, secondMagic));
-
+        addToBot(new SpectrumizeAction(secondMagic, !upgraded));
     }
 
     @Override
     public void upp() {
         //upgradeMagicNumber(1);
-        upgradeSecondMagic(1);
+        //upgradeSecondMagic(1);
+        uDesc();
     }
 
     @Override
