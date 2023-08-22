@@ -465,7 +465,7 @@
   },
   "${ModID}:WindShoes": {
     "NAME": "Wind Shoes",
-    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}.{@@}",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Next turn, draw !M! additional card{!M!|>1=s}.{@@}",
     "FLAVOR": "Shoes so light they're said to contain the very spirit of the wind."
   }
 }
