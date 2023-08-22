@@ -67,14 +67,14 @@
   },
   "${ModID}:ElysiumHarp": {
     "NAME": "Elysium Harp",
-    "DESCRIPTION": "{@@}Whenever this card enters your hand, apply !M! {!Location!|-2,4=(+1 per [Professor:WindIcon] ) } professor:Stagger to ALL enemies.",
+    "DESCRIPTION": "{@@}Whenever this card enters your hand, Gain !M! {!Location!|-2,4=(+2 per [Professor:WindIcon] ) } Block.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:SynthesizeElysiumHarp": {
     "NAME": "Peaceful Blueprint",
     "DESCRIPTION": "Ethereal. NL professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 Stagger per Wind"]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +2 Block per Wind"]
   },
   "${ModID}:ExplosiveUni": {
     "NAME": "Explosive Uni",
@@ -88,13 +88,13 @@
   },
   "${ModID}:LautePlajig": {
     "NAME": "Laute Plajig",
-    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+1 per [Professor:BoltIcon] ) }damage and apply !M! {!Location!|-2,4=NL (+1 per [Professor:FireIcon] ) }professor:Stagger to a random enemy !Professor:M2! times."
+    "DESCRIPTION": "{@@}Deal !D! {!Location!|-2,4=(+5 per [Professor:BoltIcon] ) }damage. NL Deals !M! additional damage for each card in your hand."
   },
   "${ModID}:SynthesizeLautePlajig": {
     "NAME": "Shocking Blueprint",
     "DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig. NL Requires !Professor:I! cards.",
     "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig+. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 damage per Bolt, +1 Stagger per Fire"]
+    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +5 damage per Bolt"]
   },
   "${ModID}:Luft": {
     "NAME": "Luft",
@@ -417,7 +417,7 @@
   },
   "${ModID}:TabooDrop": {
     "NAME": "Taboo Drop",
-    "DESCRIPTION": "Deal !D! damage and apply !M! professor:Stagger to ALL enemies."
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage to ALL enemies."
   },
   "${ModID}:TemptingSap": {
     "NAME": "Tempting Sap",
@@ -430,7 +430,7 @@
   },
   "${ModID}:TransportCannon": {
     "NAME": "Transport Cannon",
-    "DESCRIPTION": "Discard your hand. NL Deal !D! damage for each card discarded. NL Apply professor:Stagger equal to cards discarded."
+    "DESCRIPTION": "Discard your hand. NL Deal !D! damage for each card discarded."
   },
   "${ModID}:Uni": {
     "NAME": "Uni",

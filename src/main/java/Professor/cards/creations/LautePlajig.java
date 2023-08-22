@@ -1,20 +1,29 @@
 package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
-import Professor.damageMods.StaggerDamage;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
+import Professor.util.Wiz;
+import Professor.vfx.BigExplosionVFX;
+import Professor.vfx.BurnToAshEffect;
+import Professor.vfx.DirectedParticleEffect;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
-import com.evacipated.cardcrawl.mod.stslib.damagemods.BindingHelper;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.Collections;
+import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
 import static Professor.MainModfile.makeID;
 
@@ -28,7 +37,7 @@ public class LautePlajig extends AbstractCreationCard {
     }
 
     public LautePlajig(ElementData data) {
-        super(ID, 2, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        super(ID, 2, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
         addCustomKeyword(KeywordManager.LAUTE_PLAJIG);
         setDisplayRarity(CardRarity.UNCOMMON);
@@ -36,17 +45,16 @@ public class LautePlajig extends AbstractCreationCard {
 
     @Override
     public void updateElementData(ElementData data) {
-        baseDamage = damage = 4; // Damage
-        baseMagicNumber = magicNumber = 1; // Stagger
-        baseSecondMagic = secondMagic = 4; // Hits
+        baseDamage = damage = 15; // Damage
+        baseMagicNumber = magicNumber = 2; // Vuln
         if (data != null) {
-            baseDamage += data.y;
+            baseDamage += 5*data.y;
             damage = baseDamage;
-            baseMagicNumber += data.r;
-            magicNumber = baseMagicNumber;
+            //baseMagicNumber += data.r;
+            //magicNumber = baseMagicNumber;
         }
-        //Worst: Deal 4x4, 1x4 Stagger = 16, 4
-        //Best: Deal 6x4, 3x4 Stagger = 24, 12
+        //Worst: Deal 15
+        //Best: Deal 25
 
     }
 
@@ -60,15 +68,59 @@ public class LautePlajig extends AbstractCreationCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0 ; i < secondMagic ; i ++) {
-            addToBot(BindingHelper.makeAction(Collections.singletonList(new StaggerDamage(magicNumber)), new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.LIGHTNING)));
+        if (m != null) {
+            addToBot(new AbstractGameAction() {
+                {
+                    duration = startDuration = 0.75f;
+                }
+                @Override
+                public void update() {
+                    if (duration == startDuration) {
+                        CardCrawlGame.sound.play("ORB_PLASMA_CHANNEL", 0.05F);
+                        for (AbstractCard c : p.hand.group) {
+                            c.superFlash(Color.GOLD.cpy());
+                            for (int i = 0 ; i < 10 ; i++) {
+                                float xo = MathUtils.random(-125.0F, 125.0F) * Settings.scale;
+                                float yo = MathUtils.random(-125.0F, 125.0F) * Settings.scale;
+                                Vector2 dir = new Vector2(m.hb.cX -c.hb.cX+xo, Settings.HEIGHT-yo - c.hb.cY+yo+250*Settings.scale);
+                                dir.nor();
+                                dir.scl(1500f * Settings.scale * MathUtils.random(1.0F, 1.25F));
+                                AbstractDungeon.effectList.add(new DirectedParticleEffect(Color.GOLD.cpy(), c.hb.cX+xo, c.hb.cY+yo, dir.x, dir.y));
+                            }
+                        }
+                    }
+                    tickDuration();
+                }
+            });
+            addToBot(new SFXAction("THUNDERCLAP", 0.05F));
+            addToBot(new VFXAction(new LightningEffect(m.drawX, m.drawY), 0.15F));
+            addToBot(new BigExplosionVFX(m));
+            dmg(m, AbstractGameAction.AttackEffect.NONE, true);
         }
     }
 
     @Override
+    public void applyPowers() {
+        int base = baseDamage;
+        baseDamage += magicNumber * Wiz.adp().hand.group.stream().filter(c -> c != this).count();
+        super.applyPowers();
+        baseDamage = base;
+        isDamageModified = baseDamage != damage;
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        int base = baseDamage;
+        baseDamage += magicNumber * Wiz.adp().hand.group.stream().filter(c -> c != this).count();
+        super.calculateCardDamage(mo);
+        baseDamage = base;
+        isDamageModified = baseDamage != damage;
+    }
+
+    @Override
     public void upp() {
-        //upgradeDamage(2);
-        upgradeSecondMagic(1);
+        //upgradeDamage(4);
+        upgradeMagicNumber(1);
     }
 
     @Override

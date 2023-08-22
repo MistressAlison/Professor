@@ -230,7 +230,7 @@
       "laute_plajig",
       "laute_plajig+"
     ],
-    "DESCRIPTION": "Deals damage to random enemies and applies Stagger. NL Scales with [Professor:BoltIcon] and [Professor:FireIcon] ."
+    "DESCRIPTION": "Deals damage related to cards in hand. NL Scales with [Professor:BoltIcon] ."
   },
   {
     "ID": "dawn_grimoire",

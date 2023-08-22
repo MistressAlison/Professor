@@ -1,7 +1,6 @@
 package Professor.actions;
 
 import Professor.MainModfile;
-import Professor.powers.StaggerPower;
 import Professor.util.TextureSniper;
 import Professor.util.Wiz;
 import Professor.vfx.VFXContainer;
@@ -28,7 +27,7 @@ public class TransportCannonAction extends AbstractGameAction {
     public void update() {
         CardCrawlGame.sound.play("GHOST_ORB_IGNITE_1");
         int size = Wiz.adp().hand.size();
-        Wiz.applyToEnemyTop((AbstractMonster) target, new StaggerPower(target, size));
+        //Wiz.applyToEnemyTop((AbstractMonster) target, new StaggerPower(target, size));
         for (int i = 0; i < size; i++) {
             addToTop(new DamageAction(target, info, AttackEffect.SLASH_DIAGONAL));
         }

@@ -1,7 +1,6 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.powers.StaggerPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import Professor.vfx.ColoredSmokeBombEffect;
@@ -19,23 +18,24 @@ public class TabooDrop extends AbstractEasyCard {
 
     public TabooDrop() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
-        baseDamage = damage = 8;
-        baseMagicNumber = magicNumber = 4;
+        baseDamage = damage = 7;
+        baseBlock = block = 7;
         isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        blck();
         Wiz.forAllMonstersLiving(mon -> addToBot(new VFXAction(new ColoredSmokeBombEffect(mon.hb.cX, mon.hb.cY, Color.PURPLE))));
         allDmg(AbstractGameAction.AttackEffect.POISON);
         //Wiz.forAllMonstersLiving(mon -> addToBot(new ApplyPowerActionWithFollowup(new ApplyPowerAction(mon, p, new StrengthPower(mon, -this.magicNumber)), new ApplyPowerAction(mon, p, new GainStrengthPower(mon, this.magicNumber)))));
-        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new StaggerPower(mon, magicNumber)));
+        //Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new StaggerPower(mon, magicNumber)));
     }
 
     @Override
     public void upp() {
         upgradeDamage(2);
-        upgradeMagicNumber(1);
+        upgradeBlock(2);
     }
 
     @Override

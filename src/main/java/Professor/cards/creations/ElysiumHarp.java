@@ -1,9 +1,7 @@
 package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
-import Professor.cutStuff.powers.ExposedPower;
 import Professor.patches.EnterCardGroupPatches;
-import Professor.powers.StaggerPower;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
@@ -11,7 +9,7 @@ import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -40,10 +38,10 @@ public class ElysiumHarp extends AbstractCreationCard implements EnterCardGroupP
 
     @Override
     public void updateElementData(ElementData data) {
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = 6;
         //baseSecondMagic = secondMagic = 1;
         if (data != null) {
-            baseMagicNumber += data.g;
+            baseMagicNumber += 2*data.g;
             magicNumber = baseMagicNumber;
             //baseSecondMagic += data.g;
             //secondMagic = baseSecondMagic;
@@ -96,7 +94,8 @@ public class ElysiumHarp extends AbstractCreationCard implements EnterCardGroupP
             addToBot(new SFXAction("TINGSHA"));
             addToBot(new VFXAction(Wiz.adp(), new ShockWaveEffect(Wiz.adp().hb.cX, Wiz.adp().hb.cY, Color.GOLD.cpy(), ShockWaveEffect.ShockWaveType.CHAOTIC), 0.3F));
             //addToBot(new DrawCardAction(secondMagic));
-            Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new StaggerPower(mon, magicNumber)));
+            //Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new StaggerPower(mon, magicNumber)));
+            addToBot(new GainBlockAction(Wiz.adp(), magicNumber));
         }
     }
 }
