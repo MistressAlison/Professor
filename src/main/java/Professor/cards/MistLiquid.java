@@ -17,8 +17,6 @@ public class MistLiquid extends AbstractEasyCard {
     public MistLiquid() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 3;
-        // TODO check for unplayable counts as energy detection
-        tags.add(CustomTags.PROF_NOT_BOLT);
     }
 
     @Override
@@ -28,10 +26,10 @@ public class MistLiquid extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(1);
+        //upgradeMagicNumber(1);
         //upgradeBaseCost(0);
-        //isInnate = true;
-        //uDesc();
+        isInnate = true;
+        uDesc();
     }
 
     @Override

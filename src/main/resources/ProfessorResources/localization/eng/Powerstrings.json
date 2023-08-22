@@ -9,7 +9,7 @@
   },
   "${ModID}:MistLiquidPower": {
     "NAME": "Mist Liquid",
-    "DESCRIPTIONS": ["Whenever you draw an #yUnplayable card, gain #b"," #yBlock."]
+    "DESCRIPTIONS": ["Whenever a card is #yRetained, gain #b"," #yBlock."]
   },
   "${ModID}:SeptrinPower": {
     "NAME": "Septrin",

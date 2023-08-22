@@ -301,8 +301,8 @@
   },
   "${ModID}:IceEssence": {
     "NAME": "Ice Essence",
-    "DESCRIPTION": "Whenever a card is Retained, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever a card is Retained, gain !M! Block."
+    "DESCRIPTION": "???",
+    "UPGRADE_DESCRIPTION": "Innate. NL ???"
   },
   "${ModID}:Ingot": {
     "NAME": "Ingot",
@@ -352,8 +352,8 @@
   },
   "${ModID}:MistLiquid": {
     "NAME": "Mist Liquid",
-    "DESCRIPTION": "Whenever you draw an Unplayable card, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you draw an Unplayable card, gain !M! Block."
+    "DESCRIPTION": "Whenever a card is Retained, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever a card is Retained, gain !M! Block."
   },
   "${ModID}:MysteriousBroom": {
     "NAME": "Mysterious Broom",
