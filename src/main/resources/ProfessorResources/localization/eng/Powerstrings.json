@@ -17,7 +17,7 @@
   },
   "${ModID}:DragonBloodPower": {
     "NAME": "Dragon Blood",
-    "DESCRIPTIONS": ["Whenever you #yInfuse a card, #yInfuse it #b"," additional time."," additional times."]
+    "DESCRIPTIONS": ["Increase the potency of all #yBlock and damage #yInfusisons by #b","."]
   },
   "${ModID}:AetherPower": {
     "NAME": "Aether Essence",

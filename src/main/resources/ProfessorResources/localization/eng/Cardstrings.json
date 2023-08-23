@@ -217,7 +217,7 @@
   },
   "${ModID}:DragonBlood": {
     "NAME": "Dragon Blood",
-    "DESCRIPTION": "Whenever you professor:Infuse a card, the professor:Infusion is performed !M! additional time{@@}{!M!|>1=s}.",
+    "DESCRIPTION": "Increase the potency of all Block and damage professor:Infusions by !M!.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you professor:Infuse a card, the professor:Infusion is performed !M! additional time{@@}{!M!|>1=s}."
   },
   "${ModID}:DragonBone": {

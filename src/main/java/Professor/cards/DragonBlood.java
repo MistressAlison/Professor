@@ -16,7 +16,7 @@ public class DragonBlood extends AbstractEasyCard {
 
     public DragonBlood() {
         super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 3;
     }
 
     @Override
@@ -26,8 +26,9 @@ public class DragonBlood extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        isInnate = true;
-        uDesc();
+        //isInnate = true;
+        //uDesc();
+        upgradeMagicNumber(1);
     }
 
     @Override

@@ -161,7 +161,8 @@
     "NAMES": [
       "infuse",
       "infused",
-      "infusion"
+      "infusion",
+      "infusions"
     ],
     "DESCRIPTION": "Add an extra effect onto a card this combat."
   },
