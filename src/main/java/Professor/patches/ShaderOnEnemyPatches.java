@@ -3,7 +3,7 @@ package Professor.patches;
 import Professor.MainModfile;
 import Professor.powers.UnstablePower;
 import Professor.util.ImageHelper;
-import Professor.util.Wiz;
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -13,10 +13,8 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import javassist.CtBehavior;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
 
 import java.nio.charset.StandardCharsets;
 
@@ -24,26 +22,53 @@ public class ShaderOnEnemyPatches {
     public static ShaderProgram shader = new ShaderProgram(SpriteBatch.createDefaultShader().getVertexShaderSource(), Gdx.files.internal(MainModfile.makePath("shaders/watercolor2.frag")).readString(String.valueOf(StandardCharsets.UTF_8)));
     public static FrameBuffer fb = ImageHelper.createBuffer();
     private static boolean capturing = false;
+    private static boolean drawnToBuffer = false;
 
     public static void begin(AbstractCreature __instance, SpriteBatch sb) {
         capturing = false;
         if (__instance.hasPower(UnstablePower.POWER_ID)) {
             capturing = true;
             sb.end();
-            ImageHelper.beginBuffer(fb);
+            if (drawnToBuffer) {
+                fb.begin();
+            } else {
+                ImageHelper.beginBuffer(fb);
+            }
             sb.begin();
         }
     }
 
-    public static void draw(SpriteBatch sb) {
+    public static void end(SpriteBatch sb) {
         if (capturing) {
+            sb.end();
             fb.end();
-            TextureRegion r = ImageHelper.getBufferTexture(fb);
-            ShaderProgram back = sb.getShader();
+            sb.begin();
+            drawnToBuffer = true;
+            /*TextureRegion r = ImageHelper.getBufferTexture(fb);
+            ShaderProgram origShader = sb.getShader();
+            Color origColor = sb.getColor();
             sb.setShader(shader);
             shader.setUniformf("x_time", MainModfile.time);
+            sb.setColor(Color.WHITE);
             sb.draw(r, 0, 0);
-            sb.setShader(back);
+            sb.setShader(origShader);
+            sb.setColor(origColor);*/
+        }
+    }
+
+    public static void draw(SpriteBatch sb) {
+        if (drawnToBuffer) {
+            TextureRegion r = ImageHelper.getBufferTexture(fb);
+            ShaderProgram origShader = sb.getShader();
+            Color origColor = sb.getColor();
+            sb.setShader(shader);
+            shader.setUniformf("x_time", MainModfile.time);
+            sb.setColor(Color.WHITE);
+            sb.draw(r, 0, 0);
+            sb.setShader(origShader);
+            sb.setColor(origColor);
+            drawnToBuffer = false;
+            capturing = false;
         }
     }
 
@@ -57,74 +82,31 @@ public class ShaderOnEnemyPatches {
 
         @SpirePostfixPatch
         public static void failsafe(SpriteBatch sb) {
-            if (capturing) {
-                draw(sb);
-            }
+            // If the player is dead, it is not turned off in renderHealthText
+            end(sb);
         }
     }
 
     @SpirePatch2(clz = AbstractCreature.class, method = "renderHealthText")
     public static class ShaderTime2 {
-        @SpirePrefixPatch
-        public static void ofForHealthText(SpriteBatch sb) {
-            draw(sb);
-        }
-
         @SpirePostfixPatch
-        public static void backOn(AbstractCreature __instance, SpriteBatch sb) {
-            begin(__instance, sb);
+        public static void offForHealthText(SpriteBatch sb) {
+            end(sb);
         }
     }
 
-    @SpirePatch2(clz = AbstractCreature.class, method = "renderBlockIconAndValue")
-    public static class ShaderTime3 {
-        /*@SpirePrefixPatch
-        public static void backOn(AbstractCreature __instance, SpriteBatch sb) {
-            begin(__instance, sb);
-        }*/
-
+    @SpirePatch2(clz = MonsterGroup.class, method = "render")
+    public static class DrawCaptures {
         @SpirePrefixPatch
-        //@SpireInsertPatch(locator = BlockTextLocator.class)
-        public static void offForBlockText(SpriteBatch sb) {
+        public static void reset() {
+
+        }
+        @SpirePostfixPatch
+        public static void plz(MonsterGroup __instance, SpriteBatch sb) {
             draw(sb);
-        }
-
-        public static class BlockTextLocator extends SpireInsertLocator {
-            @Override
-            public int[] Locate(CtBehavior ctBehavior) throws Exception {
-                Matcher m = new Matcher.MethodCallMatcher(FontHelper.class, "renderFontCentered");
-                return LineFinder.findInOrder(ctBehavior, m);
-            }
-        }
-    }
-
-    @SpirePatch2(clz = AbstractCreature.class, method = "renderPowerIcons")
-    public static class ShaderTime5 {
-        private static final Color blockTextColor = new Color(0.9F, 0.9F, 0.9F, 1.0F);
-        /*@SpirePrefixPatch
-        public static void backOn(AbstractCreature __instance, SpriteBatch sb) {
-            begin(__instance, sb);
-        }*/
-
-        //@SpireInsertPatch(locator = PowerTextLocator.class)
-        @SpirePrefixPatch
-        public static void offForPowerText(AbstractCreature __instance, SpriteBatch sb, float ___hbYOffset, float ___BLOCK_ICON_X, Color ___blockTextColor, float ___blockScale) {
-            //boolean fix = capturing;
-            if (capturing) {
-                draw(sb);
-            }
-
-            /*if (__instance.currentBlock != 0 && __instance.hbAlpha != 0.0F) {
-                float x = __instance.hb.cX - __instance.hb.width / 2.0F;
-                float y = __instance.hb.cY - __instance.hb.height / 2.0F + ___hbYOffset;
-                FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(__instance.currentBlock), x + ___BLOCK_ICON_X, y - 16.0F * Settings.scale, Color.WHITE, ___blockScale);
-            }*/
-        }
-        public static class PowerTextLocator extends SpireInsertLocator {
-            @Override
-            public int[] Locate(CtBehavior ctBehavior) throws Exception {
-                Matcher m = new Matcher.FieldAccessMatcher(AbstractCreature.class, "powers");
-                return new int[]{LineFinder.findAllInOrder(ctBehavior, m)[1]};
+            for (AbstractMonster m : __instance.monsters) {
+                float hbyo = ReflectionHacks.getPrivate(m, AbstractCreature.class, "hbYOffset");
+                ReflectionHacks.privateMethod(AbstractCreature.class, "renderHealthText", SpriteBatch.class, float.class).invoke(m, sb, m.hb.cY - m.hb.height / 2.0F + hbyo);
             }
         }
     }
