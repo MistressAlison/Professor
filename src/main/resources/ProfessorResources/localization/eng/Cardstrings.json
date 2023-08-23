@@ -327,6 +327,10 @@
     "UPGRADE_DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis finishes instantly and the completed card is Upgraded.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
+  "${ModID}:LunaticDebonyal": {
+    "NAME": "Lunatic Debonyal",
+    "DESCRIPTION": "Infuse \"Deal !M! damage to ALL enemies\" into the first playable card you draw each turn."
+  },
   "${ModID}:MagmaPowder": {
     "NAME": "Magma Powder",
     "DESCRIPTION": "Unplayable. NL While in hand, deal !M! damage to ALL enemies whenever you play a card.",

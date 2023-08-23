@@ -90,5 +90,9 @@
   "${ModID}:ForbiddenElixirPower": {
     "NAME": "Forbidden Elixir",
     "DESCRIPTIONS": ["For the next #b"," turns, #yAttacks against this enemy also hit ALL other enemies.","#yAttacks against this enemy also hit ALL other enemies this turn."]
+  },
+  "${ModID}:LunaticDebonyalPower": {
+    "NAME": "Lunatic Debonyal",
+    "DESCRIPTIONS": ["#yInfuse \"Deal #b"," damage to ALL enemies\" into the first playable card you draw each turn."]
   }
 }
