@@ -1,6 +1,7 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.patches.CustomTags;
 import Professor.powers.DragonBloodPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
@@ -17,6 +18,9 @@ public class DragonBlood extends AbstractEasyCard {
     public DragonBlood() {
         super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 3;
+        //TODO elements not being picked up
+        tags.add(CustomTags.PROF_BOLT);
+        tags.add(CustomTags.PROF_ICE);
     }
 
     @Override
