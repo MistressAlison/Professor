@@ -37,7 +37,6 @@ public class Catch extends AbstractEasyCard {
     public void upp() {
         //upgradeDamage(1);
         upgradeMagicNumber(1);
-        needsArtRefresh = true;
     }
 
     @Override
@@ -52,11 +51,6 @@ public class Catch extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return upgraded ? "MasterBugNet" : "BugNet";
-    }
-
-    @Override
-    public String rollerKey() {
-        return upgraded ? cardID+"+" : cardID;
+        return "BugNet";
     }
 }
