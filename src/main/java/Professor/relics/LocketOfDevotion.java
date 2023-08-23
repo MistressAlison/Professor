@@ -35,7 +35,7 @@ public class LocketOfDevotion extends AbstractEasyRelic {
     public void atTurnStartPostDraw() {
         flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        addToBot(new InfuseRandomCardAction(1, new DealDamageMod(3, 3)));
+        addToBot(new InfuseRandomCardAction(1, new DealDamageMod(5, 5)));
     }
 
     @Override //Should replace default relic.
