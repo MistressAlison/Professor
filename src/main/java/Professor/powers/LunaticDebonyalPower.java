@@ -4,7 +4,6 @@ import Professor.MainModfile;
 import Professor.actions.InfuseCardsInHandAction;
 import Professor.actions.InfuseSpecificCardsAction;
 import Professor.cardmods.DealAOEDamageMod;
-import Professor.cardmods.DealDamageMod;
 import Professor.cards.LunaticDebonyal;
 import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.cards.AbstractCard;
