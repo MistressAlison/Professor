@@ -13,6 +13,8 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 
@@ -87,10 +89,10 @@ public class ShaderOnEnemyPatches {
         }
     }
 
-    @SpirePatch2(clz = AbstractCreature.class, method = "renderHealthText")
+    @SpirePatch2(clz = AbstractCreature.class, method = "renderPowerIcons")
     public static class ShaderTime2 {
-        @SpirePostfixPatch
-        public static void offForHealthText(SpriteBatch sb) {
+        @SpirePrefixPatch
+        public static void offForIcons(SpriteBatch sb) {
             end(sb);
         }
     }
@@ -105,8 +107,18 @@ public class ShaderOnEnemyPatches {
         public static void plz(MonsterGroup __instance, SpriteBatch sb) {
             draw(sb);
             for (AbstractMonster m : __instance.monsters) {
+                //Render Health amount
                 float hbyo = ReflectionHacks.getPrivate(m, AbstractCreature.class, "hbYOffset");
+                float bscale = ReflectionHacks.getPrivate(m, AbstractCreature.class, "blockScale");
+                Color btc = ReflectionHacks.getPrivate(m, AbstractCreature.class, "blockTextColor");
                 ReflectionHacks.privateMethod(AbstractCreature.class, "renderHealthText", SpriteBatch.class, float.class).invoke(m, sb, m.hb.cY - m.hb.height / 2.0F + hbyo);
+
+                //Render Block amount
+                if (m.currentBlock != 0 && m.hbAlpha != 0.0F) {
+                    float x = m.hb.cX - m.hb.width / 2.0F;
+                    float y = m.hb.cY - m.hb.height / 2.0F + hbyo;
+                    FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(m.currentBlock), x -14.0F * Settings.scale, y - 16.0F * Settings.scale, btc, bscale);
+                }
             }
         }
     }
