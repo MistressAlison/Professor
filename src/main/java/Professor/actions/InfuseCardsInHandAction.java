@@ -1,7 +1,7 @@
 package Professor.actions;
 
 import Professor.cardmods.AbstractInfusion;
-import Professor.powers.interfaces.OnInfusionPower;
+import Professor.powers.interfaces.OnCreateInfusionPower;
 import Professor.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -29,8 +29,8 @@ public class InfuseCardsInHandAction extends ModifyCardsInHandAction {
     public static void doInfusion(AbstractCard c, AbstractCardModifier mod) {
         int times = 1;
         for (AbstractPower p : Wiz.adp().powers) {
-            if (p instanceof OnInfusionPower) {
-                times += ((OnInfusionPower) p).increaseTimes(c, mod);
+            if (p instanceof OnCreateInfusionPower) {
+                times += ((OnCreateInfusionPower) p).increaseTimes(c, mod);
             }
         }
         for (int i = 0 ; i < times ; i++) {

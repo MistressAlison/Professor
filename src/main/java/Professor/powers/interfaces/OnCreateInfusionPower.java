@@ -3,6 +3,6 @@ package Professor.powers.interfaces;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-public interface OnInfusionPower {
+public interface OnCreateInfusionPower {
     int increaseTimes(AbstractCard c, AbstractCardModifier mod);
 }

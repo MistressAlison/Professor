@@ -1,13 +1,9 @@
 package Professor.actions;
 
-import Professor.powers.interfaces.OnInfusionPower;
 import Professor.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
-import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;

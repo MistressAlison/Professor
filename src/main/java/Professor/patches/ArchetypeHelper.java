@@ -1,7 +1,7 @@
 package Professor.patches;
 
 import Professor.powers.interfaces.CheatCostPower;
-import Professor.powers.interfaces.OnInfusionPower;
+import Professor.powers.interfaces.OnCreateInfusionPower;
 import Professor.util.matcher.*;
 import basemod.Pair;
 import basemod.abstracts.AbstractCardModifier;
@@ -156,7 +156,7 @@ public class ArchetypeHelper {
             new Matcher.NewExprMatcher(ChangeStanceAction.class),
 
             //Infusion Boost
-            new InterfaceMatcher(OnInfusionPower.class)
+            new InterfaceMatcher(OnCreateInfusionPower.class)
     };
     public static Matcher[] testMatcher = {
 

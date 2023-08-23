@@ -465,8 +465,8 @@
   },
   "${ModID}:WindEssence": {
     "NAME": "Wind Essence",
-    "DESCRIPTION": "The first time you draw during each turn, draw !M! additional card{@@}{!M!|>1=s}.",
-    "UPGRADE_DESCRIPTION": "Innate. NL The first time you draw during each turn, draw !M! additional card{@@}{!M!|>1=s}."
+    "DESCRIPTION": "Whenever you professor:Infuse a card, draw !M! card{@@}{!M!|>1=s}.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you professor:Infuse a card, draw !M! card{@@}{!M!|>1=s}."
   },
   "${ModID}:WindShoes": {
     "NAME": "Wind Shoes",
