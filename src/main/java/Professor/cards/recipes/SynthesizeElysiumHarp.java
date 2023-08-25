@@ -8,6 +8,7 @@ import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
@@ -20,6 +21,7 @@ public class SynthesizeElysiumHarp extends AbstractRecipeCard {
         baseInfo = info = 2;
         cardsToPreview = new ElysiumHarp();
         isEthereal = true;
+        addVanillaKeyword(GameDictionary.BLOCK);
     }
 
     @Override

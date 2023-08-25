@@ -5,7 +5,6 @@ import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.cards.abstracts.AbstractRecipeCard;
 import Professor.cards.creations.LautePlajig;
 import Professor.util.CardArtRoller;
-import Professor.util.KeywordManager;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,7 +19,7 @@ public class SynthesizeLautePlajig extends AbstractRecipeCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseInfo = info = 2;
         cardsToPreview = new LautePlajig();
-        addCustomKeyword(KeywordManager.STAGGER);
+        //addCustomKeyword(KeywordManager.STAGGER);
     }
 
     @Override
