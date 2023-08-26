@@ -26,7 +26,6 @@ public class TabooDrop extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
         Wiz.forAllMonstersLiving(mon -> addToBot(new VFXAction(new ColoredSmokeBombEffect(mon.hb.cX, mon.hb.cY, Color.PURPLE))));
         allDmg(AbstractGameAction.AttackEffect.POISON);
         //Wiz.forAllMonstersLiving(mon -> addToBot(new ApplyPowerActionWithFollowup(new ApplyPowerAction(mon, p, new StrengthPower(mon, -this.magicNumber)), new ApplyPowerAction(mon, p, new GainStrengthPower(mon, this.magicNumber)))));
