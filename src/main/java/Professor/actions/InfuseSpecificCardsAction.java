@@ -1,6 +1,6 @@
 package Professor.actions;
 
-import Professor.util.Wiz;
+import Professor.cardmods.AbstractInfusion;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,6 +11,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class InfuseSpecificCardsAction extends AbstractGameAction {
+    public static Predicate<AbstractCard> shenaniganFilter = c -> AbstractInfusion.usesVanillaTargeting(c) && c.costForTurn > -2;
     private final List<AbstractCard> cards;
     private final AbstractCardModifier mod;
     private final Predicate<AbstractCard> filter;
@@ -22,7 +23,7 @@ public class InfuseSpecificCardsAction extends AbstractGameAction {
     public InfuseSpecificCardsAction(List<AbstractCard> cards, AbstractCardModifier mod, Predicate<AbstractCard> filter) {
         this.cards = cards;
         this.mod = mod;
-        this.filter = filter.and(InfuseCardsInHandAction.shenaniganFilter);
+        this.filter = filter.and(shenaniganFilter);
     }
 
     @Override
