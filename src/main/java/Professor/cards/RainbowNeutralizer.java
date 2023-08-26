@@ -8,6 +8,7 @@ import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
 import Professor.patches.CustomTags;
 import Professor.util.CardArtRoller;
+import Professor.util.KeywordManager;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
@@ -29,6 +30,7 @@ public class RainbowNeutralizer extends AbstractEasyCard {
         // Not picked up as Bolt since we cant set Exhaust, or else we duplicate the card
         tags.add(CustomTags.PROF_BOLT);
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
+        addCustomKeyword(KeywordManager.CATALYST);
     }
 
     @Override

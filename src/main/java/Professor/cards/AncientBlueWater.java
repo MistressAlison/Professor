@@ -7,6 +7,7 @@ import Professor.cards.tokens.GreenNeutralizer;
 import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
 import Professor.util.CardArtRoller;
+import Professor.util.KeywordManager;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -24,6 +25,7 @@ public class AncientBlueWater extends AbstractEasyCard {
         baseMagicNumber = magicNumber = 1;
         exhaust = true;
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
+        addCustomKeyword(KeywordManager.CATALYST);
     }
 
     @Override

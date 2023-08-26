@@ -7,6 +7,7 @@ import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
 import Professor.powers.SeptrinPower;
 import Professor.util.CardArtRoller;
+import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
@@ -22,6 +23,7 @@ public class Septrin extends AbstractEasyCard {
     public Septrin() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
+        addCustomKeyword(KeywordManager.CATALYST);
     }
 
     @Override

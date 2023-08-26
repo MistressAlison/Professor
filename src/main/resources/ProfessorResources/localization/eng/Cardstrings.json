@@ -172,8 +172,8 @@
   },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",
-    "DESCRIPTION": "Apply !M! professor:Unstable. NL Spectrumize !Professor:M2! card{@@}{!Professor:M2!|>1=s} at random.",
-    "UPGRADE_DESCRIPTION": "Apply !M! professor:Unstable. NL Spectrumize !Professor:M2! card{@@}{!Professor:M2!|>1=s}."
+    "DESCRIPTION": "Apply !M! professor:Unstable. NL professor:Spectrumize !Professor:M2! card{@@}{!Professor:M2!|>1=s} at random.",
+    "UPGRADE_DESCRIPTION": "Apply !M! professor:Unstable. NL professor:Spectrumize !Professor:M2! card{@@}{!Professor:M2!|>1=s}."
   },
   "${ModID}:BlackWater": {
     "NAME": "Black Water",
@@ -333,7 +333,7 @@
   },
   "${ModID}:LunaticDebonyal": {
     "NAME": "Lunatic Debonyal",
-    "DESCRIPTION": "Infuse \"Deal !M! damage to ALL enemies\" into the first playable card you draw each turn."
+    "DESCRIPTION": "professor:Infuse \"Deal !M! damage to ALL enemies\" into the first playable card you draw each turn."
   },
   "${ModID}:MagmaPowder": {
     "NAME": "Magma Powder",

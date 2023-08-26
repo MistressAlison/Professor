@@ -2,10 +2,16 @@ package Professor.cards;
 
 import Professor.actions.SpectrumizeAction;
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.cards.tokens.BlueNeutralizer;
+import Professor.cards.tokens.GreenNeutralizer;
+import Professor.cards.tokens.RedNeutralizer;
+import Professor.cards.tokens.YellowNeutralizer;
 import Professor.powers.UnstablePower;
 import Professor.util.CardArtRoller;
+import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import Professor.vfx.ColoredWaterDropEffect;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -22,6 +28,8 @@ public class BlackMuck extends AbstractEasyCard {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 3;
         baseSecondMagic = secondMagic = 1;
+        MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
+        addCustomKeyword(KeywordManager.CATALYST);
     }
 
     @Override
