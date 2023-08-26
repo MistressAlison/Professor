@@ -34,13 +34,13 @@ public class MistLiquidPower extends AbstractPower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
+    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
                 for (AbstractCard c : AbstractDungeon.player.hand.group) {
                     if (c.selfRetain || c.retain) {
-                        addToBot(new GainBlockAction(owner, owner, MistLiquidPower.this.amount));
+                        addToTop(new GainBlockAction(owner, owner, MistLiquidPower.this.amount));
                     }
                 }
                 this.isDone = true;
