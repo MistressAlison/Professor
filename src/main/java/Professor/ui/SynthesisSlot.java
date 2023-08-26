@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.vfx.BobEffect;
 
 public class SynthesisSlot {
-    private SynthesisItem container;
+    private final SynthesisItem container;
     public float cX, cY, tX, tY;
     protected float angle;
     public AbstractCard card;

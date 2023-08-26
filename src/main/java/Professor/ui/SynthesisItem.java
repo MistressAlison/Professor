@@ -39,8 +39,8 @@ public class SynthesisItem {
     public boolean processing;
 
     public SynthesisItem(AbstractRecipeCard recipeCard, List<AbstractCard> addedCards) {
-        this.cX = this.tX = SynthesisPanel.BASE_X;
-        this.cY = this.tY = SynthesisPanel.BASE_Y;
+        this.cX = this.tX = SynthesisPanel.getBaseX();
+        this.cY = this.tY = SynthesisPanel.getBaseY();
         this.currentRecipe = recipeCard;
         for (AbstractCard c : addedCards) {
             SynthesisSlot s = new SynthesisSlot(this, cX, cY);

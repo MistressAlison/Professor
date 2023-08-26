@@ -38,11 +38,11 @@ public class BeginSynthesisAction extends AbstractGameAction {
             boolean instant = false;
             SynthesisItem item = new SynthesisItem(recipeCard, l);
             SynthesisPanel.addSynthesisItem(item);
-            EmpowerRedirectPatches.setRedirect(recipeCard, SynthesisPanel.BASE_X, SynthesisPanel.BASE_Y);
+            EmpowerRedirectPatches.setRedirect(recipeCard, SynthesisPanel.getBaseX(), SynthesisPanel.getBaseY());
             AbstractDungeon.player.hand.empower(recipeCard);
             recipeCard.fadingOut = true;
             for (AbstractCard c : l) {
-                EmpowerRedirectPatches.setRedirect(c, SynthesisPanel.BASE_X, SynthesisPanel.BASE_Y);
+                EmpowerRedirectPatches.setRedirect(c, SynthesisPanel.getBaseX(), SynthesisPanel.getBaseY());
                 AbstractDungeon.player.hand.empower(c);
                 if (c instanceof OnUseInSynthesisCard) {
                     if (((OnUseInSynthesisCard) c).onAdded(item)) {

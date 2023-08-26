@@ -15,15 +15,20 @@ import java.util.Collections;
 public class SynthesisPanel {
     public static final float ITEMS_PER_ROW = 4;
     public static final float Y_OFFSET = 200f * Settings.scale;
-    public static final float BASE_X = Wiz.adp().hb.cX;
-    public static final float BASE_Y = Wiz.adp().hb.cY + Wiz.adp().hb.height/2f + Y_OFFSET;
     public static final float PAD_X = SynthesisItem.ORBIT_R * 2 + 60f * Settings.scale;
     public static final float PAD_Y = SynthesisItem.ORBIT_R * 2 + 60f * Settings.scale;
     public static final ArrayList<SynthesisItem> items = new ArrayList<>();
     //public static boolean processing;
 
-    public static void update() {
+    public static float getBaseX() {
+        return Wiz.adp().hb.cX;
+    }
 
+    public static float getBaseY() {
+        return Wiz.adp().hb.cY + Wiz.adp().hb.height/2f + Y_OFFSET;
+    }
+
+    public static void update() {
         for (SynthesisItem i : items) {
             layoutItems();
             i.update();
@@ -41,8 +46,8 @@ public class SynthesisPanel {
         int row = 0;
         int amtThisRow = (int) Math.min(items.size(), ITEMS_PER_ROW);
         for (SynthesisItem item : items) {
-            item.tX = BASE_X - (amtThisRow-1)/2f * PAD_X + index * PAD_X;
-            item.tY = BASE_Y - row * PAD_Y;
+            item.tX = getBaseX() - (amtThisRow-1)/2f * PAD_X + index * PAD_X;
+            item.tY = getBaseY() - row * PAD_Y;
             index++;
             if (index == ITEMS_PER_ROW) {
                 index = 0;
