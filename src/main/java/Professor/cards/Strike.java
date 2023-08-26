@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.WaterDropEffect;
 
 import static Professor.MainModfile.makeID;
 
@@ -45,7 +44,7 @@ public class Strike extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, mix(HALF_GRAY, Color.FIREBRICK), WHITE, mix(HALF_GRAY, Color.FIREBRICK), BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, mix(GRAY, Color.FIREBRICK), WHITE, mix(GRAY, Color.FIREBRICK), BLACK, false);
     }
 
     @Override

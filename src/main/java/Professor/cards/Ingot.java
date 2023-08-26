@@ -29,7 +29,7 @@ public class Ingot extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null) {
-            addToBot(new ThrowObjectAction(itemArt(), 2/5f, m.hb, HALF_GRAY));
+            addToBot(new ThrowObjectAction(itemArt(), 2/5f, m.hb, GRAY));
         }
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
         Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
@@ -45,7 +45,7 @@ public class Ingot extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), WHITE, pastel(mix(THREE_QUARTER_GRAY, Color.BROWN)), BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), WHITE, pastel(mix(DARK_GRAY, Color.BROWN)), BLACK, false);
     }
 
     @Override

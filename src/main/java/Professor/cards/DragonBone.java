@@ -40,7 +40,7 @@ public class DragonBone extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), WHITE, mix(HALF_GRAY, pastel(Color.YELLOW)), BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), WHITE, mix(GRAY, pastel(Color.YELLOW)), BLACK, false);
     }
 
     @Override

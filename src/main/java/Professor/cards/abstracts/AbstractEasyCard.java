@@ -84,11 +84,18 @@ public abstract class AbstractEasyCard extends CustomCard {
     protected static final Color RASPBERRY = new Color(0xFF0060FF);
     protected static final Color CRIMSON = new Color(0xFF0040FF);
     protected static final Color AMARANTH = new Color(0xFF0020FF);
+
+    protected static final Color PLATINUM = new Color(0xE5E4E2FF);
+    protected static final Color GOLD = new Color(0xFFD700FF);
+    protected static final Color SILVER = new Color(0xC0C0C0FF);
+    protected static final Color BRONZE = new Color(0xCD7F32FF);
+
     protected static final Color WHITE = new Color(1, 1, 1, 1);
-    protected static final Color QUARTER_GRAY =  new Color(0.75f, 0.75f, 0.75f, 1);
-    protected static final Color HALF_GRAY =  new Color(0.5f, 0.5f, 0.5f, 1);
-    protected static final Color THREE_QUARTER_GRAY =  new Color(0.25f, 0.25f, 0.25f, 1);
+    protected static final Color LIGHT_GRAY =  new Color(0.75f, 0.75f, 0.75f, 1);
+    protected static final Color GRAY =  new Color(0.5f, 0.5f, 0.5f, 1);
+    protected static final Color DARK_GRAY =  new Color(0.25f, 0.25f, 0.25f, 1);
     protected static final Color BLACK = new Color(0, 0, 0, 1);
+
     protected static final Color TRANSPARENT = new Color(0, 0, 0, 0);
 
     private List<TooltipInfo> addedTips;

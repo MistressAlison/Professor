@@ -35,7 +35,7 @@ public class Meltstone extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, ORANGE, YELLOW, THREE_QUARTER_GRAY, mix(ORANGE, YELLOW), false);
+        return new CardArtRoller.ReskinInfo(ID, ORANGE, YELLOW, DARK_GRAY, mix(ORANGE, YELLOW), false);
     }
 
     @Override
