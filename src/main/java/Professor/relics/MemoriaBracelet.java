@@ -3,6 +3,7 @@ package Professor.relics;
 import Professor.TheProfessor;
 import Professor.actions.InfuseRandomCardAction;
 import Professor.cardmods.DealDamageMod;
+import Professor.cardmods.GainBlockMod;
 import Professor.util.Wiz;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -21,10 +22,14 @@ import static Professor.MainModfile.makeID;
 public class MemoriaBracelet extends AbstractEasyRelic {
     public static final String ID = makeID(MemoriaBracelet.class.getSimpleName());
     private static final int DAMAGE = 5;
+    private static final int BLOCK = 5;
     HashMap<String, Integer> stats = new HashMap<>();
-    private final String STAT = DESCRIPTIONS[1];
-    private final String PER_TURN = DESCRIPTIONS[2];
-    private final String PER_COMBAT = DESCRIPTIONS[3];
+    private final String DAMAGE_STAT = DESCRIPTIONS[1];
+    private final String BLOCK_STAT = DESCRIPTIONS[2];
+    private final String DPT = DESCRIPTIONS[3];
+    private final String DPC = DESCRIPTIONS[4];
+    private final String BPT = DESCRIPTIONS[5];
+    private final String BPC = DESCRIPTIONS[6];
 
     public MemoriaBracelet() {
         super(ID, RelicTier.STARTER, LandingSound.MAGICAL, TheProfessor.Enums.MEDIUM_RUBY_COLOR);
@@ -36,56 +41,78 @@ public class MemoriaBracelet extends AbstractEasyRelic {
         flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         addToBot(new InfuseRandomCardAction(1, new DealDamageMod(DAMAGE, DAMAGE)));
+        addToBot(new InfuseRandomCardAction(1, new GainBlockMod(BLOCK, BLOCK)));
     }
 
-    public int getStat() {
-        return stats.get(STAT);
+    public int getDamageStat() {
+        return stats.get(DAMAGE_STAT);
     }
 
-    public void incrementStat(int amount) {
-        stats.put(STAT, stats.get(STAT) + amount);
+    public void incrementDamageStat(int amount) {
+        stats.put(DAMAGE_STAT, stats.get(DAMAGE_STAT) + amount);
     }
 
-    public static void onInfusionTrigger(int amount) {
+    public void incrementBlockStat(int amount) {
+        stats.put(BLOCK_STAT, stats.get(BLOCK_STAT) + amount);
+    }
+
+    public static void onDamageInfusionTrigger(int amount) {
         if (CardCrawlGame.isInARun() && Wiz.adp() != null && Wiz.adp().hasRelic(MemoriaBracelet.ID)) {
-            ((MemoriaBracelet) Wiz.adp().getRelic(MemoriaBracelet.ID)).incrementStat(amount);
+            ((MemoriaBracelet) Wiz.adp().getRelic(MemoriaBracelet.ID)).incrementDamageStat(amount);
+        }
+    }
+
+    public static void onBlockInfusionTrigger(int amount) {
+        if (CardCrawlGame.isInARun() && Wiz.adp() != null && Wiz.adp().hasRelic(MemoriaBracelet.ID)) {
+            ((MemoriaBracelet) Wiz.adp().getRelic(MemoriaBracelet.ID)).incrementBlockStat(amount);
         }
     }
 
     public String getStatsDescription() {
-        return STAT + stats.get(STAT);
+        return DAMAGE_STAT + stats.get(DAMAGE_STAT) + BLOCK_STAT + stats.get(BLOCK_STAT);
     }
 
     public String getExtendedStatsDescription(int totalCombats, int totalTurns) {
         // You would just return getStatsDescription() if you don't want to display per-combat and per-turn stats
         StringBuilder builder = new StringBuilder();
         builder.append(getStatsDescription());
-        float stat = (float)stats.get(STAT);
+
         // Relic Stats truncates these extended stats to 3 decimal places, so we do the same
         DecimalFormat perTurnFormat = new DecimalFormat("#.###");
-        builder.append(PER_TURN);
+
+        float stat = (float)stats.get(DAMAGE_STAT);
+        builder.append(DPT);
         builder.append(perTurnFormat.format(stat / Math.max(totalTurns, 1)));
-        builder.append(PER_COMBAT);
+        builder.append(DPC);
+        builder.append(perTurnFormat.format(stat / Math.max(totalCombats, 1)));
+
+        stat = (float)stats.get(BLOCK_STAT);
+        builder.append(BPT);
+        builder.append(perTurnFormat.format(stat / Math.max(totalTurns, 1)));
+        builder.append(BPC);
         builder.append(perTurnFormat.format(stat / Math.max(totalCombats, 1)));
         return builder.toString();
     }
 
     public void resetStats() {
-        stats.put(STAT, 0);
+        stats.put(DAMAGE_STAT, 0);
+        stats.put(BLOCK_STAT, 0);
     }
 
     public JsonElement onSaveStats() {
         // An array makes more sense if you want to store more than one stat
         Gson gson = new Gson();
         ArrayList<Integer> statsToSave = new ArrayList<>();
-        statsToSave.add(stats.get(STAT));
+        statsToSave.add(stats.get(DAMAGE_STAT));
+        statsToSave.add(stats.get(BLOCK_STAT));
         return gson.toJsonTree(statsToSave);
     }
 
     public void onLoadStats(JsonElement jsonElement) {
         if (jsonElement != null) {
             JsonArray jsonArray = jsonElement.getAsJsonArray();
-            stats.put(STAT, jsonArray.get(0).getAsInt());
+            stats.put(DAMAGE_STAT, jsonArray.get(0).getAsInt());
+            stats.put(BLOCK_STAT, jsonArray.get(1).getAsInt());
         } else {
             resetStats();
         }

@@ -46,7 +46,7 @@ public class LocketOfDevotion extends AbstractEasyRelic {
         if (p.hasRelic(MemoriaBracelet.ID)) {
             //Grab its data for relic stats if you want to carry the stats over to the boss relic
             MemoriaBracelet mb = (MemoriaBracelet) p.getRelic(MemoriaBracelet.ID);
-            stats.put(STAT, mb.getStat());
+            stats.put(STAT, mb.getDamageStat());
             //Find it...
             for (int i = 0; i < p.relics.size(); ++i) {
                 if (p.relics.get(i).relicId.equals(MemoriaBracelet.ID)) {

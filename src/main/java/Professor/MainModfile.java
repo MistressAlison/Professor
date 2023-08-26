@@ -2,6 +2,7 @@ package Professor;
 
 import Professor.cardmods.AbstractInfusion;
 import Professor.cardmods.DealDamageMod;
+import Professor.cardmods.GainBlockMod;
 import Professor.cards.cardvars.*;
 import Professor.cards.interfaces.GlowAdjacentCard;
 import Professor.icons.IconContainer;
@@ -512,8 +513,10 @@ public class MainModfile implements
 
     public static void infusionTrigger(AbstractInfusion infusion, int directAmount, int relicAmount) {
         if (infusion instanceof DealDamageMod) {
-            MemoriaBracelet.onInfusionTrigger(relicAmount);
+            MemoriaBracelet.onDamageInfusionTrigger(relicAmount);
             LocketOfDevotion.onInfusionTrigger(relicAmount);
+        } else if (infusion instanceof GainBlockMod) {
+            MemoriaBracelet.onBlockInfusionTrigger(relicAmount);
         }
         for (AbstractPower p : Wiz.adp().powers) {
             if (p instanceof InfusionTriggerPower) {
