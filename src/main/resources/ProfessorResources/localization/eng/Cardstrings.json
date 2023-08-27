@@ -263,7 +263,7 @@
   },
   "${ModID}:EtherealStone": {
     "NAME": "Ethereal Stone",
-    "DESCRIPTION": "Ethereal. NL When you draw this card, draw !M! cards."
+    "DESCRIPTION": "Ethereal. NL Draw !M! cards."
   },
   "${ModID}:FireEssence": {
     "NAME": "Fire Essence",

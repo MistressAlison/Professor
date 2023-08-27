@@ -16,21 +16,17 @@ public class EtherealStone extends AbstractEasyCard {
     public EtherealStone() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         isEthereal = true;
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {}
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new DrawCardAction(magicNumber));
+    }
 
     @Override
     public void upp() {
         upgradeMagicNumber(1);
-    }
-
-    @Override
-    public void triggerWhenDrawn() {
-        flash();
-        addToBot(new DrawCardAction(magicNumber));
     }
 
     @Override
