@@ -1,5 +1,6 @@
 package Professor.cards;
 
+import Professor.actions.InfuseRandomCardAction;
 import Professor.actions.InfuseSpecificCardsAction;
 import Professor.cardmods.DealDamageMod;
 import Professor.cards.abstracts.AbstractEasyCard;
@@ -17,30 +18,30 @@ public class DreamPowder extends AbstractEasyCard {
     public final static String ID = makeID(DreamPowder.class.getSimpleName());
 
     public DreamPowder() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        //baseBlock = block = 13;
+        super(ID, -2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        isEthereal = true;
         baseMagicNumber = magicNumber = 2;
-        baseSecondMagic = secondMagic = 5;
-        //tags.add(CustomTags.PROF_REACTANT);
+        baseSecondMagic = secondMagic = 4;
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        //blck();
-        //Wiz.applyToSelf(new DrawCardNextTurnPower(p, magicNumber));
-        addToBot(new DrawCardAction(magicNumber, new AbstractGameAction() {
-            @Override
-            public void update() {
-                addToTop(new InfuseSpecificCardsAction(DrawCardAction.drawnCards, new DealDamageMod(secondMagic)));
-                this.isDone = true;
-            }
-        }));
+    public void use(AbstractPlayer p, AbstractMonster m) {}
+
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+        return false;
+    }
+
+    @Override
+    public void triggerWhenDrawn() {
+        flash();
+        addToBot(new InfuseRandomCardAction(magicNumber, new DealDamageMod(secondMagic)));
     }
 
     @Override
     public void upp() {
-        //upgradeBlock(4);
-        upgradeMagicNumber(1);
+        //upgradeMagicNumber(1);
+        upgradeSecondMagic(2);
     }
 
     @Override

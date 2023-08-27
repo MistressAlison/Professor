@@ -67,7 +67,7 @@
   },
   "${ModID}:ElysiumHarp": {
     "NAME": "Elysium Harp",
-    "DESCRIPTION": "{@@}Whenever this card enters your hand, Gain !M! {!Location!|-2,4=(+2 per [Professor:WindIcon] ) } Block.",
+    "DESCRIPTION": "{@@}Unplayable. NL Whenever this card enters your hand, Gain !M! {!Location!|-2,4=(+2 per [Professor:WindIcon] ) } Block.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:SynthesizeElysiumHarp": {
@@ -230,7 +230,8 @@
   },
   "${ModID}:DreamPowder": {
     "NAME": "Dream Powder",
-    "DESCRIPTION": "Draw !M! card{@@}{!M!|>1=s}. NL professor:Infuse \"Deal !Professor:M2! damage\" into them."
+    "DESCRIPTION": "Unplayable. Ethereal. NL When you draw this card, professor:Infuse \"Deal !Professor:M2! damage\" into !M! random card{@@}{!M!|>1=s}.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:DuskyPowder": {
     "NAME": "Dusk Powder",
@@ -350,7 +351,7 @@
   },
   "${ModID}:ManaLantern": {
     "NAME": "Mana Lantern",
-    "DESCRIPTION": "Ethereal. NL When you draw this card, gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}.",
+    "DESCRIPTION": "Unplayable. Ethereal. NL When you draw this card, gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:MedicinalMoss": {
