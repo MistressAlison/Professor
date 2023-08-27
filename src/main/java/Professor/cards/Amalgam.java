@@ -1,5 +1,6 @@
 package Professor.cards;
 
+import Professor.actions.BetterSelectCardsInHandAction;
 import Professor.actions.SpectrumizeAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.cards.interfaces.GlowAdjacentCard;
@@ -18,6 +19,9 @@ import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import static Professor.MainModfile.makeID;
 
 public class Amalgam extends AbstractEasyCard implements GlowAdjacentCard {
@@ -26,21 +30,31 @@ public class Amalgam extends AbstractEasyCard implements GlowAdjacentCard {
 
     public Amalgam() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 5;
-        exhaust = true;
+        baseDamage = damage = 7;
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
         addCustomKeyword(KeywordManager.CATALYST);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.FIRE);
-        Wiz.forAdjacentCards(this, c -> addToBot(new SpectrumizeAction(c)));
+        dmg(m, AbstractGameAction.AttackEffect.POISON);
+        if (upgraded) {
+            ArrayList<AbstractCard> adjacent = Wiz.getAdjacentCards(this);
+            addToBot(new BetterSelectCardsInHandAction(adjacent.size(), SpectrumizeAction.TEXT[0], true, true, adjacent::contains, l -> {
+                Collections.reverse(l);
+                for (AbstractCard c : l) {
+                    addToTop(new SpectrumizeAction(c));
+                }
+            }));
+        } else {
+            Wiz.forAdjacentCards(this, c -> addToBot(new SpectrumizeAction(c)));
+        }
     }
 
     @Override
     public void upp() {
-        upgradeDamage(3);
+        //upgradeDamage(3);
+        uDesc();
     }
 
     @Override

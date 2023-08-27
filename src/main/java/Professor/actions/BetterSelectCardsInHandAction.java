@@ -39,7 +39,7 @@ public class BetterSelectCardsInHandAction extends AbstractGameAction {
         if (this.duration == this.startDuration) {
             cardOrder.addAll(hand);
             if (this.hand.size() != 0 && this.hand.stream().anyMatch(this.predicate) && this.callback != null) {
-                if (hand.stream().filter(predicate).count() <= amount) {
+                if (hand.stream().filter(predicate).count() <= amount && !anyNumber && !canPickZero) {
                     callback.accept(hand.stream().filter(predicate).collect(Collectors.toList()));
                     this.isDone = true;
                     return;
