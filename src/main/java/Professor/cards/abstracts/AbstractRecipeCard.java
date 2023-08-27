@@ -4,6 +4,7 @@ import Professor.MainModfile;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public abstract class AbstractRecipeCard extends AbstractEasyCard {
+    public boolean triggered;
     public AbstractRecipeCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target) {
         super(cardID, cost, type, rarity, target);
         switch (type) {

@@ -35,7 +35,8 @@
   },
   "${ModID}:SynthesisAction": {
     "TEXT": [
-      "Contribute"
+      "Contribute",
+      "I don't have enough cards."
     ]
   }
 }

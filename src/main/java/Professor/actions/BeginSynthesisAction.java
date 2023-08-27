@@ -11,6 +11,7 @@ import Professor.ui.SynthesisItem;
 import Professor.ui.SynthesisPanel;
 import Professor.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -34,7 +35,13 @@ public class BeginSynthesisAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        if (Wiz.adp().hand.size() < recipeCard.getValance()) {
+            addToTop(new TalkAction(true, TEXT[1], 0f, 2f));
+            this.isDone = true;
+            return;
+        }
         addToTop(new BetterSelectCardsInHandAction(recipeCard.getValance(), TEXT[0]+extraInfo, false, false, c -> true, l -> {
+            recipeCard.triggered = true;
             boolean instant = false;
             SynthesisItem item = new SynthesisItem(recipeCard, l);
             SynthesisPanel.addSynthesisItem(item);

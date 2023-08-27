@@ -12,7 +12,7 @@ public class UseCardActionPatch {
     public static class DirectToSynthesis {
         @SpireInsertPatch(locator = Locator.class)
         public static SpireReturn<?> redirect(UseCardAction __instance, AbstractCard ___targetCard) {
-            if (___targetCard instanceof AbstractRecipeCard) {
+            if (___targetCard instanceof AbstractRecipeCard && ((AbstractRecipeCard) ___targetCard).triggered) {
                 //EmpowerRedirectPatches.setRedirect(___targetCard, SynthesisPanel.BASE_X, SynthesisPanel.BASE_Y);
                 //AbstractDungeon.player.hand.empower(___targetCard);
                 __instance.isDone = true;
