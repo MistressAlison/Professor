@@ -2,6 +2,7 @@ package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.cards.interfaces.GlowAdjacentCard;
+import Professor.powers.CardToHandPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
@@ -24,7 +25,7 @@ public class EternalFire extends AbstractEasyCard implements GlowAdjacentCard {
 
     public EternalFire() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 5;
+        baseMagicNumber = magicNumber = 7;
         //tags.add(CustomTags.PROF_REACTANT);
     }
 
@@ -34,13 +35,13 @@ public class EternalFire extends AbstractEasyCard implements GlowAdjacentCard {
         Wiz.forAdjacentCards(this, c -> addToBot(new ExhaustSpecificCardAction(c, p.hand)));
         if (Wiz.getAdjacentCards(this).stream().anyMatch(c -> !(c instanceof Necronomicurse))) {
             addToBot(new SFXAction("CARD_BURN", 0.2F));
-            Wiz.makeInHand(this.makeStatEquivalentCopy());
+            Wiz.applyToSelf(new CardToHandPower(p, 1, this.makeStatEquivalentCopy()));
         }
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(3);
     }
 
     @Override

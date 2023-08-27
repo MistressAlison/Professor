@@ -258,7 +258,7 @@
   },
   "${ModID}:EternalFire": {
     "NAME": "Eternal Fire",
-    "DESCRIPTION": "Enemy loses !M! HP. NL Exhaust adjacent cards to add a copy of this into your hand.",
+    "DESCRIPTION": "Enemy loses !M! HP. NL Exhaust adjacent cards to add a copy of this into your hand next turn.",
     "EXTENDED_DESCRIPTION": ["Burn"]
   },
   "${ModID}:EtherealStone": {
