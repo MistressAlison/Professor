@@ -20,9 +20,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class Amalgam extends AbstractEasyCard implements GlowAdjacentCard {
+public class Amalgam extends AbstractEasyCard {
     public final static String ID = makeID(Amalgam.class.getSimpleName());
-    private static final Color c = Color.RED.cpy();
 
     public Amalgam() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
@@ -72,10 +71,5 @@ public class Amalgam extends AbstractEasyCard implements GlowAdjacentCard {
     @Override
     public float itemScale() {
         return 0.85f;
-    }
-
-    @Override
-    public Color getGlowColor(AbstractCard card) {
-        return c;
     }
 }
