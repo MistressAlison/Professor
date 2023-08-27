@@ -246,7 +246,7 @@
   },
   "${ModID}:EternalFire": {
     "NAME": "Eternal Fire",
-    "DESCRIPTION": "Enemy loses !M! HP. NL Exhaust adjacent cards to add a copy of this into your hand next turn.",
+    "DESCRIPTION": "Deal !D! damage. NL There is no escape from this card. NL Attempts increase its damage by !M!.",
     "EXTENDED_DESCRIPTION": ["Burn"]
   },
   "${ModID}:EtherealStone": {

@@ -1,47 +1,58 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.cards.interfaces.GlowAdjacentCard;
-import Professor.powers.CardToHandPower;
+import Professor.patches.EnterCardGroupPatches;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
+import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.curses.Necronomicurse;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.FlameParticleEffect;
 
 import static Professor.MainModfile.makeID;
 
-public class EternalFire extends AbstractEasyCard implements GlowAdjacentCard {
+public class EternalFire extends AbstractEasyCard implements CustomSavable<Integer>, EnterCardGroupPatches.OnEnterCardGroupCard {
     public final static String ID = makeID(EternalFire.class.getSimpleName());
-    private static final Color c = Color.RED.cpy();
+    public static final float BASE = 8;
 
     public EternalFire() {
-        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 7;
-        //tags.add(CustomTags.PROF_REACTANT);
+        super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        baseMagicNumber = magicNumber = 5;
+        baseDamage = damage = 10;
+        misc = 0;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, magicNumber, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
-        Wiz.forAdjacentCards(this, c -> addToBot(new ExhaustSpecificCardAction(c, p.hand)));
-        if (!Wiz.getAdjacentCards(this).isEmpty()) {
-            addToBot(new SFXAction("CARD_BURN", 0.2F));
-            Wiz.applyToSelf(new CardToHandPower(p, 1, this.makeStatEquivalentCopy()));
-        }
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(3);
+        upgradeMagicNumber(2);
+    }
+
+    @Override
+    public void onRemoveFromMasterDeck() {
+        misc += magicNumber;
+        baseDamage += magicNumber;
+        EternalFire copy = (EternalFire) makeSameInstanceOf();
+        AbstractDungeon.player.masterDeck.addToTop(copy);
+        CardCrawlGame.sound.play("ATTACK_FIRE");
+        for(int i = 0; i < 75; ++i) {// 21
+            AbstractDungeon.topLevelEffectsQueue.add(new FlameParticleEffect(Settings.WIDTH/2f, Settings.HEIGHT/2f));// 22
+        }
+        //AbstractDungeon.topLevelEffectsQueue.add(new JitteryShowCardBrieflyEffect(copy.makeStatEquivalentCopy()));
     }
 
     @Override
@@ -60,7 +71,25 @@ public class EternalFire extends AbstractEasyCard implements GlowAdjacentCard {
     }
 
     @Override
-    public Color getGlowColor(AbstractCard card) {
-        return c;
+    public Integer onSave() {
+        return misc;
+    }
+
+    @Override
+    public void onLoad(Integer integer) {
+        misc = integer;
+        baseDamage += misc;
+        damage += misc;
+    }
+
+    @Override
+    public void onEnter(CardGroup g) {
+        if (g == Wiz.adp().exhaustPile) {
+            Wiz.adp().exhaustPile.removeCard(this);
+            misc += magicNumber;
+            baseDamage += magicNumber;
+            EternalFire copy = (EternalFire) makeSameInstanceOf();
+            addToBot(new MakeTempCardInHandAction(copy, true, true));
+        }
     }
 }
