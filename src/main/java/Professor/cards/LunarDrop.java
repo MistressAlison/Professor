@@ -1,25 +1,23 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.cards.interfaces.InstantSynthesisCard;
 import Professor.cards.interfaces.OnUseInSynthesisCard;
-import Professor.patches.CustomTags;
 import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class LunarDrop extends AbstractEasyCard implements OnUseInSynthesisCard, InstantSynthesisCard {
+public class LunarDrop extends AbstractEasyCard implements OnUseInSynthesisCard {
     public final static String ID = makeID(LunarDrop.class.getSimpleName());
 
     public LunarDrop() {
         super(ID, -2, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
         selfRetain = true;
-        // TODO Upgrade is Wind but not being detected.
-        tags.add(CustomTags.PROF_WIND);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {}
@@ -59,7 +57,8 @@ public class LunarDrop extends AbstractEasyCard implements OnUseInSynthesisCard,
     }
 
     @Override
-    public boolean isInstant(SynthesisItem item) {
-        return true;
+    public void onComplete(AbstractCard createdCard) {
+        superFlash();
+        addToTop(new MakeTempCardInHandAction(createdCard.makeStatEquivalentCopy()));
     }
 }

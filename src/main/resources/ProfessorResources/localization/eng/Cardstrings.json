@@ -319,8 +319,8 @@
   },
   "${ModID}:LunarDrop": {
     "NAME": "Lunar Drop",
-    "DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis finishes instantly.",
-    "UPGRADE_DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis finishes instantly and the completed card is Upgraded.",
+    "DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis creates an additional card.",
+    "UPGRADE_DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis creates an additional card, and the created cards are Upgraded.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:LunaticDebonyal": {
