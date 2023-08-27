@@ -22,8 +22,8 @@ public class GiantClaws extends AbstractEasyCard {
     public static final ArrayList<String> clawNames = new ArrayList<>();
 
     public GiantClaws() {
-        super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 3;
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        baseDamage = damage = 6;
         baseMagicNumber = magicNumber = 2;
         if (clawNames.isEmpty()) {
             clawNames.addAll(Arrays.asList(cardStrings.EXTENDED_DESCRIPTION).subList(1, cardStrings.EXTENDED_DESCRIPTION.length));
@@ -41,7 +41,7 @@ public class GiantClaws extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        //upgradeDamage(2);
+        upgradeDamage(2);
         upgradeMagicNumber(1);
     }
 
