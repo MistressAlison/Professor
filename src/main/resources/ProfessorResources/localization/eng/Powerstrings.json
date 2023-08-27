@@ -98,5 +98,9 @@
   "${ModID}:CardToHandPower": {
     "NAME": " Next Turn",
     "DESCRIPTIONS": ["Next turn, add "," into your hand."," copies of "]
+  },
+  "${ModID}:AmalgamPower": {
+    "NAME": "Spectrumize Next Card",
+    "DESCRIPTIONS": ["#ySpectrumize the next card you play this turn.","#ySpectrumize the next #b"," cards you play this turn."]
   }
 }

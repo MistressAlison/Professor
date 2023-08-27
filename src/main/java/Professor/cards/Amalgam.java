@@ -8,6 +8,7 @@ import Professor.cards.tokens.BlueNeutralizer;
 import Professor.cards.tokens.GreenNeutralizer;
 import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
+import Professor.powers.AmalgamPower;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
@@ -38,7 +39,8 @@ public class Amalgam extends AbstractEasyCard implements GlowAdjacentCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.POISON);
-        if (upgraded) {
+        Wiz.applyToSelf(new AmalgamPower(p, 1));
+        /*if (upgraded) {
             ArrayList<AbstractCard> adjacent = Wiz.getAdjacentCards(this);
             addToBot(new BetterSelectCardsInHandAction(adjacent.size(), SpectrumizeAction.TEXT[0], true, true, adjacent::contains, l -> {
                 Collections.reverse(l);
@@ -48,13 +50,13 @@ public class Amalgam extends AbstractEasyCard implements GlowAdjacentCard {
             }));
         } else {
             Wiz.forAdjacentCards(this, c -> addToBot(new SpectrumizeAction(c)));
-        }
+        }*/
     }
 
     @Override
     public void upp() {
-        //upgradeDamage(3);
-        uDesc();
+        upgradeDamage(3);
+        //uDesc();
     }
 
     @Override
