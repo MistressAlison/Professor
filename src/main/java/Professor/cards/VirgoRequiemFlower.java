@@ -4,9 +4,14 @@ import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.HashSet;
 
 import static Professor.MainModfile.makeID;
 
@@ -20,7 +25,17 @@ public class VirgoRequiemFlower extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new FetchAction(p.exhaustPile, c -> !(c instanceof VirgoRequiemFlower), 1, l -> {
+        CardGroup g = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        HashSet<AbstractCard> checked = new HashSet<>();
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+            if (!checked.contains(c) && (c.type == CardType.POWER || c.type == CardType.ATTACK)) {
+                g.group.add(c.makeStatEquivalentCopy());
+                checked.add(c);
+            }
+        }
+        g.sortAlphabetically(false);
+        g.sortByRarity(false);
+        addToBot(new FetchAction(g, c -> true, 1, l -> {
             //Maybe do something?
         }));
     }

@@ -452,7 +452,7 @@
   },
   "${ModID}:VirgoRequiemFlower": {
     "NAME": "Requiem Flower",
-    "DESCRIPTION": "Fetch a card from your exhaust pile. NL Exhaust.",
+    "DESCRIPTION": "Choose an Attack or Power you have played. Add a copy of it into your hand. NL Exhaust.",
     "FLAVOR": "Its faint bluish-white blossom is said to console the dead."
   },
   "${ModID}:Volley": {
