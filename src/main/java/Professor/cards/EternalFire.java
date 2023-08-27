@@ -23,10 +23,9 @@ import static Professor.MainModfile.makeID;
 
 public class EternalFire extends AbstractEasyCard implements CustomSavable<Integer>, EnterCardGroupPatches.OnEnterCardGroupCard {
     public final static String ID = makeID(EternalFire.class.getSimpleName());
-    public static final float BASE = 8;
 
     public EternalFire() {
-        super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 5;
         baseDamage = damage = 10;
         misc = 0;
