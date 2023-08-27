@@ -104,7 +104,7 @@
     "NAME": "Memoria Bracelet",
     "FLAVOR": "The bracelet made as a symbol of affection. It was designed with fashion in mind more than practical use.",
     "DESCRIPTIONS": [
-      "At the start of each combat, #yprofessor:Infuse \"Gain 5 #yBlock [REMOVE_SPACE]\" and \"Deal 5 damage\" into random cards in your hand.",
+      "At the start of each combat, #yprofessor:Infuse \"Deal 5 damage\" into a random card in your hand.",
       "Damage dealt: "," NL Block gained: "," NL Damage per turn: "," NL Damage per combat: "," NL Block per turn: "," NL Block per combat: "
 
     ]

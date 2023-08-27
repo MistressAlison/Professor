@@ -41,7 +41,7 @@ public class MemoriaBracelet extends AbstractEasyRelic {
         flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         addToBot(new InfuseRandomCardAction(1, new DealDamageMod(DAMAGE, DAMAGE)));
-        addToBot(new InfuseRandomCardAction(1, new GainBlockMod(BLOCK, BLOCK)));
+        //addToBot(new InfuseRandomCardAction(1, new GainBlockMod(BLOCK, BLOCK)));
     }
 
     public int getDamageStat() {
@@ -69,7 +69,7 @@ public class MemoriaBracelet extends AbstractEasyRelic {
     }
 
     public String getStatsDescription() {
-        return DAMAGE_STAT + stats.get(DAMAGE_STAT) + BLOCK_STAT + stats.get(BLOCK_STAT);
+        return DAMAGE_STAT + stats.get(DAMAGE_STAT);// + BLOCK_STAT + stats.get(BLOCK_STAT);
     }
 
     public String getExtendedStatsDescription(int totalCombats, int totalTurns) {
@@ -86,11 +86,11 @@ public class MemoriaBracelet extends AbstractEasyRelic {
         builder.append(DPC);
         builder.append(perTurnFormat.format(stat / Math.max(totalCombats, 1)));
 
-        stat = (float)stats.get(BLOCK_STAT);
+        /*stat = (float)stats.get(BLOCK_STAT);
         builder.append(BPT);
         builder.append(perTurnFormat.format(stat / Math.max(totalTurns, 1)));
         builder.append(BPC);
-        builder.append(perTurnFormat.format(stat / Math.max(totalCombats, 1)));
+        builder.append(perTurnFormat.format(stat / Math.max(totalCombats, 1)));*/
         return builder.toString();
     }
 
