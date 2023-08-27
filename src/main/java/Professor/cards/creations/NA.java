@@ -3,12 +3,15 @@ package Professor.cards.creations;
 import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
+import Professor.util.Wiz;
+import Professor.vfx.BigExplosionVFX;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
@@ -18,7 +21,7 @@ import static Professor.MainModfile.makeID;
 public class NA extends AbstractCreationCard {
     public final static String ID = makeID(NA.class.getSimpleName());
 
-    private static final int BASE_COST = 5;
+    private static final int BASE_COST = 6;
 
     public NA() {
         this(null);
@@ -66,7 +69,8 @@ public class NA extends AbstractCreationCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        allDmg(AbstractGameAction.AttackEffect.FIRE);
+        Wiz.forAllMonstersLiving(mon -> addToBot(new BigExplosionVFX(mon, ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT)));
+        allDmg(AbstractGameAction.AttackEffect.NONE);
     }
 
     @Override

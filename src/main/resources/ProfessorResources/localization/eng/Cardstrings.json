@@ -31,9 +31,9 @@
   },
   "${ModID}:SynthesizeBomb": {
     "NAME": "Explosive Blueprint",
-    "DESCRIPTION": "professor:Synthesize a professor:Bomb. NL Requires !Professor:I! cards.",
-    "UPGRADE_DESCRIPTION": "Retain. NL professor:Synthesize a professor:Bomb. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +3 damage per Fire, +2 AoE damage per Bolt"]
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:Bomb. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "Retain. NL {@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:Bomb. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": [": +3 damage per Fire, +2 AoE damage per Bolt"]
   },
   "${ModID}:CrystalIceBomb": {
     "NAME": "Crystal Ice Bomb",
@@ -41,9 +41,8 @@
   },
   "${ModID}:SynthesizeCrystalIceBomb": {
     "NAME": "Crystallized Blueprint",
-    "DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb. NL Requires !Professor:I! cards.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Crystal_Ice_Bomb+. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +4 damage per Ice, +1 Weak per Wind"]
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:Crystal_Ice_Bomb. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": [": +4 damage per Ice, +1 Weak per Wind"]
   },
   "${ModID}:DarkNightTreasure": {
     "NAME": "Dark Night Treasure",
@@ -51,9 +50,8 @@
   },
   "${ModID}:SynthesizeDarkNightTreasure": {
     "NAME": "Vorpal Blueprint",
-    "DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure. NL Requires !Professor:I! cards.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Dark_Night_Treasure+. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +5 kill threshold per Ice"]
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:Dark_Night_Treasure. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": [": +5 kill threshold per Ice"]
   },
   "${ModID}:DawnGrimoire": {
     "NAME": "Dawn Grimoire",
@@ -61,9 +59,9 @@
   },
   "${ModID}:SynthesizeDawnGrimoire": {
     "NAME": "Grim Blueprint",
-    "DESCRIPTION": "professor:Synthesize a professor:Dawn_Grimoire. NL Requires !Professor:I! cards.",
-    "UPGRADE_DESCRIPTION": "Retain. NL professor:Synthesize a professor:Dawn_Grimoire. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +3 damage per Fire, +1 healing per Bolt"]
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:Dawn_Grimoire. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "Retain. NL {@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:Dawn_Grimoire. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": [": +3 damage per Fire, +1 healing per Bolt"]
   },
   "${ModID}:ElysiumHarp": {
     "NAME": "Elysium Harp",
@@ -72,19 +70,9 @@
   },
   "${ModID}:SynthesizeElysiumHarp": {
     "NAME": "Peaceful Blueprint",
-    "DESCRIPTION": "Ethereal. NL professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +2 Block per Wind"]
-  },
-  "${ModID}:ExplosiveUni": {
-    "NAME": "Explosive Uni",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Stagger."
-  },
-  "${ModID}:SynthesizeExplosiveUni": {
-    "NAME": "Sharp Blueprint",
-    "DESCRIPTION": "professor:Synthesize an professor:Explosive_Uni. NL professor:Valency !M!.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize an professor:Explosive_Uni+. NL professor:Valency !M!.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards."]
+    "DESCRIPTION": "Ethereal. NL {@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": [": +2 Block per Wind"]
   },
   "${ModID}:LautePlajig": {
     "NAME": "Laute Plajig",
@@ -92,9 +80,9 @@
   },
   "${ModID}:SynthesizeLautePlajig": {
     "NAME": "Shocking Blueprint",
-    "DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig. NL Requires !Professor:I! cards.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Laute_Plajig+. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +5 damage per Bolt"]
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:Laute_Plajig. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:Laute_Plajig+. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": [": +5 damage per Bolt"]
   },
   "${ModID}:Luft": {
     "NAME": "Luft",
@@ -102,9 +90,9 @@
   },
   "${ModID}:SynthesizeLuft": {
     "NAME": "Breezy Blueprint",
-    "DESCRIPTION": "professor:Synthesize a professor:Luft. NL Requires !Professor:I! cards.",
-    "UPGRADE_DESCRIPTION": "Retain. NL professor:Synthesize a professor:Luft. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": +1 draw per Wind"]
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:Luft. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "Retain. NL {@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:Luft. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": [": +1 draw per Wind"]
   },
   "${ModID}:NA": {
     "NAME": "N/A",
@@ -112,9 +100,9 @@
   },
   "${ModID}:SynthesizeNA": {
     "NAME": "Enigmatic Blueprint",
-    "DESCRIPTION": "professor:Synthesize an professor:N/A. NL Requires !Professor:I! cards.",
-    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:N/A+. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": ["I don't have enough cards.",": -1 cost for each Element you add 2 or more of"]
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize an professor:N/A. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize a professor:N/A+. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": [": -1 cost for each Element you add 2 or more of"]
   },
   "${ModID}:ThornyEmbrace": {
     "NAME": "Thorny Embrace",

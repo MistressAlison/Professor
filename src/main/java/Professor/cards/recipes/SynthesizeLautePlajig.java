@@ -6,6 +6,7 @@ import Professor.cards.abstracts.AbstractRecipeCard;
 import Professor.cards.creations.LautePlajig;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -17,6 +18,7 @@ public class SynthesizeLautePlajig extends AbstractRecipeCard {
 
     public SynthesizeLautePlajig() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 2;
         baseInfo = info = 2;
         cardsToPreview = new LautePlajig();
         //addCustomKeyword(KeywordManager.STAGGER);
@@ -24,20 +26,8 @@ public class SynthesizeLautePlajig extends AbstractRecipeCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new BeginSynthesisAction(this, cardStrings.EXTENDED_DESCRIPTION[1]));
-    }
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse) {
-            return false;
-        } else {
-            if (p.hand.size() <= getValance()) {
-                canUse = false;
-                this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-            }
-            return canUse;
-        }
+        addToBot(new DrawCardAction(magicNumber));
+        addToBot(new BeginSynthesisAction(this, cardStrings.EXTENDED_DESCRIPTION[0]));
     }
 
     @Override
