@@ -34,8 +34,8 @@ public class DarkCrystalFragment extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeDamage(4);
-        //upgradeMagicNumber(1);
+        upgradeDamage(2);
+        upgradeMagicNumber(1);
     }
 
     @Override
