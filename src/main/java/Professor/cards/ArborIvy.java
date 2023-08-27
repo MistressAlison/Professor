@@ -15,7 +15,7 @@ public class ArborIvy extends AbstractEasyCard {
 
     public ArborIvy() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 9;
+        baseBlock = block = 8;
         baseMagicNumber = magicNumber = 1;
     }
 
