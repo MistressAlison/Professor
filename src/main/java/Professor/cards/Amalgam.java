@@ -1,7 +1,5 @@
 package Professor.cards;
 
-import Professor.actions.BetterSelectCardsInHandAction;
-import Professor.actions.SpectrumizeAction;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.cards.interfaces.GlowAdjacentCard;
 import Professor.cards.tokens.BlueNeutralizer;
@@ -19,9 +17,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.ArrayList;
-import java.util.Collections;
 
 import static Professor.MainModfile.makeID;
 
