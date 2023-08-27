@@ -66,6 +66,7 @@ public class BeginSynthesisAction extends AbstractGameAction {
                 }
             }
             l.clear();
+            AbstractDungeon.onModifyPower();
             if (instant) {
                 addToBot(new PerformSynthesisAction(item));
             }
