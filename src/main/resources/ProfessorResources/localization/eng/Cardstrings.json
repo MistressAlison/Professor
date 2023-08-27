@@ -121,8 +121,7 @@
   },
   "${ModID}:AetherEssence": {
     "NAME": "Aether Essence",
-    "DESCRIPTION": "When professor:Synthesis is completed, contributed cards are returned to your hand instead.",
-    "UPGRADE_DESCRIPTION": "When professor:Synthesis is completed, contributed cards are Upgraded for the rest of combat and returned to your hand instead."
+    "DESCRIPTION": "Receive 50% less damage from Attacks while professor:Synthesis is prepared."
   },
   "${ModID}:AirDrop": {
     "NAME": "Air Drop",

@@ -1,6 +1,5 @@
 package Professor.patches;
 
-import Professor.powers.AetherPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

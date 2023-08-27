@@ -1,4 +1,4 @@
-package Professor.powers;
+package Professor.cutStuff.powers;
 
 import Professor.MainModfile;
 import Professor.cards.AetherEssence;

@@ -1,8 +1,7 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.patches.CustomTags;
-import Professor.powers.AetherPower;
+import Professor.powers.AetherEssencePower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
@@ -16,28 +15,22 @@ public class AetherEssence extends AbstractEasyCard {
     public final static String ID = makeID(AetherEssence.class.getSimpleName());
 
     public AetherEssence() {
-        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        //isInnate = true;
-        //isEthereal = true;
-        // TODO no elements being picked up, make it rainbow for now
-        tags.add(CustomTags.PROF_FIRE);
-        tags.add(CustomTags.PROF_ICE);
-        tags.add(CustomTags.PROF_BOLT);
-        tags.add(CustomTags.PROF_WIND);
+        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new AetherPower(p, upgraded ? 1 : 0));
+        //Wiz.applyToSelf(new AetherPower(p, upgraded ? 1 : 0));
+        Wiz.applyToSelf(new AetherEssencePower(p, 1));
     }
 
     @Override
     public void upp() {
         //upgradeMagicNumber(2);
-        //upgradeBaseCost(0);
+        upgradeBaseCost(1);
         //isInnate = true;
         //isEthereal = false;
-        uDesc();
+        //uDesc();
     }
 
     @Override
