@@ -21,7 +21,7 @@ public class DemonClaws extends AbstractEasyCard {
 
     public DemonClaws() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 7;
+        baseDamage = damage = 5;
     }
 
     @Override
@@ -30,6 +30,9 @@ public class DemonClaws extends AbstractEasyCard {
             this.addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
         }
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, true));
+        if (m != null) {
+            this.addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
+        }
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, true));
         Wiz.applyToSelf(new FreeAttackPower(p, 1));
     }

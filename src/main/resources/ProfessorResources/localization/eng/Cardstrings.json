@@ -283,7 +283,11 @@
   },
   "${ModID}:GiantClaws": {
     "NAME": "Giant Claws",
-    "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Giant Claws by !M! this combat."
+    "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Claw cards by !M! this combat.",
+    "EXTENDED_DESCRIPTION": [
+      "Translator note: following strings are used to check the name of the card contains Claw. You can add more strings if you want to check multiple words",
+      "Claw"
+    ]
   },
   "${ModID}:GoldenCrown": {
     "NAME": "Golden Crown",
