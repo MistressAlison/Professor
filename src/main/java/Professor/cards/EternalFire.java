@@ -33,7 +33,7 @@ public class EternalFire extends AbstractEasyCard implements GlowAdjacentCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, magicNumber, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
         Wiz.forAdjacentCards(this, c -> addToBot(new ExhaustSpecificCardAction(c, p.hand)));
-        if (Wiz.getAdjacentCards(this).stream().anyMatch(c -> !(c instanceof Necronomicurse))) {
+        if (!Wiz.getAdjacentCards(this).isEmpty()) {
             addToBot(new SFXAction("CARD_BURN", 0.2F));
             Wiz.applyToSelf(new CardToHandPower(p, 1, this.makeStatEquivalentCopy()));
         }
