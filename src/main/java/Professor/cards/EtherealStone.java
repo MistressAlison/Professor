@@ -1,6 +1,8 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
+import Professor.cards.interfaces.OnUseInSynthesisCard;
+import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -10,13 +12,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class EtherealStone extends AbstractEasyCard {
+public class EtherealStone extends AbstractEasyCard implements OnUseInSynthesisCard {
     public final static String ID = makeID(EtherealStone.class.getSimpleName());
 
     public EtherealStone() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         isEthereal = true;
         baseMagicNumber = magicNumber = 3;
+        baseSecondMagic = secondMagic = 2;
     }
 
     @Override
@@ -42,5 +45,12 @@ public class EtherealStone extends AbstractEasyCard {
     @Override
     public String itemArt() {
         return EtherealStone.class.getSimpleName();
+    }
+
+    @Override
+    public boolean onAdded(SynthesisItem item) {
+        superFlash();
+        addToBot(new DrawCardAction(secondMagic));
+        return false;
     }
 }

@@ -251,7 +251,7 @@
   },
   "${ModID}:EtherealStone": {
     "NAME": "Ethereal Stone",
-    "DESCRIPTION": "Ethereal. NL Draw !M! cards."
+    "DESCRIPTION": "Ethereal. NL Draw !M! cards. NL professor:Catalyst: Draw !Professor:M2! cards."
   },
   "${ModID}:FireEssence": {
     "NAME": "Fire Essence",
