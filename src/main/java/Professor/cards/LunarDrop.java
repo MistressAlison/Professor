@@ -34,7 +34,7 @@ public class LunarDrop extends AbstractEasyCard implements OnUseInSynthesisCard 
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, AZURE, WHITE, AZURE, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, COBALT, WHITE, COBALT, WHITE, false);
     }
 
     @Override

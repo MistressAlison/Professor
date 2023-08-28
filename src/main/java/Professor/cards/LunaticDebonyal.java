@@ -33,7 +33,7 @@ public class LunaticDebonyal extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.GRAY, RED, Color.GRAY, darken(RED), false);
+        return new CardArtRoller.ReskinInfo(ID, Color.GRAY, RASPBERRY, Color.GRAY, darken(RASPBERRY), false);
     }
 
     @Override

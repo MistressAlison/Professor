@@ -36,7 +36,7 @@ public class Eiche extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, AZURE, WHITE, AZURE, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, CAPRI, WHITE, CAPRI, WHITE, false);
     }
 
     @Override

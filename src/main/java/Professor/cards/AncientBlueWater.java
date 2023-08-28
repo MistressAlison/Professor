@@ -41,7 +41,7 @@ public class AncientBlueWater extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), BLACK, lighten(BLUE), Color.ROYAL, false);
+        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), BLACK, lighten(IRIS), Color.ROYAL, false);
     }
 
     @Override

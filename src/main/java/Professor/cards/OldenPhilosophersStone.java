@@ -42,7 +42,7 @@ public class OldenPhilosophersStone extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, RED, mix(CYAN, Color.LIGHT_GRAY), RED, mix(CYAN, Color.LIGHT_GRAY), false);
+        return new CardArtRoller.ReskinInfo(ID, SCARLET, mix(CYAN, Color.LIGHT_GRAY), SCARLET, mix(CYAN, Color.LIGHT_GRAY), false);
     }
 
     @Override

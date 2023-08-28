@@ -36,6 +36,7 @@ import static Professor.util.Wiz.atb;
 import static Professor.util.Wiz.att;
 
 public abstract class AbstractEasyCard extends CustomCard {
+    // https://en.wikipedia.org/wiki/Tertiary_color#Tertiary-,_quaternary-,_and_quinary-_terms
     protected static final Color RED = new Color(0xFF0000FF);
     protected static final Color SCARLET = new Color(0xFF2000FF);
     protected static final Color VERMILION = new Color(0xFF4000FF);

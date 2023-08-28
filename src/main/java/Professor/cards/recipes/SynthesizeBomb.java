@@ -36,7 +36,7 @@ public class SynthesizeBomb extends AbstractRecipeCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, RED, WHITE, RED, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, VERMILION, WHITE, VERMILION, WHITE, false);
     }
 
     @Override

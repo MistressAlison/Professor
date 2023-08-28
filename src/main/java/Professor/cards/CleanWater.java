@@ -32,7 +32,7 @@ public class CleanWater extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, AZURE, WHITE, AZURE, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, CORNFLOWER, WHITE, CORNFLOWER, WHITE, false);
     }
 
     @Override

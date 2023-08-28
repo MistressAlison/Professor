@@ -37,7 +37,7 @@ public class DragonBlood extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, mix(RED,Color.GRAY), RED, mix(RED,Color.GRAY), RED, false);
+        return new CardArtRoller.ReskinInfo(ID, mix(RED,Color.GRAY), SCARLET, mix(RED,Color.GRAY), SCARLET, false);
     }
 
     @Override
