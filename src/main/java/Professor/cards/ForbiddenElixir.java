@@ -21,8 +21,8 @@ public class ForbiddenElixir extends AbstractEasyCard {
     public final static String ID = makeID(ForbiddenElixir.class.getSimpleName());
 
     public ForbiddenElixir() {
-        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 4;
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
+        baseMagicNumber = magicNumber = 3;
     }
 
     @Override
