@@ -68,7 +68,7 @@ public class SynthesisItem {
                 CardModifierManager.addModifier(currentCreation, mod.makeCopy());
             }
         }
-        if (Loader.isModLoaded("ChimeraCards")) {
+        if (Loader.isModLoaded("CardAugments")) {
             ChimeraHelper.rollOnSynthesisCard(currentCreation);
         }
     }

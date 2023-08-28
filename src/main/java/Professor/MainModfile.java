@@ -241,6 +241,7 @@ public class MainModfile implements
         tryLoadStringsFile(CardStrings.class, path + "Chatterstrings.json");
         tryLoadStringsFile(UIStrings.class, path + "UIstrings.json");
         tryLoadStringsFile(PotionStrings.class, path +"Potionstrings.json");
+        tryLoadStringsFile(UIStrings.class, path + "CardAugmentstrings.json");
     }
 
     private void tryLoadStringsFile(Class<?> stringType, String filepath) {
@@ -284,6 +285,12 @@ public class MainModfile implements
         //Wide Potions
         if (Loader.isModLoaded("widepotions")) {
             WidePotionLoader.loadCrossoverContent();
+        }
+
+        //Chimera Cards
+        if (Loader.isModLoaded("CardAugments")) {
+            ChimeraHelper.registerAugments();
+            ChimeraHelper.applyBans();
         }
 
         //Add Config stuff
