@@ -125,7 +125,7 @@ public class LautePlajig extends AbstractCreationCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, YELLOW, WHITE, YELLOW, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, YELLOW, WHITE, pastel(GOLDEN_YELLOW), WHITE, false);
     }
 
     @Override

@@ -34,7 +34,7 @@ public class ArborIvy extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, GREEN, WHITE, GREEN, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, GREEN, WHITE, darken(JADE), SILVER, false);
     }
 
     @Override

@@ -45,7 +45,7 @@ public class Ingot extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), WHITE, pastel(mix(DARK_GRAY, Color.BROWN)), BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, darken(PURPLE), WHITE, pastel(mix(DARK_GRAY, BRONZE)), BLACK, false);
     }
 
     @Override

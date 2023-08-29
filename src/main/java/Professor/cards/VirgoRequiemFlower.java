@@ -47,7 +47,7 @@ public class VirgoRequiemFlower extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, mix(GREEN, Color.GRAY), AZURE, mix(GREEN, Color.GRAY), AZURE, false);
+        return new CardArtRoller.ReskinInfo(ID, mix(GREEN, Color.GRAY), AZURE, mix(BRIGHT_GREEN, Color.GRAY), AZURE, false);
     }
 
     @Override

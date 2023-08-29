@@ -69,7 +69,7 @@ public class EmberStone extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, ORANGE, WHITE, ORANGE, BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, ORANGE, WHITE, ORANGE_PEEL, BLACK, false);
     }
 
     @Override

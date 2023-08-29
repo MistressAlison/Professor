@@ -74,7 +74,7 @@ public class ElysiumHarp extends AbstractCreationCard implements EnterCardGroupP
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), WHITE, Color.GOLD, BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, darken(PURPLE), WHITE, GOLD, BLACK, false);
     }
 
     @Override

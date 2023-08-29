@@ -49,7 +49,7 @@ public class RainbowNeutralizer extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, darken(RED), YELLOW, pastel(Color.PINK), pastel(YELLOW), false);
+        return new CardArtRoller.ReskinInfo(ID, darken(RED), YELLOW, pastel(Color.PINK), pastel(LEMON), false);
     }
 
     @Override

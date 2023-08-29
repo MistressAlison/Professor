@@ -32,7 +32,7 @@ public class DuskyPowder extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, mix(Color.GRAY, Color.PURPLE), WHITE, mix(Color.GRAY, Color.PURPLE), BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, mix(Color.GRAY, PURPLE), WHITE, mix(Color.GRAY, VERONICA), BLACK, false);
     }
 
     @Override

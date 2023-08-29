@@ -33,7 +33,7 @@ public class WindEssence extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, GREEN, WHITE, GREEN, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, HARLEQUIN, WHITE, HARLEQUIN, WHITE, false);
     }
 
     @Override

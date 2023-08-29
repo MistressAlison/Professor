@@ -41,7 +41,7 @@ public class RotwoodMiasma extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.PURPLE, BLACK, Color.PURPLE, BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, VIOLET, BLACK, VIOLET, BLACK, false);
     }
 
     @Override

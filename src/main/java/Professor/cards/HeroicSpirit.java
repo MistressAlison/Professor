@@ -46,7 +46,7 @@ public class HeroicSpirit extends AbstractEasyCard implements OnUseEnergyPatches
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, mix(Color.GRAY, Color.PURPLE), WHITE, mix(Color.GRAY, Color.PURPLE), BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, mix(Color.GRAY, PURPLE), WHITE, mix(Color.GRAY, AMETHYST), BLACK, false);
     }
 
     @Override

@@ -32,7 +32,7 @@ public class IceEssence extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, CYAN, WHITE, CYAN, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, SKY_BLUE, WHITE, SKY_BLUE, WHITE, false);
     }
 
     @Override

@@ -34,7 +34,7 @@ public class DreamFlower extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.PURPLE, WHITE, Color.PURPLE, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, PURPLE, WHITE, MAGENTA, WHITE, false);
     }
 
     @Override

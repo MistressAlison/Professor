@@ -78,7 +78,7 @@ public class DarkNightTreasure extends AbstractCreationCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, mix(Color.PURPLE, Color.GRAY), WHITE, mix(Color.PURPLE, Color.GRAY), BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, mix(PURPLE, Color.GRAY), WHITE, mix(PURPLE, Color.GRAY), BLACK, false);
     }
 
     @Override

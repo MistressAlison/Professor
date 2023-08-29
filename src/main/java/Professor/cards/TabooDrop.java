@@ -40,7 +40,7 @@ public class TabooDrop extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.PURPLE, BLACK, Color.PURPLE, BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, PHLOX, BLACK, PHLOX, BLACK, false);
     }
 
     @Override

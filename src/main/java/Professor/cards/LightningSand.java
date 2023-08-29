@@ -43,7 +43,7 @@ public class LightningSand extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, darken(Color.PURPLE), BLACK, Color.YELLOW, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, darken(PURPLE), BLACK, YELLOW, WHITE, false);
     }
 
     @Override

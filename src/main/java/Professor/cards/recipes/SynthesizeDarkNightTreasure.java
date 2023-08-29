@@ -39,7 +39,7 @@ public class SynthesizeDarkNightTreasure extends AbstractRecipeCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, mix(Color.PURPLE, Color.GRAY), WHITE, mix(Color.PURPLE, Color.GRAY), WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, mix(PURPLE, Color.GRAY), WHITE, mix(PURPLE, Color.GRAY), WHITE, false);
     }
 
     @Override

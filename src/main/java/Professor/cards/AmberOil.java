@@ -32,7 +32,7 @@ public class AmberOil extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, ORANGE, WHITE, ORANGE, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, AMBER, WHITE, AMBER, WHITE, false);
     }
 
     @Override

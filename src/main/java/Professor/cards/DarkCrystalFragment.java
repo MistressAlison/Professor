@@ -40,7 +40,7 @@ public class DarkCrystalFragment extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, Color.YELLOW, Color.ORANGE, darken(Color.PURPLE), Color.BLACK, false);
+        return new CardArtRoller.ReskinInfo(ID, YELLOW, ORANGE, darken(VIOLET), BLACK, false);
     }
 
     @Override

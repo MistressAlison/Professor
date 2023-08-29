@@ -74,7 +74,7 @@ public class CrystalIceBomb extends AbstractCreationCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, CYAN, WHITE, CYAN, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, CERULEAN, WHITE, CERULEAN, WHITE, false);
     }
 
     @Override
