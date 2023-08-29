@@ -35,7 +35,7 @@ public class AetherEssence extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, ORANGE, BLACK, Color.GRAY, DEEP_PINK, false);
+        return new CardArtRoller.ReskinInfo(ID, ORANGE, BLACK, pastel(DEEP_PINK), pastel(PERSIMMON), false);
     }
 
     @Override
