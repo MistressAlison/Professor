@@ -4,7 +4,6 @@ import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.powers.AetherEssencePower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.tempCards.Omega;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -20,7 +19,6 @@ public class AetherEssence extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //Wiz.applyToSelf(new AetherPower(p, upgraded ? 1 : 0));
         Wiz.applyToSelf(new AetherEssencePower(p, 1));
     }
 

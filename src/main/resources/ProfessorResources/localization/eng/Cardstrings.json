@@ -121,7 +121,7 @@
   },
   "${ModID}:AetherEssence": {
     "NAME": "Aether Essence",
-    "DESCRIPTION": "Receive 50% less damage from Attacks while professor:Synthesis is prepared."
+    "DESCRIPTION": "Whenever a card is created during combat, professor:Masterwork it."
   },
   "${ModID}:AirDrop": {
     "NAME": "Air Drop",
