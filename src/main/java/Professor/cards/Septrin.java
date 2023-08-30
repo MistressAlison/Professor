@@ -11,6 +11,7 @@ import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,11 +30,21 @@ public class Septrin extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new SeptrinPower(p));
+        if (magicNumber > 0) {
+            addToBot(new ExhaustAction(this.magicNumber, false, true, true));
+        }
     }
 
     @Override
     public void upp() {
-        upgradeBaseCost(0);
+        if (timesUpgraded > 2) {
+            upgradeMagicNumber(1);
+        } else if (timesUpgraded == 2) {
+            baseMagicNumber = magicNumber = 0;
+            upgradeMagicNumber(2);
+        } else {
+            upgradeBaseCost(0);
+        }
     }
 
     @Override

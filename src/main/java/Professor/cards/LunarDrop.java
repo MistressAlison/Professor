@@ -17,6 +17,7 @@ public class LunarDrop extends AbstractEasyCard implements OnUseInSynthesisCard 
 
     public LunarDrop() {
         super(ID, -2, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+        baseMagicNumber = magicNumber = 1;
         selfRetain = true;
     }
 
@@ -29,7 +30,11 @@ public class LunarDrop extends AbstractEasyCard implements OnUseInSynthesisCard 
 
     @Override
     public void upp() {
-        uDesc();
+        if (timesUpgraded >= 2) {
+            upgradeMagicNumber(1);
+        } else {
+            uDesc();
+        }
     }
 
     @Override
@@ -59,6 +64,6 @@ public class LunarDrop extends AbstractEasyCard implements OnUseInSynthesisCard 
     @Override
     public void onComplete(AbstractCard createdCard) {
         superFlash();
-        addToTop(new MakeTempCardInHandAction(createdCard.makeStatEquivalentCopy()));
+        addToTop(new MakeTempCardInHandAction(createdCard.makeStatEquivalentCopy(), magicNumber));
     }
 }

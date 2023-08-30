@@ -323,8 +323,8 @@
   },
   "${ModID}:LunarDrop": {
     "NAME": "Lunar Drop",
-    "DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis creates an additional card.",
-    "UPGRADE_DESCRIPTION": "Unplayable. Retain. NL professor:Catalyst: professor:Synthesis creates an additional card, and the created cards are Upgraded.",
+    "DESCRIPTION": "{@@}Unplayable. Retain. NL professor:Catalyst: professor:Synthesis creates !M! additional card{!M!|>1=s}.",
+    "UPGRADE_DESCRIPTION": "{@@}Unplayable. Retain. NL professor:Catalyst: professor:Synthesis creates !M! additional card{!M!|>1=s}, and the created cards are Upgraded.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:LunaticDebonyal": {
@@ -411,7 +411,7 @@
   },
   "${ModID}:Septrin": {
     "NAME": "Septrin",
-    "DESCRIPTION": "Whenever a professor:non-Neutralizer card is Exhausted, professor:Spectrumize it."
+    "DESCRIPTION": "Whenever a professor:non-Neutralizer card is Exhausted, professor:Spectrumize it.{@@}{!M!|>0= NL Exhaust up to !M! cards in your hand.}"
   },
   "${ModID}:ShiningSand": {
     "NAME": "Shining Sand",
