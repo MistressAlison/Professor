@@ -1,7 +1,7 @@
 package Professor.powers;
 
 import Professor.MainModfile;
-import Professor.cards.DragonBlood;
+import Professor.cutStuff.cards.DragonBlood;
 import Professor.powers.interfaces.InfusionBoostingPower;
 import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.cards.AbstractCard;
