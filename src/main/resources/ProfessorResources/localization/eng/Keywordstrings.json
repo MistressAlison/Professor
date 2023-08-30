@@ -179,12 +179,12 @@
   },
   {
     "ID": "masterwork",
-    "PROPER_NAME": "Masterpiece",
+    "PROPER_NAME": "Masterwork",
     "NAMES": [
       "masterwork",
       "masterpiece"
     ],
-    "DESCRIPTION": "Masterpieces are upgraded, and can be upgraded any number of times."
+    "DESCRIPTION": "Masterworking a card #yUpgrades it and allows it to be upgraded any number of times."
   },
   {
     "ID": "bomb",
