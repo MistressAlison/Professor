@@ -119,10 +119,6 @@
     "DESCRIPTION": "Unplayable. Retain. NL Whenever this card enters your discard pile, deal !D! damage to ALL enemies.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
-  "${ModID}:AetherEssence": {
-    "NAME": "Aether Essence",
-    "DESCRIPTION": "Whenever a card is created during combat, professor:Masterwork it."
-  },
   "${ModID}:AirDrop": {
     "NAME": "Air Drop",
     "DESCRIPTION": "Choose 1 of 3 professor:Synthesis cards to add into your hand. NL It costs 0 this turn. NL Exhaust.",
@@ -160,6 +156,10 @@
   "${ModID}:AstronomicalClock": {
     "NAME": "Astronomical Clock",
     "DESCRIPTION": "Receive 50% less damage from Attacks while professor:Synthesis is prepared."
+  },
+  "${ModID}:AuroraEssence": {
+    "NAME": "Aurora Essence",
+    "DESCRIPTION": "{@@}Whenever a card is created during combat, professor:Masterwork it{!M!|>1= !M! times}."
   },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",

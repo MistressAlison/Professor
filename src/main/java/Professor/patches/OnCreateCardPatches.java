@@ -14,14 +14,14 @@ import java.util.ArrayList;
 
 public class OnCreateCardPatches {
     @SpirePatch2(clz = AbstractCard.class, method = SpirePatch.CLASS)
-    public static class LoopingCreationField {
-        public static SpireField<Boolean> looping = new SpireField<>(() -> false);
+    public static class AlreadyModifiedField {
+        public static SpireField<Boolean> modified = new SpireField<>(() -> false);
     }
 
     @SpirePatch(clz = AbstractCard.class, method = "makeStatEquivalentCopy")
     public static class MakeStatEquivalentCopy {
         public static AbstractCard Postfix(AbstractCard result, AbstractCard self) {
-            LoopingCreationField.looping.set(result, LoopingCreationField.looping.get(self));
+            AlreadyModifiedField.modified.set(result, AlreadyModifiedField.modified.get(self));
             return result;
         }
     }
@@ -49,7 +49,7 @@ public class OnCreateCardPatches {
     public static class CreatedCards {
         @SpirePostfixPatch
         public static void plz(Object[] __args) {
-            if (__args[0] instanceof AbstractCard && !LoopingCreationField.looping.get(__args[0])) {
+            if (__args[0] instanceof AbstractCard && !AlreadyModifiedField.modified.get(__args[0])) {
                 for (AbstractPower p : Wiz.adp().powers) {
                     if (p instanceof OnCreateCardPower) {
                         ((OnCreateCardPower) p).onCreateCard((AbstractCard) __args[0]);

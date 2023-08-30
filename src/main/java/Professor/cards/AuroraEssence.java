@@ -4,36 +4,40 @@ import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.powers.AetherEssencePower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.tempCards.Omega;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class AetherEssence extends AbstractEasyCard {
-    public final static String ID = makeID(AetherEssence.class.getSimpleName());
+public class AuroraEssence extends AbstractEasyCard {
+    public final static String ID = makeID(AuroraEssence.class.getSimpleName());
 
-    public AetherEssence() {
+    public AuroraEssence() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new AetherEssencePower(p, 1));
+        Wiz.applyToSelf(new AetherEssencePower(p, magicNumber));
     }
 
     @Override
     public void upp() {
-        //upgradeMagicNumber(2);
-        upgradeBaseCost(1);
-        //isInnate = true;
-        //isEthereal = false;
-        //uDesc();
+        if (timesUpgraded > 2) {
+            upgradeMagicNumber(1);
+        } else if (timesUpgraded == 2) {
+            upgradeBaseCost(0);
+        } else {
+            upgradeBaseCost(1);
+        }
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, ORANGE, BLACK, pastel(DEEP_PINK), pastel(PERSIMMON), false);
+        return new CardArtRoller.ReskinInfo(ID, YELLOW, mix(BLACK, RED), pastel(GOLD), pastel(Color.GOLDENROD), false);
     }
 
     @Override
@@ -43,6 +47,6 @@ public class AetherEssence extends AbstractEasyCard {
 
     @Override
     public String itemArt() {
-        return AetherEssence.class.getSimpleName();
+        return AuroraEssence.class.getSimpleName();
     }
 }

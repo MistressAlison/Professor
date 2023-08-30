@@ -1,7 +1,7 @@
 package Professor.cutStuff.powers;
 
 import Professor.MainModfile;
-import Professor.cards.AetherEssence;
+import Professor.cards.AuroraEssence;
 import Professor.patches.ZeroAmountPowerPatches;
 import Professor.powers.interfaces.OnFinishSynthesisPower;
 import Professor.ui.SynthesisItem;
@@ -24,7 +24,7 @@ public class AetherPower extends AbstractPower implements OnFinishSynthesisPower
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        PowerIconMaker.setIcons(this, AetherEssence.class.getSimpleName());
+        PowerIconMaker.setIcons(this, AuroraEssence.class.getSimpleName());
         updateDescription();
     }
 

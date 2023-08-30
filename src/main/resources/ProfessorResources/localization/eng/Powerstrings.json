@@ -100,7 +100,7 @@
     "DESCRIPTIONS": ["#ySpectrumize the next card you play this turn.","#ySpectrumize the next #b"," cards you play this turn."]
   },
   "${ModID}:AetherEssencePower": {
-    "NAME": "Aether Essence",
+    "NAME": "Aurora Essence",
     "DESCRIPTIONS": ["Whenever a card is created during combat, #yMasterwork it.","Whenever a card is created during combat, #yMasterwork it #b"," times."]
   },
   "${ModID}:AstronomicalClockPower": {

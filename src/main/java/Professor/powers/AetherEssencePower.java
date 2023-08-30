@@ -1,8 +1,9 @@
 package Professor.powers;
 
 import Professor.MainModfile;
-import Professor.cards.AetherEssence;
+import Professor.cards.AuroraEssence;
 import Professor.patches.ForcedUpgradesPatches;
+import Professor.patches.OnCreateCardPatches;
 import Professor.powers.interfaces.OnCreateCardPower;
 import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -23,7 +24,7 @@ public class AetherEssencePower extends AbstractPower implements OnCreateCardPow
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        PowerIconMaker.setIcons(this, AetherEssence.class.getSimpleName());
+        PowerIconMaker.setIcons(this, AuroraEssence.class.getSimpleName());
         updateDescription();
     }
 
@@ -38,7 +39,7 @@ public class AetherEssencePower extends AbstractPower implements OnCreateCardPow
 
     @Override
     public void onCreateCard(AbstractCard card) {
-        if (!card.upgraded) {
+        if (!OnCreateCardPatches.AlreadyModifiedField.modified.get(card)) {
             ForcedUpgradesPatches.applyUnlockIfNeeded(card);
             for (int i = 0 ; i < amount ; i++) {
                 card.upgrade();
@@ -52,5 +53,6 @@ public class AetherEssencePower extends AbstractPower implements OnCreateCardPow
         for (int i = 0 ; i < amount ; i++) {
             card.upgrade();
         }
+        OnCreateCardPatches.AlreadyModifiedField.modified.set(card, true);
     }
 }
