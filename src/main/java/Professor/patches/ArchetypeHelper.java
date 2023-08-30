@@ -1,6 +1,7 @@
 package Professor.patches;
 
 import Professor.powers.interfaces.CheatCostPower;
+import Professor.powers.interfaces.OnCreateCardPower;
 import Professor.powers.interfaces.OnCreateInfusionPower;
 import Professor.util.matcher.*;
 import basemod.Pair;
@@ -150,6 +151,9 @@ public class ArchetypeHelper {
             new Matcher.NewExprMatcher(ShowCardAndAddToHandEffect.class),
             new Matcher.NewExprMatcher(ShowCardAndAddToDiscardEffect.class),
             new Matcher.NewExprMatcher(ShowCardAndAddToDrawPileEffect.class),
+            new InterfaceMatcher(OnCreateCardPower.class),
+
+            //Hand Size
             new Matcher.FieldAccessMatcher(AbstractPlayer.class, "gameHandSize"),
 
             //Stance Change
