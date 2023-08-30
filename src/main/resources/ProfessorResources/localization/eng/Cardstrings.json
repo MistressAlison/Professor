@@ -159,7 +159,7 @@
   },
   "${ModID}:AuroraEssence": {
     "NAME": "Aurora Essence",
-    "DESCRIPTION": "{@@}Whenever a card is created during combat, professor:Masterwork it{!M!|>1= !M! times}."
+    "DESCRIPTION": "{@@}Whenever a card is created during combat, professor:Masterwork it and Upgrade it{!M!|>1= !M! times}."
   },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",
@@ -372,7 +372,7 @@
   },
   "${ModID}:OldMagicTome": {
     "NAME": "Old Magic Tome",
-    "DESCRIPTION": "professor:Masterwork a card !M! times for the rest of combat. NL Exhaust.",
+    "DESCRIPTION": "professor:Masterwork a card and Upgrade it !M! times for the rest of combat. NL Exhaust.",
     "FLAVOR": "Even those who have no magic abilities can feel the mana coursing through it."
   },
   "${ModID}:OldScroll": {
