@@ -1,14 +1,11 @@
 package Professor.cards;
 
-import Professor.vfx.ApplyShaderEffect;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.powers.PhilosophersPower;
-import Professor.shaders.SobelShader;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
 import basemod.helpers.BaseModCardTags;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.tempCards.Omega;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,8 +33,18 @@ public class OldenPhilosophersStone extends AbstractEasyCard {
     @Override
     public void upp() {
         //upgradeMagicNumber(1);
-        isEthereal = false;
-        uDesc();
+        if (timesUpgraded == 1) {
+            isEthereal = false;
+            uDesc();
+        } else if (timesUpgraded == 2) {
+            upgradeBaseCost(2);
+        } else if (timesUpgraded == 3) {
+            upgradeBaseCost(1);
+        } else if (timesUpgraded == 4) {
+            upgradeBaseCost(0);
+        } else {
+            upgradeMagicNumber(1);
+        }
     }
 
     @Override
