@@ -3,8 +3,8 @@
     "NAME": "Baron's Crown",
     "FLAVOR": "Wearing this crown will make anyone look more important.",
     "DESCRIPTIONS": [
-      "On pickup, choose a card. #yprofessor:Unlock and #yUpgrade it.",
-      "Choose a card to Unlock and Upgrade.",
+      "On pickup, choose a card. #yprofessor:Masterwork it.",
+      "Choose a card to Masterwork.",
       "Card chosen: "
     ]
   },

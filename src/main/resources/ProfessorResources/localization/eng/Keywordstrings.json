@@ -178,6 +178,15 @@
     "DESCRIPTION": "Unlocked cards can be upgraded any number of times."
   },
   {
+    "ID": "masterwork",
+    "PROPER_NAME": "Masterpiece",
+    "NAMES": [
+      "masterwork",
+      "masterpiece"
+    ],
+    "DESCRIPTION": "Masterpieces are upgraded, and can be upgraded any number of times."
+  },
+  {
     "ID": "bomb",
     "PROPER_NAME": "Bomb",
     "NAMES": [

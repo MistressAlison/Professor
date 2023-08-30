@@ -19,7 +19,7 @@ public class UnlockedMod extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return FormatHelper.insertAfterText(rawDescription , TEXT[0]);
+        return FormatHelper.insertBeforeText(rawDescription , TEXT[0]);
     }
 
     public AbstractCardModifier makeCopy() {
