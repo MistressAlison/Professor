@@ -121,8 +121,8 @@
   },
   "${ModID}:AirDrop": {
     "NAME": "Air Drop",
-    "DESCRIPTION": "Choose 1 of 3 professor:Synthesis cards to add into your hand. NL It costs 0 this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Choose 1 of 3 Upgraded professor:Synthesis cards to add into your hand. NL It costs 0 this turn. NL Exhaust."
+    "DESCRIPTION": "Choose 1 of !M! professor:Synthesis cards to add into your hand. NL It costs 0 this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose 1 of !M! Upgraded professor:Synthesis cards to add into your hand. NL It costs 0 this turn. NL Exhaust."
   },
   "${ModID}:Amalgam": {
     "NAME": "Amalgam",
@@ -138,7 +138,7 @@
   },
   "${ModID}:AncientSolution": {
     "NAME": "Ancient Solution",
-    "DESCRIPTION": "professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Gain [E] equal to its cost."
+    "DESCRIPTION": "professor:Spectrumize !M! card{!M!|>1=s}{@@}. NL Gain [E] equal to {!M!|1=its|@=their combined} cost."
   },
   "${ModID}:AncientUni": {
     "NAME": "Ancient Uni",

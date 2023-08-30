@@ -21,15 +21,16 @@ public class GatherAction extends AbstractGameAction {
     private final Predicate<AbstractCard> filter;
 
     public GatherAction(Predicate<AbstractCard> filter) {
-        this(filter, false, false);
+        this(3, filter, false, false);
     }
 
-    public GatherAction(Predicate<AbstractCard> filter, boolean freeThisTurn, boolean upgradedCards) {
+    public GatherAction(int amount, Predicate<AbstractCard> filter, boolean freeThisTurn, boolean upgradedCards) {
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
         this.upgradedCards = upgradedCards;
         this.freeThisTurn = freeThisTurn;
         this.filter = filter;
+        this.amount = amount;
     }
 
     public void update() {
@@ -70,7 +71,7 @@ public class GatherAction extends AbstractGameAction {
             validCards.addAll(CardLibrary.getAllCards().stream().filter(c -> filter.test(c) && (c.rarity == AbstractCard.CardRarity.COMMON || c.rarity == AbstractCard.CardRarity.UNCOMMON || c.rarity == AbstractCard.CardRarity.RARE)).collect(Collectors.toList()));
         }
         ArrayList<AbstractCard> ret = new ArrayList<>();
-        for (int i = 0 ; (i < 3 && !validCards.isEmpty()) ; i++) {
+        for (int i = 0 ; (i < amount && !validCards.isEmpty()) ; i++) {
             ret.add(validCards.remove(AbstractDungeon.cardRandomRng.random(validCards.size() - 1)).makeCopy());
         }
         if (upgradedCards) {

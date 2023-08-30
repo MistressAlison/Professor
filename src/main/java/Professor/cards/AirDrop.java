@@ -17,17 +17,23 @@ public class AirDrop extends AbstractEasyCard {
     public AirDrop() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         exhaust = true;
+        baseMagicNumber = magicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GatherAction(c -> c instanceof AbstractRecipeCard, true, upgraded));
+        addToBot(new GatherAction(magicNumber, c -> c instanceof AbstractRecipeCard, true, upgraded));
     }
 
     @Override
     public void upp() {
-        //upgradeBaseCost(0);
-        uDesc();
+        if (timesUpgraded > 2) {
+            upgradeMagicNumber(1);
+        } else if (timesUpgraded == 2) {
+            upgradeBaseCost(0);
+        } else {
+            uDesc();
+        }
     }
 
     @Override
