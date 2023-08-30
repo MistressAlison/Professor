@@ -101,6 +101,10 @@
   },
   "${ModID}:AetherEssencePower": {
     "NAME": "Aether Essence",
+    "DESCRIPTIONS": ["Whenever a card is created during combat, #yMasterwork it.","Whenever a card is created during combat, #yMasterwork it #b"," times."]
+  },
+  "${ModID}:AstronomicalClockPower": {
+    "NAME": "Astronomical Clock",
     "DESCRIPTIONS": ["Receives #b","% less damage from #yAttacks while #ySynthesis is prepared."]
   }
 }

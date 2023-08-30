@@ -157,6 +157,10 @@
     "NAME": "Arbor Ivy",
     "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
   },
+  "${ModID}:AstronomicalClock": {
+    "NAME": "Astronomical Clock",
+    "DESCRIPTION": "Receive 50% less damage from Attacks while professor:Synthesis is prepared."
+  },
   "${ModID}:BlackMuck": {
     "NAME": "Black Muck",
     "DESCRIPTION": "Apply !M! professor:Unstable. NL professor:Spectrumize !Professor:M2! card{@@}{!Professor:M2!|>1=s} at random.",
