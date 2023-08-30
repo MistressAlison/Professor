@@ -44,9 +44,12 @@ public class BlackMuck extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        //upgradeMagicNumber(1);
         //upgradeSecondMagic(1);
-        uDesc();
+        if (timesUpgraded >= 2) {
+            upgradeMagicNumber(1);
+        } else {
+            uDesc();
+        }
     }
 
     @Override

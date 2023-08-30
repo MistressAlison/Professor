@@ -1,7 +1,6 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.patches.CustomTags;
 import Professor.powers.MistLiquidPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
@@ -26,10 +25,13 @@ public class MistLiquid extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        //upgradeMagicNumber(1);
+        if (timesUpgraded >= 2) {
+            upgradeMagicNumber(1);
+        } else {
+            isInnate = true;
+            uDesc();
+        }
         //upgradeBaseCost(0);
-        isInnate = true;
-        uDesc();
     }
 
     @Override

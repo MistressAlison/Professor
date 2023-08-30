@@ -5,6 +5,7 @@ import Professor.patches.CustomTags;
 import Professor.powers.WindEssencePower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,12 +24,22 @@ public class WindEssence extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new WindEssencePower(p, magicNumber));
+        if (secondMagic > 0) {
+            addToBot(new DrawCardAction(secondMagic));
+        }
     }
 
     @Override
     public void upp() {
-        isInnate = true;
-        uDesc();
+        if (timesUpgraded >= 2) {
+            if (baseSecondMagic == -1) {
+                baseSecondMagic = secondMagic = 0;
+            }
+            upgradeSecondMagic(1);
+        } else {
+            isInnate = true;
+            uDesc();
+        }
     }
 
     @Override

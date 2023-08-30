@@ -16,6 +16,7 @@ public class PolishingPowder extends AbstractEasyCard {
 
     public PolishingPowder() {
         super(ID, 3, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 1;
         exhaust = true;
     }
 
@@ -23,14 +24,22 @@ public class PolishingPowder extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ModifyCardsInHandAction(p.hand.size(), l -> {
             for (AbstractCard c : l) {
-                c.setCostForTurn(c.costForTurn - 1);
+                c.setCostForTurn(c.costForTurn - magicNumber);
             }
         }));
     }
 
     @Override
     public void upp() {
-        upgradeBaseCost(2);
+        if (timesUpgraded >= 4) {
+            upgradeMagicNumber(1);
+        } else if (timesUpgraded == 3) {
+            upgradeBaseCost(0);
+        } else if (timesUpgraded == 2) {
+            upgradeBaseCost(1);
+        } else {
+            upgradeBaseCost(2);
+        }
     }
 
     @Override

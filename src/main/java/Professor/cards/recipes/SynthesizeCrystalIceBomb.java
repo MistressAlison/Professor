@@ -32,7 +32,11 @@ public class SynthesizeCrystalIceBomb extends AbstractRecipeCard {
 
     @Override
     public void upp() {
-        upgradeBaseCost(0);
+        if (timesUpgraded >= 2) {
+            upgradeMagicNumber(1);
+        } else {
+            upgradeBaseCost(0);
+        }
     }
 
     @Override

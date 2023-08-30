@@ -20,6 +20,7 @@ public class VirgoRequiemFlower extends AbstractEasyCard {
 
     public VirgoRequiemFlower() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 1;
         exhaust = true;
     }
 
@@ -35,14 +36,18 @@ public class VirgoRequiemFlower extends AbstractEasyCard {
         }
         g.sortAlphabetically(false);
         g.sortByRarity(false);
-        addToBot(new FetchAction(g, c -> true, 1, l -> {
+        addToBot(new FetchAction(g, c -> true, magicNumber, l -> {
             //Maybe do something?
         }));
     }
 
     @Override
     public void upp() {
-        upgradeBaseCost(0);
+        if (timesUpgraded >= 2) {
+            upgradeMagicNumber(1);
+        } else {
+            upgradeBaseCost(0);
+        }
     }
 
     @Override

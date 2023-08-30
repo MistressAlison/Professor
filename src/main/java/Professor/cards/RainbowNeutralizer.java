@@ -41,10 +41,12 @@ public class RainbowNeutralizer extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        //upgradeDamage(2);
-        selfRetain = true;
-        uDesc();
-        //upgradeMagicNumber(2);
+        if (timesUpgraded >= 2) {
+            upgradeDamage(5);
+        } else {
+            selfRetain = true;
+            uDesc();
+        }
     }
 
     @Override

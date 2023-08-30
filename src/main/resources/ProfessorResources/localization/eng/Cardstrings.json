@@ -390,7 +390,7 @@
   },
   "${ModID}:PolishingPowder": {
     "NAME": "Polishing Powder",
-    "DESCRIPTION": "Reduce the cost of all cards in your hand by 1 this turn. NL Exhaust."
+    "DESCRIPTION": "Reduce the cost of all cards in your hand by !M! this turn. NL Exhaust."
   },
   "${ModID}:RainbowNeutralizer": {
     "NAME": "Rainbow Neutralizer",
@@ -448,7 +448,7 @@
   },
   "${ModID}:VirgoRequiemFlower": {
     "NAME": "Requiem Flower",
-    "DESCRIPTION": "Choose an Attack or Power you have played. Add a copy of it into your hand. NL Exhaust.",
+    "DESCRIPTION": "{@@}Choose {!M!|1=an|@=!M!} Attack{!M!|>1=s} or Power{!M!|>1=s} you have played. Add a copy of {!M!|1=it|@=them} into your hand. NL Exhaust.",
     "FLAVOR": "Its faint bluish-white blossom is said to console the dead."
   },
   "${ModID}:Volley": {
@@ -465,8 +465,8 @@
   },
   "${ModID}:WindEssence": {
     "NAME": "Wind Essence",
-    "DESCRIPTION": "Whenever you professor:Infuse a card, draw !M! card{@@}{!M!|>1=s}.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you professor:Infuse a card, draw !M! card{@@}{!M!|>1=s}."
+    "DESCRIPTION": "Whenever you professor:Infuse a card, draw !M! card{@@}{!M!|>1=s}{!Professor:M2!|>0=. NL Draw !Professor:M2! card}{!Professor:M2!|>1=s}.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you professor:Infuse a card, draw !M! card{@@}{!M!|>1=s}{!Professor:M2!|>0=. NL Draw !Professor:M2! card}{!Professor:M2!|>1=s}."
   },
   "${ModID}:WindShoes": {
     "NAME": "Wind Shoes",

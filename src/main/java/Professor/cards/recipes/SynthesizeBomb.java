@@ -30,8 +30,12 @@ public class SynthesizeBomb extends AbstractRecipeCard {
 
     @Override
     public void upp() {
-        uDesc();
-        selfRetain = true;
+        if (timesUpgraded >= 2) {
+            upgradeMagicNumber(1);
+        } else {
+            uDesc();
+            selfRetain = true;
+        }
     }
 
     @Override
