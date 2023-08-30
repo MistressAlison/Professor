@@ -2,6 +2,7 @@ package Professor.cards.tokens;
 
 import Professor.cards.abstracts.AbstractTokenCard;
 import Professor.cards.interfaces.OnUseInSynthesisCard;
+import Professor.patches.CustomTags;
 import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
@@ -22,7 +23,8 @@ public class GreenNeutralizer extends AbstractTokenCard implements OnUseInSynthe
         baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 2;
         //tags.add(CustomTags.PROF_REACTANT);
-        PurgeField.purge.set(this, true);
+        exhaust = true;
+        tags.add(CustomTags.PROF_NOT_BOLT);
     }
 
     @Override

@@ -7,19 +7,19 @@
   },
   "${ModID}:BlueNeutralizer": {
     "NAME": "Blue Neutralizer",
-    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Play a copy of this card. NL Purge."
+    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Play a copy of this card. NL Exhaust."
   },
   "${ModID}:GreenNeutralizer": {
     "NAME": "Green Neutralizer",
-    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL professor:Catalyst: Play a copy of this card. NL Purge."
+    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL professor:Catalyst: Play a copy of this card. NL Exhaust."
   },
   "${ModID}:RedNeutralizer": {
     "NAME": "Red Neutralizer",
-    "DESCRIPTION": "Deal !D! damage. NL professor:Catalyst: Play a copy of this card. NL Purge."
+    "DESCRIPTION": "Deal !D! damage. NL professor:Catalyst: Play a copy of this card. NL Exhaust."
   },
   "${ModID}:YellowNeutralizer": {
     "NAME": "Yellow Neutralizer",
-    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL professor:Catalyst: Play a copy of this card. NL Purge."
+    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL professor:Catalyst: Play a copy of this card. NL Exhaust."
   },
   "${ModID}:HolyArborCrystal": {
     "NAME": "Holy Arbor Crystal",
@@ -407,7 +407,7 @@
   },
   "${ModID}:Septrin": {
     "NAME": "Septrin",
-    "DESCRIPTION": "Whenever a card is Exhausted, professor:Spectrumize it."
+    "DESCRIPTION": "Whenever a professor:non-Neutralizer card is Exhausted, professor:Spectrumize it."
   },
   "${ModID}:ShiningSand": {
     "NAME": "Shining Sand",

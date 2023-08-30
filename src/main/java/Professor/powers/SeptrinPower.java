@@ -3,6 +3,10 @@ package Professor.powers;
 import Professor.MainModfile;
 import Professor.actions.SpectrumizeAction;
 import Professor.cards.Septrin;
+import Professor.cards.tokens.BlueNeutralizer;
+import Professor.cards.tokens.GreenNeutralizer;
+import Professor.cards.tokens.RedNeutralizer;
+import Professor.cards.tokens.YellowNeutralizer;
 import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -35,7 +39,7 @@ public class SeptrinPower extends AbstractPower {
 
     @Override
     public void onExhaust(AbstractCard card) {
-        if (!SpectrumizeAction.spectrumizing) {
+        if (/*!SpectrumizeAction.spectrumizing &&*/ !(card instanceof RedNeutralizer) && !(card instanceof BlueNeutralizer) && !(card instanceof YellowNeutralizer) && !(card instanceof GreenNeutralizer)) {
             flash();
             addToBot(new AbstractGameAction() {
                 @Override

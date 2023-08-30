@@ -54,7 +54,9 @@
     "PROPER_NAME": "Spectrumize",
     "NAMES": [
       "spectrumize",
-      "spectrumized"
+      "spectrumized",
+      "neutralizer",
+      "non-neutralizer"
     ],
     "DESCRIPTION": "A #ySpectrumized card is #yExhausted and is replaced with #yNeutralizers matching its #yElements."
   },

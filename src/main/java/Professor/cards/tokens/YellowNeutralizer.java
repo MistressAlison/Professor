@@ -2,6 +2,7 @@ package Professor.cards.tokens;
 
 import Professor.cards.abstracts.AbstractTokenCard;
 import Professor.cards.interfaces.OnUseInSynthesisCard;
+import Professor.patches.CustomTags;
 import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
@@ -22,7 +23,7 @@ public class YellowNeutralizer extends AbstractTokenCard implements OnUseInSynth
         baseMagicNumber = magicNumber = 1;
         baseSecondMagic = secondMagic = 4;
         //tags.add(CustomTags.PROF_REACTANT);
-        PurgeField.purge.set(this, true);
+        exhaust = true;
     }
 
     @Override

@@ -2,6 +2,7 @@ package Professor.cards.tokens;
 
 import Professor.cards.abstracts.AbstractTokenCard;
 import Professor.cards.interfaces.OnUseInSynthesisCard;
+import Professor.patches.CustomTags;
 import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
@@ -19,7 +20,8 @@ public class BlueNeutralizer extends AbstractTokenCard implements OnUseInSynthes
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
         baseBlock = block = 6;
         baseMagicNumber = magicNumber = 3;
-        PurgeField.purge.set(this, true);
+        exhaust = true;
+        tags.add(CustomTags.PROF_NOT_BOLT);
     }
 
     @Override

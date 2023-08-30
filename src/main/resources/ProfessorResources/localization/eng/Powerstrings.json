@@ -13,7 +13,7 @@
   },
   "${ModID}:SeptrinPower": {
     "NAME": "Septrin",
-    "DESCRIPTIONS": ["Whenever you #yExhaust a card, #ySpectrumize it."]
+    "DESCRIPTIONS": ["Whenever you #yExhaust a #ynon-Neutralizer card, #ySpectrumize it."]
   },
   "${ModID}:DragonBloodPower": {
     "NAME": "Dragon Blood",
