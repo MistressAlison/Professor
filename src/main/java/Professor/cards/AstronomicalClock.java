@@ -45,7 +45,7 @@ public class AstronomicalClock extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, ORANGE, YELLOW, mix(GRAY, CERULEAN), darken(SILVER), false);
+        return new CardArtRoller.ReskinInfo(ID, ORANGE, YELLOW, mix(GRAY, CERULEAN), BLACK, false);
     }
 
     @Override
