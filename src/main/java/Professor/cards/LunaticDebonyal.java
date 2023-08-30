@@ -15,8 +15,8 @@ public class LunaticDebonyal extends AbstractEasyCard {
     public final static String ID = makeID(LunaticDebonyal.class.getSimpleName());
 
     public LunaticDebonyal() {
-        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 5;
+        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 4;
     }
 
     @Override

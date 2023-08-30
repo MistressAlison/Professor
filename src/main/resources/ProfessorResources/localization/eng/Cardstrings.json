@@ -329,7 +329,7 @@
   },
   "${ModID}:LunaticDebonyal": {
     "NAME": "Lunatic Debonyal",
-    "DESCRIPTION": "professor:Infuse \"Deal !M! damage to ALL enemies\" into the first playable card you draw each turn."
+    "DESCRIPTION": "Whenever a card is Exhausted, deal !M! damage to ALL enemies."
   },
   "${ModID}:MagmaPowder": {
     "NAME": "Magma Powder",

@@ -89,7 +89,7 @@
   },
   "${ModID}:LunaticDebonyalPower": {
     "NAME": "Lunatic Debonyal",
-    "DESCRIPTIONS": ["#yInfuse \"Deal #b"," damage to ALL enemies\" into the first playable card you draw each turn."]
+    "DESCRIPTIONS": ["Whenever you #yExhaust a card, deal #b"," damage to ALL enemies."]
   },
   "${ModID}:CardToHandPower": {
     "NAME": " Next Turn",
