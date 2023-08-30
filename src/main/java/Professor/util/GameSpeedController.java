@@ -151,7 +151,7 @@ public class GameSpeedController {
     }
 
     @SpirePatch2(clz = VfxBuilder.class, method = "gravity")
-    public static class FexGravity {
+    public static class FixGravity {
         @SpirePrefixPatch
         public static SpireReturn<VfxBuilder> plz(VfxBuilder __instance, float strength,float ___duration, List<Predicate<Float>> ___updaters) {
             ___updaters.add((t) -> {// 433
@@ -187,17 +187,26 @@ public class GameSpeedController {
     }
 
     public static class SlowMotionAction extends AbstractGameAction {
-
         SlowMotionEffect effect;
+        boolean added;
+        boolean blocking;
 
-        public SlowMotionAction(SlowMotionEffect effect) {
-            this.effect = effect;
+        public SlowMotionAction(float speedDivisor, float duration, boolean blocking) {
+            this.effect = new SlowMotionEffect(speedDivisor, duration);
+            this.blocking = blocking;
         }
 
         @Override
         public void update() {
-            addSlowMotionEffect(effect);
-            this.isDone = true;
+            if (!added) {
+                added = true;
+                addSlowMotionEffect(effect);
+                if (!blocking) {
+                    this.isDone = true;
+                    return;
+                }
+            }
+            this.isDone = effect.isDone;
         }
     }
 
