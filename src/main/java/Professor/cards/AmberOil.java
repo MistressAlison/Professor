@@ -1,7 +1,6 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.patches.CustomTags;
 import Professor.powers.AmberOilPower;
 import Professor.util.CardArtRoller;
 import Professor.util.Wiz;
@@ -32,7 +31,7 @@ public class AmberOil extends AbstractEasyCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, AMBER, WHITE, AMBER, WHITE, false);
+        return new CardArtRoller.ReskinInfo(ID, PERSIMMON, WHITE, PERSIMMON, WHITE, false);
     }
 
     @Override
