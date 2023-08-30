@@ -155,7 +155,7 @@
   },
   "${ModID}:AstronomicalClock": {
     "NAME": "Astronomical Clock",
-    "DESCRIPTION": "Receive 50% less damage from Attacks while professor:Synthesis is prepared."
+    "DESCRIPTION": "Receive 50% less damage from Attacks {@@}{!Professor:M2!|>0=and gain !Professor:M2! Block }while professor:Synthesis is prepared."
   },
   "${ModID}:AuroraEssence": {
     "NAME": "Aurora Essence",

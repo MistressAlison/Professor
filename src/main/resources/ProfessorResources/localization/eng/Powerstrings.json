@@ -106,5 +106,9 @@
   "${ModID}:AstronomicalClockPower": {
     "NAME": "Astronomical Clock",
     "DESCRIPTIONS": ["Receives #b","% less damage from #yAttacks while #ySynthesis is prepared."]
+  },
+  "${ModID}:AstronomicalClockPower2": {
+    "NAME": "Astronomical Clock",
+    "DESCRIPTIONS": ["Whenever #ySynthesis is prepared, gain #b"," #yBlock."]
   }
 }

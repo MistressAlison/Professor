@@ -1,14 +1,10 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.patches.CustomTags;
-import Professor.powers.AetherEssencePower;
 import Professor.powers.AstronomicalClockPower;
-import Professor.ui.SynthesisPanel;
+import Professor.powers.AstronomicalClockPower2;
 import Professor.util.CardArtRoller;
-import Professor.util.GameSpeedController;
 import Professor.util.Wiz;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,16 +21,24 @@ public class AstronomicalClock extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!SynthesisPanel.items.isEmpty()) {
-            addToBot(new GameSpeedController.SlowMotionAction(4f, 1.5f, false));
-            addToBot(new SFXAction("POWER_TIME_WARP", 0.2f));
-        }
         Wiz.applyToSelf(new AstronomicalClockPower(p, magicNumber));
+        if (secondMagic > 0) {
+            Wiz.applyToSelf(new AstronomicalClockPower2(p, secondMagic));
+        }
     }
 
     @Override
     public void upp() {
-        upgradeBaseCost(1);
+        if (timesUpgraded == 1) {
+            upgradeBaseCost(1);
+        } else if (timesUpgraded == 2) {
+            upgradeBaseCost(0);
+        } else {
+            if (baseSecondMagic == -1) {
+                baseSecondMagic = secondMagic = 0;
+            }
+            upgradeSecondMagic(3);
+        }
         //isInnate = true;
         //uDesc();
     }
