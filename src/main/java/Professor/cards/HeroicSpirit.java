@@ -32,8 +32,22 @@ public class HeroicSpirit extends AbstractEasyCard implements OnUseEnergyPatches
 
     @Override
     public void upp() {
-        isEthereal = false;
-        uDesc();
+        if (timesUpgraded >= 2) {
+            if (baseSecondMagic == -1) {
+                baseSecondMagic = secondMagic = 0;
+            }
+            upgradeSecondMagic(1);
+        } else {
+            isEthereal = false;
+            uDesc();
+        }
+    }
+
+    public void triggerWhenDrawn() {
+        if (secondMagic > 0) {
+            flash();
+            addToBot(new DrawCardAction(secondMagic));
+        }
     }
 
     @Override
