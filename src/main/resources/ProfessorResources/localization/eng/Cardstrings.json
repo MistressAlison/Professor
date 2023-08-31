@@ -65,14 +65,13 @@
   },
   "${ModID}:ElysiumHarp": {
     "NAME": "Elysium Harp",
-    "DESCRIPTION": "{@@}Unplayable. NL Whenever this card enters your hand, Gain !M! {!Location!|-2,4=(+2 per [Professor:WindIcon] ) } Block.",
-    "EXTENDED_DESCRIPTION": ["I can't play this card."]
+    "DESCRIPTION": "{@@}Gain !B! {!Location!|-2,4=(+3 per [Professor:WindIcon] ) } Block. NL Draw !M! card{!M!|>1=s}. Discard all cards drawn this way that do not cost 0."
   },
   "${ModID}:SynthesizeElysiumHarp": {
     "NAME": "Peaceful Blueprint",
     "DESCRIPTION": "Ethereal. NL {@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
     "UPGRADE_DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL professor:Synthesize an professor:Elysium_Harp. NL Requires !Professor:I! cards.",
-    "EXTENDED_DESCRIPTION": [": +2 Block per Wind"]
+    "EXTENDED_DESCRIPTION": [": +3 Block per Wind"]
   },
   "${ModID}:LautePlajig": {
     "NAME": "Laute Plajig",

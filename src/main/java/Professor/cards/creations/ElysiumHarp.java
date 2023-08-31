@@ -1,7 +1,6 @@
 package Professor.cards.creations;
 
 import Professor.cards.abstracts.AbstractCreationCard;
-import Professor.patches.EnterCardGroupPatches;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
@@ -9,10 +8,11 @@ import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.defect.ScrapeFollowUpAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,7 +22,7 @@ import static Professor.MainModfile.makeID;
 
 @NoCompendium
 @NoPools
-public class ElysiumHarp extends AbstractCreationCard implements EnterCardGroupPatches.OnEnterCardGroupCard {
+public class ElysiumHarp extends AbstractCreationCard {
     public final static String ID = makeID(ElysiumHarp.class.getSimpleName());
 
     public ElysiumHarp() {
@@ -30,7 +30,7 @@ public class ElysiumHarp extends AbstractCreationCard implements EnterCardGroupP
     }
 
     public ElysiumHarp(ElementData data) {
-        super(ID, -2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         updateElementData(data);
         addCustomKeyword(KeywordManager.ELYSIUM_HARP);
         setDisplayRarity(CardRarity.UNCOMMON);
@@ -38,16 +38,19 @@ public class ElysiumHarp extends AbstractCreationCard implements EnterCardGroupP
 
     @Override
     public void updateElementData(ElementData data) {
-        baseMagicNumber = magicNumber = 6;
+        baseBlock = block = 7;
+        baseMagicNumber = magicNumber = 4;
         //baseSecondMagic = secondMagic = 1;
         if (data != null) {
-            baseMagicNumber += 2*data.g;
-            magicNumber = baseMagicNumber;
+            baseBlock += 3*data.g;
+            block = baseBlock;
+            //baseMagicNumber += data.g;
+            //magicNumber = baseMagicNumber;
             //baseSecondMagic += data.g;
             //secondMagic = baseSecondMagic;
         }
-        //Worst: 5 Vigor, 1 draw
-        //Best: 9 Vigor, 3 draw
+        //Worst: 7 Block, 4 draw
+        //Best: 12 Block, 4 draw
     }
 
     @Override
@@ -59,16 +62,17 @@ public class ElysiumHarp extends AbstractCreationCard implements EnterCardGroupP
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {}
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-        return false;
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction("TINGSHA"));
+        addToBot(new VFXAction(Wiz.adp(), new ShockWaveEffect(Wiz.adp().hb.cX, Wiz.adp().hb.cY, Color.GOLD.cpy(), ShockWaveEffect.ShockWaveType.CHAOTIC), 0.3F));
+        addToBot(new GainBlockAction(Wiz.adp(), block));
+        addToBot(new DrawCardAction(this.magicNumber, new ScrapeFollowUpAction()));
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeBlock(2);
+        upgradeMagicNumber(1);
         //upgradeSecondMagic(1);
     }
 
@@ -85,17 +89,5 @@ public class ElysiumHarp extends AbstractCreationCard implements EnterCardGroupP
     @Override
     public String itemArt() {
         return ElysiumHarp.class.getSimpleName();
-    }
-
-    @Override
-    public void onEnter(CardGroup g) {
-        if (g == Wiz.adp().hand) {
-            superFlash();
-            addToBot(new SFXAction("TINGSHA"));
-            addToBot(new VFXAction(Wiz.adp(), new ShockWaveEffect(Wiz.adp().hb.cX, Wiz.adp().hb.cY, Color.GOLD.cpy(), ShockWaveEffect.ShockWaveType.CHAOTIC), 0.3F));
-            //addToBot(new DrawCardAction(secondMagic));
-            //Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new StaggerPower(mon, magicNumber)));
-            addToBot(new GainBlockAction(Wiz.adp(), magicNumber));
-        }
     }
 }
