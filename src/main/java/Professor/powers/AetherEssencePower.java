@@ -5,6 +5,8 @@ import Professor.cards.AuroraEssence;
 import Professor.patches.ForcedUpgradesPatches;
 import Professor.patches.OnCreateCardPatches;
 import Professor.powers.interfaces.OnCreateCardPower;
+import Professor.powers.interfaces.OnFinishSynthesisPower;
+import Professor.ui.SynthesisItem;
 import Professor.util.PowerIconMaker;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -12,7 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class AetherEssencePower extends AbstractPower implements OnCreateCardPower {
+public class AetherEssencePower extends AbstractPower implements OnCreateCardPower, OnFinishSynthesisPower {
     public static final String POWER_ID = MainModfile.makeID(AetherEssencePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -54,5 +56,14 @@ public class AetherEssencePower extends AbstractPower implements OnCreateCardPow
             card.upgrade();
         }
         OnCreateCardPatches.AlreadyModifiedField.modified.set(card, true);
+    }
+
+    @Override
+    public boolean returnCardsToHand(SynthesisItem item) {
+        ForcedUpgradesPatches.applyUnlockIfNeeded(item.currentCreation);
+        for (int i = 0 ; i < amount ; i++) {
+            item.currentCreation.upgrade();
+        }
+        return false;
     }
 }
