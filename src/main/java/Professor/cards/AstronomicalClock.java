@@ -15,7 +15,7 @@ public class AstronomicalClock extends AbstractEasyCard {
     public final static String ID = makeID(AstronomicalClock.class.getSimpleName());
 
     public AstronomicalClock() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
     }
 
@@ -30,8 +30,6 @@ public class AstronomicalClock extends AbstractEasyCard {
     @Override
     public void upp() {
         if (timesUpgraded == 1) {
-            upgradeBaseCost(1);
-        } else if (timesUpgraded == 2) {
             upgradeBaseCost(0);
         } else {
             if (baseSecondMagic == -1) {
