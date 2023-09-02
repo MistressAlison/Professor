@@ -15,7 +15,7 @@ public class MistLiquid extends AbstractEasyCard {
 
     public MistLiquid() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 1;
     }
 
     @Override
@@ -25,13 +25,14 @@ public class MistLiquid extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        if (timesUpgraded >= 2) {
-            upgradeMagicNumber(1);
-        } else {
+        if (timesUpgraded == 1) {
             isInnate = true;
             uDesc();
+        } else if (timesUpgraded == 2) {
+            upgradeBaseCost(0);
+        } else {
+            upgradeMagicNumber(1);
         }
-        //upgradeBaseCost(0);
     }
 
     @Override
