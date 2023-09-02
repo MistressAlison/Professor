@@ -1,13 +1,10 @@
 package Professor.powers;
 
 import Professor.MainModfile;
-import Professor.actions.FastDamageRandomEnemyAction;
 import Professor.cards.AmberOil;
 import Professor.util.PowerIconMaker;
-import Professor.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
