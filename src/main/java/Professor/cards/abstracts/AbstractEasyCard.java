@@ -148,8 +148,9 @@ public abstract class AbstractEasyCard extends CustomCard {
                 if (cardsToPreview instanceof AbstractEasyCard) {
                     CardArtRoller.computeCard((AbstractEasyCard) cardsToPreview);
                 }
-            } else
+            } else {
                 needsArtRefresh = true;
+            }
         }
 
         FlavorText.AbstractCardFlavorFields.boxColor.set(this, mix(BLACK.cpy(), MainModfile.MEDIUM_RUBY_COLOR.cpy()));
