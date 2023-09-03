@@ -28,7 +28,6 @@ public class SmallCrystals extends AbstractEasyCard {
     public void upp() {
         //upgradeDamage(2);
         upgradeMagicNumber(1);
-        needsArtRefresh = true;
     }
 
     @Override
