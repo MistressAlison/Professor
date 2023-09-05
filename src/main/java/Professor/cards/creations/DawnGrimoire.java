@@ -4,6 +4,8 @@ import Professor.cards.abstracts.AbstractCreationCard;
 import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
+import Professor.vfx.BigExplosionVFX;
+import Professor.vfx.SpotlightEnemyEffect;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -16,6 +18,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.SpotlightEffect;
 import com.megacrit.cardcrawl.vfx.combat.BloodShotEffect;
+import com.megacrit.cardcrawl.vfx.combat.InversionBeamEffect;
 
 import static Professor.MainModfile.makeID;
 
@@ -29,7 +32,7 @@ public class DawnGrimoire extends AbstractCreationCard {
     }
 
     public DawnGrimoire(ElementData data) {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         updateElementData(data);
         addCustomKeyword(KeywordManager.DAWN_GRIMOIRE);
         exhaust = true;
@@ -40,7 +43,7 @@ public class DawnGrimoire extends AbstractCreationCard {
     @Override
     public void updateElementData(ElementData data) {
         baseDamage = damage = 8;
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = 3;
         isMultiDamage = true;
         if (data != null) {
             baseDamage += 3*data.r;
@@ -62,12 +65,15 @@ public class DawnGrimoire extends AbstractCreationCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //addToBot(new SFXAction("ORB_DARK_CHANNEL"));
-        addToBot(new VFXAction(new SpotlightEffect()));
-        addToBot(new SFXAction("INTIMIDATE"));
+        //addToBot(new SFXAction("INTIMIDATE"));
+        addToBot(new SFXAction("ORB_DARK_CHANNEL"));
         Wiz.forAllMonstersLiving(mon -> addToBot(new VFXAction(new BloodShotEffect(mon.hb.cX, mon.hb.cY, p.hb.cX, p.hb.cY, magicNumber/2))));
-        //addToBot(BindingHelper.makeAction(Collections.singletonList(new DawnGrimDamage(magicNumber)), new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE)));
-        allDmg(AbstractGameAction.AttackEffect.FIRE);
+        addToBot(new VFXAction(new SpotlightEnemyEffect(m)));
+        for (int i = 0 ; i < Wiz.getEnemies().size() ; i++) {
+            addToBot(new VFXAction(new InversionBeamEffect(m.hb.cX)));
+            addToBot(new BigExplosionVFX(m));
+            dmg(m, AbstractGameAction.AttackEffect.NONE);
+        }
         Wiz.forAllMonstersLiving(mon -> addToBot(new HealAction(p, p, magicNumber)));
     }
 

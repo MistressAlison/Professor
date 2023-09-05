@@ -2,9 +2,11 @@ package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.CardArtRoller;
-import Professor.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,43 +17,21 @@ public class MagmaPowder extends AbstractEasyCard {
     public final static String ID = makeID(MagmaPowder.class.getSimpleName());
 
     public MagmaPowder() {
-        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        isMultiDamage = true;
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        magicNumber = baseMagicNumber = 2;
+        cardsToPreview = new Burn();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        allDmg(AbstractGameAction.AttackEffect.FIRE);
+        addToBot(new SFXAction("ATTACK_FIRE"));
+        addToBot(new GainEnergyAction(magicNumber));
+        addToBot(new MakeTempCardInDiscardAction(new Burn(), 1));
     }
 
     @Override
     public void upp() {
-        if (baseMagicNumber == -1) {
-            baseMagicNumber = magicNumber = 0;
-        }
-        upgradeMagicNumber(3);
-    }
-
-    @Override
-    public void applyPowers() {
-        baseDamage = countCards();
-        if (magicNumber > 0) {
-            baseDamage += magicNumber;
-        }
-        super.applyPowers();
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        baseDamage = countCards();
-        if (magicNumber > 0) {
-            baseDamage += magicNumber;
-        }
-        super.calculateCardDamage(mo);
-    }
-
-    public int countCards() {
-        return (int) Wiz.adp().hand.group.stream().filter(c -> c != this).count();
+        upgradeMagicNumber(1);
     }
 
     @Override
