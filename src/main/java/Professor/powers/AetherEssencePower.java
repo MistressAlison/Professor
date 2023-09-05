@@ -42,28 +42,28 @@ public class AetherEssencePower extends AbstractPower implements OnCreateCardPow
     @Override
     public void onCreateCard(AbstractCard card) {
         if (!OnCreateCardPatches.AlreadyModifiedField.modified.get(card)) {
-            ForcedUpgradesPatches.applyUnlockIfNeeded(card);
-            for (int i = 0 ; i < amount ; i++) {
-                card.upgrade();
-            }
+            doUpgrades(card);
         }
     }
 
     @Override
     public void onGenerateCardOption(AbstractCard card) {
-        ForcedUpgradesPatches.applyUnlockIfNeeded(card);
-        for (int i = 0 ; i < amount ; i++) {
-            card.upgrade();
-        }
+        doUpgrades(card);
         OnCreateCardPatches.AlreadyModifiedField.modified.set(card, true);
     }
 
     @Override
     public boolean returnCardsToHand(SynthesisItem item) {
-        ForcedUpgradesPatches.applyUnlockIfNeeded(item.currentCreation);
-        for (int i = 0 ; i < amount ; i++) {
-            item.currentCreation.upgrade();
-        }
+        doUpgrades(item.currentCreation);
         return false;
+    }
+
+    private void doUpgrades(AbstractCard card) {
+        if (card.type != AbstractCard.CardType.STATUS && card.type != AbstractCard.CardType.CURSE) {
+            ForcedUpgradesPatches.applyUnlockIfNeeded(card);
+            for (int i = 0 ; i < amount ; i++) {
+                card.upgrade();
+            }
+        }
     }
 }
