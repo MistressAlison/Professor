@@ -195,7 +195,7 @@
   },
   "${ModID}:DarkCrystalFragment": {
     "NAME": "Dark Crystal",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! professor:Unstable."
+    "DESCRIPTION": "Deal !D! damage twice. NL Apply !M! professor:Unstable."
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
