@@ -2,6 +2,7 @@ package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.cards.interfaces.OnUseInSynthesisCard;
+import Professor.patches.CustomTags;
 import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
@@ -18,7 +19,8 @@ public class SaintsDiamond extends AbstractEasyCard implements OnUseInSynthesisC
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = block = 15;
         baseMagicNumber = magicNumber = 1;
-        //tags.add(CustomTags.PROF_CATALYST);
+        // TODO not being picked up
+        tags.add(CustomTags.PROF_BOLT);
     }
 
     @Override
