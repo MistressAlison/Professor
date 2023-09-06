@@ -7,19 +7,19 @@
   },
   "${ModID}:BlueNeutralizer": {
     "NAME": "Blue Neutralizer",
-    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Play a copy of this card. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL When added to professor:Synthesis, play a copy of this card. NL Exhaust."
   },
   "${ModID}:GreenNeutralizer": {
     "NAME": "Green Neutralizer",
-    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL professor:Catalyst: Play a copy of this card. NL Exhaust."
+    "DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL When added to professor:Synthesis, play a copy of this card. NL Exhaust."
   },
   "${ModID}:RedNeutralizer": {
     "NAME": "Red Neutralizer",
-    "DESCRIPTION": "Deal !D! damage. NL professor:Catalyst: Play a copy of this card. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL When added to professor:Synthesis, play a copy of this card. NL Exhaust."
   },
   "${ModID}:YellowNeutralizer": {
     "NAME": "Yellow Neutralizer",
-    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL professor:Catalyst: Play a copy of this card. NL Exhaust."
+    "DESCRIPTION": "Gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL When added to professor:Synthesis, play a copy of this card. NL Exhaust."
   },
   "${ModID}:HolyArborCrystal": {
     "NAME": "Holy Arbor Crystal",
@@ -243,10 +243,6 @@
     "NAME": "Emperor Uni",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL professor:Infuse \"Deal !M! damage to ALL enemies\" into a card."
   },
-  "${ModID}:EternalCrystal": {
-    "NAME": "Eternal Crystal",
-    "DESCRIPTION": "professor:Catalyst. NL At the end of your turn, gain !M! Block."
-  },
   "${ModID}:EternalFire": {
     "NAME": "Eternal Fire",
     "DESCRIPTION": "Deal !D! damage. NL There is no escape from this card. NL Attempts increase its damage by !M!.",
@@ -322,8 +318,8 @@
   },
   "${ModID}:LunarDrop": {
     "NAME": "Lunar Drop",
-    "DESCRIPTION": "{@@}Unplayable. Retain. NL professor:Catalyst: professor:Synthesis creates !M! additional card{!M!|>1=s}.",
-    "UPGRADE_DESCRIPTION": "{@@}Unplayable. Retain. NL professor:Catalyst: professor:Synthesis creates !M! additional card{!M!|>1=s}, and the created cards are Upgraded.",
+    "DESCRIPTION": "{@@}Unplayable. Retain. NL When used in professor:Synthesis, it creates !M! additional card{!M!|>1=s}.",
+    "UPGRADE_DESCRIPTION": "{@@}Unplayable. Retain. NL When used in professor:Synthesis, it creates !M! additional card{!M!|>1=s}, and the created cards are Upgraded.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:LunaticDebonyal": {
@@ -405,7 +401,7 @@
   },
   "${ModID}:SaintsDiamond": {
     "NAME": "Saint's Diamond",
-    "DESCRIPTION": "Gain !B! Block. NL professor:Catalyst: Reduce this card's cost by !M! this combat."
+    "DESCRIPTION": "Gain !B! Block. NL When added to professor:Synthesis, reduce this card's cost by !M! this combat."
   },
   "${ModID}:Septrin": {
     "NAME": "Septrin",

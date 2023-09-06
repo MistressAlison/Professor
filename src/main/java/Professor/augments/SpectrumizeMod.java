@@ -7,35 +7,29 @@ import Professor.cards.tokens.BlueNeutralizer;
 import Professor.cards.tokens.GreenNeutralizer;
 import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
-import Professor.util.KeywordManager;
-import basemod.BaseMod;
 import basemod.abstracts.AbstractCardModifier;
-import basemod.helpers.TooltipInfo;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
-import java.util.Collections;
-import java.util.List;
-
 public class SpectrumizeMod extends AbstractAugment {
     public static final String ID = MainModfile.makeID(SpectrumizeMod.class.getSimpleName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ID).TEXT;
     public static final String[] CARD_TEXT = CardCrawlGame.languagePack.getUIString(ID).EXTRA_TEXT;
-    private static final List<TooltipInfo> catalystTip = Collections.singletonList(new TooltipInfo(BaseMod.getKeywordTitle(KeywordManager.CATALYST), BaseMod.getKeywordDescription(KeywordManager.CATALYST)));
-    private boolean addTip;
+    //private static final List<TooltipInfo> catalystTip = Collections.singletonList(new TooltipInfo(BaseMod.getKeywordTitle(KeywordManager.CATALYST), BaseMod.getKeywordDescription(KeywordManager.CATALYST)));
+    //private boolean addTip;
 
     @Override
     public void onInitialApplication(AbstractCard card) {
         if (MultiCardPreview.multiCardPreview.get(card).stream().noneMatch(c -> c instanceof RedNeutralizer)) {
-            addTip = true;
+            //addTip = true;
             MultiCardPreview.add(card, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
         }
     }
 
-    @Override
+    /*@Override
     public List<TooltipInfo> additionalTooltips(AbstractCard card) {
         List<TooltipInfo> superTips = super.additionalTooltips(card);
         if (addTip) {
@@ -45,7 +39,7 @@ public class SpectrumizeMod extends AbstractAugment {
             superTips.addAll(0, catalystTip);
         }
         return superTips;
-    }
+    }*/
 
     @Override
     public boolean validCard(AbstractCard card) {

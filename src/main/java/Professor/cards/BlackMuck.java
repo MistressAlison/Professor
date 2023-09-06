@@ -8,7 +8,6 @@ import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
 import Professor.powers.UnstablePower;
 import Professor.util.CardArtRoller;
-import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import Professor.vfx.ColoredWaterDropEffect;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
@@ -29,7 +28,7 @@ public class BlackMuck extends AbstractEasyCard {
         baseMagicNumber = magicNumber = 3;
         baseSecondMagic = secondMagic = 1;
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
-        addCustomKeyword(KeywordManager.CATALYST);
+        //addCustomKeyword(KeywordManager.CATALYST);
     }
 
     @Override

@@ -1,19 +1,16 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.cards.interfaces.GlowAdjacentCard;
 import Professor.cards.tokens.BlueNeutralizer;
 import Professor.cards.tokens.GreenNeutralizer;
 import Professor.cards.tokens.RedNeutralizer;
 import Professor.cards.tokens.YellowNeutralizer;
 import Professor.powers.AmalgamPower;
 import Professor.util.CardArtRoller;
-import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -27,7 +24,7 @@ public class Amalgam extends AbstractEasyCard {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = damage = 7;
         MultiCardPreview.add(this, new RedNeutralizer(), new BlueNeutralizer(), new YellowNeutralizer(), new GreenNeutralizer());
-        addCustomKeyword(KeywordManager.CATALYST);
+        //addCustomKeyword(KeywordManager.CATALYST);
     }
 
     @Override
