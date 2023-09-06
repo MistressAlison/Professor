@@ -5,7 +5,7 @@
   },
   "${ModID}:AmberOilPower": {
     "NAME": "Amber Oil",
-    "DESCRIPTIONS": ["Whenever a card is #yRetained, deal #b"," damage to ALL enemies."]
+    "DESCRIPTIONS": ["Whenever you draw an #yUnplayable card, deal #b"," damage to ALL enemies."]
   },
   "${ModID}:MistLiquidPower": {
     "NAME": "Mist Liquid",

@@ -129,7 +129,7 @@
   },
   "${ModID}:AmberOil": {
     "NAME": "Amber Oil",
-    "DESCRIPTION": "Whenever a card is Retained, deal !M! damage to ALL enemies."
+    "DESCRIPTION": "Whenever you draw an Unplayable card, deal !M! damage to ALL enemies."
   },
   "${ModID}:AncientBlueWater": {
     "NAME": "Ancient Blue Water",
@@ -254,7 +254,7 @@
   },
   "${ModID}:EtherealStone": {
     "NAME": "Ethereal Stone",
-    "DESCRIPTION": "Ethereal. NL Draw !M! cards. NL professor:Catalyst: Draw !Professor:M2! cards."
+    "DESCRIPTION": "Put a *Void on top of your draw pile. NL Draw !M! cards."
   },
   "${ModID}:FireEssence": {
     "NAME": "Fire Essence",

@@ -1,29 +1,30 @@
 package Professor.cards;
 
 import Professor.cards.abstracts.AbstractEasyCard;
-import Professor.cards.interfaces.OnUseInSynthesisCard;
-import Professor.ui.SynthesisItem;
 import Professor.util.CardArtRoller;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Professor.MainModfile.makeID;
 
-public class EtherealStone extends AbstractEasyCard implements OnUseInSynthesisCard {
+public class EtherealStone extends AbstractEasyCard {
     public final static String ID = makeID(EtherealStone.class.getSimpleName());
 
     public EtherealStone() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        isEthereal = true;
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        //isEthereal = true;
         baseMagicNumber = magicNumber = 3;
         baseSecondMagic = secondMagic = 2;
+        cardsToPreview = new VoidCard();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), 1, false, true, false));
         addToBot(new DrawCardAction(magicNumber));
     }
 
@@ -47,10 +48,10 @@ public class EtherealStone extends AbstractEasyCard implements OnUseInSynthesisC
         return EtherealStone.class.getSimpleName();
     }
 
-    @Override
+    /*@Override
     public boolean onAdded(SynthesisItem item) {
         superFlash();
         addToBot(new DrawCardAction(secondMagic));
         return false;
-    }
+    }*/
 }

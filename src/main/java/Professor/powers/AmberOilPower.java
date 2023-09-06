@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -36,6 +35,15 @@ public class AmberOilPower extends AbstractPower {
     }
 
     @Override
+    public void onCardDraw(AbstractCard card) {
+        if (card.cost == -2 || card.costForTurn == -2) {
+            flash();
+            addToTop(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(AmberOilPower.this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+
+        }
+    }
+
+    /*@Override
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         addToBot(new AbstractGameAction() {
             @Override
@@ -48,5 +56,5 @@ public class AmberOilPower extends AbstractPower {
                 this.isDone = true;
             }
         });
-    }
+    }*/
 }
