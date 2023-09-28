@@ -32,7 +32,7 @@ public class WaterUni extends AbstractEasyCard implements InHandCard {
 
     @Override
     public void onDamaged(DamageInfo info) {
-        if (info.owner != null && info.owner != Wiz.adp()) {
+        if (info.owner != null && info.owner != Wiz.adp() && info.type == DamageInfo.DamageType.NORMAL) {
             addToTop(new DamageAction(info.owner, new DamageInfo(Wiz.adp(), magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         }
     }
