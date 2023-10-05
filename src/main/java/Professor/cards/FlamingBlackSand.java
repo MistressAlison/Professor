@@ -41,7 +41,7 @@ public class FlamingBlackSand extends AbstractEasyCard implements GlowAdjacentCa
 
     @Override
     public void upp() {
-        upgradeDamage(4);
+        upgradeDamage(3);
         //upgradeMagicNumber(1);
     }
 
