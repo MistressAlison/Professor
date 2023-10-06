@@ -15,7 +15,7 @@ public class Eiche extends AbstractEasyCard {
 
     public Eiche() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 6;
+        baseBlock = block = 5;
         baseMagicNumber = magicNumber = 3;
         //baseSecondMagic = secondMagic = 3;
     }
