@@ -28,7 +28,7 @@ public class ShaderOnEnemyPatches {
 
     public static void begin(AbstractCreature __instance, SpriteBatch sb) {
         capturing = false;
-        if (__instance.hasPower(UnstablePower.POWER_ID)) {
+        if (__instance.hasPower(UnstablePower.POWER_ID) && MainModfile.enableUnstableShader) {
             capturing = true;
             sb.end();
             if (drawnToBuffer) {
@@ -46,15 +46,6 @@ public class ShaderOnEnemyPatches {
             fb.end();
             sb.begin();
             drawnToBuffer = true;
-            /*TextureRegion r = ImageHelper.getBufferTexture(fb);
-            ShaderProgram origShader = sb.getShader();
-            Color origColor = sb.getColor();
-            sb.setShader(shader);
-            shader.setUniformf("x_time", MainModfile.time);
-            sb.setColor(Color.WHITE);
-            sb.draw(r, 0, 0);
-            sb.setShader(origShader);
-            sb.setColor(origColor);*/
         }
     }
 
@@ -99,25 +90,24 @@ public class ShaderOnEnemyPatches {
 
     @SpirePatch2(clz = MonsterGroup.class, method = "render")
     public static class DrawCaptures {
-        @SpirePrefixPatch
-        public static void reset() {
-
-        }
         @SpirePostfixPatch
         public static void plz(MonsterGroup __instance, SpriteBatch sb) {
+            boolean doOverlay = drawnToBuffer;
             draw(sb);
-            for (AbstractMonster m : __instance.monsters) {
-                //Render Health amount
-                float hbyo = ReflectionHacks.getPrivate(m, AbstractCreature.class, "hbYOffset");
-                float bscale = ReflectionHacks.getPrivate(m, AbstractCreature.class, "blockScale");
-                Color btc = ReflectionHacks.getPrivate(m, AbstractCreature.class, "blockTextColor");
-                ReflectionHacks.privateMethod(AbstractCreature.class, "renderHealthText", SpriteBatch.class, float.class).invoke(m, sb, m.hb.cY - m.hb.height / 2.0F + hbyo);
+            if (doOverlay) {
+                for (AbstractMonster m : __instance.monsters) {
+                    //Render Health amount
+                    float hbyo = ReflectionHacks.getPrivate(m, AbstractCreature.class, "hbYOffset");
+                    float bscale = ReflectionHacks.getPrivate(m, AbstractCreature.class, "blockScale");
+                    Color btc = ReflectionHacks.getPrivate(m, AbstractCreature.class, "blockTextColor");
+                    ReflectionHacks.privateMethod(AbstractCreature.class, "renderHealthText", SpriteBatch.class, float.class).invoke(m, sb, m.hb.cY - m.hb.height / 2.0F + hbyo);
 
-                //Render Block amount
-                if (m.currentBlock != 0 && m.hbAlpha != 0.0F) {
-                    float x = m.hb.cX - m.hb.width / 2.0F;
-                    float y = m.hb.cY - m.hb.height / 2.0F + hbyo;
-                    FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(m.currentBlock), x -14.0F * Settings.scale, y - 16.0F * Settings.scale, btc, bscale);
+                    //Render Block amount
+                    if (m.currentBlock != 0 && m.hbAlpha != 0.0F) {
+                        float x = m.hb.cX - m.hb.width / 2.0F;
+                        float y = m.hb.cY - m.hb.height / 2.0F + hbyo;
+                        FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(m.currentBlock), x -14.0F * Settings.scale, y - 16.0F * Settings.scale, btc, bscale);
+                    }
                 }
             }
         }

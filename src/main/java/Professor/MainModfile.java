@@ -22,6 +22,7 @@ import Professor.util.*;
 import Professor.vfx.ShaderTest;
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.helpers.CardBorderGlowManager;
 import basemod.helpers.RelicType;
@@ -35,6 +36,7 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.Loader;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -42,16 +44,19 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Properties;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -105,6 +110,12 @@ public class MainModfile implements
     public static String[] EXTRA_TEXT;
     private static final String AUTHOR = "Mistress Alison";
 
+    // Mod-settings settings. This is if you want an on/off savable button
+    public static SpireConfig professorConfig;
+
+    public static final String ENABLE_UNSTABLE_SHADER = "enableUnstableShader";
+    public static boolean enableUnstableShader = true;
+
     public static final String ENABLE_CARD_BATTLE_TALK_SETTING = "enableCardBattleTalk";
     public static boolean enableCardBattleTalkEffect = false;
 
@@ -131,6 +142,15 @@ public class MainModfile implements
                 ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
                 CARD_ENERGY_L, TEXT_ENERGY);
+
+        Properties professorDefaultSettings = new Properties();
+        professorDefaultSettings.setProperty(ENABLE_UNSTABLE_SHADER, Boolean.toString(enableUnstableShader));
+        try {
+            professorConfig = new SpireConfig("ProfessorMod", "ProfessorModConfig", professorDefaultSettings);
+            enableUnstableShader = professorConfig.getBool(ENABLE_UNSTABLE_SHADER);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static String makePath(String resourcePath) {
@@ -294,6 +314,20 @@ public class MainModfile implements
         }
 
         //Add Config stuff
+        float currentYposition = 740f;
+        float spacingY = 55f;
+
+        //Used to set the unused self damage setting.
+        ModLabeledToggleButton enableUnstableShaderButton = new ModLabeledToggleButton(TEXT[0],350.0f, currentYposition, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                professorConfig.getBool(ENABLE_UNSTABLE_SHADER), settingsPanel, (label) -> {}, (button) -> {
+            professorConfig.setBool(ENABLE_UNSTABLE_SHADER, button.enabled);
+            enableUnstableShader = button.enabled;
+            try {
+                professorConfig.save();} catch (IOException e) {e.printStackTrace();}
+        });
+        currentYposition -= spacingY;
+
+        settingsPanel.addUIElement(enableUnstableShaderButton);
 
         //Other Setup stuff
         processElements();
