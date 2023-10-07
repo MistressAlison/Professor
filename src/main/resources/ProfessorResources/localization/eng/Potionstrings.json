@@ -1,7 +1,7 @@
 {
   "${ModID}:TabooPotion": {
     "NAME": "Taboo Potion",
-    "DESCRIPTIONS": ["Apply #b"," #yStagger."]
+    "DESCRIPTIONS": ["Enemy deals #b"," less damage with Attacks this turn"]
   },
   "${ModID}:LimitBreaker": {
     "NAME": "Limit Breaker",

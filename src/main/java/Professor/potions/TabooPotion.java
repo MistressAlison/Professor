@@ -4,11 +4,9 @@ import Professor.MainModfile;
 import Professor.actions.AnimationAction;
 import Professor.actions.ThrowObjectAction;
 import Professor.powers.StaggerPower;
-import Professor.util.KeywordManager;
 import Professor.util.TextureSniper;
 import Professor.util.Wiz;
 import Professor.vfx.ColoredSmokeBombEffect;
-import basemod.BaseMod;
 import basemod.abstracts.CustomPotion;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -55,7 +53,7 @@ public class TabooPotion extends CustomPotion {
         description = potionStrings.DESCRIPTIONS[0] + potency + potionStrings.DESCRIPTIONS[1];
         tips.clear();
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordTitle(KeywordManager.STAGGER), BaseMod.getKeywordDescription(KeywordManager.STAGGER)));
+        //tips.add(new PowerTip(BaseMod.getKeywordTitle(KeywordManager.STAGGER), BaseMod.getKeywordDescription(KeywordManager.STAGGER)));
     }
 
     @Override
