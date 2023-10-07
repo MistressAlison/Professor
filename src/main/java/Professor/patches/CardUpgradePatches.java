@@ -32,7 +32,7 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
-public class ForcedUpgradesPatches {
+public class CardUpgradePatches {
     public static boolean previewMultipleUpgrade = false;
     public static int upgradeTimes = 0;
 
@@ -105,6 +105,10 @@ public class ForcedUpgradesPatches {
             }
         }
         MainModfile.onUpgradeTrigger(card);
+    }
+
+    public static void postUpgrade(AbstractCard card) {
+        MainModfile.postUpgradeTrigger(card);
     }
 
     @SpirePatch2(clz = AbstractCard.class, method = "makeStatEquivalentCopy")
@@ -218,7 +222,8 @@ public class ForcedUpgradesPatches {
                     CtMethod[] methods = ctClass.getDeclaredMethods();
                     for (CtMethod m : methods) {
                         if (m.getName().equals("upgrade")) {
-                            m.insertBefore(ForcedUpgradesPatches.class.getName() + ".infCheck($0);");
+                            m.insertBefore(CardUpgradePatches.class.getName() + ".infCheck($0);");
+                            m.insertAfter(CardUpgradePatches.class.getName() + ".postUpgrade($0);");
                         }
                     }
                 } catch (CannotCompileException ignored) {}

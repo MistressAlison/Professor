@@ -48,6 +48,16 @@ public class DealDamageMod extends AbstractInfusion {
     }
 
     @Override
+    public void postUpgrade(AbstractCard card) {
+        if (card.target == AbstractCard.CardTarget.ALL_ENEMY || card.target == AbstractCard.CardTarget.NONE) {
+            card.target = AbstractCard.CardTarget.ENEMY;
+        }
+        if (card.target == AbstractCard.CardTarget.SELF || card.target == AbstractCard.CardTarget.ALL) {
+            card.target = AbstractCard.CardTarget.SELF_AND_ENEMY;
+        }
+    }
+
+    @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         if (target instanceof AbstractMonster) {
             Wiz.atb(new InfusionTriggerAction(this, val, relicStatsVal == baseVal ? val : val - CalcHelper.calculateCardDamage(baseVal - relicStatsVal, (AbstractMonster) target)));

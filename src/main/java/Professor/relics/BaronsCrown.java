@@ -2,7 +2,7 @@ package Professor.relics;
 
 import Professor.TheProfessor;
 import Professor.cardmods.UnlockedMod;
-import Professor.patches.ForcedUpgradesPatches;
+import Professor.patches.CardUpgradePatches;
 import Professor.util.FormatHelper;
 import Professor.util.Wiz;
 import basemod.helpers.CardModifierManager;
@@ -51,8 +51,8 @@ public class BaronsCrown extends AbstractEasyRelic {
         if (tmp.group.isEmpty()) {
             this.cardsSelected = true;
         } else {
-            ForcedUpgradesPatches.previewMultipleUpgrade = true;
-            ForcedUpgradesPatches.upgradeTimes = 1;
+            CardUpgradePatches.previewMultipleUpgrade = true;
+            CardUpgradePatches.upgradeTimes = 1;
             AbstractDungeon.gridSelectScreen.open(tmp, selection, DESCRIPTIONS[1], true, false, false, false);
         }
     }
@@ -60,8 +60,8 @@ public class BaronsCrown extends AbstractEasyRelic {
     public void update() {
         super.update();
         if (!this.cardsSelected && AbstractDungeon.gridSelectScreen.selectedCards.size() == selection) {
-            ForcedUpgradesPatches.previewMultipleUpgrade = false;
-            ForcedUpgradesPatches.upgradeTimes = 0;
+            CardUpgradePatches.previewMultipleUpgrade = false;
+            CardUpgradePatches.upgradeTimes = 0;
             AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
             CardModifierManager.addModifier(c, new UnlockedMod());
             c.upgrade();

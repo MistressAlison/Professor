@@ -58,6 +58,8 @@ public abstract class AbstractInfusion extends AbstractCardModifier implements D
         }
     }
 
+    public void postUpgrade(AbstractCard card) {}
+
     /*@Override
     public List<String> extraDescriptors(AbstractCard card) {
         if (type == InfusionType.DAMAGE_ALL || type == InfusionType.DAMAGE_RANDOM || type == InfusionType.DAMAGE_DIRECT) {

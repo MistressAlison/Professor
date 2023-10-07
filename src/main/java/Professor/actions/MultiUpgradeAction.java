@@ -1,7 +1,6 @@
 package Professor.actions;
 
-import Professor.patches.ForcedUpgradesPatches;
-import Professor.util.Wiz;
+import Professor.patches.CardUpgradePatches;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -41,8 +40,8 @@ public class MultiUpgradeAction extends AbstractGameAction {
                     if (this.tempHand.size() > 0) {
                         this.hand.removeIf(this.tempHand::contains);
                     }
-                    ForcedUpgradesPatches.previewMultipleUpgrade = true;
-                    ForcedUpgradesPatches.upgradeTimes = amount;
+                    CardUpgradePatches.previewMultipleUpgrade = true;
+                    CardUpgradePatches.upgradeTimes = amount;
                     AbstractDungeon.handCardSelectScreen.open(CardCrawlGame.languagePack.getUIString("ArmamentsAction").TEXT[0], 1, false, false, false, true);
                     this.tickDuration();
                 }
@@ -50,8 +49,8 @@ public class MultiUpgradeAction extends AbstractGameAction {
                 this.isDone = true;
             }
         } else if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-            ForcedUpgradesPatches.previewMultipleUpgrade = false;
-            ForcedUpgradesPatches.upgradeTimes = 0;
+            CardUpgradePatches.previewMultipleUpgrade = false;
+            CardUpgradePatches.upgradeTimes = 0;
             performUpgrades(AbstractDungeon.handCardSelectScreen.selectedCards.group, amount);
             this.hand.addAll(AbstractDungeon.handCardSelectScreen.selectedCards.group);
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
@@ -73,7 +72,7 @@ public class MultiUpgradeAction extends AbstractGameAction {
 
     public static void performUpgrades(List<AbstractCard> cards, int times) {
         for (AbstractCard card : cards) {
-            ForcedUpgradesPatches.applyUnlockIfNeeded(card);
+            CardUpgradePatches.applyUnlockIfNeeded(card);
             AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
             card.superFlash();
             card.applyPowers();

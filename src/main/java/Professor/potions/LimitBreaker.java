@@ -2,7 +2,7 @@ package Professor.potions;
 
 import Professor.MainModfile;
 import Professor.actions.ModifyCardsInHandAction;
-import Professor.patches.ForcedUpgradesPatches;
+import Professor.patches.CardUpgradePatches;
 import Professor.util.CustomLighting;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
@@ -42,7 +42,7 @@ public class LimitBreaker extends CustomPotion implements CustomLighting {
         addToBot(new VFXAction(Wiz.adp(), new InflameEffect(Wiz.adp()), 0.5F));
         addToBot(new ModifyCardsInHandAction(Wiz.adp().hand.size(), l -> {
             for (AbstractCard card : l) {
-                ForcedUpgradesPatches.applyUnlockIfNeeded(card);
+                CardUpgradePatches.applyUnlockIfNeeded(card);
                 AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(card.hb.cX, card.hb.cY));
                 card.superFlash();
                 card.applyPowers();

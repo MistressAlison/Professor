@@ -1,6 +1,6 @@
 package Professor.cardmods;
 
-import Professor.patches.ForcedUpgradesPatches;
+import Professor.patches.CardUpgradePatches;
 import Professor.util.FormatHelper;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,7 +14,7 @@ public class UnlockedMod extends AbstractCardModifier {
 
     @Override
     public void onInitialApplication(AbstractCard card) {
-        ForcedUpgradesPatches.ForcedUpgradeField.inf.set(card, true);
+        CardUpgradePatches.ForcedUpgradeField.inf.set(card, true);
     }
 
     @Override

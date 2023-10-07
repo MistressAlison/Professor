@@ -2,7 +2,7 @@ package Professor.cutStuff.powers;
 
 import Professor.MainModfile;
 import Professor.cutStuff.cards.AnotherPlanet;
-import Professor.patches.ForcedUpgradesPatches;
+import Professor.patches.CardUpgradePatches;
 import Professor.patches.ZeroAmountPowerPatches;
 import Professor.powers.interfaces.OnUpgradePower;
 import Professor.util.PowerIconMaker;
@@ -45,18 +45,18 @@ public class AnotherPlanetPower extends AbstractPower implements OnUpgradePower,
 
     @Override
     public void onUpgrade(AbstractCard c) {
-        if (!ForcedUpgradesPatches.ForcedUpgradeField.looping.get(c)) {
+        if (!CardUpgradePatches.ForcedUpgradeField.looping.get(c)) {
             flash();
-            ForcedUpgradesPatches.applyUnlockIfNeeded(c);
+            CardUpgradePatches.applyUnlockIfNeeded(c);
             AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(c.hb.cX, c.hb.cY));
             c.superFlash();
             c.applyPowers();
-            ForcedUpgradesPatches.ForcedUpgradeField.looping.set(c, true);
+            CardUpgradePatches.ForcedUpgradeField.looping.set(c, true);
             for (int i = 0 ; i < amount ; i++) {
                 c.upgrade();
                 c.upgraded = false;
             }
-            ForcedUpgradesPatches.ForcedUpgradeField.looping.set(c, false);
+            CardUpgradePatches.ForcedUpgradeField.looping.set(c, false);
         }
     }
 

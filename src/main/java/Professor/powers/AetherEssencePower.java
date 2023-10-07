@@ -2,7 +2,7 @@ package Professor.powers;
 
 import Professor.MainModfile;
 import Professor.cards.AuroraEssence;
-import Professor.patches.ForcedUpgradesPatches;
+import Professor.patches.CardUpgradePatches;
 import Professor.patches.OnCreateCardPatches;
 import Professor.powers.interfaces.OnCreateCardPower;
 import Professor.powers.interfaces.OnFinishSynthesisPower;
@@ -60,7 +60,7 @@ public class AetherEssencePower extends AbstractPower implements OnCreateCardPow
 
     private void doUpgrades(AbstractCard card) {
         if (card.type != AbstractCard.CardType.STATUS && card.type != AbstractCard.CardType.CURSE) {
-            ForcedUpgradesPatches.applyUnlockIfNeeded(card);
+            CardUpgradePatches.applyUnlockIfNeeded(card);
             for (int i = 0 ; i < amount ; i++) {
                 card.upgrade();
             }

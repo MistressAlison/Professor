@@ -24,7 +24,9 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardBorderGlowManager;
+import basemod.helpers.CardModifierManager;
 import basemod.helpers.RelicType;
 import basemod.helpers.ScreenPostProcessorManager;
 import basemod.interfaces.*;
@@ -572,6 +574,14 @@ public class MainModfile implements
                 if (p instanceof OnUpgradePower) {
                     ((OnUpgradePower) p).onUpgrade(c);
                 }
+            }
+        }
+    }
+
+    public static void postUpgradeTrigger(AbstractCard c) {
+        for (AbstractCardModifier m : CardModifierManager.modifiers(c)) {
+            if (m instanceof AbstractInfusion) {
+                ((AbstractInfusion) m).postUpgrade(c);
             }
         }
     }

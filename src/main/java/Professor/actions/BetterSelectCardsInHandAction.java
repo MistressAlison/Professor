@@ -19,8 +19,8 @@ public class BetterSelectCardsInHandAction extends AbstractGameAction {
     private final boolean anyNumber;
     private final boolean canPickZero;
     private final ArrayList<AbstractCard> cardOrder = new ArrayList<>();
-    private final ArrayList<AbstractCard> hand;
-    private final ArrayList<AbstractCard> tempHand;
+    private final ArrayList<AbstractCard> tempHand = new ArrayList<>();
+    private ArrayList<AbstractCard> hand;
 
     public BetterSelectCardsInHandAction(int amount, String textForSelect, boolean anyNumber, boolean canPickZero, Predicate<AbstractCard> cardFilter, Consumer<List<AbstractCard>> callback) {
         this.amount = amount;
@@ -30,13 +30,12 @@ public class BetterSelectCardsInHandAction extends AbstractGameAction {
         this.canPickZero = canPickZero;
         this.predicate = cardFilter;
         this.callback = callback;
-        this.hand = AbstractDungeon.player.hand.group;
-        this.tempHand = new ArrayList<>();
-        this.tempHand.addAll(this.hand);
     }
 
     public void update() {
         if (this.duration == this.startDuration) {
+            hand = AbstractDungeon.player.hand.group;
+            tempHand.addAll(this.hand);
             cardOrder.addAll(hand);
             if (this.hand.size() != 0 && this.hand.stream().anyMatch(this.predicate) && this.callback != null) {
                 if (hand.stream().filter(predicate).count() <= amount && !anyNumber && !canPickZero) {
