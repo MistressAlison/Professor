@@ -28,11 +28,13 @@ public class InfuseRandomCardAction extends AbstractGameAction {
     @Override
     public void update() {
         ArrayList<AbstractCard> validCards = Wiz.adp().hand.group.stream().filter(filter).collect(Collectors.toCollection(ArrayList::new));
-        for (int i = 0 ; i < amount ; i++) {
-            AbstractCard c = Wiz.getRandomItem(validCards);
-            InfuseCardsInHandAction.doInfusion(c, mod);
+        if (!validCards.isEmpty()) {
+            for (int i = 0 ; i < amount ; i++) {
+                AbstractCard c = Wiz.getRandomItem(validCards);
+                InfuseCardsInHandAction.doInfusion(c, mod);
+            }
+            InfuseCardsInHandAction.infusionSFX();
         }
-        InfuseCardsInHandAction.infusionSFX();
         this.isDone = true;
     }
 }
