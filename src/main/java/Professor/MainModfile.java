@@ -3,6 +3,7 @@ package Professor;
 import Professor.cardmods.AbstractInfusion;
 import Professor.cardmods.DealDamageMod;
 import Professor.cardmods.GainBlockMod;
+import Professor.cards.AncientUni;
 import Professor.cards.cardvars.*;
 import Professor.cards.interfaces.GlowAdjacentCard;
 import Professor.icons.IconContainer;
@@ -17,13 +18,11 @@ import Professor.powers.interfaces.OnUpgradePower;
 import Professor.relics.AbstractEasyRelic;
 import Professor.relics.LocketOfDevotion;
 import Professor.relics.MemoriaBracelet;
+import Professor.ui.ModCardRenderer;
 import Professor.ui.SynthesisPanel;
 import Professor.util.*;
 import Professor.vfx.ShaderTest;
-import basemod.AutoAdd;
-import basemod.BaseMod;
-import basemod.ModLabeledToggleButton;
-import basemod.ModPanel;
+import basemod.*;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardBorderGlowManager;
 import basemod.helpers.CardModifierManager;
@@ -42,6 +41,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.green.Acrobatics;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -115,8 +115,17 @@ public class MainModfile implements
     // Mod-settings settings. This is if you want an on/off savable button
     public static SpireConfig professorConfig;
 
+    public static final String RENDER_ELEMENTS_OFF_CHARACTER = "renderElementsOffCharacter";
+    public static boolean renderElementsOffCharacter = false;
+
+    public static final String ELEMENT_ICON_SIZE = "elementIconSize";
+    public static float elementIconSize = 1f;
+
     public static final String ENABLE_UNSTABLE_SHADER = "enableUnstableShader";
     public static boolean enableUnstableShader = true;
+
+    public static final String CHEAT_MATCH_AND_KEEP = "cheatMatchAndKeep";
+    public static boolean cheatMatchAndKeep = false;
 
     public static final String ENABLE_CARD_BATTLE_TALK_SETTING = "enableCardBattleTalk";
     public static boolean enableCardBattleTalkEffect = false;
@@ -147,9 +156,15 @@ public class MainModfile implements
 
         Properties professorDefaultSettings = new Properties();
         professorDefaultSettings.setProperty(ENABLE_UNSTABLE_SHADER, Boolean.toString(enableUnstableShader));
+        professorDefaultSettings.setProperty(RENDER_ELEMENTS_OFF_CHARACTER, Boolean.toString(renderElementsOffCharacter));
+        professorDefaultSettings.setProperty(ELEMENT_ICON_SIZE, Float.toString(elementIconSize));
+        professorDefaultSettings.setProperty(CHEAT_MATCH_AND_KEEP, Boolean.toString(cheatMatchAndKeep));
         try {
             professorConfig = new SpireConfig("ProfessorMod", "ProfessorModConfig", professorDefaultSettings);
             enableUnstableShader = professorConfig.getBool(ENABLE_UNSTABLE_SHADER);
+            renderElementsOffCharacter = professorConfig.getBool(RENDER_ELEMENTS_OFF_CHARACTER);
+            elementIconSize = professorConfig.getFloat(ELEMENT_ICON_SIZE);
+            cheatMatchAndKeep = professorConfig.getBool(CHEAT_MATCH_AND_KEEP);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -317,19 +332,43 @@ public class MainModfile implements
 
         //Add Config stuff
         float currentYposition = 740f;
+        float sliderOffset = 50.0F + FontHelper.getWidth(FontHelper.charDescFont, TEXT[1], 1.0F / Settings.scale);
         float spacingY = 55f;
 
-        //Used to set the unused self damage setting.
-        ModLabeledToggleButton enableUnstableShaderButton = new ModLabeledToggleButton(TEXT[0],350.0f, currentYposition, Settings.CREAM_COLOR, FontHelper.charDescFont,
+        //IUIElements
+        ModLabeledToggleButton enableUnstableShaderButton = new ModLabeledToggleButton(TEXT[2],360.0f, currentYposition - 10f, Settings.CREAM_COLOR, FontHelper.charDescFont,
                 professorConfig.getBool(ENABLE_UNSTABLE_SHADER), settingsPanel, (label) -> {}, (button) -> {
             professorConfig.setBool(ENABLE_UNSTABLE_SHADER, button.enabled);
             enableUnstableShader = button.enabled;
-            try {
-                professorConfig.save();} catch (IOException e) {e.printStackTrace();}
+            try {professorConfig.save();} catch (IOException e) {e.printStackTrace();}
         });
         currentYposition -= spacingY;
 
+        ModLabeledToggleButton renderOffCharacterButton = new ModLabeledToggleButton(TEXT[0],360.0f, currentYposition - 10f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                professorConfig.getBool(RENDER_ELEMENTS_OFF_CHARACTER), settingsPanel, (label) -> {}, (button) -> {
+            professorConfig.setBool(RENDER_ELEMENTS_OFF_CHARACTER, button.enabled);
+            renderElementsOffCharacter = button.enabled;
+            try {professorConfig.save();} catch (IOException e) {e.printStackTrace();}
+        });
+        currentYposition -= spacingY;
+
+        ModLabel iconSizeLabel = new ModLabel(TEXT[1], 400.0F, currentYposition, Settings.CREAM_COLOR, FontHelper.charDescFont, settingsPanel, modLabel -> {});
+        ModMinMaxSlider IconSizeSlider = new ModMinMaxSlider("", 400.0F + sliderOffset, currentYposition + 7.0F, 0.5F, 1.0F, professorConfig.getFloat(ELEMENT_ICON_SIZE), "%.2f", settingsPanel, slider -> {
+            professorConfig.setString(ELEMENT_ICON_SIZE, Float.toString(slider.getValue()));
+            elementIconSize = slider.getValue();
+            try {professorConfig.save();} catch (IOException e) {e.printStackTrace();}
+        });
+        currentYposition -= spacingY;
+
+        ModCardRenderer exampleCard1 = new ModCardRenderer(new AncientUni(), 550f, 400f, 0.7f);
+        ModCardRenderer exampleCard2 = new ModCardRenderer(new Acrobatics(), 850f, 400f, 0.7f);
+
+        settingsPanel.addUIElement(renderOffCharacterButton);
+        settingsPanel.addUIElement(iconSizeLabel);
+        settingsPanel.addUIElement(IconSizeSlider);
         settingsPanel.addUIElement(enableUnstableShaderButton);
+        settingsPanel.addUIElement(exampleCard1);
+        settingsPanel.addUIElement(exampleCard2);
 
         //Other Setup stuff
         processElements();

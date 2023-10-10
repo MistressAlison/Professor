@@ -1,6 +1,8 @@
 {
   "${ModID}:ModConfigs": {
     "TEXT": [
+      "Render Elements Off Character",
+      "Element Render Scale",
       "Enable Shaders"
     ],
     "EXTRA_TEXT": [

@@ -1,6 +1,7 @@
 package Professor.patches;
 
 import Professor.MainModfile;
+import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.TexLoader;
 import basemod.ReflectionHacks;
 import basemod.helpers.CardModifierManager;
@@ -10,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 
@@ -32,7 +34,7 @@ public class ElementRenderPatches {
     public static class RenderHook {
         @SpirePrefixPatch
         public static void preMods(AbstractCard card, SpriteBatch sb) {
-            if (isOnScreen(card)) {
+            if (shouldRender(card)) {
                 doElementRendering(card, sb);
             }
         }
@@ -47,8 +49,11 @@ public class ElementRenderPatches {
         }
     }
 
-    public static boolean isOnScreen(AbstractCard card) {
-        return (card.current_y >= -200.0F * Settings.scale && card.current_y <= Settings.HEIGHT + 200.0F * Settings.scale);
+    public static boolean shouldRender(AbstractCard card) {
+        if (!CardCrawlGame.isInARun() && !(card instanceof AbstractEasyCard) && !MainModfile.renderElementsOffCharacter) {
+            return false;
+        }
+        return !card.isFlipped && (card.current_y >= -200.0F * Settings.scale && card.current_y <= Settings.HEIGHT + 200.0F * Settings.scale);
     }
 
     public static void doElementRendering(AbstractCard card, SpriteBatch sb) {
@@ -73,11 +78,11 @@ public class ElementRenderPatches {
             WHITEISH.a = card.transparency;
             sb.setColor(WHITEISH);
             float dx = -(elements.size()-1) * spacing / 2F;
-            float dy = 210f;
+            float dy = 210f / MainModfile.elementIconSize;
             for (Texture t : elements) {
                 sb.draw(t, card.current_x + dx - t.getWidth()/2f, card.current_y + dy - t.getHeight()/2f,
                         t.getWidth()/2f - dx, t.getHeight()/2f - dy, t.getWidth(), t.getHeight(),
-                        card.drawScale*Settings.scale, card.drawScale*Settings.scale, card.angle,
+                        card.drawScale * Settings.scale * MainModfile.elementIconSize, card.drawScale * Settings.scale * MainModfile.elementIconSize, card.angle,
                         0, 0, t.getWidth(), t.getHeight(), false, false);
                 dx += spacing;
             }
@@ -106,11 +111,11 @@ public class ElementRenderPatches {
         if (!elements.isEmpty()) {
             sb.setColor(Color.WHITE.cpy());
             float dx = -(elements.size()-1) * spacingSCV / 2F;
-            float dy = 420f;
+            float dy = 420f / MainModfile.elementIconSize;
             for (Texture t : elements) {
                 sb.draw(t, Settings.WIDTH/2f + dx - t.getWidth()/2f, Settings.HEIGHT/2f + dy - t.getHeight()/2f,
                         t.getWidth()/2f - dx, t.getHeight()/2f - dy, t.getWidth(), t.getHeight(),
-                        Settings.scale, Settings.scale, card.angle,
+                        Settings.scale * MainModfile.elementIconSize, Settings.scale * MainModfile.elementIconSize, card.angle,
                         0, 0, t.getWidth(), t.getHeight(), false, false);
                 dx += spacingSCV;
             }
