@@ -29,7 +29,7 @@ public class VirgoRequiemFlower extends AbstractEasyCard {
         CardGroup g = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         HashSet<AbstractCard> checked = new HashSet<>();
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
-            if (!checked.contains(c) && (c.type == CardType.POWER || c.type == CardType.ATTACK)) {
+            if (!checked.contains(c) && (c.type == CardType.POWER || c.type == CardType.ATTACK) && !(c instanceof VirgoRequiemFlower)) {
                 g.group.add(c.makeStatEquivalentCopy());
                 checked.add(c);
             }
