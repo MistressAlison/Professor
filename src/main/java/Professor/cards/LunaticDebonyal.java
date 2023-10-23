@@ -16,7 +16,7 @@ public class LunaticDebonyal extends AbstractEasyCard {
 
     public LunaticDebonyal() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = 3;
     }
 
     @Override
