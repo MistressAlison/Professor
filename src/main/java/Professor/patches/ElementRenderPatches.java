@@ -45,12 +45,15 @@ public class ElementRenderPatches {
         @SpirePrefixPatch
         public static void preMods(SingleCardViewPopup screen, SpriteBatch sb) {
             AbstractCard card = ReflectionHacks.getPrivate(screen, SingleCardViewPopup.class, "card");
+            if (!(card instanceof AbstractEasyCard) && !MainModfile.renderElementsOffCharacter) {
+                return;
+            }
             doElementRenderingSCV(card, sb);
         }
     }
 
     public static boolean shouldRender(AbstractCard card) {
-        if (!CardCrawlGame.isInARun() && !(card instanceof AbstractEasyCard) && !MainModfile.renderElementsOffCharacter) {
+        if (!(card instanceof AbstractEasyCard) && !MainModfile.renderElementsOffCharacter) {
             return false;
         }
         return !card.isFlipped && (card.current_y >= -200.0F * Settings.scale && card.current_y <= Settings.HEIGHT + 200.0F * Settings.scale);
