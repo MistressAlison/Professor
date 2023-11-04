@@ -34,10 +34,7 @@ import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Lightning;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.AccuracyPower;
-import com.megacrit.cardcrawl.powers.BarricadePower;
-import com.megacrit.cardcrawl.powers.FocusPower;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.powers.watcher.FreeAttackPower;
 import com.megacrit.cardcrawl.powers.watcher.MantraPower;
 import com.megacrit.cardcrawl.powers.watcher.MasterRealityPower;
@@ -97,6 +94,7 @@ public class ArchetypeHelper {
 
             //Orb Manip
             new Matcher.NewExprMatcher(FocusPower.class),
+            new Matcher.NewExprMatcher(LockOnPower.class),
             new Matcher.MethodCallMatcher(AbstractOrb.class, "onStartOfTurn"),
             new Matcher.MethodCallMatcher(AbstractOrb.class, "onEndOfTurn"),
             new Matcher.MethodCallMatcher(AbstractPlayer.class, "evokeWithoutLosingOrb"),
@@ -199,16 +197,10 @@ public class ArchetypeHelper {
         if (card.hasTag(CustomTags.PROF_NOT_ICE)) {
             return false;
         }
-        if (cardCheck(card, (c,l) -> c.selfRetain || l.stream().anyMatch(u ->  u.selfRetain))) {
-            return true;
-        }
-        if (hasKeyword(card, GameDictionary.UNPLAYABLE.NAMES)) {
+        if (cardCheck(card, (c,l) -> c.selfRetain || c.cost == -2 || l.stream().anyMatch(u -> u.selfRetain || u.cost == -2))) {
             return true;
         }
         if (testCard(card, iceMatchers)) {
-            return true;
-        }
-        if (hasKeyword(card, GameDictionary.LOCK_ON.NAMES)) {
             return true;
         }
         return false;
@@ -222,10 +214,7 @@ public class ArchetypeHelper {
         if (card.hasTag(CustomTags.PROF_NOT_BOLT)) {
             return false;
         }
-        if (cardCheck(card, (c,l) -> c.exhaust || ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c) > -1 || FleetingField.fleeting.get(c) || l.stream().anyMatch(u ->  u.exhaust || ExhaustiveField.ExhaustiveFields.baseExhaustive.get(u) > -1 || FleetingField.fleeting.get(u)))) {
-            return true;
-        }
-        if (Arrays.stream(orbCodes).anyMatch(s -> CardModifierManager.onCreateDescription(card, card.rawDescription).contains(s))) {
+        if (cardCheck(card, (c,l) -> hasOrb(c) || c.exhaust || ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c) > -1 || FleetingField.fleeting.get(c) || l.stream().anyMatch(u -> hasOrb(u) || u.exhaust || ExhaustiveField.ExhaustiveFields.baseExhaustive.get(u) > -1 || FleetingField.fleeting.get(u)))) {
             return true;
         }
         if (testCard(card, boltMatchers)) {
@@ -265,6 +254,10 @@ public class ArchetypeHelper {
 
     public static boolean hasKeyword(AbstractCard card, String[] keywords) {
         return Arrays.stream(keywords).anyMatch(s -> card.keywords.contains(s));
+    }
+
+    public static boolean hasOrb(AbstractCard card) {
+        return Arrays.stream(orbCodes).anyMatch(s -> CardModifierManager.onCreateDescription(card, card.rawDescription).contains(s));
     }
 
     private static ArrayList<AbstractCard> getCardStates(AbstractCard card) {
