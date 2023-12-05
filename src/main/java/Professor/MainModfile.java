@@ -50,6 +50,11 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import imgui.ImGui;
+import imgui.ImVec2;
+import imgui.flag.ImGuiCond;
+import imgui.type.ImBoolean;
+import imgui.type.ImFloat;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -67,7 +72,7 @@ public class MainModfile implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        EditCharactersSubscriber, PostInitializeSubscriber, PostUpdateSubscriber, AddAudioSubscriber, OnPlayerTurnStartSubscriber, StartGameSubscriber {
+        EditCharactersSubscriber, PostInitializeSubscriber, PostUpdateSubscriber, AddAudioSubscriber, OnPlayerTurnStartSubscriber, StartGameSubscriber, ImGuiSubscriber {
 
     public static final String modID = "Professor";
     public static final Logger logger = LogManager.getLogger(MainModfile.class.getName());
@@ -403,7 +408,7 @@ public class MainModfile implements
             }
         });
 
-        if (shaderTest) {
+        if (shaderActive.get()) {
             ScreenPostProcessor postProcessor = new ShaderTest();
             ScreenPostProcessorManager.addPostProcessor(postProcessor);
         }
@@ -412,7 +417,6 @@ public class MainModfile implements
     public static boolean runTest = false;
     public static boolean colorLog = true;
     public static boolean crash = false;
-    public static boolean shaderTest = false;
 
     private static void processElements() {
         logger.info("Performing elemental analysis:");
@@ -623,5 +627,23 @@ public class MainModfile implements
                 ((AbstractInfusion) m).postUpgrade(c);
             }
         }
+    }
+
+    public static final ImBoolean shaderActive = new ImBoolean(false);
+    public static final ImFloat MAGIC_SENSITIVITY = new ImFloat(10f);
+    public static final ImFloat MAGIC_COLOR = new ImFloat(0.5f);
+
+    @Override
+    public void receiveImGui() {
+        ImVec2 windowPos = ImGui.getMainViewport().getPos();
+        ImGui.setNextWindowPos(windowPos.x + 10, windowPos.y + 300, ImGuiCond.FirstUseEver);
+        ImGui.setNextWindowSize(200, 200, ImGuiCond.FirstUseEver);
+
+        ImGui.newLine();
+        ImGui.selectable("Shader Active", shaderActive);
+
+        ImGui.newLine();
+        ImGui.sliderFloat("Magic Sensitivity", MAGIC_SENSITIVITY.getData(), 0f, 25f);
+        ImGui.sliderFloat("Magic Color", MAGIC_COLOR.getData(), 0f, 1f);
     }
 }
