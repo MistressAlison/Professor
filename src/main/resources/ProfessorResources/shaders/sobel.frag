@@ -50,6 +50,7 @@ vec3 sobel(float stepx, float stepy, vec2 center){
 
 void main() {
     vec2 uv = v_texCoords.xy / u_screenSize.xy;
-    vec4 color = texture(u_texture, uv.xy);
+    vec4 color = v_color * texture2D(u_texture, v_texCoords);
     gl_FragColor.xyz = sobel(stepSize /u_screenSize.x, stepSize /u_screenSize.y, v_texCoords);
+    gl_FragColor.a = color.a;
 }
