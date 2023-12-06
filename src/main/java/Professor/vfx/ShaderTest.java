@@ -45,7 +45,7 @@ public class ShaderTest implements ImGuiSubscriber, PostInitializeSubscriber, Po
 
     @Override
     public void receivePostInitialize() {
-        sp = new ShaderProgram(SpriteBatch.createDefaultShader().getVertexShaderSource(), Gdx.files.internal(MainModfile.makePath("shaders/sketch2.frag")).readString(String.valueOf(StandardCharsets.UTF_8)));
+        sp = new ShaderProgram(SpriteBatch.createDefaultShader().getVertexShaderSource(), Gdx.files.internal(MainModfile.makePath("shaders/comic.frag")).readString(String.valueOf(StandardCharsets.UTF_8)));
     }
 
     @Override
