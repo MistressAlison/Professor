@@ -18,6 +18,7 @@ public abstract class AbstractRecipeCard extends AbstractEasyCard {
                 this.setBackgroundTexture(MainModfile.SKILL_S_ART_BLUE, MainModfile.SKILL_L_ART_BLUE);
                 break;
         }
+        setOrbTexture(MainModfile.CARD_ENERGY_S_BLUE, MainModfile.CARD_ENERGY_L_BLUE);
     }
 
     public AbstractRecipeCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target, CardColor color) {
@@ -33,6 +34,7 @@ public abstract class AbstractRecipeCard extends AbstractEasyCard {
                 this.setBackgroundTexture(MainModfile.SKILL_S_ART_BLUE, MainModfile.SKILL_L_ART_BLUE);
                 break;
         }
+        setOrbTexture(MainModfile.CARD_ENERGY_S_BLUE, MainModfile.CARD_ENERGY_L_BLUE);
     }
 
     public abstract int getValance();

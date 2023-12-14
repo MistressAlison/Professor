@@ -97,9 +97,13 @@ public class MainModfile implements
     public static final String ATTACK_L_ART_PURPLE = modID + "Resources/images/1024/bg_attack_purple.png";
     public static final String SKILL_L_ART_PURPLE = modID + "Resources/images/1024/bg_skill_purple.png";
     public static final String POWER_L_ART_PURPLE = modID + "Resources/images/1024/bg_power_purple.png";
-    private static final String CARD_ENERGY_S = modID + "Resources/images/512/energy.png";
-    private static final String TEXT_ENERGY = modID + "Resources/images/512/text_energy.png";
-    private static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy.png";
+    public static final String TEXT_ENERGY = modID + "Resources/images/512/text_energy.png";
+    public static final String CARD_ENERGY_S = modID + "Resources/images/512/energyRed.png";
+    public static final String CARD_ENERGY_L = modID + "Resources/images/1024/energyBigRed.png";
+    public static final String CARD_ENERGY_S_BLUE = modID + "Resources/images/512/energyBlue.png";
+    public static final String CARD_ENERGY_L_BLUE = modID + "Resources/images/1024/energyBigBlue.png";
+    public static final String CARD_ENERGY_S_PURPLE = modID + "Resources/images/512/energyPurple.png";
+    public static final String CARD_ENERGY_L_PURPLE = modID + "Resources/images/1024/energyBigPurple.png";
     private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
     private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
 
@@ -182,6 +186,10 @@ public class MainModfile implements
 
     public static String makePowerPath(String resourcePath) {
         return modID + "Resources/images/powers/" + resourcePath;
+    }
+
+    public static String makeCharacterPath(String resourcePath) {
+        return modID + "Resources/images/char/" + resourcePath;
     }
 
     public static String makeCardPath(String resourcePath) {
