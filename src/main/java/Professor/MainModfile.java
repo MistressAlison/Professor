@@ -112,7 +112,7 @@ public class MainModfile implements
     public static UIStrings uiStrings;
     public static String[] TEXT;
     public static String[] EXTRA_TEXT;
-    private static final String AUTHOR = "Mistress Alison";
+    private static final String AUTHOR = "Mistress Autumn";
 
     // Mod-settings settings. This is if you want an on/off savable button
     public static SpireConfig professorConfig;
