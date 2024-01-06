@@ -1,24 +1,35 @@
-This is an example character template for the more experienced Slay the Spire modder.
-It contains the basics of an empty character, as well as:
-- Improved X cost action framework (Alchyr)
-- General action use wizard for any effects (GK + my own stuff)
-- Lambda power support (mine)
-- Automatic ability to apply TempPowers. Make any power a Flex! (me)
-- AbstractRelic, Power and Card with improved image loading and other shortcuts (alchyr + mine)
-- AbstractCard comes with secondary variable and secondary damage (me + Kio)
-- Automatic card recoloring (me + Mayhem)
-- Hopefully more! Let me know if there's something you'd want added!!
+# The Professor
 
-Setup guide:
-1. Clone the project with Github, preferably downloading with Github Desktop to make it so IntelliJ integration is easy!
-2. Go into your pom.xml, and change the path to your steam installation, the artifactId, version number, name, description, and modID fields inside of that.
-3. Rename the enclosing mod folder. (the folder just under Java, initially named Professor.)
-4. Rename the mod's Resources folder. (the folder under the "resources" folder, initially named todomodResources. The change needs to match your mod ID, plus "Resources". IE: if your modid is "blah", "blahResources".)
-5. Rename the modded character file. (the class initially named TheTodo, not in a folder.)
-6. In the modded character file, go to the Enums section at the bottom and change the PlayerClass and CardColor enums. They're also annotated with TODOs.
-7. Rename the main mod file. (the class initially named TodoMod, not in a folder.)
-8. In the main mod file, change the modID to match the modID field in your pom.xml.
+This mod currently adds a new playable character, The Professor.
 
-9+. You'll probably want to rename your character in the CharStrings file to start off. From there, it's just making the mod of your dreams!
+Alongside them is a new set of 87 cards, 5 Relics, and 2 Potions. While I do not yet know of any incompatibilities, please let me know if you find any.
 
-(You could also commission me to make the mod of your dreams at Vex'd#2468!)
+Character, relic, and other assets are from Disgaea and are property of Nippon Ichi Software.
+
+Features
+---
+The Professor is an alchemist loosely based around the Atelier series; gameplay will involve breaking down cards, creating new cards, and adding extra effects to existing cards. The Professor's main mechanics are Elements, Synthesis, Infuse, Spectrumize, and Unstable.
+
+_**Elements:**_
+ Elements are a passive classification that cards will have while Professor is installed. Cards will automatically be given some combination of Fire, Ice, Lightning, and Wind based on the effects the card has. Elements do nothing on their own but other cards and mechanics will interact with them.
+
+_**Synthesis:**_
+Use Blueprint cards to create a new card that is strengthened based on the Elements on the cards you choose to contribute. This process takes a turn to perform, giving you the finished product at the start of your next turn and discarding the cards you contributed to it previously.
+
+_**Infuse:**_
+Add extra effects into your cards to change how they work. Turn Skills into Attacks by adding damaging effects, and scale through combat by Infusing multiple effects into cheap cards.
+
+_**Spectrumize:**_
+Break a card down into Neutralizer tokens based on what Elements the card has. Neutralizers all have a single effect related to their Element, Exhaust, and have special synergy when used in Synthesis.
+
+_**Unstable:**_
+Corrupt an enemy and make it take additional damage from Attacks. Offers an additional scaling solution if you outpace its slow decay, and has a unique visual effect.
+
+---
+
+Made using Protemplate.
+---
+
+If you would like to make your own mod...
+
+Check the wiki to get started: https://github.com/Alchyr/BasicMod/wiki
