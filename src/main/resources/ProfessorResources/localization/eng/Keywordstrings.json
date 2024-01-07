@@ -47,7 +47,7 @@
       "synthesis",
       "synthesize"
     ],
-    "DESCRIPTION": "Remove X cards from your hand, contributing their #yElements towards this card. Next turn, add the completed version into your hand and discard the chosen cards."
+    "DESCRIPTION": "Remove X cards from your hand, contributing their #yElements towards #yTransforming this card. Next turn, add the transformed card into your hand and discard the chosen cards."
   },
   {
     "ID": "spectrumize",
