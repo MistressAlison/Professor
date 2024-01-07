@@ -3,6 +3,7 @@ package Professor.patches;
 import Professor.MainModfile;
 import Professor.cards.abstracts.AbstractEasyCard;
 import Professor.util.TexLoader;
+import Professor.util.Wiz;
 import basemod.ReflectionHacks;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Color;
@@ -45,7 +46,7 @@ public class ElementRenderPatches {
         @SpirePrefixPatch
         public static void preMods(SingleCardViewPopup screen, SpriteBatch sb) {
             AbstractCard card = ReflectionHacks.getPrivate(screen, SingleCardViewPopup.class, "card");
-            if (!(card instanceof AbstractEasyCard) && !MainModfile.renderElementsOffCharacter) {
+            if (!(card instanceof AbstractEasyCard) && !MainModfile.renderElementsOffCharacter && !Wiz.inProfessorRun()) {
                 return;
             }
             doElementRenderingSCV(card, sb);
@@ -53,7 +54,7 @@ public class ElementRenderPatches {
     }
 
     public static boolean shouldRender(AbstractCard card) {
-        if (!(card instanceof AbstractEasyCard) && !MainModfile.renderElementsOffCharacter) {
+        if (!(card instanceof AbstractEasyCard) && !MainModfile.renderElementsOffCharacter && !Wiz.inProfessorRun()) {
             return false;
         }
         return !card.isFlipped && (card.current_y >= -200.0F * Settings.scale && card.current_y <= Settings.HEIGHT + 200.0F * Settings.scale);

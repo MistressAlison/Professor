@@ -1,5 +1,6 @@
 package Professor.util;
 
+import Professor.TheProfessor;
 import Professor.actions.TimedVFXAction;
 import Professor.patches.CardCounterPatches;
 import Professor.powers.LosePowerPower;
@@ -280,5 +281,9 @@ public class Wiz {
         ArrayList<AbstractCard> ret = new ArrayList<>();
         forAdjacentCards(thisCard, ret::add);
         return ret;
+    }
+
+    public static boolean inProfessorRun() {
+        return CardCrawlGame.isInARun() && AbstractDungeon.player instanceof TheProfessor;
     }
 }
