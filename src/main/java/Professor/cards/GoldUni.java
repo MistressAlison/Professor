@@ -22,7 +22,7 @@ public class GoldUni extends AbstractEasyCard {
 
     public GoldUni() {
         super(ID, 3, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 20;
+        baseDamage = damage = 24;
         baseMagicNumber = magicNumber = 2;
         tags.add(CustomTags.PROF_UNI);
     }
