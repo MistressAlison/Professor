@@ -15,7 +15,7 @@ public class HolyArborBranch extends AbstractEasyCard {
 
     public HolyArborBranch() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = block = 10;
+        baseBlock = block = 12;
         selfRetain = true;
     }
 
