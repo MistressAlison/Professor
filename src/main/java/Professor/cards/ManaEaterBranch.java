@@ -18,7 +18,7 @@ public class ManaEaterBranch extends AbstractEasyCard {
     public ManaEaterBranch() {
         super(ID, -1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         baseDamage = damage = 10;
-        exhaust = true;
+        //exhaust = true;
     }
 
     @Override

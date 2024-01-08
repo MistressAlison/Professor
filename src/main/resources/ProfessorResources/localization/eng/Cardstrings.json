@@ -332,7 +332,7 @@
   },
   "${ModID}:ManaEaterBranch": {
     "NAME": "Mana-Eater Branch",
-    "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage to a random enemy X times."
   },
   "${ModID}:ManaLantern": {
     "NAME": "Mana Lantern",
