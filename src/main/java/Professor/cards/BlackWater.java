@@ -14,8 +14,8 @@ public class BlackWater extends AbstractEasyCard {
     public final static String ID = makeID(BlackWater.class.getSimpleName());
 
     public BlackWater() {
-        super(ID, 3, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 1;
         //tags.add(CustomTags.PROF_REACTANT);
     }
 
@@ -26,8 +26,8 @@ public class BlackWater extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(1);
-        //upgradeBaseCost(0);
+        //upgradeMagicNumber(1);
+        upgradeBaseCost(0);
         //isInnate = true;
         //uDesc();
     }
