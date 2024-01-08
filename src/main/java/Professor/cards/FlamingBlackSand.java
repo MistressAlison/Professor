@@ -21,8 +21,8 @@ public class FlamingBlackSand extends AbstractEasyCard implements GlowAdjacentCa
 
     public FlamingBlackSand() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 7;
-        baseMagicNumber = magicNumber = 1;
+        baseDamage = damage = 8;
+        baseMagicNumber = magicNumber = 2;
     }
 
     @Override
@@ -32,6 +32,7 @@ public class FlamingBlackSand extends AbstractEasyCard implements GlowAdjacentCa
         for (AbstractCard c : Wiz.getAdjacentCards(this)) {
             if (ArchetypeHelper.isFire(c)) {
                 energy = true;
+                exhaustOnUseOnce = true;
             }
         }
         if (energy) {
@@ -41,8 +42,8 @@ public class FlamingBlackSand extends AbstractEasyCard implements GlowAdjacentCa
 
     @Override
     public void upp() {
-        upgradeDamage(3);
-        //upgradeMagicNumber(1);
+        //upgradeDamage(1);
+        upgradeMagicNumber(1);
     }
 
     public void triggerOnGlowCheck() {

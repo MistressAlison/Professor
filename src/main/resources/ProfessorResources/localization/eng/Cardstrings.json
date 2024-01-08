@@ -258,7 +258,7 @@
   },
   "${ModID}:FlamingBlackSand": {
     "NAME": "Flaming Black Sand",
-    "DESCRIPTION": "Deal !D! damage. NL If an adjacent card is professor:Fire, gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}."
+    "DESCRIPTION": "Deal !D! damage. NL If an adjacent card is professor:Fire, gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]} and Exhaust."
   },
   "${ModID}:ForbiddenElixir": {
     "NAME": "Forbidden Elixir",
