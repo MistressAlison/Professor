@@ -15,7 +15,7 @@ public class AmberOil extends AbstractEasyCard {
 
     public AmberOil() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 5;
+        baseMagicNumber = magicNumber = 6;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class AmberOil extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(4);
         //upgradeBaseCost(0);
     }
 
