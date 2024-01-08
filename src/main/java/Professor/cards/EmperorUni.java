@@ -18,7 +18,7 @@ public class EmperorUni extends AbstractEasyCard {
 
     public EmperorUni() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        baseDamage = damage = 6;
+        baseDamage = damage = 4;
         baseMagicNumber = magicNumber = 4;
         tags.add(CustomTags.PROF_UNI);
         isMultiDamage = true;
