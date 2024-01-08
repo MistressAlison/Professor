@@ -15,7 +15,7 @@ public class DuskyPowder extends AbstractEasyCard {
     public final static String ID = makeID(DuskyPowder.class.getSimpleName());
 
     public DuskyPowder() {
-        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         baseMagicNumber = magicNumber = 2;
         exhaust = true;
     }
@@ -27,7 +27,8 @@ public class DuskyPowder extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(1);
+        //upgradeMagicNumber(1);
+        upgradeBaseCost(0);
     }
 
     @Override
