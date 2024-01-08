@@ -26,10 +26,11 @@ public class BlackWater extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        //upgradeMagicNumber(1);
-        upgradeBaseCost(0);
-        //isInnate = true;
-        //uDesc();
+        if (timesUpgraded == 1) {
+            upgradeBaseCost(0);
+        } else {
+            upgradeMagicNumber(1);
+        }
     }
 
     @Override
