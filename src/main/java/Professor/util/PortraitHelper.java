@@ -1,6 +1,7 @@
 
 package Professor.util;
 
+import Professor.MainModfile;
 import basemod.Pair;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.*;
@@ -32,10 +33,12 @@ public class PortraitHelper {
         Pair<String, AbstractCard.CardType> key = new Pair<>(card.cardID, card.type);
         if (hashedTextures.containsKey(key)) {
             card.portrait = hashedTextures.get(key).getKey();
-        } else {
+        } else if (CardLibrary.getCard(card.cardID) != null) {
             Texture temp = makeMaskedTexture(card, 2);
             card.portrait = new TextureAtlas.AtlasRegion(makeMaskedTexture(card, 1), 0, 0, WIDTH, HEIGHT);
             hashedTextures.put(key, new Pair<>(card.portrait, temp));
+        } else {
+            MainModfile.logger.warn("Card: "+card.cardID+" does not exist in CardLibrary.");
         }
     }
 
