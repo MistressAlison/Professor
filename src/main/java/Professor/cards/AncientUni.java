@@ -27,7 +27,7 @@ public class AncientUni extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(3);
     }
 
     @Override
