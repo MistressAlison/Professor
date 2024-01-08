@@ -35,8 +35,8 @@ public class TabooDrop extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeDamage(2);
-        upgradeBlock(2);
+        upgradeDamage(3);
+        upgradeBlock(3);
         //upgradeMagicNumber(1);
     }
 
