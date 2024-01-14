@@ -1,0 +1,14 @@
+{
+  "Professor:InfuseAddonMod": {
+    "TEXT": ["", "插件", "伤害减少 #b33% 。 将其伤害 #y灌注 入另一张卡牌。 #y消耗 。"],
+    "EXTRA_TEXT": ["固有。 NL ","向一张卡牌 professor:灌注 \"造成 !M! 点伤害\" 。 NL 消耗 。","向一张卡牌 professor:灌注 \"对所有敌人造成 !M! 点伤害\" 。 NL 消耗 。"]
+  },
+  "Professor:SpectrumizeMod": {
+    "TEXT": ["熔解 ", "", "#y谱系化 一张随机手牌。 #y升级 后可选择目标."],
+    "EXTRA_TEXT": [" NL professor:谱系化 1张随机手牌。"," NL professor:谱系化 1张手牌。"]
+  },
+  "Professor:UnstableMod": {
+    "TEXT": ["挥发 ", "", "伤害减少 #b2 。 NL 给予 #b2(+1) 层 #y失稳 。"],
+    "EXTRA_TEXT": [" NL 给予 %s 层 professor:失稳 。"]
+  }
+}

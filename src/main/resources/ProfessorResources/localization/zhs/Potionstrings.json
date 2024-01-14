@@ -1,0 +1,10 @@
+{
+  "Professor:TabooPotion": {
+    "NAME": "禁忌药水",
+    "DESCRIPTIONS": ["敌人在本回合造成的攻击伤害降低 #b"," 点。"]
+  },
+  "Professor:LimitBreaker": {
+    "NAME": "突破药剂",
+    "DESCRIPTIONS": ["#y杰作化 并 #y升级 你手牌中的所有牌。","#y杰作化 并 #y升级 你手牌中的所有牌 #b"," 次。"]
+  }
+}

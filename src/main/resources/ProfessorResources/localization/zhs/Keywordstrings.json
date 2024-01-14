@@ -1,0 +1,310 @@
+[
+  {
+    "ID": "element",
+    "PROPER_NAME": "元素",
+    "NAMES": [
+      "元素",
+      "火元素",
+      "冰元素",
+      "雷元素",
+      "风元素",
+      "element",
+      "elements",
+      "fire",
+      "ice",
+      "bolt",
+      "wind"
+    ],
+    "DESCRIPTION": "四种元素分别为 #r火 [Professor:FireIcon] 、 #b冰 [Professor:IceIcon] 、 #y雷 [Professor:BoltIcon] 与 #g风 [Professor:WindIcon] 。"
+  },
+  {
+    "ID": "synthesis",
+    "PROPER_NAME": "调和",
+    "NAMES": [
+      "调和",
+      "synthesis",
+      "synthesize"
+    ],
+    "DESCRIPTION": "从你的手牌中移出指定数量张牌，并将它们的 #y元素 用于 #y变化 这张牌。下一回合，将变化后的牌加入手牌，并丢弃之前选中的卡牌。"
+  },
+  {
+    "ID": "spectrumize",
+    "PROPER_NAME": "谱系化",
+    "NAMES": [
+      "谱系化",
+      "中和剂",
+      "非中和剂",
+      "spectrumize",
+      "spectrumized",
+      "neutralizer",
+      "non-neutralizer"
+    ],
+    "DESCRIPTION": "被 #y谱系化 的卡牌将被 #y消耗 ，然后将与其 #y元素 匹配的 #y中和剂 加入手牌。"
+  },
+  {
+    "ID": "unstable",
+    "PROPER_NAME": "失稳",
+    "NAMES": [
+      "失稳",
+      "unstable",
+      "destabilize",
+      "destabilized"
+    ],
+    "DESCRIPTION": "失稳的生物将受到额外的攻击伤害。回合结束时，失稳的层数下降 #b1 。"
+  },
+  {
+    "ID": "infuse",
+    "PROPER_NAME": "灌注",
+    "NAMES": [
+      "灌注",
+      "infuse",
+      "infused",
+      "infusion",
+      "infusions"
+    ],
+    "DESCRIPTION": "在本场战斗中，为一张卡附加一个额外效果。"
+  },
+  {
+    "ID": "masterwork",
+    "PROPER_NAME": "杰作",
+    "NAMES": [
+      "杰作",
+      "杰作化",
+      "masterwork",
+      "masterpiece"
+    ],
+    "DESCRIPTION": "一张杰作可以被升级任意多次。"
+  },
+  {
+    "ID": "bomb",
+    "PROPER_NAME": "炎烧",
+    "NAMES": [
+      "炎烧",
+      "bomb",
+      "bomb+"
+    ],
+    "DESCRIPTION": "同时造成单体与群体伤害。 NL 效果受使用的 [Professor:FireIcon] 与 [Professor:BoltIcon] 影响。"
+  },
+  {
+    "ID": "na",
+    "PROPER_NAME": "不适用",
+    "NAMES": [
+      "不适用",
+      "不适用+",
+      "n/a",
+      "na",
+      "n/a+"
+    ],
+    "DESCRIPTION": "造成大量群体伤害。 NL 每当你在调和过程中加入一种数量至少为2的元素，费用降低1。"
+  },
+  {
+    "ID": "crystal_ice_bomb",
+    "PROPER_NAME": "结晶冰精",
+    "NAMES": [
+      "结晶冰精",
+      "crystal ice bomb",
+      "crystal_ice_bomb",
+      "crystal_ice_bomb+"
+    ],
+    "DESCRIPTION": "造成群体伤害并给予 #y虚弱 。 NL 效果受使用的 [Professor:IceIcon] 与 [Professor:WindIcon] 影响。"
+  },
+  {
+    "ID": "luft",
+    "PROPER_NAME": "风精",
+    "NAMES": [
+      "风精",
+      "luft",
+      "luft+"
+    ],
+    "DESCRIPTION": "抽牌并将它们升级。 NL 效果受使用的 [Professor:WindIcon] 影响。"
+  },
+  {
+    "ID": "laute_plajig",
+    "PROPER_NAME": "震耳雷球",
+    "NAMES": [
+      "震耳雷球",
+      "震耳雷球+",
+      "laute plajig",
+      "laute_plajig",
+      "laute_plajig+"
+    ],
+    "DESCRIPTION": "伤害受手牌数量影响。 NL 效果受使用的 [Professor:BoltIcon] 影响。"
+  },
+  {
+    "ID": "dawn_grimoire",
+    "PROPER_NAME": "黄昏魔典",
+    "NAMES": [
+      "黄昏魔典",
+      "dawn grimoire",
+      "dawn_grimoire",
+      "dawn_grimoire+"
+    ],
+    "DESCRIPTION": "造成多段的单体伤害与回复。 NL 效果受使用的 [Professor:FireIcon] 与 [Professor:BoltIcon] 影响。"
+  },
+  {
+    "ID": "elysium_harp",
+    "PROPER_NAME": "天国竖琴",
+    "NAMES": [
+      "天国竖琴",
+      "elysium harp",
+      "elysium_harp",
+      "elysium_harp+"
+    ],
+    "DESCRIPTION": "获得格挡。 NL 效果受使用的 [Professor:WindIcon] 影响。"
+  },
+  {
+    "ID": "dark_night_treasure",
+    "PROPER_NAME": "暗夜宝藏",
+    "NAMES": [
+      "暗夜宝藏",
+      "dark night treasure",
+      "dark_night_treasure",
+      "dark_night_treasure+"
+    ],
+    "DESCRIPTION": "击杀生命值低于一定值的所有敌人。 NL 效果受使用的 [Professor:IceIcon] 影响。"
+  },
+  {
+    "ID": "catalyst",
+    "PROPER_NAME": "触媒",
+    "NAMES": [
+      "catalyst",
+      "catalysts",
+      "catalyze",
+      "catalytic"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "reactant",
+    "PROPER_NAME": "反应物",
+    "NAMES": [
+      "reactant",
+      "reactants"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "valency",
+    "PROPER_NAME": "效价",
+    "NAMES": [
+      "valency"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "neutralizer",
+    "PROPER_NAME": "中和剂",
+    "NAMES": [
+      "neutralizer",
+      "neutralizers"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "precipitate",
+    "PROPER_NAME": "沉淀",
+    "NAMES": [
+      "precipitate"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "recipe",
+    "PROPER_NAME": "配方",
+    "NAMES": [
+      "recipe",
+      "recipes"
+    ],
+    "DESCRIPTION": "?"
+  },
+  {
+    "ID": "creation",
+    "PROPER_NAME": "造物",
+    "NAMES": [
+      "creation",
+      "creations"
+    ],
+    "DESCRIPTION": "?"
+  },
+  {
+    "ID": "burn",
+    "PROPER_NAME": "燃烧",
+    "NAMES": [
+      "burn",
+      "burning"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "braced",
+    "PROPER_NAME": "加固",
+    "NAMES": [
+      "braced"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "exposed",
+    "PROPER_NAME": "暴露",
+    "NAMES": [
+      "expose",
+      "exposed"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "phased",
+    "PROPER_NAME": "相位化",
+    "NAMES": [
+      "phased"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "stagger",
+    "PROPER_NAME": "交错",
+    "NAMES": [
+      "stagger",
+      "staggered"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "gather",
+    "PROPER_NAME": "收集",
+    "NAMES": [
+      "gather",
+      "gathered"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "unlock",
+    "PROPER_NAME": "解封",
+    "NAMES": [
+      "unlock",
+      "unlocked"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "explosive_uni",
+    "PROPER_NAME": "爆炸海胆",
+    "NAMES": [
+      "explosive uni",
+      "explosive_uni",
+      "explosive_uni+"
+    ],
+    "DESCRIPTION": "[未使用]"
+  },
+  {
+    "ID": "thorny_embrace",
+    "PROPER_NAME": "Thorny Embrace",
+    "NAMES": [
+      "thorny embrace",
+      "thorny_embrace",
+      "thorny_embrace+"
+    ],
+    "DESCRIPTION": "[未使用]"
+  }
+]

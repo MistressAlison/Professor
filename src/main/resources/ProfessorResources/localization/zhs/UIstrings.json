@@ -1,0 +1,41 @@
+{
+  "Professor:ModConfigs": {
+    "TEXT": [
+      "为非本职业卡牌渲染元素提示",
+      "元素提示渲染大小",
+      "启用特效着色器"
+    ],
+    "EXTRA_TEXT": [
+      "炼金教授",
+      "文本。"
+    ]
+  },
+  "Professor:CrossOver": {
+    "TEXT": [
+      "启用炼金教授的交互元素"
+    ]
+  },
+  "Professor:SpectrumizeAction": {
+    "TEXT": [
+      "谱系化"
+    ]
+  },
+  "Professor:ModifyAction": {
+    "TEXT": [
+      "修改"
+    ]
+  },
+  "Professor:CleanseAction": {
+    "TEXT": [
+      "移除",
+      "选择1个状态移除。",
+      "选择 "," 个状态移除。"
+    ]
+  },
+  "Professor:SynthesisAction": {
+    "TEXT": [
+      "调和",
+      "我没有足够的卡牌。"
+    ]
+  }
+}

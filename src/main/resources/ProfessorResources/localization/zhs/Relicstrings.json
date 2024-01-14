@@ -1,0 +1,155 @@
+{
+  "Professor:BaronsCrown": {
+    "NAME": "男爵冠",
+    "FLAVOR": "戴上这顶皇冠，任何人看起来都不可或缺。",
+    "DESCRIPTIONS": [
+      "拾起时，选择一张牌。 令其 #yprofessor:杰作化 并 #y升级 .",
+      "选择一张卡牌变为杰作。",
+      "选择的卡牌: "
+    ]
+  },
+  "Professor:Cosmos": {
+    "NAME": "Cosmos",
+    "FLAVOR": "An amulet that grants the wearer power beyond human knowledge. The effect is powerful, but also puts stress on the body.",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "Professor:ElixirRing": {
+    "NAME": "Elixir Ring",
+    "FLAVOR": "An exclusive ring for alchemists. It takes two Philosopher's Stones to craft.",
+    "DESCRIPTIONS": [
+      "Rest sites heal?"
+    ]
+  },
+  "Professor:EnergyPendant": {
+    "NAME": "Energy Pendant",
+    "FLAVOR": "Just putting it on makes you feel less tired, so it's recommended for adventurers.",
+    "DESCRIPTIONS": [
+      "Unspent Energy conditional?"
+    ]
+  },
+  "Professor:EnlightenedBandana": {
+    "NAME": "Enlightened Bandana",
+    "FLAVOR": "The longer you wear it, the more it will hone your nerves and the stronger the effect will become.",
+    "DESCRIPTIONS": [
+      "Gain Str/Dex every third turn?"
+    ]
+  },
+  "Professor:FluffyTail": {
+    "NAME": "Fluffy Tail",
+    "FLAVOR": "Once you put it on, you can't remove it unless you get it wet, so you don't need to worry about losing it. Unless it's raining, of course.",
+    "DESCRIPTIONS": [
+      "Start of combat Draw and Block?"
+    ]
+  },
+  "Professor:FocusGlass": {
+    "NAME": "聚焦眼镜",
+    "FLAVOR": "戴上它就能揭示敌人的弱点。只是由于设计问题，它使用起来有些困难。",
+    "DESCRIPTIONS": [
+      "你每在同一回合内打出 #b3 张 #y攻击牌 ，你的下一张 #y攻击牌 额外造成 #b50% 伤害。"
+    ]
+  },
+  "Professor:FourSpiritsAmulet": {
+    "NAME": "Four Spirits Amulet",
+    "FLAVOR": "An amulet containing the blessings of the four elemental spirits. It's powerful, but extremely difficult to craft.",
+    "DESCRIPTIONS": [
+      "Gain E if you play all 4 elements in 1 turn?"
+    ]
+  },
+  "Professor:GloryBelt": {
+    "NAME": "Glory Belt",
+    "FLAVOR": "The belt given to the champion of the yearly battle arena. There is only one of these in the entire world, so it probably shouldn't be here at all...",
+    "DESCRIPTIONS": [
+      "If Fatal, gain Str/Dex/HP?"
+    ]
+  },
+  "Professor:GnadeRing": {
+    "NAME": "Gnade Ring",
+    "FLAVOR": "A ring popular among adventurers. Its specific effects change according to how it's made.",
+    "DESCRIPTIONS": [
+      "Start combat Vigor and Braced?"
+    ]
+  },
+  "Professor:HotBloodedBandana": {
+    "NAME": "Hot-Blooded Bandana",
+    "FLAVOR": "Wrapping this around your head seems to provide extra motivation, but it will also make you tired much faster.",
+    "DESCRIPTIONS": [
+      "Gain E early, then gain weak?"
+    ]
+  },
+  "Professor:InnocentRiches": {
+    "NAME": "Innocent Riches",
+    "FLAVOR": "It's been reported that wearing it for too long can actually cause the tail's movement to affect the wearer's emotions.",
+    "DESCRIPTIONS": [
+      "Upgraded cards exhaust and give gold"
+    ]
+  },
+  "Professor:KaiserCape": {
+    "NAME": "Kaiser Cape",
+    "FLAVOR": "A thick cape once worn by a famous emperor when heading to war, raising the morale of soldiers fighting by his side.",
+    "DESCRIPTIONS": [
+      "Whenever you play a cost 2 or higher card, draw a card?"
+    ]
+  },
+  "Professor:LocketOfDevotion": {
+    "NAME": "奉献相框坠",
+    "FLAVOR": "如果把想要保护的人的照片放在里面，它就会让你承担起他们的苦难。",
+    "DESCRIPTIONS": [
+      "替换 #y回忆手环 。回合开始时，向随机1张手牌 #yprofessor:灌注 \"造成 5 点伤害\"。",
+      "造成伤害: "," NL 伤害/回合: "," NL 伤害/战斗: "
+    ]
+  },
+  "Professor:MemoriaBracelet": {
+    "NAME": "回忆手环",
+    "FLAVOR": "手环是感情的象征，因此它的设计理念时尚多于实用。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，向随机1张手牌 #yprofessor:灌注 \"造成 5 点伤害\"。",
+      "造成伤害: "," NL 获得格挡: "," NL 伤害/回合: "," NL 伤害/战斗: "," NL 格挡/回合: "," NL 格挡/战斗: "
+
+    ]
+  },
+  "Professor:MigratoryCharm": {
+    "NAME": "Migratory Charm",
+    "FLAVOR": "Wearing it helps keep your legs from getting tired or going numb, so it's perfect for long trips.",
+    "DESCRIPTIONS": [
+      "Negates debuff, heals you?"
+    ]
+  },
+  "Professor:QuartzNecklace": {
+    "NAME": "Quartz Necklace",
+    "FLAVOR": "A necklace designed to last longer while using less metal. It's the perfect gift to give the object of your affection",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "Professor:SageCirclet": {
+    "NAME": "Sage Circlet",
+    "FLAVOR": "A circlet said to contain the knowledge of a legendary sage.",
+    "DESCRIPTIONS": [
+      "Bonus damage to Vuln enemies?"
+    ]
+  },
+  "Professor:SamastenNecklace": {
+    "NAME": "Samasten Necklace",
+    "FLAVOR": "A choker decorated with Samasten, a surprisingly brittle ore.",
+    "DESCRIPTIONS": [
+      "Some per turn effect, lost when attacked"
+    ]
+  },
+  "Professor:SoulOfFortitude": {
+    "NAME": "Soul of Fortitude",
+    "FLAVOR": "An accessory made for knights defending the kingdom. It's good at absorbing damage, making it great for long, drawn-out battles.",
+    "DESCRIPTIONS": [
+      "???"
+    ]
+  },
+  "Professor:UniCharm": {
+    "NAME": "海胆挂饰",
+    "FLAVOR": "人们总认为它看起来有些毛骨悚然。这自然有其道理：它是用真正的海胆制作的。",
+    "DESCRIPTIONS": [
+      "每当你在一场战斗中首次受到伤害时，对所有敌人造成 #b8 点伤害。",
+      "造成伤害: "," NL 伤害/战斗: "
+    ]
+  }
+}

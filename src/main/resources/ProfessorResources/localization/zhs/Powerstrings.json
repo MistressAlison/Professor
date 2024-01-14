@@ -1,0 +1,114 @@
+{
+  "Professor:AmmoPower": {
+    "NAME": "Ammo",
+    "DESCRIPTIONS": ["Used to perform #yRanged attacks."]
+  },
+  "Professor:AmberOilPower": {
+    "NAME": "琥珀油",
+    "DESCRIPTIONS": ["每当你抽到一张 #y不能被打出 的卡牌，对所有敌人造成 #b"," 点伤害。"]
+  },
+  "Professor:MistLiquidPower": {
+    "NAME": "雾液",
+    "DESCRIPTIONS": ["回合结束时，你每有一张手牌，获得 #b"," 点 #y格挡 。"]
+  },
+  "Professor:SeptrinPower": {
+    "NAME": "圣石",
+    "DESCRIPTIONS": ["当一张 #y非中和剂 被 #y消耗 ， #y谱系化 之。"]
+  },
+  "Professor:DragonBloodPower": {
+    "NAME": "Dragon Blood",
+    "DESCRIPTIONS": ["Increase the potency of all #yBlock and damage #yInfusisons by #b","."]
+  },
+  "Professor:PhilosophersPower": {
+    "NAME": "贤者之形态",
+    "DESCRIPTIONS": ["每个回合 #b1 次，你可以在没有足够 #y能量 的时候打出卡牌。","每个回合 #b", " 次，你可以在没有足够 #y能量 的时候打出卡牌。"]
+  },
+  "Professor:FireEssencePower": {
+    "NAME": "火之精华",
+    "DESCRIPTIONS": ["每当你造成未被 #y格挡 的攻击伤害，对所有敌人造成 #b"," 点伤害。"]
+  },
+  "Professor:IceEssencePower": {
+    "NAME": "冰之精华",
+    "DESCRIPTIONS": ["每当你从卡牌中获得 #y格挡 ，在下回合获得 #b"," 点 #y格挡 。"]
+  },
+  "Professor:BoltEssencePower": {
+    "NAME": "雷之精华",
+    "DESCRIPTIONS": ["费用为 #b0 的攻击牌额外造成 #b"," 点伤害。"]
+  },
+  "Professor:WindEssencePower": {
+    "NAME": "风之精华",
+    "DESCRIPTIONS": ["每当你 #y灌注 一张牌，抽 #b"," 张牌。"," 张牌。"]
+  },
+  "Professor:PoisonPowderPower": {
+    "NAME": "Poison Powder",
+    "DESCRIPTIONS": ["Your next Attack applies #b"," #yPoison on hit."]
+  },
+  "Professor:BracedPower": {
+    "NAME": "Braced",
+    "DESCRIPTIONS": ["Your next #yBlock gaining card gains #b", " additional #yBlock."]
+  },
+  "Professor:BurnPower": {
+    "NAME": "Burn",
+    "DESCRIPTIONS": ["At the start of its turn, takes #b"," damage."]
+  },
+  "Professor:ExposedPower": {
+    "NAME": "Exposed",
+    "DESCRIPTIONS": ["Takes #b"," more damage from Attacks this turn."]
+  },
+  "Professor:UnstablePower": {
+    "NAME": "失稳",
+    "DESCRIPTIONS": ["受到的攻击伤害增加 #b"," 点。回合结束时， #y失稳 的层数降低 #b1."]
+  },
+  "Professor:StaggerPower": {
+    "NAME": "Staggered",
+    "DESCRIPTIONS": ["Deals #b"," less damage with Attacks this turn."]
+  },
+  "Professor:FocusedPower": {
+    "NAME": "聚焦",
+    "DESCRIPTIONS": ["你的下一张 #y攻击牌 额外造成 #b50% 伤害。"," 你的下 #b"," 张 #y攻击牌 额外造成 #b50% 伤害。"]
+  },
+  "Professor:AnotherPlanetPower": {
+    "NAME": "Another Planet",
+    "DESCRIPTIONS": ["Whenever you #yUpgrade a card, #yUnlock it.","Whenever you #yUpgrade a card, #yUnlock it and #yUpgrade it #b"," additional time."," additional times."]
+  },
+  "Professor:BroomPower": {
+    "NAME": "御帚飞行",
+    "DESCRIPTIONS": ["本回合结束后，额外获得一回合。"]
+  },
+  "Professor:ThornyEmbracePower": {
+    "NAME": "Thorny Embrace",
+    "DESCRIPTIONS": ["At the end of your turn, deal #b"," damage to each enemy that intends to attack."]
+  },
+  "Professor:BlackWaterPower": {
+    "NAME": "黑水",
+    "DESCRIPTIONS": ["每当你给予敌人 #y虚弱 或 #y易伤 ，同时给予 #b"," 层 #y失稳 。"]
+  },
+  "Professor:ForbiddenElixirPower": {
+    "NAME": "禁忌万灵药",
+    "DESCRIPTIONS": ["在接下来 #b"," 回合内，指向目标的 #y攻击 将攻击所有敌人。","本回合，指向目标的 #y攻击 将攻击所有敌人。"]
+  },
+  "Professor:LunaticDebonyalPower": {
+    "NAME": "恶魔狂药",
+    "DESCRIPTIONS": ["每当一张卡牌被 #y消耗 ，对所有敌人造成 #b"," 点伤害。"]
+  },
+  "Professor:CardToHandPower": {
+    "NAME": " 下个回合",
+    "DESCRIPTIONS": ["下个回合，将 "," 加入手牌"," 张复制品"]
+  },
+  "Professor:AmalgamPower": {
+    "NAME": "水银光谱",
+    "DESCRIPTIONS": ["#y谱系化 你本回合打出的下一张牌。","#y谱系化 你本回合打出的下 #b"," 张牌。"]
+  },
+  "Professor:AetherEssencePower": {
+    "NAME": "极光精华",
+    "DESCRIPTIONS": ["所有在战斗中临时增加的牌将被 #y杰作化 。","所有在战斗中临时增加的牌将被 #y升级 #b"," 次。"]
+  },
+  "Professor:AstronomicalClockPower": {
+    "NAME": "时空天文钟",
+    "DESCRIPTIONS": ["如果正在准备 #y调和 ，受到的 #y攻击 伤害降低 #b","%。"]
+  },
+  "Professor:AstronomicalClockPower2": {
+    "NAME": "时空天文钟(杰作)",
+    "DESCRIPTIONS": ["如果正在准备 #y调和 ，在回合结束时获得 #b"," 点 #y格挡 。"]
+  }
+}

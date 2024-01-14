@@ -1,0 +1,470 @@
+{
+  "Professor:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Main description",
+    "UPGRADE_DESCRIPTION": "Upgrade description",
+    "EXTENDED_DESCRIPTION": ["Extra Stuff"]
+  },
+  "Professor:BlueNeutralizer": {
+    "NAME": "中和剂·蓝",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 被用于 professor:调和 时，打出这张牌的复制。 NL 消耗 。"
+  },
+  "Professor:GreenNeutralizer": {
+    "NAME": "中和剂·绿",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 被用于 professor:调和 时，打出这张牌的复制。 NL 消耗 。"
+  },
+  "Professor:RedNeutralizer": {
+    "NAME": "中和剂·红",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 被用于 professor:调和 时，打出这张牌的复制。 NL 消耗 。"
+  },
+  "Professor:YellowNeutralizer": {
+    "NAME": "中和剂·黄",
+    "DESCRIPTION": "获得 {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]} 。 NL 被用于 professor:调和 时，打出这张牌的复制。 NL 消耗 。"
+  },
+  "Professor:HolyArborCrystal": {
+    "NAME": "圣树水晶",
+    "DESCRIPTION": "保留 。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
+  },
+  "Professor:Bomb": {
+    "NAME": "炎烧",
+    "DESCRIPTION": "{@@}造成 !Professor:D2! {!Location!|-2,4=(+3 / [Professor:FireIcon] ) }点伤害。 NL 对所有敌人造成 !D! {!Location!|-2,4=(+2 / [Professor:BoltIcon] ) }点伤害。"
+  },
+  "Professor:SynthesizeBomb": {
+    "NAME": "爆炸蓝图",
+    "DESCRIPTION": "抽 !M! 张牌。 NL professor:调和 一份 professor:炎烧 。 NL 需要 !Professor:I! 张牌。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 抽 !M! 张牌。 NL professor:调和 一份 professor:炎烧 。 NL 需要 !Professor:I! 张牌。",
+    "EXTENDED_DESCRIPTION": [": 火=+3伤害，雷=+2群体伤害。"]
+  },
+  "Professor:CrystalIceBomb": {
+    "NAME": "结晶冰精",
+    "DESCRIPTION": "{@@}对所有敌人造成 !D! {!Location!|-2,4=(+4 / [Professor:IceIcon] ) }点伤害并给予 !M! {!Location!|-2,4= NL (+1 / [Professor:WindIcon] ) }层 虚弱 。"
+  },
+  "Professor:SynthesizeCrystalIceBomb": {
+    "NAME": "晶化蓝图",
+    "DESCRIPTION": "抽 !M! 张牌。 NL professor:调和 一份 professor:结晶冰精 。 NL 需要 !Professor:I! 张牌。",
+    "EXTENDED_DESCRIPTION": [": 冰=+4伤害，风=+1虚弱层数。"]
+  },
+  "Professor:DarkNightTreasure": {
+    "NAME": "暗夜宝藏",
+    "DESCRIPTION": "{@@}击杀全体生命值小于等于 !M! {!Location!|-2,4=(+5 / [Professor:IceIcon] ) }点的敌人。"
+  },
+  "Professor:SynthesizeDarkNightTreasure": {
+    "NAME": "致命蓝图",
+    "DESCRIPTION": "抽 !M! 张牌。 NL professor:调和 一份 professor:暗夜宝藏 。 NL 需要 !Professor:I! 张牌。",
+    "EXTENDED_DESCRIPTION": [": 冰=+5斩杀阈值。"]
+  },
+  "Professor:DawnGrimoire": {
+    "NAME": "黄昏魔典",
+    "DESCRIPTION": "{@@}每有一个敌人，造成 !D! {!Location!|-2,4=(+3 / [Professor:FireIcon] ) }点伤害并恢复 !M! {!Location!|-2,4=NL (+1 / [Professor:BoltIcon] ) }点生命。 NL 消耗 。"
+  },
+  "Professor:SynthesizeDawnGrimoire": {
+    "NAME": "阴森蓝图",
+    "DESCRIPTION": "抽 !M! 张牌。 NL professor:调和 一份 professor:黄昏魔典 。 NL 需要 !Professor:I! 张牌。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 抽 !M! 张牌。 NL professor:调和 一份 professor:黄昏魔典 。 NL 需要 !Professor:I! 张牌。",
+    "EXTENDED_DESCRIPTION": [": 火=+3伤害，雷=+1回复量。"]
+  },
+  "Professor:ElysiumHarp": {
+    "NAME": "天国竖琴",
+    "DESCRIPTION": "{@@}获得 !B! {!Location!|-2,4=(+3 / [Professor:WindIcon] ) } 点 格挡 。 NL 抽 !M! 张牌，丢弃抽到的牌中耗能不为0的牌。"
+  },
+  "Professor:SynthesizeElysiumHarp": {
+    "NAME": "和平蓝图",
+    "DESCRIPTION": "虚无 。 NL 抽 !M! 张牌。 NL professor:调和 一份 professor:天国竖琴 。 NL 需要 !Professor:I! 张牌。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL professor:调和 一份 professor:天国竖琴 。 NL 需要 !Professor:I! 张牌。",
+    "EXTENDED_DESCRIPTION": [": 风=+3格挡。"]
+  },
+  "Professor:LautePlajig": {
+    "NAME": "震耳雷球",
+    "DESCRIPTION": "{@@}造成 !D! {!Location!|-2,4=(+5 / [Professor:BoltIcon] ) }点伤害。 NL 每有一张手牌，额外造成 !M! 点伤害。"
+  },
+  "Professor:SynthesizeLautePlajig": {
+    "NAME": "电击蓝图",
+    "DESCRIPTION": "抽 !M! 张牌。 NL professor:调和 一份 professor:震耳雷球 。 NL 需要 !Professor:I! 张牌。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL professor:调和 一份 professor:震耳雷球+ 。 NL 需要 !Professor:I! 张牌。",
+    "EXTENDED_DESCRIPTION": [": 雷=+5伤害。"]
+  },
+  "Professor:Luft": {
+    "NAME": "风精",
+    "DESCRIPTION": "{@@}抽 !M! {!Location!|-2,4=(+1 / [Professor:WindIcon] ) }张牌，然后在本场战斗中将 {!M!|1=它|@=它们} 升级。"
+  },
+  "Professor:SynthesizeLuft": {
+    "NAME": "微风蓝图",
+    "DESCRIPTION": "抽 !M! 张牌。 NL professor:调和 一份 professor:风精 。 NL 需要 !Professor:I! 张牌。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 抽 !M! 张牌。 NL professor:调和 一份 professor:风精 。 NL 需要 !Professor:I! 张牌。",
+    "EXTENDED_DESCRIPTION": [": 风=+1抽牌数。"]
+  },
+  "Professor:NA": {
+    "NAME": "不适用",
+    "DESCRIPTION": "{@@}对所有敌人造成 !D! 点伤害。{!Location!|-2,4= NL 每在调和过程中加入一种数量至少为2的 professor:元素 ，费用降低1。}"
+  },
+  "Professor:SynthesizeNA": {
+    "NAME": "神秘蓝图",
+    "DESCRIPTION": "抽 !M! 张牌。 NL professor:调和 一份 professor:不适用 。 NL 需要 !Professor:I! 张牌。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL professor:调和 一份 professor:不适用+ 。 NL 需要 !Professor:I! 张牌。",
+    "EXTENDED_DESCRIPTION": [": 每在调和过程中加入一种数量至少为2的元素，费用降低1。"]
+  },
+  "Professor:ThornyEmbrace": {
+    "NAME": "Thorny Embrace",
+    "DESCRIPTION": "{@@}At the end of your turn, deal !M! {!Location!|-2,4=(+2 per [Professor:WindIcon] ) }damage to each enemy that intends to attack."
+  },
+  "Professor:SynthesizeThornyEmbrace": {
+    "NAME": "Pointy Blueprint",
+    "DESCRIPTION": "professor:Synthesize a professor:Thorny_Embrace. NL Requires !Professor:I! cards.",
+    "UPGRADE_DESCRIPTION": "professor:Synthesize a professor:Thorny_Embrace+. NL Requires !Professor:I! cards.",
+    "EXTENDED_DESCRIPTION": ["我没有足够的手牌。",": +2 damage per Wind"]
+  },
+  "Professor:AbyssBolt": {
+    "NAME": "深渊电能装置",
+    "DESCRIPTION": "不能被打出 。 保留 。 NL 每当这张牌进入弃牌堆，对所有敌人造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": ["我不能打出这张牌。"]
+  },
+  "Professor:AirDrop": {
+    "NAME": "水中气囊",
+    "DESCRIPTION": "从 !M! 张 professor:调和 牌中选择1张加入你的手牌。 NL 这张牌在本回合耗能变为0。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "从 !M! 张升级过的 professor:调和 牌中选择1张加入你的手牌。 NL 这张牌在本回合耗能变为0。 NL 消耗 。"
+  },
+  "Professor:Amalgam": {
+    "NAME": "水银合金",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL professor:谱系化 你本回合打出的下一张牌。"
+  },
+  "Professor:AmberOil": {
+    "NAME": "琥珀油",
+    "DESCRIPTION": "每当你抽到一张 不能被打出 的卡牌，对所有敌人造成 !M! 点伤害。"
+  },
+  "Professor:AncientBlueWater": {
+    "NAME": "太古苍水",
+    "DESCRIPTION": "professor:谱系化 你的手牌。 NL 每 professor:谱系化 一张牌， 获得 !B! 点 格挡 。 NL 消耗 。"
+  },
+  "Professor:AncientSolution": {
+    "NAME": "古药原液",
+    "DESCRIPTION": "professor:谱系化 !M! 张牌。 NL 获得等同于其费用的 [E] 。"
+  },
+  "Professor:AncientUni": {
+    "NAME": "古代海胆",
+    "DESCRIPTION": "向一张卡牌 professor:灌注 \"造成 !M! 点伤害\"。"
+  },
+  "Professor:AnotherPlanet": {
+    "NAME": "Another Planet",
+    "DESCRIPTION": "Whenever you Upgrade a card, professor:Unlock it.",
+    "UPGRADE_DESCRIPTION": "Whenever you Upgrade a card, professor:Unlock it and Upgrade it an additional time."
+  },
+  "Professor:ArborIvy": {
+    "NAME": "大树常春藤",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 丢弃 !M! 张牌。"
+  },
+  "Professor:AstronomicalClock": {
+    "NAME": "时空天文钟",
+    "DESCRIPTION": "如果正在准备 professor:调和 ，受到的攻击伤害降低50% {@@}{!Professor:M2!|>0=并获得 !Professor:M2! 点 格挡 }。"
+  },
+  "Professor:AuroraEssence": {
+    "NAME": "极光精华",
+    "DESCRIPTION": "{@@}所有在战斗中临时增加的牌将被 professor:杰作化 并 升级 {!M!|>1= !M! 次}。"
+  },
+  "Professor:BlackMuck": {
+    "NAME": "黑泥",
+    "DESCRIPTION": "给予 !M! 层 professor:失稳 。 NL 随机 professor:谱系化 !Professor:M2! 张手牌。",
+    "UPGRADE_DESCRIPTION": "给予 !M! 层 professor:失稳 。 NL professor:谱系化 !Professor:M2! 张手牌。"
+  },
+  "Professor:BlackWater": {
+    "NAME": "黑水",
+    "DESCRIPTION": "每当你给予敌人 虚弱 或 易伤 ，同时给予 !M! 层 professor:失稳 。"
+  },
+  "Professor:BlueStarRobe": {
+    "NAME": "Blue Star Robe",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL Next turn, draw !M! additional card{@@}{!M!|>1=s}."
+  },
+  "Professor:BlueFlameEmber": {
+    "NAME": "Blue Flame Ember",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL Gain !M! Strength. NL At the end of this turn, lose !M! Strength."
+  },
+  "Professor:Catch": {
+    "NAME": "捕虫网",
+    "DESCRIPTION": "给予 !M! 层 易伤 。"
+  },
+  "Professor:CleanWater": {
+    "NAME": "干净的水",
+    "DESCRIPTION": "保留 。 NL 获得 !B! 点 格挡 。 NL 丢弃 1 张牌。"
+  },
+  "Professor:Clobber": {
+    "NAME": "Clobber",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL Apply !M! professor:Exposed."
+  },
+  "Professor:CrossDaggers": {
+    "NAME": "Cross Daggers",
+    "DESCRIPTION": "???"
+  },
+  "Professor:DarkCrystalFragment": {
+    "NAME": "暗水晶碎片",
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL 给予 !M! 层 professor:失稳 。"
+  },
+  "Professor:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "Professor:DemonClaws": {
+    "NAME": "魔爪",
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL 你打出的下一张攻击牌耗能变为0。"
+  },
+  "Professor:DragonBlood": {
+    "NAME": "Dragon Blood",
+    "DESCRIPTION": "professor:Infusions deal !M! additional damage and grant !M! additional Block.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you professor:灌注 a card, the professor:Infusion is performed !M! additional time{@@}{!M!|>1=s}."
+  },
+  "Professor:DragonBone": {
+    "NAME": "龙骨",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 无视 格挡 。"
+  },
+  "Professor:DreamFlower": {
+    "NAME": "梦境雾花",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 下回合, 获得 {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]} 。"
+  },
+  "Professor:DreamPowder": {
+    "NAME": "梦游光粉",
+    "DESCRIPTION": "不能被打出 。 虚无 。 NL 抽到时， 向 !M! 张随机卡牌 professor:灌注 \"造成 !Professor:M2! 点伤害\" 。",
+    "EXTENDED_DESCRIPTION": ["我不能打出这张牌。"]
+  },
+  "Professor:DuskyPowder": {
+    "NAME": "日落粉末",
+    "DESCRIPTION": "向一张卡牌 professor:灌注 \"给予 !M! 层 professor:失稳 \" 。 NL 消耗 。"
+  },
+  "Professor:Eiche": {
+    "NAME": "橡木",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 向一张卡牌 professor:灌注 \"获得 !M! 点 格挡 \" 。"
+  },
+  "Professor:EmberStone": {
+    "NAME": "余火石",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 易伤 ，再造成 !D! 点伤害。"
+  },
+  "Professor:EmeraldBand": {
+    "NAME": "绿宝石光带",
+    "DESCRIPTION": "随机升级 !M! 张手牌。"
+  },
+  "Professor:EmperorUni": {
+    "NAME": "大王海胆",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 向一张卡牌 professor:灌注 \"对所有敌人造成 !D! 点伤害\" 。"
+  },
+  "Professor:EternalFire": {
+    "NAME": "永世之焰",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 这张卡牌无法逃脱。 NL 每当这张牌被 消耗 ，伤害增加 !M! 。",
+    "EXTENDED_DESCRIPTION": ["燃烧"]
+  },
+  "Professor:EtherealStone": {
+    "NAME": "白灵岩",
+    "DESCRIPTION": "将一张 *虚空 加入抽牌堆顶部， NL 然后抽 !M! 张牌。"
+  },
+  "Professor:FireEssence": {
+    "NAME": "火之精华",
+    "DESCRIPTION": "每当你造成未被 格挡 的攻击伤害，对所有敌人造成 !M! 点伤害。"
+  },
+  "Professor:FlamingBlackSand": {
+    "NAME": "焰之黑砂",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果相邻的一张手牌拥有 professor:火元素 ，获得 {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]} 并 消耗 。"
+  },
+  "Professor:ForbiddenElixir": {
+    "NAME": "禁忌万灵药",
+    "DESCRIPTION": "给予 !M! 层 professor:失稳 。 NL 本回合，指向目标的攻击将攻击所有敌人。"
+  },
+  "Professor:Fragile": {
+    "NAME": "易碎花",
+    "DESCRIPTION": "向 !Professor:M2! 张牌 professor:灌注 \"获得 !M! 点 格挡 \" 。 NL 消耗 。"
+  },
+  "Professor:GiantClaws": {
+    "NAME": "巨大的爪子",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 所有\"爪\"牌的伤害在本场战斗中提高 !M! 。",
+    "EXTENDED_DESCRIPTION": [
+      "Translator note: following strings are used to check the name of the card contains Claw. You can add more strings if you want to check multiple words",
+      "爪"
+    ]
+  },
+  "Professor:GoldenCrown": {
+    "NAME": "Golden Crown",
+    "DESCRIPTION": "Choose a card. NL {!Upgrades!|>0=Upgrade it and add|@=Add}{@@} a copy of it into your deck. NL Fleeting."
+  },
+  "Professor:GoldUni": {
+    "NAME": "黄金海胆",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果这张牌杀死了敌人，则抽 !M! 张牌。 NL {@@}{!M!|1=它|1>=它们} 本回合费用为0。"
+  },
+  "Professor:HeroicSpirit": {
+    "NAME": "英灵之魂",
+    "DESCRIPTION": "不能被打出 。 虚无 。 NL 在手牌中时，每当你消耗能量，抽 !M! 张牌{!Professor:M2!|>0=. NL 抽到时，抽 !Professor:M2! 张牌}。{@@}",
+    "UPGRADE_DESCRIPTION": "不能被打出 。 NL 在手牌中时，每当你消耗能量，抽 !M! 张牌{!Professor:M2!|>0=. NL 抽到时，抽 !Professor:M2! 张牌}。{@@}",
+    "EXTENDED_DESCRIPTION": ["我不能打出这张牌。"]
+  },
+  "Professor:HolyArborBranch": {
+    "NAME": "圣树大枝",
+    "DESCRIPTION": "保留 。 NL 获得 !B! 点 格挡 。 NL 在手牌中时， 保留 相邻的手牌。"
+  },
+  "Professor:IceEssence": {
+    "NAME": "冰之精华",
+    "DESCRIPTION": "每当你从卡牌中获得 格挡 ，在下回合获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 每当你从卡牌中获得 格挡 ，在下回合获得 !M! 点 格挡 。"
+  },
+  "Professor:Ingot": {
+    "NAME": "金属块",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 。 NL 给予 !M! 层 易伤 。 NL 无视 格挡 。",
+    "FLAVOR": "一块致密的金属，非常适合投掷。"
+  },
+  "Professor:LightningEssence": {
+    "NAME": "雷之精华",
+    "DESCRIPTION": "费用为0的攻击牌额外造成 !M! 点伤害。"
+  },
+  "Professor:LightningSand": {
+    "NAME": "带电砂",
+    "DESCRIPTION": "保留 。 NL 对随机敌人造成 !D! 点伤害 !M! 次。 NL 每当这张牌被 保留 时，将其在本场战斗的耗能减少1。"
+  },
+  "Professor:Liquifier": {
+    "NAME": "液化剂",
+    "DESCRIPTION": "抽 !M! 张牌。 NL professor:谱系化 手牌中的 诅咒 与 状态 。 NL 消耗 。"
+  },
+  "Professor:LunarDrop": {
+    "NAME": "月滴花",
+    "DESCRIPTION": "不能被打出 。 保留 。 NL 被用于 professor:调和 时，额外添加 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "不能被打出 。 保留 。 NL 被用于 professor:调和 时，额外添加 !M! 张牌，且添加的牌将被升级。",
+    "EXTENDED_DESCRIPTION": ["我不能打出这张牌。"]
+  },
+  "Professor:LunaticDebonyal": {
+    "NAME": "恶魔狂药",
+    "DESCRIPTION": "每当一张卡牌被 消耗 ，对所有敌人造成 !M! 点伤害。"
+  },
+  "Professor:MagmaPowder": {
+    "NAME": "岩浆粉",
+    "DESCRIPTION": "获得 {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]} 。 NL 将一张 *灼伤 放入你的弃牌堆中。"
+  },
+  "Professor:ManaEaterBranch": {
+    "NAME": "噬魔树枝",
+    "DESCRIPTION": "对随机敌人造成 !D! 点伤害 X 次。"
+  },
+  "Professor:ManaLantern": {
+    "NAME": "玛那灯",
+    "DESCRIPTION": "不能被打出 。 虚无 。 NL 抽到时，获得 {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]} 。",
+    "EXTENDED_DESCRIPTION": ["我不能打出这张牌。"]
+  },
+  "Professor:MedicinalMoss": {
+    "NAME": "药苔",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 选择移除 !M! 个负面效果。"
+  },
+  "Professor:Meltstone": {
+    "NAME": "Meltstone",
+    "DESCRIPTION": "造成 !D! 点伤害。 Exhaust !M! card{@@}{!M!|>1=s}.",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 Exhaust !M! card{@@}{!M!|>1=s}."
+  },
+  "Professor:MistLiquid": {
+    "NAME": "雾液",
+    "DESCRIPTION": "回合结束时，你每有一张手牌，获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 回合结束时，你每有一张手牌，获得 !M! 点 格挡 。"
+  },
+  "Professor:MysteriousBroom": {
+    "NAME": "神秘扫帚",
+    "DESCRIPTION": "选择消耗至多 X 张手牌。 NL {@@}{!M!|>0=如果 X 不小于 !M! ， 消耗 |@= 消耗 } 这张牌并在本回合结束后额外获得一回合。",
+    "FLAVOR": "显然，完成普通的清洁工作对它来说不在话下。但据说如果利用它的隐藏能力储存玛那，就能跨坐在它的身上飞行。"
+  },
+  "Professor:OldenPhilosophersStone": {
+    "NAME": "贤者之形态",
+    "DESCRIPTION": "虚无 。 NL 每个回合 !M! 次，你可以在没有足够能量的时候打出卡牌。",
+    "UPGRADE_DESCRIPTION": "每个回合 !M! 次，你可以在没有足够能量的时候打出卡牌。",
+    "FLAVOR": "它那巨大的能量跳动着，看起来并不稳定。因此，这玩意显然不好处理。"
+  },
+  "Professor:OldMagicTome": {
+    "NAME": "陈旧的魔导书",
+    "DESCRIPTION": "professor:杰作化 一张手牌，然后将其在本场战斗中 升级 !M! 次。 NL 消耗 。",
+    "FLAVOR": "即使是没有魔法能力的人也能感受到玛那在其中流淌。"
+  },
+  "Professor:OldScroll": {
+    "NAME": "古老卷轴",
+    "DESCRIPTION": "将弃牌堆顶部的 !M! 张牌加入手牌。 NL 消耗 。",
+    "FLAVOR": "它的字里行间似乎提到了\"传奇时代\"，但卷轴上的文字早已失传许久，翻译起来大概需要一些时间。"
+  },
+  "Professor:PoisonGrass": {
+    "NAME": "Poison Grass",
+    "DESCRIPTION": "Apply !M! Poison. NL professor:灌注 \"Apply !M! Poison\" into a card."
+  },
+  "Professor:PoisonPowder": {
+    "NAME": "Poison Powder",
+    "DESCRIPTION": "Your next Attack applies !M! Poison on hit."
+  },
+  "Professor:PolishingPowder": {
+    "NAME": "研磨剂",
+    "DESCRIPTION": "你手牌中的所有牌在本回合的耗能降低 !M! 。 NL 消耗 。"
+  },
+  "Professor:RainbowNeutralizer": {
+    "NAME": "中和剂·虹",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL professor:谱系化 自身。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 造成 !D! 点伤害。 NL professor:谱系化 自身。"
+  },
+  "Professor:RestraintSilk": {
+    "NAME": "Restraint Silk",
+    "DESCRIPTION": "Apply !M! professor:Exposed and Vulnerable to ALL enemies. NL 消耗 。"
+  },
+  "Professor:RotwoodMiasma": {
+    "NAME": "朽木毒雾",
+    "DESCRIPTION": "给予所有敌人 !M! 层 professor:失稳 与 虚弱 。 NL 消耗 。"
+  },
+  "Professor:SaintsDiamond": {
+    "NAME": "神圣钻石",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL  被用于 professor:调和 时，将其在本场战斗的耗能减少1。"
+  },
+  "Professor:Septrin": {
+    "NAME": "圣石",
+    "DESCRIPTION": "当一张 professor:非中和剂 被 消耗 ， professor:谱系化 之。{@@}{!M!|>0= NL 消耗至多 !M! 张手牌。}"
+  },
+  "Professor:ShiningSand": {
+    "NAME": "Shining Sand",
+    "DESCRIPTION": "Ethereal. NL Next turn, NL gain {@@}{!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|>3=!M! [E]}. NL When you draw this card, apply !Professor:M2! Weak to ALL enemies."
+  },
+  "Professor:SmallCrystals": {
+    "NAME": "小晶石",
+    "DESCRIPTION": "对随机敌人造成 !D! 点伤害 !M! 次。"
+  },
+  "Professor:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "Professor:TabooDrop": {
+    "NAME": "禁忌水滴",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 对所有敌人造成 !D! 点伤害。"
+  },
+  "Professor:TemptingSap": {
+    "NAME": "Tempting Sap",
+    "DESCRIPTION": "professor:灌注 \"Apply !M! Poison\" into all cards in your hand. NL 消耗 。"
+  },
+  "Professor:TorchGrass": {
+    "NAME": "灯火草",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将弃牌堆中的 !M! 张牌放入你的手牌。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": ["灯火草"]
+  },
+  "Professor:TransportCannon": {
+    "NAME": "运送用大炮",
+    "DESCRIPTION": "丢弃所有手牌。 NL 每张被丢弃的牌造成 !D! 点伤害。"
+  },
+  "Professor:Uni": {
+    "NAME": "海胆",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 。"
+  },
+  "Professor:VirgoRequiemFlower": {
+    "NAME": "镇魂花",
+    "DESCRIPTION": "{@@}选择 !M! 张你在本场战斗中打出过的攻击或能力牌，将其复制加入手牌。 NL 消耗 。",
+    "FLAVOR": "据说它那淡蓝白色的花朵可以抚慰死者。"
+  },
+  "Professor:Volley": {
+    "NAME": "Volley",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
+  },
+  "Professor:VortexSand": {
+    "NAME": "漩涡流砂",
+    "DESCRIPTION": "抽 X {!M!|>0=+ !M!}{@@} 张牌。 NL 它们本回合耗能为0。 NL 消耗 。"
+  },
+  "Professor:WaterUni": {
+    "NAME": "水海胆",
+    "DESCRIPTION": "保留 。 NL 获得 !B! 点 格挡 。 NL 在手牌中时，当你受到攻击伤害时，反击 !M! 点伤害。"
+  },
+  "Professor:WindEssence": {
+    "NAME": "风之精华",
+    "DESCRIPTION": "每当你 professor:灌注 一张牌，抽 !M! 张牌。{@@}{!Professor:M2!|>0= NL 抽 !Professor:M2! 张牌。}",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 每当你 professor:灌注 一张牌，抽 !M! 张牌。{@@}{!Professor:M2!|>0= NL 抽 !Professor:M2! 张牌。}"
+  },
+  "Professor:WindShoes": {
+    "NAME": "风精灵之靴",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 下回合抽 !M! 张牌。",
+    "FLAVOR": "鞋子是如此轻盈，仿佛收纳了风的灵魂。"
+  }
+}
