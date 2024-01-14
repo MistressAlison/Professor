@@ -24,7 +24,7 @@ public class GiantClaws extends AbstractEasyCard {
     public GiantClaws() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = damage = 6;
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 4;
         if (clawNames.isEmpty()) {
             clawNames.addAll(Arrays.asList(cardStrings.EXTENDED_DESCRIPTION).subList(1, cardStrings.EXTENDED_DESCRIPTION.length));
         }
