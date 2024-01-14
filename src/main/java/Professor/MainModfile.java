@@ -246,7 +246,7 @@ public class MainModfile implements
         Gson gson = new Gson();
         Keyword[] keywords = null;
         try {
-            String json = Gdx.files.internal(modID + "Resources/localization/eng/Keywordstrings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+            String json = Gdx.files.internal(modID + "Resources/localization/"+language+"/Keywordstrings.json").readString(String.valueOf(StandardCharsets.UTF_8));
             keywords = gson.fromJson(json, Keyword[].class);
         } catch (GdxRuntimeException e) {
             if (!e.getMessage().startsWith("File not found:")) {
