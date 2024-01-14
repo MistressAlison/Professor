@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.SpotlightEffect;
 import com.megacrit.cardcrawl.vfx.combat.BloodShotEffect;
 import com.megacrit.cardcrawl.vfx.combat.InversionBeamEffect;
 
@@ -46,6 +45,7 @@ public class DawnGrimoire extends AbstractCreationCard {
         baseMagicNumber = magicNumber = 3;
         isMultiDamage = true;
         if (data != null) {
+            this.data = data;
             baseDamage += 3*data.r;
             damage = baseDamage;
             baseMagicNumber += data.y;

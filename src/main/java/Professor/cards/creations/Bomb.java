@@ -40,6 +40,7 @@ public class Bomb extends AbstractCreationCard {
         baseSecondDamage = secondDamage = 8; // Single
         manualD2 = true;
         if (data != null) {
+            this.data = data;
             baseDamage += 2*data.y;
             damage = baseDamage;
             baseSecondDamage += 3*data.r;

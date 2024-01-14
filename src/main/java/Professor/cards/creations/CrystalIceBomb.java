@@ -41,6 +41,7 @@ public class CrystalIceBomb extends AbstractCreationCard {
         baseMagicNumber = magicNumber = 1;
         isMultiDamage = true;
         if (data != null) {
+            this.data = data;
             baseDamage += 4*data.b;
             damage = baseDamage;
             baseMagicNumber += data.g;

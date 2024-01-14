@@ -5,7 +5,6 @@ import Professor.util.CardArtRoller;
 import Professor.util.KeywordManager;
 import Professor.util.Wiz;
 import Professor.vfx.BigExplosionVFX;
-import Professor.vfx.BurnToAshEffect;
 import Professor.vfx.DirectedParticleEffect;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
@@ -15,7 +14,6 @@ import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -48,6 +46,7 @@ public class LautePlajig extends AbstractCreationCard {
         baseDamage = damage = 15; // Damage
         baseMagicNumber = magicNumber = 2; // Vuln
         if (data != null) {
+            this.data = data;
             baseDamage += 5*data.y;
             damage = baseDamage;
             //baseMagicNumber += data.r;

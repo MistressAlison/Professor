@@ -36,6 +36,7 @@ public class Luft extends AbstractCreationCard {
     public void updateElementData(ElementData data) {
         baseMagicNumber = magicNumber = 2;
         if (data != null) {
+            this.data = data;
             baseMagicNumber += data.g;
             magicNumber = baseMagicNumber;
         }

@@ -42,6 +42,7 @@ public class ElysiumHarp extends AbstractCreationCard {
         baseMagicNumber = magicNumber = 4;
         //baseSecondMagic = secondMagic = 1;
         if (data != null) {
+            this.data = data;
             baseBlock += 3*data.g;
             block = baseBlock;
             //baseMagicNumber += data.g;
