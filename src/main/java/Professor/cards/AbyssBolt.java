@@ -24,6 +24,7 @@ public class AbyssBolt extends AbstractEasyCard implements EnterCardGroupPatches
     public AbyssBolt() {
         super(ID, -2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.NONE);
         baseDamage = damage = 14;
+        isMultiDamage = true;
         selfRetain = true;
     }
 
