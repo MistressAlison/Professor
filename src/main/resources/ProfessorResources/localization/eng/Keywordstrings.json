@@ -272,7 +272,7 @@
       "elysium_harp",
       "elysium_harp+"
     ],
-    "DESCRIPTION": "Grants Block when entering your hand. NL Scales with [Professor:WindIcon] ."
+    "DESCRIPTION": "Grants Block and draws cards. NL Scales with [Professor:WindIcon] ."
   },
   {
     "ID": "dark_night_treasure",
